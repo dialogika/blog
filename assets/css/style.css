@@ -1447,7 +1447,7 @@ span.rounded-yellow {
 .breadcrumbs {
   padding: 20px 0;
   background: rgb(220,242,254);
-background: linear-gradient(180deg, rgba(220,242,254,1) 0%, rgba(241,247,253,1) 100%);
+  background: linear-gradient(180deg, rgba(220,242,254,1) 0%, rgba(241,247,253,1) 100%);
   min-height: 40px;
   margin-top: 120px;
 }
