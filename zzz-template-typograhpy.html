@@ -75,6 +75,23 @@
         });
       }
 
+      function downloadsForm(){
+        $.ajax({
+        url:"https://api.apispreadsheets.com/data/V67SEkSOUdvoeJQn/",
+        type:"post",
+        data:$("#formDownload").serializeArray(),
+        headers:{
+          accessKey:"0595b51bf05662292a7877f0d8289443",
+          secretKey:"59da58d9abe1e4312efa3150bda9738c"},
+          success: function(){ 
+            window.location.href = "assets/pdf/cheatsheet-51-cara-and-motivasi-agar-lebih-percaya-diri-meskipun-dianggap-jelek.pdf";
+          },
+          error: function(){
+            alert("There was an error :(")
+          }
+        });
+      }
+
       function Subcription (){
         $.ajax({
           url:"https://api.apispreadsheets.com/data/18511/",
@@ -403,22 +420,29 @@
                 <h3> [SUB JUDUL] </h3>
                 <p> [UNTUK MENULIS PARAGRAF] </p>
                 <b> [TULISAN MENJADI BOLD] </b>
-                <p><img src="#" class="img-fluid" style="width: 100%; border-radius: 10px;" alt="EDIT"></p>
+                <!-- gambar -->
+                <p><img src="EDIT_LINK" class="img-fluid" style="width: 100%; border-radius: 10px;" alt="EDIT"></p>
+
+                <p>
+                  <img src="EDIT_LINK" class="img-fluid" style="width: 100%; border-radius: 10px;" alt="EDIT">
+                  <figcaption class="blockquote-footer">
+                    <cite>Sumber : <a href="EDIT_LINK">Website</a></cite>
+                  </figcaption>
+                </p>
 
                 <blockquote class="blockquote"> 
-                  <p>isis</p> 
+                  <p>"isis"</p> 
                 </blockquote>
+
+                <figcaption class="blockquote-footer">
+                    <cite>Sumber <a href="EDIT_LINK">Website</a></cite>
+                  </figcaption>
 
                 <blockquote class="blockquote"> 
                   <p>QUOTE</p> 
                   <div class="blockquote-cite">
-                    <div class="image">
-                      <img src="assets/img/intern/EDIT.jpg" style="height: 100px; margin:10px 4px;" class="rounded-circle img-thumbnail"/>
-                    </div>
-                    <div class="info">
-                      <h5>NAMA</h5>
-                      <span>CREDENTIAL</span>
-                    </div>
+                    <div class="image"><img src="assets/img/intern/EDIT.jpg" style="height: 100px; margin:10px 4px;" class="rounded-circle img-thumbnail"/></div>
+                    <div class="info"><h5>NAMA</h5><span>CREDENTIAL</span></div>
                   </div>
                 </blockquote>
 
@@ -546,19 +570,12 @@
 
                 <div class="entry-footer clearfix">
                   <div class="float-left">
-                    <i class='bx bxs-file'></i>
-                      <ul class="cats">
-                        <li><a href="EDIT_LINK" target="__blank">Reference</a></li>
-                      </ul>
-                    <i class="bx bx-user-circle"></i>
-                    <ul class="cats">
-                      <li><a href="EDIT_LINK" target="__blank">EDIT_SUMBER</a></li>
-                    </ul>
-
-                    <i class='bx bxs-edit-alt'></i>
-                    <ul class="tags">
-                      <li><a href="EDIT_LINK" target="__blank">EDIT_JUDUL </a></li>
-                    </ul>
+                    <i class='bx bxs-file'></i><ul class="cats"><li><a href="EDIT_LINK" target="__blank">
+                      Reference</a></li></ul>
+                    <i class="bx bx-user-circle"></i><ul class="cats"><li><a href="EDIT_LINK" target="__blank">
+                      EDIT_SUMBER</a></li></ul>
+                    <i class='bx bxs-edit-alt'></i><ul class="tags"><li><a href="EDIT_LINK" target="__blank">
+                      EDIT_JUDUL </a></li></ul>
                   </div>
                 </div>
                 
