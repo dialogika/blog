@@ -59,6 +59,46 @@
   }
 }
 
+/* Pagination */
+.page-item {
+  background-color: rgb(11, 43, 106);
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.page-item.active .page-link {
+  background-color: rgb(11, 43, 106);
+  border: none;
+  outline: none;
+}
+
+.page-item:not(.active) .page-link {
+  margin-left: -1px;
+  background-color: #ffffff;
+  color: black;
+}
+
+.page-item:not(.active) .page-link:hover {
+  margin-left: -1px;
+  background-color: rgb(11, 43, 106);
+  color: white;
+}
+
+/* Pagination arrow */
+.blog .blog-pagination li a {
+  color: rgb(0, 0, 0);
+  padding: 7px 16px;
+  display: inline-block;
+}
+
+.blog .blog-pagination li:hover a {
+  background-color: rgb(11, 43, 106, 0.5);
+  color: rgb(255, 255, 255);
+  padding: 7px 16px;
+  display: inline-block;
+}
+
 /*=============================
     01. Theme Default CSS
 ===============================*/
