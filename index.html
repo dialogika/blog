@@ -105,7 +105,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -156,6 +156,24 @@
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
   </script>
   <!-- End Hotjar -->
+
+  <!-- Event snippet for Submit lead forms conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-430016738/CPy3CKDwxZUYEOKRhs0B',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
 </head>
 
 <body>
@@ -336,15 +354,15 @@
             </ul>
           </li>
           <li><a class="" href="https://dialogika.co/corporate">Corporate</a></li>
-          
+
         </ul>
-        
+
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <a href="https://dialogika.co/blog" target="__blank" class="blue-btn position-relative"><span
-        class="d-none d-md-inline"> All </span> Blog
-      </span>
-    </a>
+          class="d-none d-md-inline"> All </span> Blog
+        </span>
+      </a>
     </div>
   </header><!-- End Header -->
 
@@ -391,10 +409,12 @@
               <div class="entry-img">
                 <img
                   src="https://media.istockphoto.com/id/497959594/id/foto/kue-segar.jpg?s=612x612&w=0&k=20&c=NAN1ReCEekGCskAY7_8lq-foH4K4HXYDJ4FqLlQILNY="
-                  alt="Tempat Ngabuburit Area Jogja: 5 Rekomendasi Tempat Bukber Sama Teman" class="img-fluid" style="width: 100%;">
+                  alt="Tempat Ngabuburit Area Jogja: 5 Rekomendasi Tempat Bukber Sama Teman" class="img-fluid"
+                  style="width: 100%;">
               </div>
               <h2 class="entry-title">
-                <a href="tempat-ngabuburit-area-jogja-5-rekomendasi-tempat-bukber-sama-teman.html" target="__blank">Tempat Ngabuburit Area Jogja: 5 Rekomendasi Tempat Bukber Sama Teman</a>
+                <a href="tempat-ngabuburit-area-jogja-5-rekomendasi-tempat-bukber-sama-teman.html"
+                  target="__blank">Tempat Ngabuburit Area Jogja: 5 Rekomendasi Tempat Bukber Sama Teman</a>
               </h2>
               <div class="entry-meta">
                 <ul>
@@ -408,10 +428,12 @@
               </div>
               <div class="entry-content">
                 <p>
-                  Tempat Ngabuburit Area Jogja-  Nih Dialogika punya rekomendasi tempat ngabuburit: 1. Bagi Kopi Prawirotaman.....
+                  Tempat Ngabuburit Area Jogja- Nih Dialogika punya rekomendasi tempat ngabuburit: 1. Bagi Kopi
+                  Prawirotaman.....
                 </p>
                 <div class="d-flex justify-content-end">
-                  <a href="tempat-ngabuburit-area-jogja-5-rekomendasi-tempat-bukber-sama-teman.html" target="__blank" class="blue-btn">Read
+                  <a href="tempat-ngabuburit-area-jogja-5-rekomendasi-tempat-bukber-sama-teman.html" target="__blank"
+                    class="blue-btn">Read
                     More</a>
                 </div>
               </div>
