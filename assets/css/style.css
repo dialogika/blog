@@ -7770,3 +7770,250 @@ blockquote::after {
   font-weight: bold;
   font-family: "poppins";
 }
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #2c4964;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(28, 47, 65, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile > ul > li {
+  padding: 0;
+}
+
+.navbar-mobile a {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #2c4964;
+  border: none;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
+  color: #0b2b6a;
+}
+
+.navbar-mobile .getstarted {
+  margin: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover > a {
+  color: #0b2b6a;
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+#sidebar-mobile {
+  width: 300px;
+  background: #fff;
+  border-right: 1px solid #e6e9ec;
+  left: -300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+#sidebar-mobile .nav-menu {
+  padding: 0;
+  display: block;
+}
+
+#sidebar-mobile .nav-menu i {
+  color: #45505b;
+}
+
+#sidebar-mobile .nav-menu i:hover {
+  color: #fff;
+}
+
+#sidebar-mobile .nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#sidebar-mobile .nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+#sidebar-mobile .nav-menu a {
+  display: flex;
+  align-items: center;
+  color: #45505b;
+  padding: 10px 18px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  font-size: 15px;
+  border-radius: 50px;
+  background-color: #dcf2fe;
+  /*  background: #f2f3f5;*/
+  /*height: 56px;
+  width: 56px;*/
+  transition: 0.3s;
+}
+
+/*#sidebar-mobile .nav-menu a,*/
+#sidebar-mobile .nav-menu a:focus {
+  display: flex;
+  align-items: center;
+  color: #45505b;
+  padding: 10px 18px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  font-size: 15px;
+  border-radius: 50px;
+  background: #f2f3f5;
+  height: 56px;
+  width: 56px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+#sidebar-mobile .nav-menu ul li i {
+  margin-left: 10px;
+}
+
+#sidebar-mobile .nav-menu a i,
+#sidebar-mobile .nav-menu a:focus i {
+  font-size: 20px;
+}
+
+#sidebar-mobile .nav-menu a span,
+#sidebar-mobile .nav-menu a:focus span {
+  padding: 0 5px 0 7px;
+  color: #45505b;
+}
+
+#sidebar-mobile .nav-menu a span,
+#sidebar-mobile .nav-menu a:focus span {
+  /*  display: none;*/
+  color: #45505b;
+}
+
+#sidebar-mobile .nav-menu li {
+  border-radius: 50px;
+  background-color: #dcf2fe;
+}
+
+#sidebar-mobile .nav-menu a:hover,
+#sidebar-mobile .nav-menu .active,
+#sidebar-mobile .nav-menu .active:focus,
+#sidebar-mobile .nav-menu li:hover > a {
+  color: #fff;
+  background: #0563bb;
+}
+
+#sidebar-mobile .nav-menu a:hover span,
+#sidebar-mobile .nav-menu .active span,
+#sidebar-mobile .nav-menu .active:focus span,
+#sidebar-mobile .nav-menu li:hover > a span {
+  color: #fff;
+}
+
+#sidebar-mobile .nav-menu a:hover,
+#sidebar-mobile .nav-menu li:hover > a {
+  width: 100%;
+  color: #fff;
+}
+
+#sidebar-mobile .nav-menu a:hover span,
+#sidebar-mobile .nav-menu li:hover > a span {
+  display: block;
+}
+
+#sidebar-mobile button.btn-close {
+  background-color: #f9c62e;
+  color: #212121;
+  border-radius: 50%;
+}
+
+#sidebar-mobile button.btn-close:hover {
+  /*  background:linear-gradient(to bottom, #ffb13b 5%, #f9c62e 100%);*/
+  background-color: #ffb13b;
+  color: #231f20;
+}
