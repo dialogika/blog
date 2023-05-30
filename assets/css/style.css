@@ -8,6 +8,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -6247,7 +6248,7 @@ page-section & Timeline
 
 .blog .entry {
   background-color: #fff;
-  font-family: "Poppins";
+  font-family: "Source Serif Pro", serif;
   padding: 30px;
   margin-bottom: 60px;
   border-radius: 13px;
@@ -6311,7 +6312,13 @@ page-section & Timeline
 }
 
 .blog .entry .entry-content p {
-  line-height: 24px;
+  font-family: "Source Serif Pro", serif;
+  line-height: 32px;
+  font-size: 17px;
+}
+.blog .entry .entry-content {
+  font-family: "Source Serif Pro", serif;
+  line-height: 32px;
   font-size: 17px;
 }
 
