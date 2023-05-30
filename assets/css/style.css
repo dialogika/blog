@@ -6316,6 +6316,11 @@ page-section & Timeline
   line-height: 32px;
   font-size: 17px;
 }
+.blog .entry .entry-content ul li {
+  font-family: "Source Serif Pro", serif;
+  line-height: 32px;
+  font-size: 17px;
+}
 .blog .entry .entry-content {
   font-family: "Source Serif Pro", serif;
   line-height: 32px;
