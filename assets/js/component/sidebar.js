@@ -10,7 +10,7 @@ class Sidebar extends HTMLElement {
               <div class="widget sidebar-widget">
                 <div class="tgAbout-me">
                   <div class="tgAbout-thumb">
-                    <img src="assets/img/logo-square.png" class="img-thumbnail" alt="EDIT">
+                    <img src="https://dialogika.co/blog/assets/img/logo-square.png" class="img-thumbnail" alt="EDIT">
                   </div>
                   <div class="tgAbout-info">
                     <p class="intro">Welcome to <b>Dialogika</b> Blog</p>
@@ -59,7 +59,7 @@ class Sidebar extends HTMLElement {
                 <div class="sidebarInsta__wrap">
                   <div class="sidebarInsta__top">
                     <div class="sidebarInsta__logo">
-                      <img src="assets/img/logo-square.png" alt="EDIT">
+                      <img src="https://dialogika.co/blog/assets/img/logo-square.png" alt="EDIT">
                     </div>
                     <div class="blog-details-area sidebarInsta__info">
                       <h6 class="name"><a href="https://instagram.com/dialogika.co">@dialogika.co</a></h6>
@@ -71,19 +71,19 @@ class Sidebar extends HTMLElement {
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <a href="https://www.instagram.com/p/CoJeVGjLVZJ/?utm_source=ig_web_copy_link"
-                            target="_blank"><img src="assets/img/instagram/01.jpg" alt="EDIT"></a>
+                            target="_blank"><img src="https://dialogika.co/blog/assets/img/instagram/01.jpg" alt="EDIT"></a>
                         </div>
                         <div class="swiper-slide">
                           <a href="https://www.instagram.com/dialogika.co" target="_blank"><img
-                              src="assets/img/instagram/02.jpg" alt="EDIT"></a>
+                              src="https://dialogika.co/blog/assets/img/instagram/02.jpg" alt="EDIT"></a>
                         </div>
                         <div class="swiper-slide">
                           <a href="https://www.instagram.com/dialogika.co" target="_blank"><img
-                              src="assets/img/instagram/03.jpg" alt="EDIT"></a>
+                              src="https://dialogika.co/blog/assets/img/instagram/03.jpg" alt="EDIT"></a>
                         </div>
                         <div class="swiper-slide">
                           <a href="https://www.instagram.com/dialogika.co" target="_blank"><img
-                              src="assets/img/instagram/04.jpg" alt="EDIT"></a>
+                              src="https://dialogika.co/blog/assets/img/instagram/04.jpg" alt="EDIT"></a>
                         </div>
                       </div>
                     </div>
@@ -91,19 +91,19 @@ class Sidebar extends HTMLElement {
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <a href="https://www.instagram.com/dialogika.co" target="_blank"><img
-                              src="assets/img/instagram/05.jpg" alt="EDIT"></a>
+                              src="https://dialogika.co/blog/assets/img/instagram/05.jpg" alt="EDIT"></a>
                         </div>
                         <div class="swiper-slide">
                           <a href="https://www.instagram.com/dialogika.co" target="_blank"><img
-                              src="assets/img/instagram/06.jpg" alt="EDIT"></a>
+                              src="https://dialogika.co/blog/assets/img/instagram/06.jpg" alt="EDIT"></a>
                         </div>
                         <div class="swiper-slide">
                           <a href="https://www.instagram.com/dialogika.co" target="_blank"><img
-                              src="assets/img/instagram/07.jpg" alt="EDIT"></a>
+                              src="https://dialogika.co/blog/assets/img/instagram/07.jpg" alt="EDIT"></a>
                         </div>
                         <div class="swiper-slide">
                           <a href="https://www.instagram.com/dialogika.co" target="_blank"><img
-                              src="assets/img/instagram/08.jpg" alt="EDIT"></a>
+                              src="https://dialogika.co/blog/assets/img/instagram/08.jpg" alt="EDIT"></a>
                         </div>
                       </div>
                     </div>
