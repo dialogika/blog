@@ -31,7 +31,7 @@ class Header extends HTMLElement {
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul id="navbar-navlist">
           <li><a class="nav-link scrollto active" data-scroll href="#hero">Home</a></li>
-          <li class="nav-categories"><a href="../program/index.html"><span>Program</span><i
+          <li class="nav-categories"><a href="https://dialogika.co/program/index.html"><span>Program</span><i
                 class='bx bx-chevron-down-circle'></i></a>
             <ul>
               <li>
@@ -51,41 +51,41 @@ class Header extends HTMLElement {
                 <span class="badge rounded-orange">Advance</span>&nbsp;
               </li>
               <li>
-                <a href="../corporate/">
+                <a href="https://dialogika.co/corporate/">
                   <span class="badge rounded-green">Corporate</span>&nbsp;
                   <span class="badge rounded-blue">Training</span>&nbsp;
                 </a>
               </li>
-              <li><a href="../subscribe/action-play.html"><i class='bx bxs-chevron-right'></i>&nbsp;Action Play</a></li>
+              <li><a href="https://dialogika.co/subscribe/action-play.html"><i class='bx bxs-chevron-right'></i>&nbsp;Action Play</a></li>
               <li>
-                <a href="../program/kids-class.html"><i class='bx bxs-chevron-right'></i>&nbsp;Kids Class</a>
+                <a href="https://dialogika.co/program/kids-class.html"><i class='bx bxs-chevron-right'></i>&nbsp;Kids Class</a>
                 <span class="badge rounded-blue-turtle">Kids</span>
               </li>
               <li>
-                <a href="../private/basic-private.html"><i class='bx bxs-chevron-right'></i>&nbsp;Basic Private</a>
+                <a href="https://dialogika.co/private/basic-private.html"><i class='bx bxs-chevron-right'></i>&nbsp;Basic Private</a>
                 <span class="badge rounded-blue">Online</span>
               </li>
-              <li><a href="../program/presentation-class.html"><i class='bx bxs-chevron-right'></i>&nbsp;Presentation
+              <li><a href="https://dialogika.co/program/presentation-class.html"><i class='bx bxs-chevron-right'></i>&nbsp;Presentation
                   Class</a>
               </li>
-              <li><a href="../corporate/basic-training.html"><i class='bx bxs-chevron-right'></i>&nbsp;Basic Training</a>
+              <li><a href="https://dialogika.co/corporate/basic-training.html"><i class='bx bxs-chevron-right'></i>&nbsp;Basic Training</a>
               </li>
               <li>
-                <a href="../subscribe/kids-play.html"><i class='bx bxs-chevron-right'></i>&nbsp;Kids Play</a>
+                <a href="https://dialogika.co/subscribe/kids-play.html"><i class='bx bxs-chevron-right'></i>&nbsp;Kids Play</a>
                 <span class="badge rounded-blue-turtle">Kids</span>
               </li>
               <li>
-                <a href="../program/basic-plus.html"><i class='bx bxs-chevron-right'></i>&nbsp;Basic Plus</a>
+                <a href="https://dialogika.co/program/basic-plus.html"><i class='bx bxs-chevron-right'></i>&nbsp;Basic Plus</a>
               </li>
               <li>
-                <a href="../private/first-private.html"><i class='bx bxs-chevron-right'></i>&nbsp;First Private</a>
+                <a href="https://dialogika.co/private/first-private.html"><i class='bx bxs-chevron-right'></i>&nbsp;First Private</a>
                 <span class="badge rounded-green">Jogja</span>
               </li>
               <li>
-                <a href="../program/voice-over.html"><i class='bx bxs-chevron-right'></i>&nbsp;Voice Over</a>
+                <a href="https://dialogika.co/program/voice-over.html"><i class='bx bxs-chevron-right'></i>&nbsp;Voice Over</a>
               </li>
               <li>
-                <a href="../corporate/advance-training.html"><i class='bx bxs-chevron-right'></i>&nbsp;Advance Training</a>
+                <a href="https://dialogika.co/corporate/advance-training.html"><i class='bx bxs-chevron-right'></i>&nbsp;Advance Training</a>
               </li>
               <li>
                 <span class="badge rounded-green">Offline</span>&nbsp;
@@ -96,7 +96,7 @@ class Header extends HTMLElement {
                 <span class="badge rounded-blue">Package</span>&nbsp;
               </li>
               <li>
-                <a href="../private/kids-private.html"><i class='bx bxs-chevron-right'></i>&nbsp;Kids Private</a>
+                <a href="https://dialogika.co/private/kids-private.html"><i class='bx bxs-chevron-right'></i>&nbsp;Kids Private</a>
                 <span class="badge rounded-blue-turtle">Kids</span>&nbsp;
                 <span class="badge rounded-blue">Online</span>&nbsp;
               </li>
@@ -105,27 +105,27 @@ class Header extends HTMLElement {
                 <span class="badge rounded-blue">Subscribe</span>&nbsp;
               </li>
               <li>
-                <a href="../corporate/certified-training.html"><i class='bx bxs-chevron-right'></i>&nbsp;Certified
+                <a href="https://dialogika.co/corporate/certified-training.html"><i class='bx bxs-chevron-right'></i>&nbsp;Certified
                   Training</a>
                 <span class="badge rounded-grey">Coming Soon</span>
               </li>
               <li>
-                <a href="../subscribe/jogja-play.html"><i class='bx bxs-chevron-right'></i>&nbsp;Jogja Play</a>
+                <a href="https://dialogika.co/subscribe/jogja-play.html"><i class='bx bxs-chevron-right'></i>&nbsp;Jogja Play</a>
               </li>
               <li>
-                <a href="../program/first-class.html"><i class='bx bxs-chevron-right'></i>&nbsp;First Class</a>
+                <a href="https://dialogika.co/program/first-class.html"><i class='bx bxs-chevron-right'></i>&nbsp;First Class</a>
                 <span class="badge rounded-green">Jogja</span>
               </li>
               <li>
                 &nbsp;
               </li>
               <li>
-                <a href="../program/emcee-class.html"><i class='bx bxs-chevron-right'></i>&nbsp;Master of Ceremony</a>
+                <a href="https://dialogika.co/program/emcee-class.html"><i class='bx bxs-chevron-right'></i>&nbsp;Master of Ceremony</a>
               </li>
               <li></li>
               <li>&nbsp;</li>
               <li>
-                <a href="../program/royal-class-jakarta.html"><i class='bx bxs-chevron-right'></i>&nbsp;Royal
+                <a href="https://dialogika.co/program/royal-class-jakarta.html"><i class='bx bxs-chevron-right'></i>&nbsp;Royal
                   Class</a><span class="badge rounded-green">Jakarta</span>
               </li>
               <li>&nbsp;</li>
@@ -133,69 +133,69 @@ class Header extends HTMLElement {
               <li></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="../service/"><span>Service</span><i class='bx bx-chevron-down-circle'></i></a>
+          <li class="dropdown"><a href="https://dialogika.co/service/"><span>Service</span><i class='bx bx-chevron-down-circle'></i></a>
             <ul>
               <li class="dropdown">
-                <a href="../service/counseling/"><span>Counseling</span> <i class="bi bi-chevron-right"></i></a>
+                <a href="https://dialogika.co/service/counseling/"><span>Counseling</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="../service/counseling/relationship.html">
+                  <li><a href="https://dialogika.co/service/counseling/relationship.html">
                       <span>Relationship
                         <sup>&nbsp;</sup>
                       </span>
                     </a></li>
-                  <li><a href="../service/counseling/parenting.html">
+                  <li><a href="https://dialogika.co/service/counseling/parenting.html">
                       <span>Parenting
                         <sup>&nbsp;</sup>
                       </span>
                     </a></li>
-                  <li><a href="../service/counseling/children.html">
+                  <li><a href="https://dialogika.co/service/counseling/children.html">
                       <span>Children
                         <sup>&nbsp;</sup>
                       </span>
                     </a></li>
                   <li class="dropdown-divider"></li>
-                  <li><a href="../service/counseling/request.html">
+                  <li><a href="https://dialogika.co/service/counseling/request.html">
                       <span>Request</span>
                     </a></li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="../service/mentoring/"><span>Mentoring</span> <i class="bi bi-chevron-right"></i></a>
+                <a href="https://dialogika.co/service/mentoring/"><span>Mentoring</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="../service/mentoring/teenager.html"><span>Teenager</span></a></li>
-                  <li><a href="../service/mentoring/self-development.html"><span>Self Development</span></a></li>
+                  <li><a href="https://dialogika.co/service/mentoring/teenager.html"><span>Teenager</span></a></li>
+                  <li><a href="https://dialogika.co/service/mentoring/self-development.html"><span>Self Development</span></a></li>
                   <li class="dropdown-divider"></li>
-                  <li><a href="../service/mentoring/request.html"><span>Request</span></a></li>
+                  <li><a href="https://dialogika.co/service/mentoring/request.html"><span>Request</span></a></li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="../service/agency/"><span>Agency</span> <i class="bi bi-chevron-right"></i></a>
+                <a href="https://dialogika.co/service/agency/"><span>Agency</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="../service/agency/emcee.html"><span>Master of Ceremony</span></a></li>
-                  <li><a href="../service/agency/host.html"><span>Host</span></a></li>
-                  <li><a href="../service/agency/voice-over.html"><span>Voice Over</span></a></li>
+                  <li><a href="https://dialogika.co/service/agency/emcee.html"><span>Master of Ceremony</span></a></li>
+                  <li><a href="https://dialogika.co/service/agency/host.html"><span>Host</span></a></li>
+                  <li><a href="https://dialogika.co/service/agency/voice-over.html"><span>Voice Over</span></a></li>
                   <li class="dropdown-divider"></li>
-                  <li><a href="../service/agency/request.html"><span>Request</span></a></li>
+                  <li><a href="https://dialogika.co/service/agency/request.html"><span>Request</span></a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li class="dropdown"><a href="../shop/"><span>Shop</span><i class='bx bx-chevron-down-circle'></i></a>
+          <li class="dropdown"><a href="https://dialogika.co/shop/"><span>Shop</span><i class='bx bx-chevron-down-circle'></i></a>
             <ul>
-              <li><a href="../shop/book.html">Book</a></li>
-              <li><a href="../shop/module.html">Module</a></li>
+              <li><a href="https://dialogika.co/shop/book.html">Book</a></li>
+              <li><a href="https://dialogika.co/shop/module.html">Module</a></li>
               <li class="dropdown-divider"></li>
-              <li><a href="../shop/">Discover</a></li>
+              <li><a href="https://dialogika.co/shop/">Discover</a></li>
             </ul>
           </li>
-          <li><a class="nav-link" href="../event/index.html">Event</a></li>
-          <li><a class="nav-link" href="../blog/index.html">Blog</a></li>
+          <li><a class="nav-link" href="https://dialogika.co/event/index.html">Event</a></li>
+          <li><a class="nav-link" href="https://dialogika.co/blog/index.html">Blog</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
 
-      <a href="../promo/" target="__blank" class="blue-btn position-relative"><span class="d-none d-md-inline">
+      <a href="https://dialogika.co/promo/" target="__blank" class="blue-btn position-relative"><span class="d-none d-md-inline">
           Claim</span> Promo
         <span class="position-absolute top-0 start-70 translate-middle badge rounded-pill bg-danger">
           <i class='bx bxs-alarm-exclamation bx-tada'></i>
@@ -225,12 +225,12 @@ class Header extends HTMLElement {
             </a>
           </li>
           <div class="collapse" id="online-collapse" data-bs-parent="">
-            <li><a href="../program/basic-plus.html" style="background-color: #f2f3f5;">
+            <li><a href="https://dialogika.co/program/basic-plus.html" style="background-color: #f2f3f5;">
                 <i class="fa-solid fa-shield-check" style="margin-left: 10px;"></i>
                 <span>Basic Plus</span>
               </a>
             </li>
-            <li><a href="../subscribe/action-play.html" style="background-color: #f2f3f5;">
+            <li><a href="https://dialogika.co/subscribe/action-play.html" style="background-color: #f2f3f5;">
                 <i class="fa-solid fa-shield-xmark" style="margin-left: 10px;"></i>
                 <span>Action Play</span>
               </a>
@@ -242,17 +242,17 @@ class Header extends HTMLElement {
             </a>
           </li>
           <div class="collapse" id="offline-collapse" data-bs-parent="">
-            <li><a href="../program/first-class.html" style="background-color: #f2f3f5;">
+            <li><a href="https://dialogika.co/program/first-class.html" style="background-color: #f2f3f5;">
                 <i class="fa-solid fa-shield-check" style="margin-left: 10px;"></i>
                 <span>First Class</span>
               </a>
             </li>
-            <li><a href="../program/royal-class-jakarta.html" style="background-color: #f2f3f5;">
+            <li><a href="https://dialogika.co/program/royal-class-jakarta.html" style="background-color: #f2f3f5;">
                 <i class="fa-solid fa-shield-check" style="margin-left: 10px;"></i>
                 <span>Royal Class</span>
               </a>
             </li>
-            <li><a href="../subscribe/jogja-play.html" style="background-color: #f2f3f5;">
+            <li><a href="https://dialogika.co/subscribe/jogja-play.html" style="background-color: #f2f3f5;">
                 <i class="fa-solid fa-shield-xmark" style="margin-left: 10px;"></i>
                 <span>Jogja Play</span>
               </a>
@@ -264,28 +264,28 @@ class Header extends HTMLElement {
             </a>
           </li>
           <div class="collapse" id="kids-collapse" data-bs-parent="">
-            <li><a href="../program/kids-class.html" style="background-color: #f2f3f5;">
+            <li><a href="https://dialogika.co/program/kids-class.html" style="background-color: #f2f3f5;">
                 <i class="fa-solid fa-shield-check" style="margin-left: 10px;"></i>
                 <span>Kids Class</span>
               </a>
             </li>
-            <li><a href="../subscribe/kids-play.html" style="background-color: #f2f3f5;">
+            <li><a href="https://dialogika.co/subscribe/kids-play.html" style="background-color: #f2f3f5;">
                 <i class="fa-solid fa-shield-xmark" style="margin-left: 10px;"></i>
                 <span>Kids Play</span>
               </a>
             </li>
           </div>
-          <li><a href="../corporate/index.html" class="nav-link">
+          <li><a href="https://dialogika.co/corporate/index.html" class="nav-link">
               <i class="fa-solid fa-building" style="margin-left: 10px;"></i>
               <span>Corporate</span>
             </a>
           </li>
-          <li><a href="../event/index.html" class="nav-link">
+          <li><a href="https://dialogika.co/event/index.html" class="nav-link">
               <i class="fa-solid fa-calendar-star" style="margin-left: 10px;"></i>
               <span>Event</span>
             </a>
           </li>
-          <li><a href="../blog/index.html" class="nav-link">
+          <li><a href="https://dialogika.co/blog/index.html" class="nav-link">
               <i class="fa-brands fa-blogger-b" style="margin-left: 10px;"></i>
               <span>Blog</span>
             </a>
@@ -397,13 +397,13 @@ class Footer extends HTMLElement {
               <h4>Best Program</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../program/basic-plus.html">Online Class</a>
+                  <a href="https://dialogika.co/program/basic-plus.html">Online Class</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../program/first-class.html">Offline Class</a>
+                  <a href="https://dialogika.co/program/first-class.html">Offline Class</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../program/kids-class.html">Kids Class</a>
+                  <a href="https://dialogika.co/program/kids-class.html">Kids Class</a>
                 </li>
               </ul><br>
             </div>
@@ -414,13 +414,13 @@ class Footer extends HTMLElement {
               </a>
               <ul class="accordion-collapse collapse show" id="footer-best-program" data-bs-parent=".footer-links">
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../program/basic-plus.html">Online Class</a>
+                  <a href="https://dialogika.co/program/basic-plus.html">Online Class</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../program/first-class.html">Offline Class</a>
+                  <a href="https://dialogika.co/program/first-class.html">Offline Class</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../program/kids-class.html">Kids Class</a>
+                  <a href="https://dialogika.co/program/kids-class.html">Kids Class</a>
                 </li>
               </ul>
             </div><br>
@@ -429,13 +429,13 @@ class Footer extends HTMLElement {
               <h4>Corporate Program</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../corporate/workshop.html">Workshop</a>
+                  <a href="https://dialogika.co/corporate/workshop.html">Workshop</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../corporate/webinar.html">Webinar</a>
+                  <a href="https://dialogika.co/corporate/webinar.html">Webinar</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../corporate/class.html">Class</a>
+                  <a href="https://dialogika.co/corporate/class.html">Class</a>
                 </li>
               </ul><br>
             </div>
@@ -446,13 +446,13 @@ class Footer extends HTMLElement {
               </a>
               <ul class="accordion-collapse collapse show" id="footer-corporate-program">
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../corporate/workshop.html">Workshop</a>
+                  <a href="https://dialogika.co/corporate/workshop.html">Workshop</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../corporate/webinar.html">Webinar</a>
+                  <a href="https://dialogika.co/corporate/webinar.html">Webinar</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../corporate/class.html">Class</a>
+                  <a href="https://dialogika.co/corporate/class.html">Class</a>
                 </li>
               </ul>
             </div><br>
@@ -462,13 +462,13 @@ class Footer extends HTMLElement {
               <h4>Private Program</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../mentor/private-online.html">Online Class</a>
+                  <a href="https://dialogika.co/mentor/private-online.html">Online Class</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../mentor/private-offline.html">Offline Class</a>
+                  <a href="https://dialogika.co/mentor/private-offline.html">Offline Class</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../mentor/private-kids.html">Kids Only</a>
+                  <a href="https://dialogika.co/mentor/private-kids.html">Kids Only</a>
                 </li>
               </ul><br>
             </div>
@@ -479,13 +479,13 @@ class Footer extends HTMLElement {
               </a>
               <ul class="accordion-collapse collapse show" id="footer-private-program" data-bs-parent=".footer-links">
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../private/basic-private.html">Online Private</a>
+                  <a href="https://dialogika.co/private/basic-private.html">Online Private</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../private/first-private.html">Offline Private</a>
+                  <a href="https://dialogika.co/private/first-private.html">Offline Private</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../private/kids-private.html">Kids Private</a>
+                  <a href="https://dialogika.co/private/kids-private.html">Kids Private</a>
                 </li>
               </ul>
             </div><br>
@@ -495,13 +495,13 @@ class Footer extends HTMLElement {
               <h4>Career Info</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/registration.html">Team</a>
+                  <a href="https://dialogika.co/about/registration.html">Team</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../mentor/registration.html">Mentor</a>
+                  <a href="https://dialogika.co/mentor/registration.html">Mentor</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../intern/index.html">Internship</a>
+                  <a href="https://dialogika.co/intern/index.html">Internship</a>
                 </li>
               </ul>
               <br>
@@ -513,13 +513,13 @@ class Footer extends HTMLElement {
               </a>
               <ul class="accordion-collapse collapse show" id="footer-career-info" data-bs-parent=".footer-links">
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/registration.html">Team</a>
+                  <a href="https://dialogika.co/about/registration.html">Team</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../mentor/registration.html">Mentor</a>
+                  <a href="https://dialogika.co/mentor/registration.html">Mentor</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../intern/index.html">Internship</a>
+                  <a href="https://dialogika.co/intern/index.html">Internship</a>
                 </li>
               </ul>
               <br>
@@ -543,10 +543,10 @@ class Footer extends HTMLElement {
               </a>
               <ul class="accordion-collapse collapse show" id="footer-useful-link" data-bs-parent=".footer-links">
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../blog/index.html">Blog Dialogika</a>
+                  <a href="https://dialogika.co/blog/index.html">Blog Dialogika</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../mentor/index.html">Mentor Dialogika</a>
+                  <a href="https://dialogika.co/mentor/index.html">Mentor Dialogika</a>
                 </li>
               </ul>
             </div>
@@ -559,13 +559,13 @@ class Footer extends HTMLElement {
               <h4>Our Service</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/counseling/">Counseling</a>
+                  <a href="https://dialogika.co/service/counseling/">Counseling</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/mentoring/">Mentoring</a>
+                  <a href="https://dialogika.co/service/mentoring/">Mentoring</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/agency/">Agency</a>
+                  <a href="https://dialogika.co/service/agency/">Agency</a>
                 </li>
               </ul>
               <br>
@@ -577,13 +577,13 @@ class Footer extends HTMLElement {
               </a>
               <ul class="accordion-collapse collapse show" id="footer-our-service" data-bs-parent=".footer-links">
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/counseling/">Counseling</a>
+                  <a href="https://dialogika.co/service/counseling/">Counseling</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/mentoring/">Mentoring</a>
+                  <a href="https://dialogika.co/service/mentoring/">Mentoring</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/agency/">Agency</a>
+                  <a href="https://dialogika.co/service/agency/">Agency</a>
                 </li>
               </ul>
               <br>
@@ -594,13 +594,13 @@ class Footer extends HTMLElement {
               <h4>Event Agency</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/agency/emcee.html">Master of Ceremony</a>
+                  <a href="https://dialogika.co/service/agency/emcee.html">Master of Ceremony</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/agency/host.html">Host</a>
+                  <a href="https://dialogika.co/service/agency/host.html">Host</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/agency/moderator.html">Moderator</a>
+                  <a href="https://dialogika.co/service/agency/moderator.html">Moderator</a>
                 </li>
               </ul>
               <br>
@@ -612,13 +612,13 @@ class Footer extends HTMLElement {
               </a>
               <ul class="accordion-collapse collapse show" id="footer-event-agency" data-bs-parent=".footer-links">
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/agency/emcee.html">Master of Ceremony</a>
+                  <a href="https://dialogika.co/service/agency/emcee.html">Master of Ceremony</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/agency/host.html">Host</a>
+                  <a href="https://dialogika.co/service/agency/host.html">Host</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/agency/moderator.html">Moderator</a>
+                  <a href="https://dialogika.co/service/agency/moderator.html">Moderator</a>
                 </li>
               </ul>
               <br>
@@ -629,13 +629,13 @@ class Footer extends HTMLElement {
               <h4>Counseling</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/counseling/relationship.html">Relationship</a>
+                  <a href="https://dialogika.co/service/counseling/relationship.html">Relationship</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/counseling/parenting.html">Parenting</a>
+                  <a href="https://dialogika.co/service/counseling/parenting.html">Parenting</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/counseling/kids.html">Children</a>
+                  <a href="https://dialogika.co/service/counseling/kids.html">Children</a>
                 </li>
               </ul>
               <br>
@@ -648,13 +648,13 @@ class Footer extends HTMLElement {
               <ul class="accordion-collapse collapse show" id="footer-counseling-program"
                 data-bs-parent=".footer-links">
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/counseling/relationship.html">Relationship</a>
+                  <a href="https://dialogika.co/service/counseling/relationship.html">Relationship</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/counseling/parenting.html">Parenting</a>
+                  <a href="https://dialogika.co/service/counseling/parenting.html">Parenting</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../service/counseling/kids.html">Children</a>
+                  <a href="https://dialogika.co/service/counseling/kids.html">Children</a>
                 </li>
               </ul>
               <br>
@@ -665,19 +665,19 @@ class Footer extends HTMLElement {
               <h4>About Dialogika</h4>
               <ul>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/">About Us</a>
+                  <a href="https://dialogika.co/about/">About Us</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/faq.html">FAQ</a>
+                  <a href="https://dialogika.co/about/faq.html">FAQ</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/help.html">Help Center</a>
+                  <a href="https://dialogika.co/about/help.html">Help Center</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/privacy.html">Privacy Policy</a>
+                  <a href="https://dialogika.co/about/privacy.html">Privacy Policy</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/terms.html">Terms & Agreements</a>
+                  <a href="https://dialogika.co/about/terms.html">Terms & Agreements</a>
                 </li>
               </ul>
             </div>
@@ -688,19 +688,19 @@ class Footer extends HTMLElement {
               </a>
               <ul class="accordion-collapse collapse show" id="footer-about-dialogika" data-bs-parent=".footer-links">
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/">About Us</a>
+                  <a href="https://dialogika.co/about/">About Us</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/faq.html">FAQ</a>
+                  <a href="https://dialogika.co/about/faq.html">FAQ</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/help.html">Help Center</a>
+                  <a href="https://dialogika.co/about/help.html">Help Center</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/privacy.html">Privacy Policy</a>
+                  <a href="https://dialogika.co/about/privacy.html">Privacy Policy</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/terms.html">Terms & Agreements</a>
+                  <a href="https://dialogika.co/about/terms.html">Terms & Agreements</a>
                 </li>
               </ul>
             </div>
