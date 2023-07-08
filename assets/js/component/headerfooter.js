@@ -26,7 +26,7 @@ class Header extends HTMLElement {
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-      <a href="https://dialogika.co/" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      <a href="https://dialogika.co/" class="logo me-auto"><img src="https://dialogika.co/blog/assets/img/logo.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul id="navbar-navlist">
@@ -357,7 +357,7 @@ class Footer extends HTMLElement {
         <div class="row justify-content-between">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3><img src="assets/img/white-logo.png" class="footer-logo" alt="Kelas Public Speaking Jogja" /></h3>
+            <h3><img src="https://dialogika.co/blog/assets/img/white-logo.png" class="footer-logo" alt="Kelas Public Speaking Jogja" /></h3>
             <p>
               Wadah pengembangan diri membangun aura positif sekaligus meningkatkan kualitas skill, karir hingga level
               kehidupan Anda.
@@ -717,15 +717,15 @@ class Footer extends HTMLElement {
             <br><br>
             <h4 class="d-flex justify-content-between">Payment Method<i class='bx bx-chevron-down d-md-none'></i></h4>
             <p><i class="bx bx-chevron-down"></i> Bank Transfer</p>
-            <img src="assets/img/bank.png" />
+            <img src="https://dialogika.co/blog/assets/img/bank.png" />
             <br><br>
             <p><i class="bx bx-chevron-down"></i> E-Wallet</p>
-            <img src="assets/img/wallet.png" />
+            <img src="https://dialogika.co/blog/assets/img/wallet.png" />
 
             <div class="card">
               <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted" style="color:#fff;">Telah Terdaftar Oleh</h6>
-                <img src="assets/img/ham.png" class="" /><br>
+                <img src="https://dialogika.co/blog/assets/img/ham.png" class="" /><br>
                 <p>
                   <strong>Nomor:</strong> AHU-0118640.AH.01.11.TAHUN 2022<br>
                   <strong>Registrasi: </strong>4022062334106037<br />
