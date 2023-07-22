@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Dialogika Blog - Kursus Public Speaking</title>
+    <meta
+        content="Dialogika Blog :Learn tips and best practices from our Dialogika mentor and team on topics from Mental Health & Social Science and Mindset to Public Speaking."
+        name="description">
+    <meta content="Dialogika Blog" name="keywords">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="dialogika.co" />
+    <meta property="og:site" content="dialogika.co/blog/" />
+    <meta property="og:title" content="Read a Blog from Dialogika - Kursus Public Speaking" />
+    <meta property="og:description"
+        content="Learn tips and best practices from our Dialogika mentor and team on topics from Mental Health & Social Science and Mindset to Public Speaking." />
+    <meta property="og:image"
+        content="https://media.istockphoto.com/id/1196912085/id/foto/konsep-hud-layanan-jejaring-sosial-jaringan-komunikasi.jpg?s=612x612&w=0&k=20&c=4gkwIHDDG0SkwNE0NBNK5tNrraYRGW9WvxogE3Jjiec=" />
+    <meta property="og:url" content="dialogika.co/blog/" />
+    <meta property="og:type" content="article" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/vendor/sarsa/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/sarsa/animate.min.css">
+    <link rel="stylesheet" href="assets/vendor/sarsa/magnific-popup.css">
+    <link rel="stylesheet" href="assets/vendor/sarsa/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/vendor/sarsa/imageRevealHover.css">
+    <link rel="stylesheet" href="assets/vendor/sarsa/swiper-bundle.css">
+    <link rel="stylesheet" href="assets/vendor/sarsa/flaticon.css">
+    <link rel="stylesheet" href="assets/vendor/sarsa/slick.css">
+    <link rel="stylesheet" href="assets/vendor/sarsa/spacing.css">
+
+    <!-- Vendor Epora -->
+    <link rel="stylesheet" href="assets/vendor/epora/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/meanmenu.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/animate.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/slick.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/backtotop.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/nice-select.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/ui-icon.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/elegentfonts.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/font-awesome-pro.css">
+    <link rel="stylesheet" href="assets/vendor/epora/css/spacing.css">
+    <link href="assets/vendor/epora/css/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/style-dialogika.css" rel="stylesheet" />
+    <link href="assets/css/style-blog.css" rel="stylesheet" />
+
+    <!-- Spreadsheet API Form Pendaftaran -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        function SubForm() {
+            $.ajax({
+                url: "https://api.apispreadsheets.com/data/V67SEkSOUdvoeJQn/",
+                type: "post",
+                data: $("#myForm").serializeArray(),
+                headers: {
+                    accessKey: "0595b51bf05662292a7877f0d8289443",
+                    secretKey: "59da58d9abe1e4312efa3150bda9738c"
+                },
+                success: function () {
+                    // alert("Form Data Submitted :)")
+                    $('#notifications').modal('show');
+                },
+                error: function () {
+                    alert("There was an error :(")
+                }
+            });
+        }
+
+        function Subcription() {
+            $.ajax({
+                url: "https://api.apispreadsheets.com/data/18511/",
+                type: "post",
+                data: $("#subcriptions").serializeArray(),
+                success: function () {
+                    $('#subcription-modal').modal('show');
+                },
+                error: function () {
+                    alert("There was an error :(")
+                }
+            });
+        }
+    </script>
+    <!-- End Spreadsheet API Form Pendaftaran -->
+
+
+    <!-- Pixel Facebook -->
+    <!-- DEC 2021 -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '916674555903437');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=916674555903437&ev=PageView&noscript=1" /></noscript>
+    <!-- END DEC 2021 -->
+    <!-- End Pixel Facebook -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148836422-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-148836422-2');
+    </script>
+    <!-- End Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KGK9D6H');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Hotjar Tracking Code for https://dialogika.co -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 2828594, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    <!-- End Hotjar -->
+
+    <!-- Event snippet for Submit lead forms conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-430016738/CPy3CKDwxZUYEOKRhs0B',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- ======= Top Bar, Header, Side Bar ======= -->
+    <main-header></main-header>
+    <!-- ======= Top Bar, Header, Side Bar ======= -->
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>&nbsp;</h2>
+                <ol>
+                    <li><a href="https://dialogika.co/index.html">Home</a></li>
+                    <li><a href="" onclick="return false;">Blog</a></li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <main id="main">
+
+        <!-- ======= Blog Section ======= -->
+        <section id="blog" class="blog" style="margin-top:50px;">
+            <div class="container">
+
+                <div class="row">
+                    <!-- Blog Details -->
+                    <div class="col-lg-1 blog-details-area">
+                        <main-details></main-details>
+                    </div>
+                    <!-- End Blog Details -->
+
+                    <div class="col-lg-7 entries">
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Hambatan Komunikasi -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1180187740/id/foto/tampilan-udara-kerumunan-yang-terhubung-menurut-garis.jpg?s=612x612&w=0&k=20&c=91sln1t38va3YzpNqtzx2G3wHWFPOX3K-eB01RXeenE="
+                                    alt="Hambatan Komunikasi Efektif Dalam Perusahaan, Perhatikan 3 Hal Berikut "
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="hambatan-komunikasi-efektif-dalam-perusahaan.html" target="__blank">Hambatan
+                                    Komunikasi Efektif
+                                    Dalam
+                                    Perusahaan, Perhatikan 3 Hal Berikut</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Indhira Nur</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Saling menyalahkan adalah salah satu peng hambat komunikasi efekti dalam perusahaan,
+                                    kali ini kita
+                                    akan membahas
+                                    bagaimana cara mengatasinya
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="hambatan-komunikasi-efektif-dalam-perusahaan.html" target="__blank"
+                                        class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Critical Thingking -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1199413351/id/foto/pemikiran-kritis-analisis-mendengarkan-fleksibilitas-dan-konsep-keadilan.jpg?s=612x612&w=0&k=20&c=pPyLCpzLhuMB-k8VE0pnw5AkxRVX-T-OlnT_U4IwboI="
+                                    alt="Manfaat Critical Thinking Bagi Mahasiswa, Panduan Dasar" class="img-fluid"
+                                    style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="manfaat-critical-thinking-bagi-mahasiswa.html" target="__blank">Manfaat
+                                    Critical Thinking Bagi
+                                    Mahasiswa,
+                                    Panduan Dasar</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Ron Ashrovy</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Banyak orang bilang Critical Thinking atau berpikir kritis adalah syarat sukses?
+                                    Apakah Benar? Kalau
+                                    betul? Apa
+                                    langkah awalnya? Terutama Buat kamu yang masih mahasiswa. Simak Tulisan Ini
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="manfaat-critical-thinking-bagi-mahasiswa.html" target="__blank"
+                                        class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Outfit Interview -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/935659716/id/foto/merapatkan-jabat-tangan-di-kantor.jpg?s=612x612&w=0&k=20&c=iqE4CtS8dZtKXCs4PSuduelL4GguUQmp2nZW0YDqj9Q="
+                                    alt="Outfit Interview Kerja di Kafe? Terlalu Rapih Auto Reject! - Dialogika: Kursus Public Speaking"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="outfit-interview-kerja-di-cafe.html" target="__blank">Outfit Interview Kerja di
+                                    Kafe? Terlalu
+                                    Rapih Auto
+                                    Reject! - Dialogika: Kursus Public Speaking</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Purna Lala</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Ada yang unik pada outfit interview kerja di kafe, perhatikan 3 hal penting berikut
+                                    ini
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="outfit-interview-kerja-di-cafe.html" target="__blank" class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Jobs Insecurity -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1390131605/id/foto/pria-kaukasia-santai-bermeditasi-di-tempat-kerja-di-rumah.jpg?s=612x612&w=0&k=20&c=ZocTKb9YWTYLpRZ2sEWfqZXLr14SZamUcm-6eeYEEmw="
+                                    alt="Pengaruh Job Insecurity Terhadap Kinerja Karyawan yang Wajib Diketahui HRD, Poin ke 3 Mengejutkan!"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="pengaruh-job-insecurity-terhadap-kinerja-karyawan.html"
+                                    target="__blank">Pengaruh Job
+                                    Insecurity Terhadap
+                                    Kinerja Karyawan yang Wajib Diketahui HRD, Poin ke 3 Mengejutkan!</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Dhealda Ainun</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Karyawan resign, makin banyak di rekrut yang keluar juga banyak, pasti ada yang
+                                    nggak beres, tapi apa?
+                                    Kenali Job
+                                    Insecurity Lebih Dalam
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="pengaruh-job-insecurity-terhadap-kinerja-karyawan.html" target="__blank"
+                                        class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Glossophobia -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1265522953/id/foto/wanita-yang-cemas-membaca-dokumen-merasa-khawatir-sebelum-berbicara-di-depan-umum.jpg?s=612x612&w=0&k=20&c=MTDM2n19yBsFXQ0y1PhyvgK6CnP1IWrjpxYDCDtJlIE="
+                                    alt="Takut Bicara Depan Umum, 3 Tips Ini Yang Harus Kamu Lakukan - Glossophobia"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="takut-bicara-depan-umum-glossophobia.html" target="__blank">Takut Bicara Depan
+                                    Umum, 3 Tips Ini
+                                    Yang Harus
+                                    Kamu Lakukan - Glossophobia</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Felice Valeria</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Glossophobia: Takut Berbicara Depan Umum adalah fenomena yang dirasakan banyak
+                                    orang, lakukan 3
+                                    langkah ini untuk
+                                    menjadi lebih percaya diri
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="takut-bicara-depan-umum-glossophobia.html" target="__blank"
+                                        class="blue-btn">Read More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Tips Public Speaking -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/876570114/id/foto/presentasi-pemberian-pebisnis-asia.jpg?s=612x612&w=0&k=20&c=oOSFV8vormXGmbaWNaZ2M4bLyajb_KAgh2gni78CMUY="
+                                    alt="Tips Public Speaking Bagi Pemula, Lakukan 5 Langkah Ini Agar Tampil Lebih Percaya Diri - Dialogika"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="tips-public-speaking-bagi-pemula.html" target="__blank">Tips Public Speaking
+                                    Bagi Pemula,
+                                    Lakukan 5 Langkah
+                                    Ini Agar Tampil Lebih Percaya Diri</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Izmi Azima</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Eni Irnawati</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Tips Public Speaking Bagi Pemula: 1. Pastikan kita mempersiapkan materi 2. Pahami
+                                    topik 3. Petakan
+                                    kalimat 4.
+                                    Jangan gunakan kata-kata yang sulit 5. Cobalah untuk membangun komunikasi
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="tips-public-speaking-bagi-pemula.html" target="__blank"
+                                        class="blue-btn">Read More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Toxic Positivity -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1327630162/id/foto/wanita-asia-tersedak-saat-makan-dia-memiliki-makanan-yang-tersangkut-di-tenggorokan-dan.jpg?s=612x612&w=0&k=20&c=bakdkg72GDojeMHlO88ss0U3pGm9IVWzWmyPRSCMuRA="
+                                    alt="Toxic Positivity: Hati-Hati Bisa Bikin Kamu Jadi Mati Rasa!" class="img-fluid"
+                                    style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="toxic-positivity-hati-hati-bisa-bikin-kamu-jadi-mati-rasa.html"
+                                    target="__blank">Toxic
+                                    Positivity:
+                                    Hati-Hati Bisa Bikin Kamu Jadi Mati Rasa!</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Dhealda Ainun Saraswati</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Eni Irnawati</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>Contoh toxic positivity antara lain “Kamu harus selalu bersyukur”, “Semua pasti akan
+                                    baik-baik aja
+                                    kok” “Pikirkan
+                                    hal-hal yang positif aja” “Gausah khawatir berlebihan”</p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="toxic-positivity-hati-hati-bisa-bikin-kamu-jadi-mati-rasa.html"
+                                        target="__blank" class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+                        <!-- Start Pagination -->
+                        <div class="blog-pagination">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-items-prev">
+                                        <a class="page-link" href="#prev" id="#prev" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item "><a class="page-link" href="index.html">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-2.html">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-3.html">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-4.html">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-5.html">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-6.html">6</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-7.html">7</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-8.html">8</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-9.html">9</a></li>
+                                    <li class="page-item active"><a class="page-link" href="index-10.html"
+                                            onclick="return false;">10</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="index-11.html">11</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-12.html">12</a></li>
+
+
+                                    <li class="page-items-next">
+                                        <a class="page-link" href="#next" id="#next" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- end pagination -->
+
+                        <!-- script for pagination -->
+                        <script>
+                            const items = document.querySelectorAll(".page-item");
+                            const prevBtn = document.querySelector(".page-items-prev");
+                            const nextBtn = document.querySelector(".page-items-next");
+                            const visibleItems = 3;
+                            // Ubah di current page. 1 untuk page 1,2,3(kelipatan 3)
+                            let currentPage = 1;
+
+                            showItems();
+
+                            prevBtn.addEventListener("click", () => {
+                                if (currentPage > 1) {
+                                    currentPage--;
+                                    showItems();
+                                }
+                            });
+
+                            nextBtn.addEventListener("click", () => {
+                                if (currentPage < Math.ceil(items.length / visibleItems)) {
+                                    currentPage++;
+                                    showItems();
+                                }
+                            });
+
+                            function showItems() {
+                                const startIndex = (currentPage - 1) * visibleItems;
+                                const endIndex = startIndex + visibleItems;
+
+                                for (let i = 0; i < items.length; i++) {
+                                    items[i].style.display = "none";
+                                }
+
+                                for (let i = startIndex; i < endIndex; i++) {
+                                    if (items[i]) {
+                                        items[i].style.display = "flex";
+                                    }
+                                }
+                            }
+
+                        </script>
+                        <!-- end pagination script -->
+
+
+                    </div><!-- End blog entries list -->
+
+                    <div class="col-lg-4 blog-details-area">
+                        <main-sidebar></main-sidebar>
+                    </div><!-- End blog sidebar -->
+
+                </div>
+
+            </div>
+        </section><!-- End Blog Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <main-footer></main-footer>
+    <!-- End Footer -->
+
+    <!-- <div id="preloader"></div> -->
+    <button class="scroll__top scroll-to-target" data-target="html"><i class='bx bxs-upvote'></i></button>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- JS here -->
+    <script src="assets/vendor/sarsajs/bootstrap.min.js"></script>
+    <script src="assets/vendor/sarsajs/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/sarsajs/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/sarsajs/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendor/sarsajs/jquery.marquee.min.js"></script>
+    <script src="assets/vendor/sarsajs/imageRevealHover.js"></script>
+    <script src="assets/vendor/sarsajs/swiper-bundle.js"></script>
+    <script src="assets/vendor/sarsajs/TweenMax.min.js"></script>
+    <script src="assets/vendor/sarsajs/slick.min.js"></script>
+    <script src="assets/vendor/sarsajs/ajax-form.js"></script>
+    <script src="assets/vendor/sarasa/wow.min.js"></script>
+    <script src="assets/vendor/sarsajs/main.js"></script>
+
+    <!-- Component -->
+    <script src="assets/js/component/headerfooter.js"></script>
+    <script src="assets/js/component/sidebar.js"></script>
+    <!-- Template Main JS File -->
+
+    <script src="assets/js/sarasa-main.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/bar.js"></script>
+    <script src="assets/js/whatsapp.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#submits').attr('disabled', true);
+            $('#formDownload').change(function () {
+                if ($('#names').val() != '' && $('#works').val() != '' && $('#domiciles').val() != '' && $('#whatsapps').val() != '') {
+                    $('#submits').attr('disabled', false);
+                } else {
+                    $('#submits').attr('disabled', true);
+                }
+            });
+        });
+        // get date
+        var today = new Date();
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes();
+        var dateTime = date + '    ' + time;
+        document.getElementById("timestamp").innerHTML = dateTime;
+    </script>
+
+</body>
+
+</html>
