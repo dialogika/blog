@@ -88,7 +88,7 @@
             });
         }
 
-        function downloadsForm() {
+        function downloadsForm(){
             $.ajax({
                 url: "https://api.apispreadsheets.com/data/V67SEkSOUdvoeJQn/",
                 type: "post",
@@ -98,7 +98,7 @@
                     secretKey: "59da58d9abe1e4312efa3150bda9738c"
                 },
                 success: function() {
-                    window.location.href = "assets/pdf/EDIT_FILE_LOCATION.pdf";
+                    window.location.href = "assets/pdf/template-presentasi-kinerja-perusahaan.pptx";
                 },
                 error: function() {
                     alert("There was an error :(")
@@ -489,8 +489,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <!-- /PARAGRAF_2 -->
 
                                 <div class="d-flex justify-content-end" style="margin: 13px 13px;">
-                                    <a href="https://docs.google.com/presentation/d/17wVnM1pQDxGUjzzfqvNFv33tlg0immyM/edit?usp=sharing&ouid=103199018933297248802&rtpof=true&sd=true" target="_blank" class="blue-btn">Download Cheatsheet</a>
+                                    <a href="#downloads" data-bs-toggle="modal" class="blue-btn">Download</a>
                                   </div>
+
+                                  <!-- <div class="d-flex justify-content-end" style="margin: 13px;13px;">
+                                    <a href="#downloads" data-bs-toggle="modal" class="blue-btn">Download Cheatsheet</a>
+                                  </div> -->
 
                                 <!-- /BATAS ISI -->
                                 <div class="entry-footer clearfix">
