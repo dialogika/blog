@@ -118,14 +118,21 @@
   <!-- Pixel Facebook -->
   <!-- DEC 2021 -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
+    ! function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
         n.callMethod ?
           n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t, s)
     }(window, document, 'script',
       'https://connect.facebook.net/en_US/fbevents.js');
@@ -141,7 +148,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148836422-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-148836422-2');
@@ -150,23 +160,37 @@
 
 
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-KGK9D6H');</script>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KGK9D6H');
+  </script>
   <!-- End Google Tag Manager -->
 
   <!-- Hotjar Tracking Code for https://dialogika.co -->
   <script>
     (function (h, o, t, j, a, r) {
-      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-      h._hjSettings = { hjid: 2828594, hjsv: 6 };
+      h.hj = h.hj || function () {
+        (h.hj.q = h.hj.q || []).push(arguments)
+      };
+      h._hjSettings = {
+        hjid: 2828594,
+        hjsv: 6
+      };
       a = o.getElementsByTagName('head')[0];
-      r = o.createElement('script'); r.async = 1;
+      r = o.createElement('script');
+      r.async = 1;
       r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
       a.appendChild(r);
     })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
@@ -204,13 +228,14 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       <div class="d-flex justify-content-between align-items-center">
         <h2>&nbsp;</h2>
         <ol>
-          <li><a href="https://dialogika.co/index.html">Home</a></li>
-          <li><a href="" onclick="return false;">Blog</a></li>
+          <li><a href="https://dialogika.co/">Home</a></li>
+          <li><a href="https://dialogika.co/blog" onclick="return false;">Blog</a></li>
         </ol>
       </div>
 
     </div>
-  </section><!-- End Breadcrumbs Section -->
+  </section>
+  <!-- End Breadcrumbs Section -->
 
   <main id="main">
 
@@ -227,21 +252,21 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
           <div class="col-lg-7 entries">
 
-            <article class="entry fadeInUp" data-aos="fade-up">
-              <!-- Cara Kampanye Politik -->
+            <article class="entry fadeInUp">
+              <!-- Menghilangkan rasa baper di depan audiens -->
               <div class="entry-img">
                 <img
-                  src="assets/img/blog/STOP-Pasang-Baliho-di-Pinggir-Jalan!-Ini-Dia-10-Cara-Kampanye-Politik-yang-Baik-Zaman-Sekarang/Banner Blog.jpg"
-                  alt="Cara kampanye politik yang baik" class="img-fluid" style="width: 100%;">
+                  src="assets/img/blog/Handling Rude Public Behavior Navigating the Path of Public Interactions/Banner Blog (9).jpg"
+                  alt="How to Handle Rude Behavior" class="img-fluid" style="width: 100%;">
               </div>
               <h2 class="entry-title">
-                <a href="cara-kampanye-politik-yang-baik.html" target="__blank">Cara Kampanye Politik yang Baik: STOP
-                  Pasang Baliho Di Pinggir Jalan!</a>
+                <a href="how-to-handle-rude-behavior.html" target="__blank">How to Handle Rude Behavior: Navigating the
+                  Path of Public Interactions</a>
               </h2>
               <div class="entry-meta">
                 <ul>
                   <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Lalu Akhmad Izaz</a></b>
+                    <a href="#">Edited By <b>Habibah Nureniati</a></b>
                   </li>
                   <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
                     <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
@@ -252,171 +277,30 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </ul>
               </div>
               <div class="entry-content">
-                <p>Cara kampanye politik yang baik perlu diperhatikan para calon di tengah marak-maraknya pembahasan
-                  tentang politik saat
-                  ini. Setiap calon punya cara kampanye-nya masing-masing. Artikel ini menyarankan untuk memaksimalkan
-                  kampanye politik
-                  menggunakan digital di era digitalisasi ini...</p>
+                <p>How to Handle Rude Public: Navigating the Path of Public Interactions - Learn to spot lies in public
+                  speakers with these
+                  expert tips. Don't be fooled by persuasive gestures and phrases!</p>
                 <div class="d-flex justify-content-end">
-                  <a href="cara-kampanye-politik-yang-baik.html" target="__blank" class="blue-btn">Read
+                  <a href="how-to-handle-rude-behavior.html" target="__blank" class="blue-btn">Read
                     More</a>
                 </div>
               </div>
             </article>
 
             <article class="entry fadeInUp" data-aos="fade-up">
-              <!-- Etika Berdebat Saat di Depan Umum -->
+              <!-- Menghilangkan rasa baper di depan audiens -->
               <div class="entry-img">
-                <img src="assets/img/blog/etika-berdebat-saat-didepan-umum/JPG 1.jpg"
-                  alt="Etika Berdebat Saat di Depan Umum" class="img-fluid" style="width: 100%;">
+                <img src="assets/img/blog/enhancing-intelligence/Banner Blog.jpg" alt="enhancing intelligence"
+                  class="img-fluid" style="width: 100%;">
               </div>
               <h2 class="entry-title">
-                <a href="etika-berdebat-saat-didepan-umum.html" target="__blank">Etika Berdebat Saat di Depan Umum:
-                  Struktur Debat yang Baik dan Etika yang Patut Dijaga</a>
+                <a href="enhancing-intelligence.html" target="__blank">Enhancing Intelligence: A Scientific Approach to
+                  Boosting Cognitive Abilities for Public Speaking</a>
               </h2>
               <div class="entry-meta">
                 <ul>
                   <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Rendi</a></b>
-                  </li>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                  </li><br>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Developed By <b>Rama Anindya</a></b>
-                  </li>
-                </ul>
-              </div>
-              <div class="entry-content">
-                <p>Etika saat berdebat di depan umum sangatlah penting untuk diterapkan dan dijaga, karena dengan
-                  menggunakan etika kita
-                  dapat memberikan kesan yang positif sebagai seorang debater. Lalu bagaimana caranya?</p>
-                <div class="d-flex justify-content-end">
-                  <a href="etika-berdebat-saat-didepan-umum.html" target="__blank" class="blue-btn">Read
-                    More</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="entry fadeInUp" data-aos="fade-up">
-              <!-- Cara Menjadi Caster E-sport -->
-              <div class="entry-img">
-                <img src="assets/img/blog/Tertarik Jadi Caster E-sport , Nih Baca Rahasianya !/Banner Blog.jpg"
-                  alt="Cara menjadi caster game" class="img-fluid" style="width: 100%;">
-              </div>
-              <h2 class="entry-title">
-                <a href="cara-menjadi-caster-esport.html" target="__blank">Cara Menjadi Caster Game E-Sport,
-                  Tertarik? Nih Baca Rahasianya!</a>
-              </h2>
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Lalu Akhmad Izaz</a></b>
-                  </li>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                  </li><br>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Developed By <b>Rama Anindya</a></b>
-                  </li>
-                </ul>
-              </div>
-              <div class="entry-content">
-                <p>Cara menjadi caster game e-sport banyak caranya. Anak zaman sekarang selain ingin menjadi pro-player,
-                  ingin juga menjadi
-                  seorang caster game / e-sport. Tapi mereka tidak tahu bagaimana langkah-langkah yang harus diikuti
-                  untuk mencapai
-                  keinginan tersebut…</p>
-                <div class="d-flex justify-content-end">
-                  <a href="cara-menjadi-caster-esport.html" target="__blank" class="blue-btn">Read
-                    More</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="entry fadeInUp" data-aos="fade-up">
-              <!-- Apa Saja Tips Presentasi Bisnis -->
-              <div class="entry-img">
-                <img src="assets/img/blog/apa-saja-tips-presentasi-bisnis/Banner Blog.png"
-                  alt="Apa Saja Tips Presentasi Bisnis" class="img-fluid" style="width: 100%;">
-              </div>
-              <h2 class="entry-title">
-                <a href="apa-saja-tips-presentasi-bisnis.html" target="__blank">Apa Saja Tips Presentasi Bisnis (Teknik
-                  Pitching)</a>
-              </h2>
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Yusuf Nurohman</a></b>
-                  </li>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                  </li>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Developed By <b>Rama Anindya</a></b>
-                  </li>
-                </ul>
-              </div>
-              <div class="entry-content">
-                <p>Tips presentasi bisnis salah satunya adalah teknik pitching supaya Anda dalam berbisnis
-                  dapat bernegosiasi,
-                  berkomunikasi dan menyampaikan presentasi dengan baik...</p>
-                <div class="d-flex justify-content-end">
-                  <a href="apa-saja-tips-presentasi-bisnis.html" target="__blank" class="blue-btn">Read
-                    More</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="entry fadeInUp" data-aos="fade-up">
-              <!-- takut berbicara dengan orang baru -->
-              <div class="entry-img">
-                <img src="assets/img/blog/takut-berbicara-dengan-orang-baru/Banner blog.jpg"
-                  alt="takut berbicara dengan orang baru" class="img-fluid" style="width: 100%;">
-              </div>
-              <h2 class="entry-title">
-                <a href="takut-berbicara-dengan-orang-baru.html" target="__blank">Takut Berbicara dengan Orang Baru -
-                  Mengatasi Glossophobia pada Wanita</a>
-              </h2>
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Rendi</a></b>
-                  </li>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                  </li><br>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Developed By <b>Rama Anindya</a></b>
-                  </li>
-                </ul>
-              </div>
-              <div class="entry-content">
-                <p>Takut Berbicara dengan Orang Baru Hal yang harus diatasi glossophobia pada wanita untuk keterampilan
-                  sosial yang lebih
-                  baik...</p>
-                <div class="d-flex justify-content-end">
-                  <a href="takut-berbicara-dengan-orang-baru.html" target="__blank" class="blue-btn">Read
-                    More</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="entry fadeInUp" data-aos="fade-up">
-              <!-- Membuat podcast menarik untuk pemula -->
-              <div class="entry-img">
-                <img
-                  src="assets/img/blog/6-langkah-simpel-membuat-podcast-menarik-pemula-wajib-tahu-ya!/Banner Blog.jpg"
-                  alt="Membuat podcast menarik untuk pemula" class="img-fluid" style="width: 100%;">
-              </div>
-              <h2 class="entry-title">
-                <a href="membuat-podcast-menarik-untuk-pemula.html" target="__blank">Membuat Podcast Menarik untuk
-                  Pemula, Ikuti 5+ Langkah Simpel Ini!</a>
-              </h2>
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Lalu Akhmad Izaz</a></b>
+                    <a href="#">Edited By <b>Habibah Nureniati</a></b>
                   </li>
                   <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
                     <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
@@ -427,86 +311,205 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 </ul>
               </div>
               <div class="entry-content">
-                <p>Membuat podcast yang menarik untuk pemula di zaman sekarang, hampir mudah dilakukan. Sekarang semua
-                  orang mendengarkan podcast. Mau orang yang di mobil, di kereta, yang sedang patah hati, bahagia,
-                  gelisah galau merana dan lain-lain...</p>
+                <p>Enhancing Intelligence: Boost your brain and ace public speaking with science-backed tips. Speak
+                  smarter, not harder!</p>
                 <div class="d-flex justify-content-end">
-                  <a href="membuat-podcast-menarik-untuk-pemula.html" target="__blank" class="blue-btn">Read
+                  <a href="enhancing-intelligence.html" target="__blank" class="blue-btn">Read
                     More</a>
                 </div>
               </div>
             </article>
 
             <article class="entry fadeInUp" data-aos="fade-up">
-              <!-- Skil yang harus dimiliki seorang marketing -->
+              <!-- Menghilangkan rasa baper di depan audiens -->
               <div class="entry-img">
-                <img src="assets/img/blog/10-skill-yang-harus-dimiliki-seorang-marketing/Banner Blog.jpg"
-                  alt="Skill yang harus dimiliki seorang marketing" class="img-fluid" style="width: 100%;">
+                <img src="assets/img/blog/mengendalikan-baper/banner1.jpg"
+                  alt="Menghilangkan Rasa Baper di Depan Audiens" class="img-fluid" style="width: 100%;">
               </div>
               <h2 class="entry-title">
-                <a href="skill-yang-harus-dimiliki-seorang-marketing.html" target="__blank">10 Skill yang Harus Dimiliki
-                  Seorang Marketing </a>
+                <a href="menghilangkan-rasa-baper.html" target="__blank">Mengendalikan Rasa Baper di
+                  Depan Audiens - Gyrus Parahippocampal</a>
               </h2>
               <div class="entry-meta">
                 <ul>
                   <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Edited By <b>Lalu Akhmad Izaz</a></b>
+                    <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
+                  </li>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Developed By <b>Rama Anindya</a></b>
+                  </li>
+                </ul>
+              </div>
+              <div class="entry-content">
+                <p>Menghilangkan baper di depan audiens merupakan hal yang harus kita lakukan untuk menjaga
+                  profesionalitas sebagai seorang
+                  speaker. Tapi, perlu diingat tidak semua 'baper' itu merupakan hal buruk yang menimpa kita saat
+                  tampil...</p>
+                <div class="d-flex justify-content-end">
+                  <a href="menghilangkan-rasa-baper.html" target="__blank" class="blue-btn">Read
+                    More</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="entry fadeInUp" data-aos="fade-up">
+              <!-- Cara menawarkan produk ke konsumen -->
+              <div class="entry-img">
+                <img
+                  src="assets/img/blog/The Art of Pitching -  Crafting a Great Offer by Terry Rice/Banner Blog (10).jpg"
+                  alt="cara menawarkan produk ke konsumen" class="img-fluid" style="width: 100%;">
+              </div>
+              <h2 class="entry-title">
+                <a href="cara-menawarkan-produk-ke-konsumen.html" target="__blank">Cara Menawarkan Produk ke Konsumen
+                  dengan Art of Pitching - Crafting a Great Offer by Terry Rice</a>
+              </h2>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Edited By <b>Habibah Nureniati</a></b>
                   </li>
                   <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
                     <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
                   </li><br>
                   <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                    <a href="#">Developed By <b>Cipto Ardiantoro</a></b>
+                    <a href="#">Developed By <b>Rama Anindya</a></b>
                   </li>
                 </ul>
               </div>
               <div class="entry-content">
-                <p>Skill yang harus dimiliki seorang marketing ternyata tolak ukurnya bukan apakah ia lulusan marketing
-                  dan lain-lain. Namun orang lebih melihat ke arah skill-skill yang ia punya. Artikel ini membahas
-                  skill-skill yang harus dimiliki seorang marketing, hard skill dan soft skill-nya...</p>
+                <p>Cara menawarkan produk ke konsumen dengan menerapkan Art of Pitching dapat sangat berguna untuk
+                  pembisnis. Ayo membahas
+                  pentingnya memahami masalah konsumen sebelum ‘menjual’ ide atau produk. Diskusi langsung dengan
+                  konsumen menjadi kunci
+                  suksesnya...</p>
                 <div class="d-flex justify-content-end">
-                  <a href="skill-yang-harus-dimiliki-seorang-marketing.html" target="__blank" class="blue-btn">Read
+                  <a href="cara-menawarkan-produk-ke-konsumen.html" target="__blank" class="blue-btn">Read
                     More</a>
                 </div>
               </div>
             </article>
 
 
+            <article class="entry fadeInUp" data-aos="fade-up">
+              <!-- Kenapa Orant Tua Berbohong Kepada Anaknya -->
+              <div class="entry-img">
+                <img src="assets/img/blog/kenapa-orang-tua-berbohong-kepada-anaknya/banner1.jpg"
+                  alt="Kenapa orang tua berbohong kepada anaknya" class="img-fluid" style="width: 100%;">
+              </div>
+              <h2 class="entry-title">
+                <a href="kenapa-orang-tua-berbohong-kepada-anaknya.html" target="__blank">Kenapa Orang Tua Berbohong
+                  Kepada Anaknya? - Why We
+                  Do Lie</a>
+              </h2>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
+                  </li>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Developed By <b>Rama Anindya</a></b>
+                  </li>
+                </ul>
+              </div>
+              <div class="entry-content">
+                <p>Kenapa orang tua berbohong kepada anaknya? Padahal kejujuran harus ditanamkan orang tua terhadap
+                  anaknya bukan?
+                  Kebohongan akan merusak pikiran anak, orang tua harus aware dengan perilaku ini untuk tidak
+                  berlebihan...</p>
+                <div class="d-flex justify-content-end">
+                  <a href="kenapa-orang-tua-berbohong-kepada-anaknya.html" target="__blank" class="blue-btn">Read
+                    More</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="entry fadeInUp" data-aos="fade-up">
+              <!-- Metode Spontanitas -->
+              <div class="entry-img">
+                <img
+                  src="assets/img/blog/Metode Spontanitas The Art of Spontaneity in Public Speaking/Banner Blog (12).jpg"
+                  alt="Metode Spontanitas adalah" class="img-fluid" style="width: 100%;">
+              </div>
+              <h2 class="entry-title">
+                <a href="metode-spontanitas.html" target="__blank">Metode Spontanitas: The Art of Spontaneity in Public
+                  Speaking</a>
+              </h2>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Edited By <b>Habibah Nureniati</a></b>
+                  </li>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
+                  </li><br>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Developed By <b>Rama Anindya</a></b>
+                  </li>
+                </ul>
+              </div>
+              <div class="entry-content">
+                <p>Metode Spontanitas: The Art of Spontaneity in Public Speaking - Temukan bagaimana struktur dan
+                  persiapan dapat mengubah
+                  cara Kamu berbicara dan menjawab pertanyaan secara spontan....</p>
+                <div class="d-flex justify-content-end">
+                  <a href="metode-spontanitas.html" target="__blank" class="blue-btn">Read
+                    More</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="entry fadeInUp" data-aos="fade-up">
+              <!-- why we do lie 1 -->
+              <div class="entry-img">
+                <img src="assets/img/blog/why-we-do-lie-1/banner b.jpg" alt="Membohongi diri sendiri" class="img-fluid"
+                  style="width: 100%;">
+              </div>
+              <h2 class="entry-title">
+                <a href="membohongi-diri-sendiri.html" target="__blank">Membohongi Diri Sendiri? Cewe Sering Lakukan
+                  Ini</a>
+              </h2>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Write By <b>Maya Alif Bunga M</a></b>
+                  </li>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
+                  </li><br>
+                  <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                    <a href="#">Developed By <b>Rama Anindya</a></b>
+                  </li>
+                </ul>
+              </div>
+              <div class="entry-content">
+                <p>Membohongi diri sendiri sering dilakukan oleh semua orang tapi cewe biasanya lebih banyak melakukan
+                  kebohongan pada diri
+                  sendiri katanya sih ini untuk menghindarkan dari rasa sakit, tapi apakah benar bohong akan membuat
+                  lebih baik?</p>
+                <div class="d-flex justify-content-end">
+                  <a href="membohongi-diri-sendiri.html" target="__blank" class="blue-btn">Read
+                    More</a>
+                </div>
+              </div>
+            </article>
             <!-- Start Pagination -->
             <div class="blog-pagination">
               <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                   <li class="page-items-prev">
-                    <a class="page-link" href="#prev" id="#prev" aria-label="Previous">
+                    <a class="page-link" href="index-2.html" id="#prev" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                       <span class="sr-only">Previous</span>
                     </a>
                   </li>
 
-                  <li class="page-item "><a class="page-link" href="index.html">1</a></li>
-                  <li class="page-item "><a class="page-link" href="index-2.html">2</a></li>
                   <li class="page-item active"><a class="page-link" href="index-3.html" onclick="return false;">3</a>
                   </li>
                   <li class="page-item"><a class="page-link" href="index-4.html">4</a></li>
                   <li class="page-item"><a class="page-link" href="index-5.html">5</a></li>
-                  <li class="page-item"><a class="page-link" href="index-6.html">6</a></li>
-                  <li class="page-item"><a class="page-link" href="index-7.html">7</a></li>
-                  <li class="page-item"><a class="page-link" href="index-8.html">8</a></li>
-                  <li class="page-item"><a class="page-link" href="index-9.html">9</a></li>
-                  <li class="page-item"><a class="page-link" href="index-10.html">10</a></li>
-                  <li class="page-item"><a class="page-link" href="index-11.html">11</a></li>
-                  <li class="page-item"><a class="page-link" href="index-12.html">12</a></li>
-                  <li class="page-item"><a class="page-link" href="index-13.html">13</a></li>
-                  <li class="page-item"><a class="page-link" href="index-14.html">14</a></li>
-                  <li class="page-item"><a class="page-link" href="index-15.html">15</a></li>
-                  <li class="page-item"><a class="page-link" href="index-16.html">16</a></li>
-                  <li class="page-item"><a class="page-link" href="index-17.html">17</a></li>
-                  <li class="page-item"><a class="page-link" href="index-18.html">18</a></li>
-                  <li class="page-item"><a class="page-link" href="index-19.html">19</a></li>
-
 
                   <li class="page-items-next">
-                    <a class="page-link" href="#next" id="#next" aria-label="Next">
+                    <a class="page-link" href="index-4.html" id="#next" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                       <span class="sr-only">Next</span>
                     </a>
@@ -555,23 +558,26 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                   }
                 }
               }
-
             </script>
             <!-- end pagination script -->
 
 
-          </div><!-- End blog entries list -->
+          </div>
+          <!-- End blog entries list -->
 
           <div class="col-lg-4 blog-details-area">
             <main-sidebar></main-sidebar>
-          </div><!-- End blog sidebar -->
+          </div>
+          <!-- End blog sidebar -->
 
         </div>
 
       </div>
-    </section><!-- End Blog Section -->
+    </section>
+    <!-- End Blog Section -->
 
-  </main><!-- End #main -->
+  </main>
+  <!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <main-footer></main-footer>
