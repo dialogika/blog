@@ -5,20 +5,17 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Disiplin Diri</title>
-    <meta
-        content="Disiplin diri adalah fondasi kesuksesan pribadi. Tanpa disiplin diri, kita cenderung merasa terjebak dalam siklus ketidakmampuan untuk mencapai apa yang kita inginkan."
-        name="description">
-    <meta content="Disiplin Diri" name="keywords">
+    <title>Mengatasi Para Pengganggu</title>
+    <meta content="Apa yang kamu lakukan pada saat kamu berbicara di depan umum, seseorang mengganggumu? Cara mengatasi para pengganggu harus tetap diperhatikan agar atmosfer ruangan tidak menjadi buruk bahkan kacau." name="description">
+    <meta content="Mengatasi Para Pengganggu" name="keywords">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
     <meta property="og:site_name" content="Kelas Public Speaking" />
     <meta property="og:site" content="dialogika.co" />
-    <meta property="og:title" content="Disiplin Diri" />
-    <meta property="og:description"
-        content="Disiplin diri adalah fondasi kesuksesan pribadi. Tanpa disiplin diri, kita cenderung merasa terjebak dalam siklus ketidakmampuan untuk mencapai apa yang kita inginkan." />
-    <meta property="og:image" content="assets/img/blog/banner.jpg" />
-    <meta property="og:url" content="dialogika.co/blog/menjadi-pemimpin-diri-sendiri.html" />
+    <meta property="og:title" content="Mengatasi Para Pengganggu" />
+    <meta property="og:description" content="Apa yang kamu lakukan pada saat kamu berbicara di depan umum, seseorang mengganggumu? Cara mengatasi para pengganggu harus tetap diperhatikan agar atmosfer ruangan tidak menjadi buruk bahkan kacau." />
+    <meta property="og:image" content="assets/img/blog/test42/banner.png" />
+    <meta property="og:url" content="dialogika.co/blog/mengatasi-para-pengganggu.html" />
     <meta property="og:type" content="article" />
 
     <!-- Favicons -->
@@ -26,13 +23,10 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
@@ -73,8 +67,7 @@
     <link href="assets/css/style-blog.css" rel="stylesheet" />
 
     <!-- Spreadsheet API Form Pendaftaran -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script>
         function SubForm() {
             $.ajax({
@@ -85,11 +78,11 @@
                     accessKey: "0595b51bf05662292a7877f0d8289443",
                     secretKey: "59da58d9abe1e4312efa3150bda9738c"
                 },
-                success: function () {
+                success: function() {
                     // alert("Form Data Submitted :)")
                     $('#notifications').modal('show');
                 },
-                error: function () {
+                error: function() {
                     alert("There was an error :(")
                 }
             });
@@ -104,10 +97,10 @@
                     accessKey: "0595b51bf05662292a7877f0d8289443",
                     secretKey: "59da58d9abe1e4312efa3150bda9738c"
                 },
-                success: function () {
+                success: function() {
                     window.location.href = "assets/pdf/EDIT_FILE_LOCATION.pdf";
                 },
-                error: function () {
+                error: function() {
                     alert("There was an error :(")
                 }
             });
@@ -118,10 +111,10 @@
                 url: "https://api.apispreadsheets.com/data/18511/",
                 type: "post",
                 data: $("#subcriptions").serializeArray(),
-                success: function () {
+                success: function() {
                     $('#subcription-modal').modal('show');
                 },
-                error: function () {
+                error: function() {
                     alert("There was an error :(")
                 }
             });
@@ -133,9 +126,9 @@
     <!-- Pixel Facebook -->
     <!-- DEC 2021 -->
     <script>
-        ! function (f, b, e, v, n, t, s) {
+        ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function () {
+            n = f.fbq = function() {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -155,7 +148,7 @@
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=916674555903437&ev=PageView&noscript=1" /></noscript>
+        src="https://www.facebook.com/tr?id=916674555903437&ev=PageView&noscript=1" /></noscript>
     <!-- END DEC 2021 -->
     <!-- End Pixel Facebook -->
 
@@ -176,7 +169,7 @@
 
     <!-- Google Tag Manager -->
     <script>
-        (function (w, d, s, l, i) {
+        (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
                 'gtm.start': new Date().getTime(),
@@ -195,8 +188,8 @@
 
     <!-- Hotjar Tracking Code for https://dialogika.co -->
     <script>
-        (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () {
+        (function(h, o, t, j, a, r) {
+            h.hj = h.hj || function() {
                 (h.hj.q = h.hj.q || []).push(arguments)
             };
             h._hjSettings = {
@@ -216,8 +209,8 @@
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
         function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof (url) != 'undefined') {
+            var callback = function() {
+                if (typeof(url) != 'undefined') {
                     window.location = url;
                 }
             };
@@ -246,7 +239,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 <ol>
                     <li><a href="https://dialogika.co/index.html">Home</a></li>
                     <li><a href="index.html">Blog</a></li>
-                    <li><a href="" onclick="return false;">Disiplin Diri</a></li>
+                    <li><a href="" onclick="return false;">Mengatasi Para Pengganggu</a></li>
                 </ol>
             </div>
 
@@ -265,17 +258,13 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="col-lg-1 blog-details-area">
                         <div class="blog-details-social">
                             <ul class="list-wrap">
-                                <li><a href="https://facebook.com/dialogika.co" target="__blank"><i
-                                            class="fab fa-facebook-f"></i></a>
+                                <li><a href="https://facebook.com/dialogika.co" target="__blank"><i class="fab fa-facebook-f"></i></a>
                                 </li>
-                                <li><a href="https://twitter.com/dialogika_co" target="__blank"><i
-                                            class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://twitter.com/dialogika_co" target="__blank"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="https://linkedin.com/company/dialogika" target="__blank"><i
-                                            class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="https://tiktok.com/@dialogika.co" target="__blank"><i
-                                            class="fab fa-tiktok"></i></a></li>
-                                <li><a href="https://instagram.com/dialogika.co" target="__blank"><i
-                                            class="fab fa-instagram"></i></a>
+                                class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="https://tiktok.com/@dialogika.co" target="__blank"><i class="fab fa-tiktok"></i></a></li>
+                                <li><a href="https://instagram.com/dialogika.co" target="__blank"><i class="fab fa-instagram"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -286,20 +275,19 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/blog/test41/Banner.jpg" alt="Disiplin Diri"
-                                    class="img-fluid" style="width: 100%;">
+                                <img src="assets/img/blog/test42/banner.jpg" alt="Mengatasi Para Pengganggu" class="img-fluid" style="width: 100%;">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="#" onclick="return false;">Seni Disiplin Diri, Langkah Demi Langkah Menuju Kesuksesan Pribadi</a>
+                                <a href="#" onclick="return false;">Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers</a>
                             </h2>
 
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Writer By <b>Fisalma Fadhia</a></b>
+                                        <a href="#">Writer By <b>Vincentius Aditya Agsya Putra</a></b>
                                     </li>
-
+                                    
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
                                         <a href="#">Developed By <b>Ahmad Fajar</a></b>
                                     </li>
@@ -310,99 +298,82 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <!-- EDIT_ISI -->
 
                                 <!-- PARAGRAF_1 -->
-                                <p><span style="color: rgba(0, 0, 0, 0.5);">Disiplin diri - </span>Hai Sobat Dialogika! Aku yakin kita semua setuju bahwa mencapai kesuksesan pribadi adalah tujuan yang diinginkan oleh banyak orang. Kesuksesan dapat didefinisikan secara berbeda-beda oleh setiap individu, tetapi dalam banyak kasus, itu melibatkan pencapaian tujuan pribadi dalam berbagai aspek kehidupan.</p>
-                                <p>Untuk mencapai hal tersebut, dibutuhkan salah satu aspek kunci yang sering kali terabaikan, yaitu disiplin diri. Disiplin diri adalah fondasi kesuksesan pribadi. Tanpa disiplin diri, kita cenderung merasa terjebak dalam siklus ketidakmampuan untuk mencapai apa yang kita inginkan.</p>
-                                <p>Artikel ini akan membahas arti pentingnya disiplin diri dalam mencapai kesuksesan pribadi, serta langkah-langkah konkret yang dapat kita ambil untuk mengembangkan disiplin diri yang kuat. Yuk simak lebih jelas pembahasannya!</p>
-                                <h2>Pentingnya Disiplin Diri</h2>
-                                <p>Disiplin diri adalah adalah rasa ketaatan dan kepatuhan terhadap nilai- nilai yang dipercaya dan menjadi tanggung jawabnya. Ini melibatkan kemampuan untuk menolak godaan dan mengikuti rencana dan rutinitas yang telah ditentukan. 
-                                <br>Mengapa disiplin diri penting? Berikut alasan mengapa disiplin diri itu penting : </p>
-                                <ol>
-                                    <li>
-                                        <h3>1. Menghindari Prokrastinasi</h3>
-                                        <p>Dengan disiplin diri, kita cenderung lebih berfokus pada tugas-tugas yang perlu diselesaikan daripada menunda-nunda. Kita bisa mengatasi godaan untuk melakukan hal-hal yang tidak produktif</p>
-                                        <h3>2. Menciptakan Kebiasaan Baik</h3>
-                                        <p>Disiplin diri membantu kita membentuk kebiasaan yang positif, seperti berolahraga, belajar, atau bekerja lebih keras. Kebiasaan-kebiasaan ini memainkan peran penting dalam mencapai kesuksesan jangka panjang.</p>
-                                        <h3>3. Meningkatkan Produktivitas</h3>
-                                        <p>Dengan memiliki disiplin diri yang baik, kita menjadi lebih produktif karena kita dapat mengalokasikan waktu dan energi kita secara efisien untuk tujuan-tujuan yang penting.</p>
-                                        <h3>4. Mengatasi Rintangan</h3>
-                                        <p>Ketika kita memiliki disiplin diri, kita cenderung lebih tahan terhadap rintangan dan hambatan yang mungkin muncul dalam perjalanan menuju kesuksesan. Kita memiliki tekad dan keteguhan untuk terus maju.</p>
-                                    </li>
-                                </ol>
+                                <p><span style="color: rgba(0, 0, 0, 0.5);"> Mengatasi Para Pengganggu  - </span> Apa yang kamu lakukan pada saat kamu berbicara di depan umum, seseorang mengganggumu? Cara mengatasi para pengganggu harus tetap diperhatikan agar atmosfer ruangan tidak menjadi buruk bahkan kacau.</p>
+                                <p>Terkadang, dalam perjalanan hidup, kita dihadapkan pada situasi yang tidak terduga, salah satunya adalah hadirnya para pengganggu atau hecklers. Tak hanya merugikan secara emosional, namun keberadaan mereka bisa mengacaukan berbagai aktivitas seperti presentasi publik, diskusi kelompok, atau bahkan percakapan daring. Artikel ini akan membahas cara-cara lebih mendalam untuk mengatasi para heckler dan menjaga keseimbangan mental serta profesionalisme kita. Baca lebih lanjut, yuk!</p>
+                                <h2>Menggali Akar Masalah Heckling</h2>
+                                <!--  BUAT GAMBAR DESKTOP -->
+                                <p><img src="assets/img/blog/test42/Foto 1 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+
+                                <!--  BUAT GAMBAR MOBILE -->
+                                <p><img src="assets/img/blog/test42/Foto 1 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+                                <p>Dalam menghadapi berbagai jenis hecklers, penting untuk memahami konteks acara dan audiens yang dihadapi. Tidak semua hecklers memiliki niatan negatif; beberapa mungkin mencoba berinteraksi atau bahkan menyumbangkan pandangan berharga.</p>
+                                <p>Seiring berjalannya waktu dan pengalaman, kita dapat mengembangkan kemampuan membaca situasi dengan lebih baik. Kreativitas dan fleksibilitas dalam menanggapi hecklers juga merupakan keterampilan yang dapat ditingkatkan melalui latihan dan refleksi.</p>
+                                <h2>Memahami Kepentingan Mereka</h2>
+                                <!--  BUAT GAMBAR DESKTOP -->
+                                <p><img src="assets/img/blog/test42/Foto 2 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+
+                                <!--  BUAT GAMBAR MOBILE -->
+                                <p><img src="assets/img/blog/test42/Foto 2 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+                                <p>Hecklers seringkali memiliki kepentingan atau motivasi tertentu yang mendorong mereka untuk mengganggu. Mungkin mereka merasa tidak dihargai, tidak setuju dengan ideologi atau pandangan, atau bahkan mencari cara untuk menonjolkan diri. Dengan memahami kepentingan mereka, kita dapat mencari solusi yang lebih terarah, baik itu melalui dialog atau pendekatan lain yang sesuai.</p>
+                                <h2>Menghadapi Kritik di Depan Publik</h2>
+                                <!--  BUAT GAMBAR DESKTOP -->
+                                <p><img src="assets/img/blog/test42/Foto 3 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+
+                                <!--  BUAT GAMBAR MOBILE -->
+                                <p><img src="assets/img/blog/test42/Foto 3 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+                                <p>Berbicara di depan umum memerlukan kesiapan untuk menghadapi berbagai respons dari audiens. Para pengganggu dapat muncul dalam berbagai bentuk, mulai dari kelas akademis hingga panggung komedi. Sebagai pembicara, penting untuk memiliki strategi yang matang untuk menjaga keberlanjutan dan kenyamanan saat berbicara.</p>
+                                <h2>Jenis-Jenis Hecklers : </h2>
+                                <!--  BUAT GAMBAR DESKTOP -->
+                                <p><img src="assets/img/blog/test42/Foto 4 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+
+                                <!--  BUAT GAMBAR MOBILE -->
+                                <p><img src="assets/img/blog/test42/Foto 4 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+                                <p>Dalam menjalani pengalaman berbicara di depan umum, mengenali berbagai jenis hecklers dapat membantu kita menyesuaikan pendekatan dan strategi yang lebih spesifik. Mari kita telaah beberapa jenis hecklers yang mungkin dihadapi : </p>
+                                <h3>1.	Pembicara/Tahu Segalanya</h3>
+                                <p>Pembicara ini cenderung merasa lebih tahu dari si pembicara utama. Mereka mungkin mencoba untuk mendominasi pembicaraan atau memunculkan pertanyaan rumit untuk menguji pengetahuan.</p>
+                                <h3>2.	Pengeluh</h3>
+                                <p>Mereka yang selalu menemukan sesuatu untuk dikritik atau dieluhkan. Tantangan terbesar adalah mempertahankan fokus dan tetap positif.</p>
+                                <h3>3.	Pembisik</h3>
+                                <p>Orang yang suka memberikan komentar atau pertanyaan kepada orang di sekitarnya, bisa mengalihkan perhatian dari pembicara utama.</p>
+                                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                    <figcaption class="blockquote-footer" style="margin: 0px;">
+                                    <i>Baca Juga : <b><a href="https://www.dialogika.co/blog/canggung-saat-berkomunikasi.html" target="__blank">Tips Menghilangkan Canggung Saat Berkomunikasi – Socially Awkward</a></b></cite></i>
+                                    </figcaption>
+                                </div>
+                                <h3>4.	Pengganggu</h3>
+                                <p>Berbeda dengan pengeluh, pengganggu cenderung lebih agresif. Mereka mungkin mencoba untuk mematahkan semangat pembicara atau audiens.</p>
+                                <h2>Strategi yang Efektif dalam Mengatasi Para Pengganggu : </h2>
+                                <!--  BUAT GAMBAR DESKTOP -->
+                                <p><img src="assets/img/blog/test42/Foto 5 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+
+                                <!--  BUAT GAMBAR MOBILE -->
+                                <p><img src="assets/img/blog/test42/Foto 5 - Jangan Takut! Cara Mengatasi Para Pengganggu - Hecklers - Dialogika.co.png" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="Mengatasi Para Pengganggu"></p>
+                                <h3>1.	Mengabaikan dengan Bijak</h3>
+                                <p>Mengabaikan hecklers dengan bijak adalah salah satu strategi efektif. Hecklers mencari perhatian, dan dengan tidak memberikan reaksi berlebihan, kita dapat meminimalkan dampak yang mereka miliki. Penting untuk tetap fokus pada pesan atau pertunjukan tanpa terpengaruh oleh gangguan yang tidak perlu.</p>
+                                <h2>2.	Bergabung dengan Humor: Senjata Ampuh</h2>
+                                <p>Senjata ampuh dalam mengatasi hecklers adalah humor. Respon dengan lelucon ringan atau mendayagunakan humor untuk meredakan ketegangan dapat menjadi cara efektif untuk membalikkan situasi dan mendapatkan kembali kendali atas audiens.</p>
+                                <h3>3.	Minta Bantuan: Kekuatan dalam Solidaritas</h3>
+                                <p>Jangan ragu untuk meminta bantuan dari audiens atau rekan jika hecklers terlalu kuat atau terlalu banyak. Solidaritas dapat menjadi kekuatan besar dalam mengatasi para pengganggu. Dukungan dari orang lain dapat membantu mengendalikan situasi dengan lebih efektif.</p>
+                                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                    <figcaption class="blockquote-footer" style="margin: 0px;">
+                                    <i>Baca Juga : <b><a href="https://www.dialogika.co/blog/overthink-sebelum-tidur.html" target="__blank">Mengatasi Overthink Sebelum Tidur</a></b></cite></i>
+                                    </figcaption>
+                                </div>
+                                <h3>4.	Terima Kritik dengan Baik</h3>
+                                <p>Kritik, meskipun mungkin terdengar tidak menyenangkan, bisa menjadi umpan balik berharga. Cobalah untuk menerima kritik dengan baik, tanpa menunjukkan ketidaksenangan, dan gunakan sebagai kesempatan untuk meningkatkan presentasi.</p>
                                 <!--  QUOTE  -->
                                 <p><blockquote class="blockquote">
-                                    <p>"Kita semua punya mimpi. Tetapi untuk mewujudkan mimpi, dibutuhkan banyak tekad, dedikasi, disiplin diri, dan usaha."</p>
-                                    <cite>Jesse Owens</cite>
+                                    <p>"Courage is what it takes to stand up and speak; courage is also what it takes to sit down and listen."</p>
+                                    <cite>Winston Churcill</cite>
                                 </blockquote></p>
-                                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                    <figcaption class="blockquote-footer" style="margin: 0px;">
-                                      <i>Baca Juga : <b><a href="https://www.dialogika.co/blog/belajar-isyarat-spasial.html" target="__blank">Belajar isyarat Spasial, Kenapa Kalau Berantem Duduk Berjauhan?</a></b></cite></i>
-                                    </figcaption>
-                                  </div>
-                                <h2>Langkah-Langkah untuk Mengembangkan Disiplin Diri</h2>
-                                <!--  BUAT GAMBAR DESKTOP -->
-                                <p><img src="assets/img/blog/test41/JPG 001.webp" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
+                                <h3>5.	Jaga Sikap Terbuka dan Ramah</h3>
+                                <p>Hecklers seringkali mencoba menciptakan ketegangan, namun dengan menjaga sikap terbuka dan ramah, kita dapat memberikan sinyal bahwa kita siap mendengarkan pendapat mereka. Sikap ini juga dapat membuka pintu untuk dialog yang konstruktif.</p>
+                                <h3>6.	Gunakan Kesempatan untuk Edukasi : </h3>
+                                <p>Saat menghadapi hecklers, lihatlah sebagai kesempatan untuk memberikan pemahaman lebih lanjut atau mengedukasi. Ajukan pertanyaan terbuka untuk memahami perspektif mereka, lalu sampaikan informasi dengan cara yang mengundang refleksi. Membangun dialog konstruktif dapat mengubah sikap hecklers dan audiens secara keseluruhan.</p>
+                                <h2>Kesimpulan</h2>
+                                <p>Menghadapi para pengganggu memang tidak mudah. Intensi para pengganggu yang tidak dapat disimpulkan secara gambling menjadi tantangan tersendiri untuk menciptakan strategi yang efektif untuk mengatasi hecklers. Sebagai pembicara atau entertainer, mengelola hecklers adalah bagian dari seni berbicara di depan umum. </p>
+                                <p>Jangan takut, jangan terpancing, dan tetaplah menjadi penguasa panggung. Udah ngga jaman lagi biarkan hecklers merusak momen berbicara kita! Dengan strategi yang matang, kita dapat melibatkan audiens dengan lebih baik dan mempertahankan kendali atas situasi dengan percaya diri.</p>
 
-                                <!--  BUAT GAMBAR MOBILE -->
-                                <p><img src="assets/img/blog/test41/JPG 001.webp" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-                                <p>Nah, setelah tau alasan mengapa disiplin diri penting, selanjutnya kamu harus tau langkah-langkah yang dapat kamu ambil untuk mengembangkan disiplin diri yang kuat. Simak selengkapnya!</p>
-                                <h3>Langkah 1 : Definisikan Tujuanmu dengan Jelas</h3>
-                                <!--  BUAT GAMBAR DESKTOP -->
-                                <p><img src="assets/img/blog/test41/JPG.02.jpg" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-
-                                <!--  BUAT GAMBAR MOBILE -->
-                                <p><img src="assets/img/blog/test41/JPG.02.jpg" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-                                <p>Pertama-tama, kamu harus memiliki pemahaman yang jelas tentang apa yang ingin kamu capai. Apakah itu kesuksesan dalam karier, kehidupan pribadi, atau kesejahteraan fisik? Dengan menentukan tujuan-tujuan yang konkret, kamu memberi dirimu arah yang jelas untuk bekerja.</p>
-                                <h3>Langkah 2 : Rencanakan dengan Teliti</h3>
-                                <!--  BUAT GAMBAR DESKTOP -->
-                                <p><img src="assets/img/blog/test41/JPG.03.jpeg" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-
-                                <!--  BUAT GAMBAR MOBILE -->
-                                <p><img src="assets/img/blog/test41/JPG.03.jpeg" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-                                <p>Setelah kamu memiliki tujuan yang jelas, langkah berikutnya adalah merencanakan bagaimana mencapainya. Buat rencana yang rinci yang mencakup langkah-langkah yang perlu diambil, waktu yang akan dihabiskan, dan sumber daya yang dibutuhkan. Dengan rencana yang baik, kamu akan lebih siap untuk menghadapi perjalanan menuju kesuksesan.</p>
-                                <h3>Langkah 3 : Disiplin dalam Waktu dan Manajemen Prioritas</h3>
-                                <!--  BUAT GAMBAR DESKTOP -->
-                                <p><img src="assets/img/blog/test41/JPG.03.jpg" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-
-                                <!--  BUAT GAMBAR MOBILE -->
-                                <p><img src="assets/img/blog/test41/JPG.03.jpg" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-                                <p>Disiplin diri juga melibatkan manajemen waktu yang baik. Tetapkan prioritas yang jelas dalam hidupmu dan alokasikan waktu sesuai dengan pentingnya tugas-tugas tersebut. Hindari pemborosan waktu pada hal-hal yang tidak mendukung tujuanmu.</p>
-                                <h3>Langkah 4 : Pertahankan Konsistensi</h3>
-                                <!--  BUAT GAMBAR DESKTOP -->
-                                <p><img src="assets/img/blog/test41/JPG.05.jpg" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-
-                                <!--  BUAT GAMBAR MOBILE -->
-                                <p><img src="assets/img/blog/test41/JPG.05.jpg" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-                                <p>Konsistensi adalah kunci dalam mengembangkan disiplin diri yang kuat. Lakukan tindakan-tindakan yang mendukung tujuanmu secara teratur, bahkan jika terasa sulit pada awalnya. Kebiasaan-kebiasaan ini akan memperkuat disiplin dirimu seiring berjalannya waktu.</p>
-                                <h3>Langkah 5 : Kelola Gangguan dan Godaan</h3>
-                                <!--  BUAT GAMBAR DESKTOP -->
-                                <p><img src="assets/img/blog/test41/JPG.06.webp" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-
-                                <!--  BUAT GAMBAR MOBILE -->
-                                <p><img src="assets/img/blog/test41/JPG.06.webp" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-                                <p>Dalam perjalanan menuju kesuksesan, kamu akan dihadapkan dengan berbagai godaan dan gangguan. Penting untuk memiliki kemampuan untuk menolak godaan tersebut dan tetap fokus pada tujuanmu. Ini mungkin memerlukan latihan dan tekad yang kuat, tetapi hal ini memainkan peran besar dalam pengembangan disiplin diri.</p>
-                                <h3>Langkah 6 : Evaluasi dan Koreksi Diri</h3>
-                                <!--  BUAT GAMBAR DESKTOP -->
-                                <p><img src="assets/img/blog/test41/JPG.07.png" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-
-                                <!--  BUAT GAMBAR MOBILE -->
-                                <p><img src="assets/img/blog/test41/JPG.07.png" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-                                <p>Saat kamu mengikuti rencana dan rutinitasmu, penting untuk secara berkala mengevaluasi kemajuanmu. Apakah kamu mencapai tujuanmu? Jika tidak, apa yang perlu diperbaiki? Jangan takut untuk mengoreksi diri dan melakukan perubahan jika diperlukan.</p>
-                                <h3>Langkah 7 : Temukan Dukungan</h3>
-                                <!--  BUAT GAMBAR DESKTOP -->
-                                <p><img src="assets/img/blog/test41/JPG.08.jpg" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-
-                                <!--  BUAT GAMBAR MOBILE -->
-                                <p><img src="assets/img/blog/test41/JPG.08.jpg" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="disiplin diri"></p>
-                                <p>Mengembangkan disiplin diri tidak selalu mudah, dan terkadang kamu memerlukan dukungan dari orang-orang di sekitarmu. Berbicaralah dengan teman, keluarga, atau mentor yang bisa memberikan dukungan, nasihat, dan motivasi.</p>
-                                <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                    <figcaption class="blockquote-footer" style="margin: 0px;">
-                                      <i>Baca Juga : <b><a href="https://www.dialogika.co/blog/bagaimana-cara-membangun-relasi.html" target="__blank">Bagaimana Cara Membangun Relasi Komunikasi, Berikut Langkah-Langkahnya - Mentalization-Based Therapy (MBT)</a></b></cite></i>
-                                    </figcaption>
-                                  </div>
-                                <h2>Penutup</h2>
-                                <p>Disiplin diri adalah seni yang bisa dipelajari oleh siapa pun. Ini adalah kunci menuju kesuksesan pribadi, dan dengan mengikuti langkah-langkah di atas, kamu bisa mengembangkan disiplin diri yang kuat.</p>
-                                <p>Jadi, mulailah hari ini dengan tekad dan semangat untuk mengembangkan disiplin diri yang kuat. Buatlah perencanaan yang matang, pertahankan konsistensi, dan jangan ragu untuk mencari dukungan jika diperlukan. </p>
-                                <p>Dengan seni disiplin diri ini, kamu akan mendapati bahwa apa pun yang kamu impikan dalam hidup bisa menjadi kenyataan. Kesuksesan pribadi adalah hasil dari kerja keras, tekad, dan disiplin diri yang kuat. Selamat berjuang dan selamat mencapai kesuksesan!</p>
                                 <!-- /END PARAGRAF_1 -->
 
                                 <!-- ISIKAN TULISAN PARAGRAF 2 DAN SELANJUTNYA DIBAWAH INI -->
@@ -415,12 +386,22 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                         <i class='bx bxs-file'></i>
                                         <ul class="cats">
                                             <li><a href="#" target="__blank">
-                                                    Reference</a></li>
+                                            Reference</a></li>
+                                        </ul> 
+                                        <i class='bx bxs-edit-alt'></i>
+                                        <ul class="tags">
+                                            <li><a href="https://www.palomar.edu/pages/tjohnston2/how-to-handle-hecklers/" target="__blank">
+                                                how to handle hecklers</a></li>
                                         </ul>
                                         <i class='bx bxs-edit-alt'></i>
                                         <ul class="tags">
-                                            <li><a href="https://www.gramedia.com/best-seller/sika-disiplin/" target="__blank">
-                                                Sikap Disiplin </a></li>
+                                            <li><a href="https://www.fearless.online/blog/how-to-deal-with-hostile-audiences-and-hecklers" target="__blank">
+                                                audiences and hecklers</a></li>
+                                            </ul>
+                                        <i class='bx bxs-edit-alt'></i>
+                                        <ul class="tags">
+                                            <li><a href="https://www.backstage.com/magazine/article/handle-heckler-501/" target="__blank">
+                                                handle heckler 501</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -435,9 +416,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                     <div class="col-xl-6 col-md-7">
                                         <div class="blog-details-tags">
                                             <ul class="list-wrap mb-0">
-                                                <li><a href="#" onclick="return false;">disiplin</a></li>
-                                                <li><a href="#" onclick="return false;">diri</a></li>
-                                                <li><a href="#" onclick="return false;">improvement</a></li>
+                                                <li><a href="#" onclick="return false;">mengatasiparapengganggu</a></li>
+                                                <li><a href="#" onclick="return false;">hecklers</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -445,16 +425,11 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                         <div class="blog-details-share">
                                             <h6 class="share-title">Follow Us:</h6>
                                             <ul class="list-wrap mb-0">
-                                                <li><a href="https://instagram.com/dialogika.co"><i
-                                                            class="fab fa-instagram"></i></a></li>
-                                                <li><a href="https://tiktok.com/@dialogika.co"><i
-                                                            class="fab fa-tiktok"></i></a></li>
-                                                <li><a href="https://linkedin.com/company/dilogika"><i
-                                                            class="fab fa-linkedin-in"></i></a></li>
-                                                <li><a href="https://facebook.com/dialogika.co"><i
-                                                            class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="https://twitter.com/dialogika_co"><i
-                                                            class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://instagram.com/dialogika.co"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="https://tiktok.com/@dialogika.co"><i class="fab fa-tiktok"></i></a></li>
+                                                <li><a href="https://linkedin.com/company/dilogika"><i class="fab fa-linkedin-in"></i></a></li>
+                                                <li><a href="https://facebook.com/dialogika.co"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="https://twitter.com/dialogika_co"><i class="fab fa-twitter"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -465,27 +440,25 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <div class="blog-author clearfix">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img src="assets/img/intern/fisalma.png"
-                                        class="rounded-circle float-left img-thumbnail" alt="fisalma">
+                                    <img src="assets/img/intern/vincent.jpeg" class="rounded-circle float-left img-thumbnail" alt="vincent">
                                 </div>
 
                                 <div class="col-md-10">
-                                    <h4>Fisalma fadhia</h4>
+                                    <h4>Vincentius Aditya</h4>
                                     <div class="social-links">
                                         <b>Intern - Content Writer</b>
                                     </div>
                                     <hr />
-                                    <p>Nadzar Bar Qadam</p>
+                                    <p>Believe in yourself</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- End blog author bio 
+                        <!-- End blog author bio
 
                         <div class="blog-author clearfix">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img src="assets/img/intern/EDIT_FOTO.jpg"
-                                        class="rounded-circle float-left img-thumbnail" alt="EDIT_NAMA_PENULIS">
+                                    <img src="assets/img/intern/EDIT_FOTO.jpg" class="rounded-circle float-left img-thumbnail" alt="EDIT_NAMA_PENULIS">
                                 </div>
 
                                 <div class="col-md-10">
@@ -503,9 +476,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <div class="blog-author clearfix">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img src="assets/img/intern/fajar.jpeg"
-                                        class="rounded-circle float-left img-thumbnail" alt="
-                                        fajar">
+                                    <img src="assets/img/intern/fajar.jpeg" class="rounded-circle float-left img-thumbnail" alt="fajar">
                                 </div>
 
                                 <div class="col-md-10">
@@ -526,51 +497,45 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                     <h2 class="kiri text-start">Pay Us By Leaving</h2>
                                     <h1 class="kiri text-start">Your Rating</h1>
                                     <p class="text-start" style="line-height:22px;">
-                                        Support <b>semangat penulis</b> dengan memberikan komentar dan masukan plus
-                                        <b>komentarmu akan kami
+                                        Support <b>semangat penulis</b> dengan memberikan komentar dan masukan plus <b>komentarmu akan kami
                                             masukkan</b> ke website ini dalam bentuk anonimus
                                     </p>
                                 </div>
                                 <form action="javascript:void" method="post" id="myForm">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
-                                            <input name="Domicile" type="text" class="form-control"
-                                                placeholder="Kota Tempat Tinggalmu*">
+                                            <input name="Domicile" type="text" class="form-control" placeholder="Kota Tempat Tinggalmu*">
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <input name="Work" type="text" class="form-control"
-                                                placeholder="Profesimu Saat Ini*">
+                                            <input name="Work" type="text" class="form-control" placeholder="Profesimu Saat Ini*">
                                         </div>
                                     </div>
                                     <select class="d-none" name="Timestamp">
-                                        <option id="timestamp"></option>
-                                    </select>
+                    <option id="timestamp"></option>
+                    </select>
                                     <select class="d-none" name="Keyword">
-                                        <option id="keyword">EDIT_SESUAI_JUDUL</option>
-                                    </select>
+                    <option id="keyword">EDIT_SESUAI_JUDUL</option>
+                    </select>
                                     <div class="row">
                                         <div class="col form-group">
                                             <select name="Rating" id="ratings" class="form-select" required>
-                                                <option value="" selected disabled value="">Rating this Blog</option>
-                                                <optgroup label="------------">
-                                                    <option>★★★★★</option>
-                                                    <option>★★★★☆</option>
-                                                    <option>★★★☆☆</option>
-                                                    <option>★★☆☆☆</option>
-                                                    <option>★☆☆☆☆</option>
-                                                </optgroup>
-                                            </select>
+                        <option value="" selected disabled value="">Rating this Blog</option>
+                        <optgroup label="------------">
+                            <option>★★★★★</option>
+                            <option>★★★★☆</option>
+                            <option>★★★☆☆</option>
+                            <option>★★☆☆☆</option>
+                            <option>★☆☆☆☆</option>
+                        </optgroup>
+                        </select>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col form-group">
-                                            <textarea name="Comment" class="form-control" rows="7"
-                                                placeholder="Komentar Anda*"></textarea>
+                                            <textarea name="Comment" class="form-control" rows="7" placeholder="Komentar Anda*"></textarea>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn-primary" style="border: 0px; margin-left:0px;"
-                                        data-bs-toggle="modal" data-bs-target="#notifications" onclick="SubForm()">Post
-                                        Comment</button>
+                                    <button type="submit" class="btn-primary" style="border: 0px; margin-left:0px;" data-bs-toggle="modal" data-bs-target="#notifications" onclick="SubForm()">Post Comment</button>
 
                                 </form>
                             </div>
@@ -584,58 +549,40 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             <div class="widget sidebar-widget">
                                 <div class="tgAbout-me">
                                     <div class="tgAbout-thumb">
-                                        <img src="assets/img/intern/fisalma.png" class="img-thumbnail"
-                                            alt="fisalma">
+                                        <img src="assets/img/intern/vincent.jpeg" class="img-thumbnail" alt="Vincentius">
                                     </div>
                                     <div class="tgAbout-info">
-                                        <p class="intro">Penulis <b>Fisalma Fadhia</b></p>
+                                        <p class="intro">Penulis <b>Vincentius Aditya Agsya Putra</b></p>
                                         <span class="designation">Intern - Content Writer - Dialogika</span>
                                     </div>
                                     <div class="tgAbout-social">
-                                        <a href="https://instagram.com/dialogika.co"><i
-                                                class="fab fa-instagram"></i></a>
+                                        <a href="https://instagram.com/dialogika.co"><i class="fab fa-instagram"></i></a>
                                         <a href="https://twitter.com/dialogika_co"><i class="fab fa-twitter"></i></a>
                                         <a href="https://facebook.com/dialgika.co"><i class="fab fa-facebook-f"></i></a>
                                         <a href="https://youtube.com/@dialogika_co"><i class="fab fa-youtube"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="widget sidebar-widget"
-                                style="border-radius:8px; -box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-moz-box-shadow: 0px 9px 16px -6px  rgba(231, 24, 26, 1);">
+                            <div class="widget sidebar-widget" style="border-radius:8px; -box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-moz-box-shadow: 0px 9px 16px -6px  rgba(231, 24, 26, 1);">
                                 <div class="sidePost-active">
-                                    <div class="sidePost__item"
-                                        data-background="https://dialogika.co/assets/img/program/basic-p/small.jpg">
+                                    <div class="sidePost__item" data-background="https://dialogika.co/assets/img/program/basic-p/small.jpg">
                                         <div class="sidePost__content">
-                                            <a href="https://dialogika.co/program/basic-plus.html" class="tag">Online
-                                                Class</a>
-                                            <h5 class="title tgcommon__hover"><a
-                                                    href="https://dialogika.co/program/basic-plus.html"
-                                                    target="__blank">Kelas Basic : Public Speaking Dialogika,
-                                                    Bergaransi, Selama Sebulan</a></h5>
+                                            <a href="https://dialogika.co/program/basic-plus.html" class="tag">Online Class</a>
+                                            <h5 class="title tgcommon__hover"><a href="https://dialogika.co/program/basic-plus.html" target="__blank">Kelas Basic : Public Speaking Dialogika, Bergaransi, Selama Sebulan</a></h5>
                                         </div>
                                     </div>
-                                    <div class="sidePost__item"
-                                        data-background="https://dialogika.co/assets/img/program/first-c/home.jpg">
+                                    <div class="sidePost__item" data-background="https://dialogika.co/assets/img/program/first-c/home.jpg">
                                         <div class="sidePost__content">
-                                            <a href="https://dialogika.co/program/first-class.html" class="tag">Offline
-                                                Class</a>
-                                            <h5 class="title tgcommon__hover"><a
-                                                    href="https://dialogika.co/program/first-class.html"
-                                                    target="__blank">Kelas Offline Public Speaking di Jogja, Bergaransi
-                                                    Selama 2 Bulan, Seat
-                                                    Terbatas</a></h5>
+                                            <a href="https://dialogika.co/program/first-class.html" class="tag">Offline Class</a>
+                                            <h5 class="title tgcommon__hover"><a href="https://dialogika.co/program/first-class.html" target="__blank">Kelas Offline Public Speaking di Jogja, Bergaransi Selama 2 Bulan, Seat
+                                            Terbatas</a></h5>
                                         </div>
                                     </div>
-                                    <div class="sidePost__item"
-                                        data-background="https://dialogika.co/assets/img/program/kids-c/banner.jpg">
+                                    <div class="sidePost__item" data-background="https://dialogika.co/assets/img/program/kids-c/banner.jpg">
                                         <div class="sidePost__content">
-                                            <a href="https://dialogika.co/subscribe/kids-play.html" class="tag">Kelas
-                                                Anak</a>
-                                            <h5 class="title tgcommon__hover"><a
-                                                    href="https://dialogika.co/subscribe/kids-play.html"
-                                                    target="__blank">Kursus Public Speaking Online Anak Selama Sebulan
-                                                    dari umur 5 hingga 15
-                                                    tahun</a></h5>
+                                            <a href="https://dialogika.co/subscribe/kids-play.html" class="tag">Kelas Anak</a>
+                                            <h5 class="title tgcommon__hover"><a href="https://dialogika.co/subscribe/kids-play.html" target="__blank">Kursus Public Speaking Online Anak Selama Sebulan dari umur 5 hingga 15
+                                            tahun</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -644,12 +591,10 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <div class="sidebarInsta__wrap">
                                     <div class="sidebarInsta__top">
                                         <div class="sidebarInsta__logo">
-                                            <img src="assets/img/logo-square.png"
-                                                alt="Logo Kelas Public Speaking Dialogika">
+                                            <img src="assets/img/logo-square.png" alt="Logo Kelas Public Speaking Dialogika">
                                         </div>
                                         <div class="blog-details-area sidebarInsta__info">
-                                            <h6 class="name"><a
-                                                    href="https://instagram.com/dialogika.co">@dialogika.co</a></h6>
+                                            <h6 class="name"><a href="https://instagram.com/dialogika.co">@dialogika.co</a></h6>
                                             <span class="designation">Kelas Public Speaking Jogja</span>
                                         </div>
                                     </div>
@@ -657,55 +602,39 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                         <div class="swiper-container sidebarInsta-active">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/p/CoJeVGjLVZJ/?utm_source=ig_web_copy_link"
-                                                        target="_blank"><img src="assets/img/instagram/01.jpg"
-                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/p/CoJeVGjLVZJ/?utm_source=ig_web_copy_link" target="_blank"><img src="assets/img/instagram/01.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co"
-                                                        target="_blank"><img src="assets/img/instagram/02.jpg"
-                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/02.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co"
-                                                        target="_blank"><img src="assets/img/instagram/03.jpg"
-                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/03.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co"
-                                                        target="_blank"><img src="assets/img/instagram/04.jpg"
-                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/04.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="swiper-container sidebarInsta-active-2" dir="rtl">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co"
-                                                        target="_blank"><img src="assets/img/instagram/05.jpg"
-                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/05.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co"
-                                                        target="_blank"><img src="assets/img/instagram/06.jpg"
-                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/06.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co"
-                                                        target="_blank"><img src="assets/img/instagram/07.jpg"
-                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/07.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co"
-                                                        target="_blank"><img src="assets/img/instagram/08.jpg"
-                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/08.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="sidebarInsta__bottom">
                                         <a href="https://www.instagram.com/dialogika.co" target="_blank" class="btn"><i
-                                                class="fab fa-instagram"></i><span class="text">Follow Us</span></a>
+                        class="fab fa-instagram"></i><span class="text">Follow Us</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -713,41 +642,38 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <h4 class="widget-title">Follow Us</h4>
                                 <ul class="list-wrap">
                                     <li class="align-items-center">
-                                        <div class="thumb"><a href="https://tiktok.com/@dialogika.co"><i
-                                                    class='bx bxl-tiktok'></i></a>
+                                        <div class="thumb"><a href="https://tiktok.com/@dialogika.co"><i class='bx bxl-tiktok'></i></a>
                                         </div>
                                         <b><a href="https://tiktok.com/@dialogika.co">Tiktok</a></b>
                                         <span class="float-right">9,57K</span>
                                     </li>
                                     <li>
                                         <div class="thumb"><a href="https://instagram.com/dialogika.co"><i
-                                                    class='bx bxl-instagram-alt'></i></a></div>
+                                        class='bx bxl-instagram-alt'></i></a></div>
                                         <b><a href="https://instagram.com/dialogika.co">Instagram</a></b>
                                         <span class="float-right">13,78K</span>
                                     </li>
                                     <li>
-                                        <div class="thumb"><a href="https://twitter.com/dialogika_co"><i
-                                                    class='bx bxl-twitter'></i></a>
+                                        <div class="thumb"><a href="https://twitter.com/dialogika_co"><i class='bx bxl-twitter'></i></a>
                                         </div>
                                         <b><a href="https://twitter.com/dialogika_co">Twitter</a></b>
                                         <span class="float-right">0.23K</span>
                                     </li>
                                     <li>
                                         <div class="thumb"><a href="https://facebook.com/dialogika.co"><i
-                                                    class='bx bxl-facebook-circle'></i></a></div>
+                                        class='bx bxl-facebook-circle'></i></a></div>
                                         <b><a href="https://facebook.com/dialogika.co">Facebook</a></b>
                                         <span class="float-right">0.42K</span>
                                     </li>
                                     <li>
-                                        <div class="thumb"><a href="https://youtube.com/@dialogika_co"><i
-                                                    class='bx bxl-youtube'></i></a>
+                                        <div class="thumb"><a href="https://youtube.com/@dialogika_co"><i class='bx bxl-youtube'></i></a>
                                         </div>
                                         <b><a href="https://youtube.com/@dialogika_co">Youtube</a></b>
                                         <span class="float-right">0.03K</span>
                                     </li>
                                     <li>
                                         <div class="thumb"><a href="https://linkedin.com/company/dialogika"><i
-                                                    class='bx bxl-linkedin-square'></i></a></div>
+                                        class='bx bxl-linkedin-square'></i></a></div>
                                         <b><a href="https://linkedin.com/company/dialogika">LinkedIn</a></b>
                                         <span class="float-right">2.72K</span>
                                     </li>
@@ -782,8 +708,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="section-title">
                         <h2 class="dumpil">Rating</h2>
                         <h2 class="tengah">Thank You For Rating</h2>
-                        <p>Ratingmu sama berharganya dengan <b>emas</b> yang memberikan kami semangat untuk terus
-                            berbagi</p>
+                        <p>Ratingmu sama berharganya dengan <b>emas</b> yang memberikan kami semangat untuk terus berbagi</p>
                     </div>
                     <a href="#" class="blue-btn" data-bs-dismiss="modal">Close This Message</a>
                 </div>
@@ -798,18 +723,14 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <!-- ======= Modal Downloads ======= -->
     <div class="modal fade" id="downloads" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content contact"
-                style="border-radius: 10px;box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1);-moz-box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1)">
+            <div class="modal-content contact" style="border-radius: 10px;box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1);-moz-box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1)">
                 <div class="modal-body">
-                    <form action="javascript:void" method="post" id="formDownload" enctype="text/plain" role="form"
-                        class="php-email-form needs-validation" style="box-shadow:none;">
+                    <form action="javascript:void" method="post" id="formDownload" enctype="text/plain" role="form" class="php-email-form needs-validation" style="box-shadow:none;">
                         <div class="form-group m-b30">
                             <a href="#" onclick="return false;" class="category-box dlab-box">
                                 <div class="dlab-media dlab-img-effect zoom">
-                                    <img src="https://media.istockphoto.com/id/1191184417/id/vektor/latar-belakang-putih-vektor.jpg?s=612x612&w=0&k=20&c=iMfQeeSAwOorZ1cXy0RCdDreYtTNfUbjVVQmswwPP_w="
-                                        alt="EDIT_ALT">
-                                    <div class="top-lefts"><span class="badge rounded-pill rounded-red">Thank You</span>
-                                    </div>
+                                    <img src="https://media.istockphoto.com/id/1191184417/id/vektor/latar-belakang-putih-vektor.jpg?s=612x612&w=0&k=20&c=iMfQeeSAwOorZ1cXy0RCdDreYtTNfUbjVVQmswwPP_w=" alt="EDIT_ALT">
+                                    <div class="top-lefts"><span class="badge rounded-pill rounded-red">Thank You</span></div>
                                 </div>
                                 <div class="icon-content">
                                     <h2 class="dlab-tilte">Download File</h2>
@@ -819,46 +740,42 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             </a>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="Name" id="names" class="form-control" pattern="[a-zA-Z\s]{3,100}"
-                                placeholder="Nama Lengkap*" required>
+                            <input type="text" name="Name" id="names" class="form-control" pattern="[a-zA-Z\s]{3,100}" placeholder="Nama Lengkap*" required>
                             <div class="validate"></div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-4 form-group">
-                                <input type="tel" class="form-control" name="Whatsapp" id="whatsapps"
-                                    pattern="[0-9]{10,15}" placeholder="Whatsapp*" required="">
+                                <input type="tel" class="form-control" name="Whatsapp" id="whatsapps" pattern="[0-9]{10,15}" placeholder="Whatsapp*" required="">
                                 <div class="validate"></div>
                             </div>
                             <div class="col-md-4 form-group">
-                                <input type="text" class="form-control" name="Work" id="works"
-                                    pattern="[a-zA-Z\s]{3,100}" placeholder="Profesi*" required>
+                                <input type="text" class="form-control" name="Work" id="works" pattern="[a-zA-Z\s]{3,100}" placeholder="Profesi*" required>
                                 <div class="validate"></div>
                             </div>
                             <div class="col-md-4 form-group">
-                                <input type="text" class="form-control" name="Domicile" id="domiciles"
-                                    pattern="[a-zA-Z\s]{3,100}" placeholder="Domisili*" required>
+                                <input type="text" class="form-control" name="Domicile" id="domiciles" pattern="[a-zA-Z\s]{3,100}" placeholder="Domisili*" required>
                                 <div class="validate"></div>
                             </div>
                         </div>
                         <div class="form-check">
                             <input type="checkbox" id="disabledFieldsetCheck">
                             <label class="form-check-label" for="disabledFieldsetCheck">
-                                Data yang saya isikan sudah benar
-                            </label>
+                Data yang saya isikan sudah benar
+                </label>
                             <div class="form-text" style="margin-top: 0px;">
                                 *Tombol akan menyala apabila nama, nomor hp, profesi dan domisili telah terisi.
                             </div>
                         </div>
                         <div class="form-group">
                             <select name="Keyword" class="form-select d-none" required>
-                                <option>EDIT_JUDUL_MODAL</option>
-                            </select>
+                <option>EDIT_JUDUL_MODAL</option>
+                </select>
                             <div class="validate"></div>
                         </div>
                         <select class="d-none" name="Timestamp">
-                            <option id="timestamp"></option>
-                        </select>
+                <option id="timestamp"></option>
+            </select>
                         <div class="text-end">
                             <button type="submit" id="submits" onclick="downloadsForm()">Download</button>
                         </div>
@@ -906,9 +823,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <script src="assets/js/bar.js"></script>
     <script src="assets/js/whatsapp.js"></script>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             $('#submits').attr('disabled', true);
-            $('#formDownload').change(function () {
+            $('#formDownload').change(function() {
                 if ($('#names').val() != '' && $('#works').val() != '' && $('#domiciles').val() != '' && $('#whatsapps').val() != '') {
                     $('#submits').attr('disabled', false);
                 } else {
