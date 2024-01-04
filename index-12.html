@@ -118,14 +118,21 @@
     <!-- Pixel Facebook -->
     <!-- DEC 2021 -->
     <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
@@ -141,7 +148,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148836422-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-148836422-2');
@@ -150,23 +160,37 @@
 
 
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KGK9D6H');</script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KGK9D6H');
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Hotjar Tracking Code for https://dialogika.co -->
     <script>
         (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-            h._hjSettings = { hjid: 2828594, hjsv: 6 };
+            h.hj = h.hj || function () {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {
+                hjid: 2828594,
+                hjsv: 6
+            };
             a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script'); r.async = 1;
+            r = o.createElement('script');
+            r.async = 1;
             r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
@@ -204,13 +228,14 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <div class="d-flex justify-content-between align-items-center">
                 <h2>&nbsp;</h2>
                 <ol>
-                    <li><a href="https://dialogika.co/index.html">Home</a></li>
-                    <li><a href="" onclick="return false;">Blog</a></li>
+                    <li><a href="https://dialogika.co/">Home</a></li>
+                    <li><a href="https://dialogika.co/blog" onclick="return false;">Blog</a></li>
                 </ol>
             </div>
 
         </div>
-    </section><!-- End Breadcrumbs Section -->
+    </section>
+    <!-- End Breadcrumbs Section -->
 
     <main id="main">
 
@@ -226,190 +251,116 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <!-- End Blog Details -->
 
                     <div class="col-lg-7 entries">
+                        <article class="entry fadeInUp">
+                            <!-- data-aos="fade-up" sebagai animasi -->
+                            <!--Cara Mengatasi Latah -->
+                            <div class="entry-img">
+                                <img src="assets/img/blog/Cara Mengatasi Latah Is There A Wonder Drug/Banner Blog (17).jpg"
+                                    alt="Cara Mengatasi Latah" class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="cara-mengatasi-latah.html" target="__blank">Cara Mengatasi Latah: Is There A
+                                    Wonder Drug?</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Written By <b>Habibah Nureniati</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Developed By <b>Rama Anindya</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>Cara mengatasi latah bagi penderitanya memang sulit jika 'latah' sudah mendarah
+                                    daging. Tapi, pernah
+                                    ga si kamu
+                                    mengalami latah saat berpidato? Atau kamu penasaran kenapa orang bisa latah? Temukan
+                                    rahasia di balik
+                                    fenomena Asia
+                                    Tenggara ini dan strategi untuk publik speaker...</p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="cara-mengatasi-latah.html" target="__blank" class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article>
 
                         <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- cara membuat habit baru -->
+                            <!-- data-aos="fade-up" sebagai animasi -->
+                            <!--Cara Berbicara dengan Introvert -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/narsistik/Banner Blog.jpg" alt="Seli Amelia Putri"
+                                <img src="assets/img/blog/test4/Banner.jpg" alt="Menghadapi quarter life crisis"
                                     class="img-fluid" style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="menghadapi-orang-narsisitik.html" target="__blank">Menghadapi Pacar yang
-                                    Narsistik, Nomor 3
-                                    Dijamin Bikin Doi Berubah </a>
+                                <a href="menghadapi-quarter-life-crisis.html" target="__blank">Menghadapi Quarter Life
+                                    Crisis dan Begini
+                                    Cirinya, Gen Z Wajib Tahu !</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Seli Amelia Putri </a></b>
+                                        <a href="#">Written By <b>Lalu Akhmad Izaz</a></b>
                                     </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
                                         <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                                    </li><br>
+                                    </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Cipto Ardiantoro</a></b>
+                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>Menghadapi orang narisistik memang sangat melelahkan, terlebih jika orang itu adalah
-                                    pacar kamu
-                                    sendiri. Tapi, sebagai pasangan yang baik kamu harus mengetahui cara menghadapinya
-                                    dengan melakukan
-                                    hal berikut...</p>
+                                <p>Menghadapi quarter life crisis merupakan hal yang merepotkan jika tidak ditangani
+                                    dengan baik.
+                                    Quarter Life crisis merupakan sebuah istilah Dr. Oliver Robinson yang membahas
+                                    kehidupan yang kompleks
+                                    pada usia 18-30 tahun. Artikel ini akan membantu mu mengatasi quarter life crisis
+                                    tersebut.</p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="menghadapi-orang-narsisitik.html" target="__blank" class="blue-btn">Read
+                                    <a href="menghadapi-quarter-life-crisis.html" target="__blank" class="blue-btn">Read
                                         More</a>
                                 </div>
                             </div>
                         </article>
 
                         <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- cara membuat habit baru -->
+                            <!-- data-aos="fade-up" sebagai animasi -->
+                            <!--Cara Berbicara dengan Introvert -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/10-cara-membuat-habit-baru-dengan-teknik-optogenetika-kebiasaan-baik-di-pagi-hari/JPG 1.jpg"
-                                    alt="cara membuat habit baru" class="img-fluid" style="width: 100%;">
+                                <img src="assets/img/blog/cara berbicara dengan orang introvert/JPG 1.png"
+                                    alt="Cara Berbicara dengan Orang Introvert" class="img-fluid" style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="cara-membuat-habit-baru.html" target="__blank">Cara Membuat Habit Baru dengan
-                                    Teknik
-                                    Optogenetika: Kebiasaan Baik di Pagi Hari </a>
+                                <a href="cara-berbicara-dengan-orang-introvert.html" target="__blank">Cara Berbicara
+                                    dengan Orang
+                                    Introvert: Menjalin Komunikasi yang Efektif</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Rendi </a></b>
+                                        <a href="#">Written By <b>Rendi</a></b>
                                     </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
                                         <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                                    </li><br>
+                                    </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Cipto Ardiantoro</a></b>
+                                        <a href="#">Developed By <b>Rama Anindya</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>Cara membuat habit baru bagi sebagian orang memang cukup sulit. Tapi dengan teknik
-                                    Optogenetic dapat
-                                    membantumu merubah kebiasaan burukmu menjadi kebiasaan baru yang lebih baik dan
-                                    mendukung
-                                    produktifitas mu...</p>
+                                <p>Cara berbicara dengan orang introvert ada banyak jalannya, tidak semua anak introvert
+                                    itu sulit
+                                    didekati. Kamu hanya
+                                    perlu tahu beberapa hal ini sebelum melakukan komunikasi...</p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="cara-membuat-habit-baru.html" target="__blank" class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- Penyebab susah mengingat sesuatu -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/penyebab-susah-mengingat-sesuatu(dementia prevention)/Banner Blog.jpg"
-                                    alt="Penyebab susah mengingat sesuatu " class="img-fluid" style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="penyebab-susah-mengingat-sesuatu.html" target="__blank">Penyebab Susah
-                                    Mengingat Sesuatu
-                                    (Dementia Prevention) </a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Habibah Nureniati </a></b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                                    </li><br>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Cipto Ardiantoro</a></b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Penyebab susah mengingat sesuatu, penurunan fungsi daya ingat yang bisa disebut juga
-                                    Dementia and its
-                                    Misconceptions: Uncover the truth about forgetfulness, genetic factors, and the
-                                    surprising role of
-                                    lifestyle in preventing cognitive decline...</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="penyebab-susah-mengingat-sesuatu.html" target="__blank"
-                                        class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- Kenapa tubuh bergetar sendiri -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/kenapa-tubuh-bergetar-sendiri-saat-gugup-dan-cemas-hidden-power-of-gesture/Banner Blog.jpg"
-                                    alt="Kenapa Tubuh Bergetar Sendiri " class="img-fluid" style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="kenapa-tubuh-bergetar-sendiri.html" target="__blank">Kenapa Tubuh Bergetar
-                                    Sendiri saat Gugup
-                                    dan Cemas - Hidden Power of Gesture</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Habibah Nureniati </a></b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                                    </li><br>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Cipto Ardiantoro</a></b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Kenapa tubuh bergetar densiri saat gugup dan cemas? The science behind frozen
-                                    performances and power
-                                    of gestures. If you’ve felt this before then come learn how to leverage the hidden
-                                    secrets of our
-                                    hands!...</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="kenapa-tubuh-bergetar-sendiri.html" target="__blank" class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- cara menerima kritikan dari orang lain -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/cara-menerima-kritik/Banner Blog.jpg"
-                                    alt="Cara Menerima Kritik dari Orang Lain " class="img-fluid" style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="cara-menerima-kritik-dari-orang-lain.html" target="__blank">Cara Menerima
-                                    Kritik dari Orang
-                                    Lain Menurut Buku ‘Hug Your Haters’</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Seli Amelia Putri</a></b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                                    </li><br>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Cipto Ardiantoro</a></b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Cara menerima kritik dari orang lain sebenarnya mudah kita lakukan tetapi, ternyata
-                                    itu semua karena
-                                    selama ini kita salah membedakan kritik dan ejekan. Dari buku ‘Hug Your Haters’ akan
-                                    memberikan
-                                    pengetahuan tentang bagaimana menanggapi kritik itu...</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="cara-menerima-kritik-dari-orang-lain.html" target="__blank"
+                                    <a href="cara-berbicara-dengan-orang-introvert.html" target="__blank"
                                         class="blue-btn">Read
                                         More</a>
                                 </div>
@@ -417,80 +368,146 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         </article>
 
                         <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- Review Buku: Unleashed by Anne Morriss and Frances Frei -->
+                            <!-- data-aos="fade-up" sebagai animasi -->
+                            <!--Cara Berbicara dengan Calon Mertua -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/review-buku-unleashed-by-anne-morriss-and-frances-frei/Banner Blog.jpg"
-                                    alt="Review Buku: Unleashed by Anne Morriss and Frances Frei" class="img-fluid"
+                                <img src="assets/img/blog/test3/1.jpg" alt="Cara Berbicara dengan Calon Mertua"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="cara-bicara-dengan-calon-mertua.html" target="__blank">Cara Berbicara dengan
+                                    Calon Mertua: Tips
+                                    untuk Membangun Hubungan yang Baik</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Written By <b>Rendi</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>Cara berbicara dengan calon mertua agar mudah diterima dan dihargai di keluarga
+                                    mertua bukanlah hal
+                                    yang sulit, jika kamu tau tips meluluhkan hati calon mertua. Simak tips berikut
+                                    ini...</p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="cara-bicara-dengan-calon-mertua.html" target="__blank"
+                                        class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="entry fadeInUp" data-aos="fade-up">
+                            <!-- data-aos="fade-up" sebagai animasi -->
+                            <!--Kata Menjadi Asing dalam Otak -->
+                            <div class="entry-img">
+                                <img src="assets/img/blog/test1/banner.jpg" alt="Kata Menjadi Asing dalam Otak"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="kata-menjadi-asing.html" target="__blank">Kata Menjadi Asing Kehilangan
+                                    Maknanya - Semantic
+                                    Satiation</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Written By <b>Maya Alif Bunga M</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>Kata menjadi asing atau semantic satiation merupakan hal yang harus dipahami oleh
+                                    seorang speaker
+                                    sebelum menjelaskan sesuatu pada audiensnya. Karena akibat dari pengulangan kata
+                                    yang terlalu banyak
+                                    akan mengaburkan atau membuat kata tersebut menjadi asing di otak audiens...</p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="kata-menjadi-asing.html" target="__blank" class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article>
+
+
+                        <article class="entry fadeInUp">
+                            <!-- menghilangkan rasa baper di depan audiens -->
+                            <div class="entry-img">
+                                <img src="assets/img/blog/copy-of-blog-picture/banner1.jpg"
+                                    alt="Menghilangkan Rasa Baper di Depan Audiens" class="img-fluid"
                                     style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="review-buku-unleashed-by-anne-morriss-and-frances-frei.html"
-                                    target="__blank">Review Buku:
-                                    Unleashed by Anne Morriss and Frances Frei</a>
+                                <a href="menghilangkan-rasa-baper-di-depan-audiens.html" target="__blank">Menghilangkan
+                                    Rasa Baper di
+                                    Depan Audiens - Gyrus Parahippocampal</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Habibah Nureniati</a></b>
+                                        <a href="#">Written By <b>Maya Alif Bunga M</a></b>
                                     </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
-                                    </li><br>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
                                         <a href="#">Developed By <b>Cipto Ardiantoro</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>Review Buku: Unleashed by Anne Morriss and Frances Frei - Discover the essence of
-                                    authentic
-                                    leadership, empowerment challenges, and actionable insights, especially for women
-                                    leaders. A
-                                    transformative guide for impactful leadership.</p>
+                                <p>Menghilangkan baper di depan audiens merupakan hal yang harus kita lakukan untuk
+                                    menjaga
+                                    profesionalitas sebagai seorang speaker. Tapi, perlu diingat tidak semua 'baper' itu
+                                    merupakan hal
+                                    buruk yang menimpa kita saat tampil...</p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="review-buku-unleashed-by-anne-morriss-and-frances-frei.html"
-                                        target="__blank" class="blue-btn">Read
+                                    <a href="menghilangkan-rasa-baper-di-depan-audiens.html" target="__blank"
+                                        class="blue-btn">Read
                                         More</a>
                                 </div>
                             </div>
                         </article>
 
-
                         <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- Presentasi kinerja ppt -->
+                            <!-- data-aos="fade-up" sebagai animasi -->
+                            <!-- Tips dan Trik Kuliah -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/presentasi-kinerja-perusahaan-ppt-download-contohnya/Banner Blog.jpg"
-                                    alt="presentasi kinerja perusahaan ppt" class="img-fluid" style="width: 100%;">
+                                <img src="assets/img/blog/Tips and Trik Kuliah  Information Retention/Banner Blog (14).jpg"
+                                    alt="Tips dan Trik Kuliah" class="img-fluid" style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="presentasi-kinerja-perusahaan-ppt.html" target="__blank">Presentasi Kinerja
-                                    Perusahaan PPT,
-                                    Download Contohnya</a>
+                                <a href="tips-dan-trik-kuliah.html" target="__blank">Tips dan Trik Kuliah : Information
+                                    Retention</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Lalu Akhmad Izaz</a></b>
+                                        <a href="#">Written By <b>Habibah Nureniati</a></b>
                                     </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Edited By <b>Maya Alif Bunga M</a></b>
+                                        <a href="#">Written By <b>Maya Alif Bunga M</a></b>
                                     </li><br>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Cipto Ardiantoro</a></b>
+                                        <a href="#">Developed By <b>Rama Anindya</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>Presentasi kinerja perusahaan adalah salah satu hal yang sangat penting dalam sebuah
-                                    perusahaan.
-                                    Karena melalui itulah cara para pemegang saham, investor dan lain-lain tau kedudukan
-                                    perusahaan
-                                    tersebut. Sehingga dapat diibaratkan bahwa presentasi kinerja perusahaan adalah
-                                    nyawa selanjutnya
-                                    untuk perusahaan... </p>
+                                <p>Tips dan Trik Kuliah - Temukan strategi mengingat efektif bagi mahasiswa. Buka
+                                    rahasia retensi
+                                    informasi optimal, pahami dinamika memori, dan raih kesuksesan akademik dengan
+                                    percaya diri!</p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="presentasi-kinerja-perusahaan-ppt.html" target="__blank"
-                                        class="blue-btn">Read
+                                    <a href="tips-dan-trik-kuliah.html" target="__blank" class="blue-btn">Read
                                         More</a>
                                 </div>
                             </div>
@@ -507,14 +524,14 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                         </a>
                                     </li>
 
-                                    <li class="page-item"><a class="page-link" href="index-10.html">10</a></li>
                                     <li class="page-item"><a class="page-link" href="index-11.html">11</a></li>
-                                    <li class="page-item active"><a class="page-link" href="index-11.html"
-                                            onclick="return false;">11</a>
+                                    <li class="page-item active"><a class="page-link" href="index-12.html"
+                                            onclick="return false;">12</a>
                                     </li>
+                                    <li class="page-item"><a class="page-link" href="index-13.html">13</a></li>
 
                                     <li class="page-items-next">
-                                        <a class="page-link" href="index-11.html" id="#next" aria-label="Next">
+                                        <a class="page-link" href="index-13.html" id="#next" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
                                         </a>
@@ -563,23 +580,26 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                     }
                                 }
                             }
-
                         </script>
                         <!-- end pagination script -->
 
 
-                    </div><!-- End blog entries list -->
+                    </div>
+                    <!-- End blog entries list -->
 
                     <div class="col-lg-4 blog-details-area">
                         <main-sidebar></main-sidebar>
-                    </div><!-- End blog sidebar -->
+                    </div>
+                    <!-- End blog sidebar -->
 
                 </div>
 
             </div>
-        </section><!-- End Blog Section -->
+        </section>
+        <!-- End Blog Section -->
 
-    </main><!-- End #main -->
+    </main>
+    <!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <main-footer></main-footer>

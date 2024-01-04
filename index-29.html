@@ -118,21 +118,14 @@
     <!-- Pixel Facebook -->
     <!-- DEC 2021 -->
     <script>
-        ! function (f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function () {
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
@@ -148,10 +141,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148836422-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-148836422-2');
@@ -160,37 +150,23 @@
 
 
     <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KGK9D6H');
-    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KGK9D6H');</script>
     <!-- End Google Tag Manager -->
 
     <!-- Hotjar Tracking Code for https://dialogika.co -->
     <script>
         (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 2828594,
-                hjsv: 6
-            };
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 2828594, hjsv: 6 };
             a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
+            r = o.createElement('script'); r.async = 1;
             r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
@@ -228,14 +204,13 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <div class="d-flex justify-content-between align-items-center">
                 <h2>&nbsp;</h2>
                 <ol>
-                    <li><a href="https://dialogika.co/">Home</a></li>
-                    <li><a href="https://dialogika.co/blog" onclick="return false;">Blog</a></li>
+                    <li><a href="https://dialogika.co/index.html">Home</a></li>
+                    <li><a href="" onclick="return false;">Blog</a></li>
                 </ol>
             </div>
 
         </div>
-    </section>
-    <!-- End Breadcrumbs Section -->
+    </section><!-- End Breadcrumbs Section -->
 
     <main id="main">
 
@@ -252,283 +227,266 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
                     <div class="col-lg-7 entries">
 
-                        <!-- article phase 3 -->
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Toxic Positivity -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/test23/Banner Blog. silent traetment.jpg"
-                                    alt="Silent Treatment" class="img-fluid" style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="silent-treatment.html" target="__blank">Pasanganmu Silent Treatment? Kenali
-                                    Ciri-Ciri dan Cara
-                                    Menghadapinya!</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Seli Amelia Putri</a></b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>ketika marah pasanganmu sering silent traetment? gimana rasanya diabaikan seseorang,
-                                    kesal bukan?
-                                    artikel ini akan
-                                    membahas ciri-ciri orang yang silent treatment dan akan bantu kamu untuk mengatasi
-                                    orag yang melakukan
-                                    hal ini....</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="silent-treatment.html" target="__blank" class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/test25/banner.jpg" alt="Menghadapi Bos Yang Kurang Koordinasi"
+                                <img src="https://media.istockphoto.com/id/639198068/id/foto/pebisnis-menemukan-solusi-bersama-di-kantor.jpg?s=612x612&w=0&k=20&c=-fvFUuZyEZS2Ch6SlJlIgDRBT2TGVVvHa3Bwr_3cOqM="
+                                    alt="Bagaimana Menjadi Seorang Manajer yang Efektif dan Efisien? Ini 5 Soft Skill yang Harus Kamu Pelajari!"
                                     class="img-fluid" style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="menghadapi-bos-yang-kurang-koordinasi.html" target="__blank">Cara Menghadapi
-                                    Bos Yang Kurang
-                                    Koordinasi</a>
+                                <a href="bagaimana-menjadi-seorang-manajer-yang-efektif-dan-efisien-ini-5-soft-skill-yang-harus-kamu-pelajari.html"
+                                    target="__blank">Bagaimana Menjadi Seorang Manajer yang
+                                    Efektif dan Efisien? Ini 5 Soft Skill yang Harus Kamu Pelajari!</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</a></b>
+                                        <a href="#">Wrote By <b>Gabriel Angeline</a></b>
                                     </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
+                                        <a href="#">Developed By <b>Madhani</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>menghadapi bos yang kurang koordinasi dapat menghambat kinerja anda di perusahaan.
-                                    Situasi ini dapat
-                                    membingungkan dan
-                                    bikin frustasi karyawan</p>
+                                <p>Selamat kalau kamu sekarang dipercaya untuk memimpin sebuah tim di posisi manajer.
+                                    Kamu mungkin
+                                    bingung harus bagaimana
+                                    dengan posisi baru ini.....</p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="menghadapi-bos-yang-kurang-koordinasi.html" target="__blank"
-                                        class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/test22/banner.jpg" alt="Mengenal Generasi Milenial"
-                                    class="img-fluid" style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="mengenal-generasi-milenial.html" target="__blank">Mengenal Generasi
-                                    Milenial: Karakteristik, Kebutuhan, dan Cara Berkomunikasi dengan Mereka</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Seli Amelia Putri</a></b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Ingin memahami Generasi Milenial lebih baik? Artikel ini membahas karakteristik
-                                    mereka, kebutuhan
-                                    yang mendasar, dan
-                                    tips komunikasi yang efektif. Temukan cara terbaik untuk berinteraksi dengan
-                                    generasi yang membentuk
-                                    dunia modern</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="mengenal-generasi-milenial.html" target="__blank" class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/test24/banner.jpg"
-                                    alt="Menjawab Pertanyaan Saat Presentasi dengan Profesional" class="img-fluid"
-                                    style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="menjawab-pertanyaan-saat-presentasi-dengan-profesional.html"
-                                    target="__blank">Cara Menjawab
-                                    Pertanyaan Saat
-                                    Presentasi dengan Profesional dan Efektif</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</a></b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>menjawab pertanyaan saat presentasi dengan professional menunjang kamu dapat menjadi
-                                    pusat perhatian.
-                                    tipss ini membantu
-                                    kamu menjaga kredibilitas dan hubungan baik dengan audien</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="menjawab-pertanyaan-saat-presentasi-dengan-profesional.html"
+                                    <a href="bagaimana-menjadi-seorang-manajer-yang-efektif-dan-efisien-ini-5-soft-skill-yang-harus-kamu-pelajari.html"
                                         target="__blank" class="blue-btn">Read
                                         More</a>
                                 </div>
                             </div>
-                        </article>
+                        </article><!-- End blog entry -->
 
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Toxic Positivity -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/test21/banner.jpg"
-                                    alt="Menjawab Pertanyaan yang kita tidak tahu" class="img-fluid"
+                                <img src="https://media.istockphoto.com/id/1311301427/id/foto/cucu-muslim-melayu-dengan-kostum-tradisional-menunjukkan-isyarat-minta-maaf-kepada-kakeknya.jpg?s=612x612&w=0&k=20&c=AlhpQKNsCzuNcLLNqWDoWtoxV-lmJpgNQIGAAKJL3C8="
+                                    alt="Ucapan maaf menyambut bulan ramadan 2023" class="img-fluid"
                                     style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="menjawab-pertanyaan-yang-kita-tidak-tahu.html" target="__blank">7 Tips Menjawab
-                                    Pertanyaan yang
-                                    kita tidak tahu (the art of diplomacy)</a>
+                                <a href="ucapan-maaf-menyambut-bulan-ramadhan-2023.html" target="__blank">Ucapan Maaf
+                                    Menyambut Bulan
+                                    Ramadan 2023</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</a></b>
+                                        <a href="#">Wrote By <b>Eni Irnawati</a></b>
                                     </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
+                                        <a href="#">Developed By <b>Syaiful Ihsan</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>menjawab pertanyaan yang kita tidak tahu menjadi momok yang menaktkan saat sesi tanya
-                                    jawab. Berikut
-                                    ulasannya supaya
-                                    kamu lebih professional dan efektif...</p>
+                                <p>Berikut contoh ucapan maaf yang bisa kamu pakai! 1. Marhaban ya Ramadhan, Marhaban Ya
+                                    syahru shiyam,
+                                    wa syahrul
+                                    Maghfiroh...</p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="menjawab-pertanyaan-yang-kita-tidak-tahu.html" target="__blank"
+                                    <a href="ucapan-maaf-menyambut-bulan-ramadhan-2023.html" target="__blank"
                                         class="blue-btn">Read
                                         More</a>
                                 </div>
                             </div>
-                        </article>
+                        </article><!-- End blog entry -->
 
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Membangun Tim Kerja Yang Efektif -->
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Toxic Positivity -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/test20/banner.jpg" alt="Cara menguasai lawan bicara"
-                                    class="img-fluid" style="width: 100%;">
+                                <img src="https://media.istockphoto.com/id/1411407618/id/foto/mitra-bisnis-melakukan-brainstorming-saat-bekerja-di-laptop-selama-rapat.jpg?s=612x612&w=0&k=20&c=HoDdLUQ-xd_05PkDEzXAzU5KaeOSvgiDchjkFiYLXtU="
+                                    alt="Afirmasi Positif untuk Kesuksesan: 7 Mantra Sebelum Pitching" class="img-fluid"
+                                    style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="cara-menguasai-lawan-bicara.html" target="__blank">6 Cara Menguasai Lawan
-                                    Bicara yang
-                                    Conversational Narcissist</a>
+                                <a href="afirmasi-positif-untuk-kesuksesan-7-mantra-sebelum-pitching.html"
+                                    target="__blank">Afirmasi
+                                    Positif untuk Kesuksesan: 7 Mantra Sebelum Pitching</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</b>
+                                        <a href="#">Wrote By <b>Gabriel Angeline</a></b>
                                     </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
+                                        <a href="#">Developed By <b>Madhani</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>Ketika berhadapan dengan lawan bicara yang terkesan ingin menang sendiri, ingin
-                                    mendominasi
-                                    percakapan tersebut. Orang
-                                    ini dikenal dengan istilah Conversational Narcissist. Apa itu ? dan bagaimana cara
-                                    menghadapinya ?
-                                    Simak artikel ini !</p>
+                                <p>Afirmasi Positif untuk Kesuksesan - Apa saja yang perlu disiapkan sebelum pitching
+                                    dan afirmasi
+                                    1. Pitch Deck.....
+                                </p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="cara-menguasai-lawan-bicara.html" target="__blank" class="blue-btn">Read
+                                    <a href="afirmasi-positif-untuk-kesuksesan-7-mantra-sebelum-pitching.html"
+                                        target="__blank" class="blue-btn">Read
                                         More</a>
                                 </div>
                             </div>
-                        </article>
+                        </article><!-- End blog entry -->
 
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Membangun Tim Kerja Yang Efektif -->
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Tips Public Speaking -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/test19/banner.jpg" alt="Melatih Berbicara Untuk Si Kecil"
+                                <img src="https://media.istockphoto.com/id/497959594/id/foto/kue-segar.jpg?s=612x612&w=0&k=20&c=NAN1ReCEekGCskAY7_8lq-foH4K4HXYDJ4FqLlQILNY="
+                                    alt="Tempat Ngabuburit Area Jogja: 5 Rekomendasi Tempat Bukber Sama Teman"
                                     class="img-fluid" style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="melatih-berbicara-untuk-si-kecil.html" target="__blank">Trik Asyik Melatih
-                                    Berbicara Untuk Si
-                                    Kecil (Language Acquisition Device)</a>
+                                <a href="tempat-ngabuburit-area-jogja-5-rekomendasi-tempat-bukber-sama-teman.html"
+                                    target="__blank">Tempat
+                                    Ngabuburit Area Jogja: 5 Rekomendasi Tempat Bukber Sama Teman</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</b>
+                                        <a href="#">Wrote By <b>Gabriel Angeline</a></b>
                                     </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
+                                        <a href="#">Developed By <b>Madhani</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>melatih berbicara untuk si kecil dikaitkan dengan teori tentang adanya 'Language
-                                    Acquisition Device'
-                                    (LAD) di otak. LAD ini adalah mekanisme bawaan yang memungkinkan anak-anak untuk
-                                    mengolah
-                                    aturan-aturan bahasa secara intuitif...</p>
+                                <p>
+                                    Tempat Ngabuburit Area Jogja- Nih Dialogika punya rekomendasi tempat ngabuburit: 1.
+                                    Bagi Kopi
+                                    Prawirotaman.....
+                                </p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="melatih-berbicara-untuk-si-kecil.html" target="__blank"
+                                    <a href="tempat-ngabuburit-area-jogja-5-rekomendasi-tempat-bukber-sama-teman.html"
+                                        target="__blank" class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Tips Public Speaking -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1132758418/id/foto/potret-close-up-nya-dia-bagus-menarik-bingung-gadis-berambut-bergelombang-menunjukkan-isyarat.jpg?s=612x612&w=0&k=20&c=_ovNxRAl1KbHZ6bPk4prllei_gZ7T1W1QkI4mBtQ9TU="
+                                    alt="keterampilan memecahkan masalah 2" class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="keterampilan-memecahkan-masalah-2.html" target="__blank">Keterampilan
+                                    Memecahkan Masalah 2</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Sherentina Rhany</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Developed By <b>Madhani</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Apa sih yang harus kita lakuin kalo terjebak dalam suatu masalah?
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="keterampilan-memecahkan-masalah-2.html" target="__blank"
                                         class="blue-btn">Read
                                         More</a>
                                 </div>
                             </div>
-                        </article>
-                        <!-- end of article phase 3 -->
+                        </article><!-- End blog entry -->
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Tips Public Speaking -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1445644465/id/foto/kue-ulang-tahun-dengan-30-lilin-kuning-menyala.jpg?s=612x612&w=0&k=20&c=8e7Pttl4NII6moOJhPdAposOYz9sFfNouRB6il-uwAU="
+                                    alt="7 hal yang harus kamu hindari sebelum umur 30" class="img-fluid"
+                                    style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="7-hal-yang-harus-kamu-hindari-sebelum-umur-30.html" target="__blank">7 Hal Yang
+                                    Harus Kamu
+                                    Hindari Sebelum Umur 30</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Gabriel Angeline</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Developed By <b>Syaiful Ihsan</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Saat kita menginjak usia 20-an, kita sering dihadapkan dengan situasi yang
+                                    mengharuskan kita untuk
+                                    membuat keputusan.
+                                    Masa penuh keputusan ini membuat kita merasa hidup lebih menarik dan bergairah.
+                                    Namun di dalam hidup
+                                    ada beberapa hal
+                                    yang sebaiknya kamu hindari sebelum usiamu 30 agar kehidupanmu sukses dan
+                                    berkembang...
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="7-hal-yang-harus-kamu-hindari-sebelum-umur-30.html" target="__blank"
+                                        class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Toxic Positivity -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1205852013/id/foto/kantor-pusat.jpg?s=612x612&w=0&k=20&c=Bs77PLbyQR1R89cSO2izd7EnkOj4BmzK0nD3mKVSwm8="
+                                    alt="keterampilan memecahkan masalah" class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="keterampilan-memecahkan-masalah.html" target="__blank">Keterampilan Memecahkan
+                                    Masalah</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Sherentina Rhany</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Developed By <b>Madhani</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>Ketika kamu merasa terjebak dalam suatu masalah dan tidak mengerti bagaimana cara
+                                    mencari solusi,
+                                    penting bagi kamu
+                                    untuk mengetahui bagaimana keterampilan atau skills memecahkan masalah...</p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="keterampilan-memecahkan-masalah.html" target="__blank"
+                                        class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
 
                         <!-- Start Pagination -->
                         <div class="blog-pagination">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                     <li class="page-items-prev">
-                                        <a class="page-link" href="index-7.html" id="#prev" aria-label="Previous">
+                                        <a class="page-link" href="index-23.html" id="#prev" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span class="sr-only">Previous</span>
                                         </a>
                                     </li>
 
-                                    <li class="page-item active"><a class="page-link" href="index-8.html"
-                                            onclick="return false;">8</a></li>
-                                    <li class="page-item"><a class="page-link" href="index-9.html">9</a></li>
-                                    <li class="page-item"><a class="page-link" href="index-10.html">10</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-22.html">22</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-23.html">23</a></li>
+                                    <li class="page-item active"><a class="page-link" href="index-23.html"
+                                            onclick="return false;">23</a></li>
 
                                     <li class="page-items-next">
-                                        <a class="page-link" href="index-9.html" id="#next" aria-label="Next">
+                                        <a class="page-link" href="index-25.html" id="#next" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
                                         </a>
@@ -577,26 +535,23 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                     }
                                 }
                             }
+
                         </script>
                         <!-- end pagination script -->
 
 
-                    </div>
-                    <!-- End blog entries list -->
+                    </div><!-- End blog entries list -->
 
                     <div class="col-lg-4 blog-details-area">
                         <main-sidebar></main-sidebar>
-                    </div>
-                    <!-- End blog sidebar -->
+                    </div><!-- End blog sidebar -->
 
                 </div>
 
             </div>
-        </section>
-        <!-- End Blog Section -->
+        </section><!-- End Blog Section -->
 
-    </main>
-    <!-- End #main -->
+    </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <main-footer></main-footer>

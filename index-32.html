@@ -118,21 +118,14 @@
     <!-- Pixel Facebook -->
     <!-- DEC 2021 -->
     <script>
-        ! function (f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function () {
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
@@ -148,10 +141,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148836422-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-148836422-2');
@@ -160,37 +150,23 @@
 
 
     <!-- Google Tag Manager -->
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KGK9D6H');
-    </script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KGK9D6H');</script>
     <!-- End Google Tag Manager -->
 
     <!-- Hotjar Tracking Code for https://dialogika.co -->
     <script>
         (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 2828594,
-                hjsv: 6
-            };
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 2828594, hjsv: 6 };
             a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
+            r = o.createElement('script'); r.async = 1;
             r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
@@ -228,14 +204,13 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <div class="d-flex justify-content-between align-items-center">
                 <h2>&nbsp;</h2>
                 <ol>
-                    <li><a href="https://dialogika.co/">Home</a></li>
-                    <li><a href="https://dialogika.co/blog" onclick="return false;">Blog</a></li>
+                    <li><a href="https://dialogika.co/index.html">Home</a></li>
+                    <li><a href="" onclick="return false;">Blog</a></li>
                 </ol>
             </div>
 
         </div>
-    </section>
-    <!-- End Breadcrumbs Section -->
+    </section><!-- End Breadcrumbs Section -->
 
     <main id="main">
 
@@ -251,284 +226,282 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <!-- End Blog Details -->
 
                     <div class="col-lg-7 entries">
-
-                        <!-- article phase 3 -->
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Hambatan Komunikasi -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/test23/Banner Blog. silent traetment.jpg"
-                                    alt="Silent Treatment" class="img-fluid" style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="silent-treatment.html" target="__blank">Pasanganmu Silent Treatment? Kenali
-                                    Ciri-Ciri dan Cara
-                                    Menghadapinya!</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Seli Amelia Putri</a></b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>ketika marah pasanganmu sering silent traetment? gimana rasanya diabaikan seseorang,
-                                    kesal bukan?
-                                    artikel ini akan
-                                    membahas ciri-ciri orang yang silent treatment dan akan bantu kamu untuk mengatasi
-                                    orag yang melakukan
-                                    hal ini....</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="silent-treatment.html" target="__blank" class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/test25/banner.jpg" alt="Menghadapi Bos Yang Kurang Koordinasi"
+                                <img src="https://media.istockphoto.com/id/1180187740/id/foto/tampilan-udara-kerumunan-yang-terhubung-menurut-garis.jpg?s=612x612&w=0&k=20&c=91sln1t38va3YzpNqtzx2G3wHWFPOX3K-eB01RXeenE="
+                                    alt="Hambatan Komunikasi Efektif Dalam Perusahaan, Perhatikan 3 Hal Berikut "
                                     class="img-fluid" style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="menghadapi-bos-yang-kurang-koordinasi.html" target="__blank">Cara Menghadapi
-                                    Bos Yang Kurang
-                                    Koordinasi</a>
+                                <a href="hambatan-komunikasi-efektif-dalam-perusahaan.html" target="__blank">Hambatan
+                                    Komunikasi Efektif
+                                    Dalam
+                                    Perusahaan, Perhatikan 3 Hal Berikut</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</a></b>
+                                        <a href="#">Wrote By <b>Indhira Nur</a></b>
                                     </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>menghadapi bos yang kurang koordinasi dapat menghambat kinerja anda di perusahaan.
-                                    Situasi ini dapat
-                                    membingungkan dan
-                                    bikin frustasi karyawan</p>
+                                <p>
+                                    Saling menyalahkan adalah salah satu peng hambat komunikasi efekti dalam perusahaan,
+                                    kali ini kita
+                                    akan membahas
+                                    bagaimana cara mengatasinya
+                                </p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="menghadapi-bos-yang-kurang-koordinasi.html" target="__blank"
+                                    <a href="hambatan-komunikasi-efektif-dalam-perusahaan.html" target="__blank"
                                         class="blue-btn">Read
                                         More</a>
                                 </div>
                             </div>
-                        </article>
+                        </article><!-- End blog entry -->
 
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Critical Thingking -->
                             <div class="entry-img">
-                                <img src="assets/img/blog/test22/banner.jpg" alt="Mengenal Generasi Milenial"
-                                    class="img-fluid" style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="mengenal-generasi-milenial.html" target="__blank">Mengenal Generasi
-                                    Milenial: Karakteristik, Kebutuhan, dan Cara Berkomunikasi dengan Mereka</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Seli Amelia Putri</a></b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Ingin memahami Generasi Milenial lebih baik? Artikel ini membahas karakteristik
-                                    mereka, kebutuhan
-                                    yang mendasar, dan
-                                    tips komunikasi yang efektif. Temukan cara terbaik untuk berinteraksi dengan
-                                    generasi yang membentuk
-                                    dunia modern</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="mengenal-generasi-milenial.html" target="__blank" class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/test24/banner.jpg"
-                                    alt="Menjawab Pertanyaan Saat Presentasi dengan Profesional" class="img-fluid"
+                                <img src="https://media.istockphoto.com/id/1199413351/id/foto/pemikiran-kritis-analisis-mendengarkan-fleksibilitas-dan-konsep-keadilan.jpg?s=612x612&w=0&k=20&c=pPyLCpzLhuMB-k8VE0pnw5AkxRVX-T-OlnT_U4IwboI="
+                                    alt="Manfaat Critical Thinking Bagi Mahasiswa, Panduan Dasar" class="img-fluid"
                                     style="width: 100%;">
                             </div>
                             <h2 class="entry-title">
-                                <a href="menjawab-pertanyaan-saat-presentasi-dengan-profesional.html"
-                                    target="__blank">Cara Menjawab
-                                    Pertanyaan Saat
-                                    Presentasi dengan Profesional dan Efektif</a>
+                                <a href="manfaat-critical-thinking-bagi-mahasiswa.html" target="__blank">Manfaat
+                                    Critical Thinking Bagi
+                                    Mahasiswa,
+                                    Panduan Dasar</a>
                             </h2>
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</a></b>
+                                        <a href="#">Wrote By <b>Ron Ashrovy</a></b>
                                     </li>
                                     <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
                                     </li>
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>menjawab pertanyaan saat presentasi dengan professional menunjang kamu dapat menjadi
-                                    pusat perhatian.
-                                    tipss ini membantu
-                                    kamu menjaga kredibilitas dan hubungan baik dengan audien</p>
+                                <p>
+                                    Banyak orang bilang Critical Thinking atau berpikir kritis adalah syarat sukses?
+                                    Apakah Benar? Kalau
+                                    betul? Apa
+                                    langkah awalnya? Terutama Buat kamu yang masih mahasiswa. Simak Tulisan Ini
+                                </p>
                                 <div class="d-flex justify-content-end">
-                                    <a href="menjawab-pertanyaan-saat-presentasi-dengan-profesional.html"
+                                    <a href="manfaat-critical-thinking-bagi-mahasiswa.html" target="__blank"
+                                        class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Outfit Interview -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/935659716/id/foto/merapatkan-jabat-tangan-di-kantor.jpg?s=612x612&w=0&k=20&c=iqE4CtS8dZtKXCs4PSuduelL4GguUQmp2nZW0YDqj9Q="
+                                    alt="Outfit Interview Kerja di Kafe? Terlalu Rapih Auto Reject! - Dialogika: Kursus Public Speaking"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="outfit-interview-kerja-di-cafe.html" target="__blank">Outfit Interview Kerja di
+                                    Kafe? Terlalu
+                                    Rapih Auto
+                                    Reject! - Dialogika: Kursus Public Speaking</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Purna Lala</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Ada yang unik pada outfit interview kerja di kafe, perhatikan 3 hal penting berikut
+                                    ini
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="outfit-interview-kerja-di-cafe.html" target="__blank" class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Jobs Insecurity -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1390131605/id/foto/pria-kaukasia-santai-bermeditasi-di-tempat-kerja-di-rumah.jpg?s=612x612&w=0&k=20&c=ZocTKb9YWTYLpRZ2sEWfqZXLr14SZamUcm-6eeYEEmw="
+                                    alt="Pengaruh Job Insecurity Terhadap Kinerja Karyawan yang Wajib Diketahui HRD, Poin ke 3 Mengejutkan!"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="pengaruh-job-insecurity-terhadap-kinerja-karyawan.html"
+                                    target="__blank">Pengaruh Job
+                                    Insecurity Terhadap
+                                    Kinerja Karyawan yang Wajib Diketahui HRD, Poin ke 3 Mengejutkan!</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Dhealda Ainun</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Karyawan resign, makin banyak di rekrut yang keluar juga banyak, pasti ada yang
+                                    nggak beres, tapi apa?
+                                    Kenali Job
+                                    Insecurity Lebih Dalam
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="pengaruh-job-insecurity-terhadap-kinerja-karyawan.html" target="__blank"
+                                        class="blue-btn">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Glossophobia -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1265522953/id/foto/wanita-yang-cemas-membaca-dokumen-merasa-khawatir-sebelum-berbicara-di-depan-umum.jpg?s=612x612&w=0&k=20&c=MTDM2n19yBsFXQ0y1PhyvgK6CnP1IWrjpxYDCDtJlIE="
+                                    alt="Takut Bicara Depan Umum, 3 Tips Ini Yang Harus Kamu Lakukan - Glossophobia"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="takut-bicara-depan-umum-glossophobia.html" target="__blank">Takut Bicara Depan
+                                    Umum, 3 Tips Ini
+                                    Yang Harus
+                                    Kamu Lakukan - Glossophobia</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Felice Valeria</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Gabriel Angeline</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Glossophobia: Takut Berbicara Depan Umum adalah fenomena yang dirasakan banyak
+                                    orang, lakukan 3
+                                    langkah ini untuk
+                                    menjadi lebih percaya diri
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="takut-bicara-depan-umum-glossophobia.html" target="__blank"
+                                        class="blue-btn">Read More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Tips Public Speaking -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/876570114/id/foto/presentasi-pemberian-pebisnis-asia.jpg?s=612x612&w=0&k=20&c=oOSFV8vormXGmbaWNaZ2M4bLyajb_KAgh2gni78CMUY="
+                                    alt="Tips Public Speaking Bagi Pemula, Lakukan 5 Langkah Ini Agar Tampil Lebih Percaya Diri - Dialogika"
+                                    class="img-fluid" style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="tips-public-speaking-bagi-pemula.html" target="__blank">Tips Public Speaking
+                                    Bagi Pemula,
+                                    Lakukan 5 Langkah
+                                    Ini Agar Tampil Lebih Percaya Diri</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Izmi Azima</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Eni Irnawati</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                    Tips Public Speaking Bagi Pemula: 1. Pastikan kita mempersiapkan materi 2. Pahami
+                                    topik 3. Petakan
+                                    kalimat 4.
+                                    Jangan gunakan kata-kata yang sulit 5. Cobalah untuk membangun komunikasi
+                                </p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="tips-public-speaking-bagi-pemula.html" target="__blank"
+                                        class="blue-btn">Read More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+
+                        <article class="entry fadeInUp" data-aos="fade-up"> <!-- Toxic Positivity -->
+                            <div class="entry-img">
+                                <img src="https://media.istockphoto.com/id/1327630162/id/foto/wanita-asia-tersedak-saat-makan-dia-memiliki-makanan-yang-tersangkut-di-tenggorokan-dan.jpg?s=612x612&w=0&k=20&c=bakdkg72GDojeMHlO88ss0U3pGm9IVWzWmyPRSCMuRA="
+                                    alt="Toxic Positivity: Hati-Hati Bisa Bikin Kamu Jadi Mati Rasa!" class="img-fluid"
+                                    style="width: 100%;">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="toxic-positivity-hati-hati-bisa-bikin-kamu-jadi-mati-rasa.html"
+                                    target="__blank">Toxic
+                                    Positivity:
+                                    Hati-Hati Bisa Bikin Kamu Jadi Mati Rasa!</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Wrote By <b>Dhealda Ainun Saraswati</a></b>
+                                    </li>
+                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
+                                        <a href="#">Edited By <b>Eni Irnawati</a></b>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>Contoh toxic positivity antara lain “Kamu harus selalu bersyukur”, “Semua pasti akan
+                                    baik-baik aja
+                                    kok” “Pikirkan
+                                    hal-hal yang positif aja” “Gausah khawatir berlebihan”</p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="toxic-positivity-hati-hati-bisa-bikin-kamu-jadi-mati-rasa.html"
                                         target="__blank" class="blue-btn">Read
                                         More</a>
                                 </div>
                             </div>
-                        </article>
+                        </article><!-- End blog entry -->
 
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Produktivitas dengan Menyendiri -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/test21/banner.jpg"
-                                    alt="Menjawab Pertanyaan yang kita tidak tahu" class="img-fluid"
-                                    style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="menjawab-pertanyaan-yang-kita-tidak-tahu.html" target="__blank">7 Tips Menjawab
-                                    Pertanyaan yang
-                                    kita tidak tahu (the art of diplomacy)</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</a></b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>menjawab pertanyaan yang kita tidak tahu menjadi momok yang menaktkan saat sesi tanya
-                                    jawab. Berikut
-                                    ulasannya supaya
-                                    kamu lebih professional dan efektif...</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="menjawab-pertanyaan-yang-kita-tidak-tahu.html" target="__blank"
-                                        class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Membangun Tim Kerja Yang Efektif -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/test20/banner.jpg" alt="Cara menguasai lawan bicara"
-                                    class="img-fluid" style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="cara-menguasai-lawan-bicara.html" target="__blank">6 Cara Menguasai Lawan
-                                    Bicara yang
-                                    Conversational Narcissist</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>Ketika berhadapan dengan lawan bicara yang terkesan ingin menang sendiri, ingin
-                                    mendominasi
-                                    percakapan tersebut. Orang
-                                    ini dikenal dengan istilah Conversational Narcissist. Apa itu ? dan bagaimana cara
-                                    menghadapinya ?
-                                    Simak artikel ini !</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="cara-menguasai-lawan-bicara.html" target="__blank" class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="entry fadeInUp" data-aos="fade-up">
-                            <!-- data-aos=" fade-up" sebagai animasi -->
-                            <!--Membangun Tim Kerja Yang Efektif -->
-                            <div class="entry-img">
-                                <img src="assets/img/blog/test19/banner.jpg" alt="Melatih Berbicara Untuk Si Kecil"
-                                    class="img-fluid" style="width: 100%;">
-                            </div>
-                            <h2 class="entry-title">
-                                <a href="melatih-berbicara-untuk-si-kecil.html" target="__blank">Trik Asyik Melatih
-                                    Berbicara Untuk Si
-                                    Kecil (Language Acquisition Device)</a>
-                            </h2>
-                            <div class="entry-meta">
-                                <ul>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Written By <b>Yusup Nurohman</b>
-                                    </li>
-                                    <li class="d-flex align-items-center"><i class="bx bx-user-pin"></i>
-                                        <a href="#">Developed By <b>Ahmad Fajar</a></b>
-                                    </li>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-content">
-                                <p>melatih berbicara untuk si kecil dikaitkan dengan teori tentang adanya 'Language
-                                    Acquisition Device'
-                                    (LAD) di otak. LAD ini adalah mekanisme bawaan yang memungkinkan anak-anak untuk
-                                    mengolah
-                                    aturan-aturan bahasa secara intuitif...</p>
-                                <div class="d-flex justify-content-end">
-                                    <a href="melatih-berbicara-untuk-si-kecil.html" target="__blank"
-                                        class="blue-btn">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </article>
-                        <!-- end of article phase 3 -->
 
                         <!-- Start Pagination -->
                         <div class="blog-pagination">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                     <li class="page-items-prev">
-                                        <a class="page-link" href="index-7.html" id="#prev" aria-label="Previous">
+                                        <a class="page-link" href="index-26.html" id="#prev" aria-label="Previous">
                                             <span aria-hidden="true">&laquo;</span>
                                             <span class="sr-only">Previous</span>
                                         </a>
                                     </li>
 
-                                    <li class="page-item active"><a class="page-link" href="index-8.html"
-                                            onclick="return false;">8</a></li>
-                                    <li class="page-item"><a class="page-link" href="index-9.html">9</a></li>
-                                    <li class="page-item"><a class="page-link" href="index-10.html">10</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-25.html">25</a></li>
+                                    <li class="page-item"><a class="page-link" href="index-26.html">26</a></li>
+                                    <li class="page-item active"><a class="page-link" href="index-27.html"
+                                            onclick="return false;">27</a></li>
 
                                     <li class="page-items-next">
-                                        <a class="page-link" href="index-9.html" id="#next" aria-label="Next">
+                                        <a class="page-link" href="#next" id="#next" aria-label="Next">
                                             <span aria-hidden="true">&raquo;</span>
                                             <span class="sr-only">Next</span>
                                         </a>
@@ -577,26 +550,23 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                     }
                                 }
                             }
+
                         </script>
                         <!-- end pagination script -->
 
 
-                    </div>
-                    <!-- End blog entries list -->
+                    </div><!-- End blog entries list -->
 
                     <div class="col-lg-4 blog-details-area">
                         <main-sidebar></main-sidebar>
-                    </div>
-                    <!-- End blog sidebar -->
+                    </div><!-- End blog sidebar -->
 
                 </div>
 
             </div>
-        </section>
-        <!-- End Blog Section -->
+        </section><!-- End Blog Section -->
 
-    </main>
-    <!-- End #main -->
+    </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <main-footer></main-footer>
