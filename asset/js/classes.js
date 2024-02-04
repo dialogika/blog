@@ -7,9 +7,19 @@ class Classes extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
               <div class="widget sidebar-widget-class  mt-4 order-1 order-md-3">
-                  <h3 class="sidebar-title">Best Class</h3>
+                <h3 class="sidebar-title">Our Program</h3>
+                <a href="../intern/index.html" target="__blank">
+                 <div class="sidePost__item third-item mt-4">
+                    <div class="sidePost__content" style="">
+                        <span class="tag">Internship</span>
+                        <h5 class="title tgcommon__hover">Program Magang</h5>
+                    </div>
+                 </div>
+                </a><br/>
+    
+                <h3 class="sidebar-title">Best Class</h3>
                 <div class="sidePost-active">
-                    
+      
                 <a href="../program/basic-plus.html" target="__blank">
                  <div class="sidePost__item first-item mt-4">
                     <div class="sidePost__content" style="">
