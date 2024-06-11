@@ -507,28 +507,10 @@
 
             <div class="comments">
 
-              <h4 class="comments-count">Writer Notes</h4>
-
-              <div id="comment-2" class="comment">
-                <div class="d-flex">
-                  <div class="comment-img"><img src="asset/img/intern/fahmi.jpg" alt="photo" class="rounded"></div>
-                  <div>
-                    <h5><a href="">Nasrudin Fahmi</a> <a href="#" class="reply"><i class="bi bi-card-heading"></i>
-                        Notes</a></h5>
-                    <time datetime="07/06/2024">7 Juni 2024</time>
-                    <p>
-                      Persiapan matang adalah kunci untuk menaklukkan interview kerja. Pahami dirimu, kuasai pertanyaan
-                      yang sering muncul,
-                      dan tunjukkan antusiasmemu. Percayalah, kamu pasti bisa!
-                      Semangat!
-                    </p>
-                  </div>
-                </div>
-
-              </div><!-- End comment #2-->
+              <h4 class="comments-count">Komentar</h4>
+              <div id="disqus_thread"></div>
 
               <div class="reply-form">
-
                 <h4>Asking About Us</h4>
                 <p>Jika kamu penasaran mengenai program, kelas, in house, hingga internship dan career di Dialogika
                   silahkan masukkan pertanyaan dibawah ini</p>
@@ -669,6 +651,23 @@
       </div>
     </div>
   </div>
+
+  <script>
+    var disqus_config = function () {
+      this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = window.location.href; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://dialogika-1.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+      by
+      Disqus.</a></noscript>
 
   <!-- Vendor JS Files -->
   <script src="asset/vendor/purecounter/purecounter_vanilla.js"></script>
