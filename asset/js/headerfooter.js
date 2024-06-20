@@ -280,7 +280,7 @@ class Footer extends HTMLElement {
               perilaku, penampilan hingga sikap Anda terbentuk.</p><br>
             <h4 class="d-flex justify-content-between">Contact Us<i class='bx bx-chevron-down d-md-none'></i></h4>
             <div class="social-link d-flex mt-3">
-              <a href="https://link.dialogika.co/wasap-2597-dialogika-co"
+              <a href="https://wa.link/ms2gko"
                 class="text-light d-flex align-items-center justify-content-center"><i class="bx bxl-whatsapp"></i></a>
               <a href="mailto:hello@dialogika.co" class="d-flex align-items-center justify-content-center"><i
                   class="bi bi-envelope-at-fill"></i></a>
@@ -289,7 +289,8 @@ class Footer extends HTMLElement {
             <p>Punya pertanyaan mengenai Dialogika?</p>
             <br>
             <p>
-              <strong>Phone:</strong> +62 851-6299-2597<br>
+              <strong>Phone:</strong> +62 857-8000-7799<br>
+            <strong>Phone:</strong> +62 851-6299-2597<br>
               <strong>Email:</strong> hello@dialogika.co<br>
             </p>
             <br><br>
@@ -507,7 +508,7 @@ class Footer extends HTMLElement {
         <a href="https://link.dialogika.co/twitter" class="twitter"><i class="bi bi-twitter"></i></a>
         <a href="https://link.dialogika.co/facebook" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="https://link.dialogika.co/instagram" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://link.dialogika.co/wasap-2597-dialogika-co" class="google-plus"><i
+        <a href="https://wa.link/ms2gko" class="google-plus"><i
             class="bx bxl-whatsapp"></i></a>
         <a href="https://link.dialogika.co/linkedin" class="linkedin"><i class="bx bxl-linkedin"></i></i></a>
       </div>
