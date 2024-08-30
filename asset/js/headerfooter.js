@@ -414,13 +414,13 @@ class Footer extends HTMLElement {
                   <a href="../about/">About Us</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="https://www.dialogika.co/help/">Help Center</a>
+                  <a href="https://www.dialogika.co/help">Help Center</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="https://www.dialogika.co/privacy">Privacy Policy</a>
+                  <a href="https://www.dialogika.co/policy">Privacy Policy</a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../about/terms.html">Terms & Agreements</a>
+                  <a href="https://www.dialogika.co/terms">Terms & Agreements</a>
                 </li>
               </ul><br/>
             </div>
