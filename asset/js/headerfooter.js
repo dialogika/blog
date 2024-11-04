@@ -67,32 +67,32 @@ class Header extends HTMLElement {
               </li>
             </ul>
           </li>
-            <li class="dropdown"><a href="#"><span>Internship</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="https://www.dialogika.co/intern/"><span>Internship</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="client-manager.html">
+                  <li><a href="../client-manager.html">
                       <span>Client Manager</span>
                       <span class="badge bg-success">Best</span></a>
                   </li>
-                  <li><a href="video-editing.html">Video Editor</a></li>
+                  <li><a href="../video-editing.html">Video Editor</a></li>
                   <li><hr/></li>
-                  <li><a href="deal-maker.html">
+                  <li><a href="../deal-maker.html">
                       <span>Deal Maker</span>
                       <span class="badge bg-success">Best</span>
                   </a></li>
-                  <li><a href="digital-marketing.html">Digital Marketing</a>
+                  <li><a href="../digital-marketing.html">Digital Marketing</a>
                   <li><hr/></li>
-                  <li><a href="model-talent.html">
+                  <li><a href="../model-talent.html">
                       <span>Model Talent</span>
                       <span class="badge bg-success">Best</span>
                   </a></li>
-                  <li><a href="content-writing.html">Content Writing</a></li>
-                  <li><a href="design-specialist.html">Design Specialist</a></li>
-                  <li><a href="html-writing.html">HTML Writing</a></li>
+                  <li><a href="../content-writing.html">Content Writing</a></li>
+                  <li><a href="../design-specialist.html">Design Specialist</a></li>
+                  <li><a href="../html-writing.html">HTML Writing</a></li>
                   
                   </li>
                   <li><hr/></li>
-                  <li><a href="people-development.html">People Development</a></li>
-                  <li><a href="recruiter-specialist.html">
+                  <li><a href="../people-development.html">People Development</a></li>
+                  <li><a href="../recruiter-specialist.html">
                       <span>Recruiter Specialist</span>
                       <span class="badge bg-success">Best</span>
                   </a></li>
