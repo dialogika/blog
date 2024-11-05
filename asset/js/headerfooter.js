@@ -31,7 +31,7 @@ class Header extends HTMLElement {
 
        <nav id="navbar" class="navbar order-last order-lg-0">
         <ul class="navbar-desktop-list">
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="../index.html">Home</a></li>
           <li class="dropdown"><a href="#"><span>Program</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li class="dropdown"><a href="#"><span>Online</span> <i class="bi bi-chevron-right"></i></a>
@@ -69,30 +69,30 @@ class Header extends HTMLElement {
           </li>
             <li class="dropdown"><a href="https://www.dialogika.co/intern/"><span>Internship</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="../client-manager.html">
+                  <li><a href="../intern/client-manager.html">
                       <span>Client Manager</span>
                       <span class="badge bg-success">Best</span></a>
                   </li>
-                  <li><a href="../video-editing.html">Video Editor</a></li>
+                  <li><a href="../intern/video-editing.html">Video Editor</a></li>
                   <li><hr/></li>
-                  <li><a href="../deal-maker.html">
+                  <li><a href="../intern/deal-maker.html">
                       <span>Deal Maker</span>
                       <span class="badge bg-success">Best</span>
                   </a></li>
-                  <li><a href="../digital-marketing.html">Digital Marketing</a>
+                  <li><a href="../intern/digital-marketing.html">Digital Marketing</a>
                   <li><hr/></li>
-                  <li><a href="../model-talent.html">
+                  <li><a href="../intern/model-talent.html">
                       <span>Model Talent</span>
                       <span class="badge bg-success">Best</span>
                   </a></li>
-                  <li><a href="../content-writing.html">Content Writing</a></li>
-                  <li><a href="../design-specialist.html">Design Specialist</a></li>
-                  <li><a href="../html-writing.html">HTML Writing</a></li>
+                  <li><a href="../intern/content-writing.html">Content Writing</a></li>
+                  <li><a href="../intern/design-specialist.html">Design Specialist</a></li>
+                  <li><a href="../intern/html-writing.html">HTML Writing</a></li>
                   
                   </li>
                   <li><hr/></li>
-                  <li><a href="../people-development.html">People Development</a></li>
-                  <li><a href="../recruiter-specialist.html">
+                  <li><a href="../intern/people-development.html">People Development</a></li>
+                  <li><a href="../intern/recruiter-specialist.html">
                       <span>Recruiter Specialist</span>
                       <span class="badge bg-success">Best</span>
                   </a></li>
@@ -122,7 +122,7 @@ class Header extends HTMLElement {
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body">
-              <a href="#hero"><div class="card"><div class="card-body">Home</div></div></a>
+              <a href="../index.html"><div class="card"><div class="card-body">Home</div></div></a>
               <div class="card">
                 <a href="#program-collapse" data-bs-toggle="collapse">
                   <div class="card-body d-flex justify-content-between">
