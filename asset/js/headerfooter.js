@@ -54,13 +54,12 @@ class Header extends HTMLElement {
                 </ul>
               </li>
               <li><hr/></li>
-              <li class="dropdown"><a disable><span>Area</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a disabled><span>Area</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="../program/index-jogja.html">Yogyakarta</a></li>
                   <li><a href="../program/index-tangsel.html">Bintaro</a></li>
                   <li><a href="../program/index-solo.html">Solo</a></li>
-                  <li><a href="../program/index-surabaya.html" onclick="return false;">
-                    <span>Surabaya</span>
+                  <li><a href="../program/index-surabaya.html"><span>Surabaya</span></a>
                   </li>
                 </ul>
               </li>
@@ -352,7 +351,7 @@ class Footer extends HTMLElement {
                   </a>
                 </li>
                 <li><i class="bx bx-chevron-right"></i>
-                  <a href="../program/first-class.html">Surabaya <span class="badge rounded-pill text-bg-warning">Coming Soon</span></a>
+                  <a href="https://www.dialogika.co/page/kelas-public-speaking-surabaya-new/">Surabaya</a>
                 </li>
               </ul>
             </div><br>
