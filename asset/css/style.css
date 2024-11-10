@@ -2627,6 +2627,7 @@ section {
 
 /* Baru. Button Template*/
 .blue-dialogika-btn {
+  font-family: "Poppins", sans-serif;
   padding: 8px 25px;
   color: #fff;
   display: inline-block;
@@ -2648,6 +2649,7 @@ section {
 }
 
 .blue-dialogika-btn:hover {
+  font-family: "Poppins", sans-serif;
   background-color: #0b2b6a;
   background: linear-gradient(to bottom, #0b2b6a 5%, #0f61a8 100%);
   cursor: pointer;
@@ -2656,6 +2658,7 @@ section {
 }
 
 .yellow-dialogika-btn {
+  font-family: "Poppins", sans-serif;
   padding: 8px 25px;
   color: black;
   display: inline-block;
@@ -2679,7 +2682,42 @@ section {
 }
 
 .yellow-dialogika-btn:hover {
+  font-family: "Poppins", sans-serif;
   background-color: #0b2b6a;
+  background: linear-gradient(to bottom, #f1ac15 22%, #fcf221 100%);
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 2px #fcf221;
+  -webkit-box-shadow: 0px 0px 10px 2px #fcf221;
+}
+
+.modal .modal-footer .yellow-dialogika-btn {
+  font-family: "Poppins", sans-serif;
+  padding: 8px 25px;
+  color: black;
+  display: inline-block;
+  background: linear-gradient(to top, #f1ac15 22%, #fcf221 100%);
+  box-shadow: 0 4px 10px rgba(241, 172, 21, 0.4),
+    0 6px 20px rgba(252, 242, 33, 0.3);
+  -webkit-box-shadow: 0 4px 10px rgba(241, 172, 21, 0.4),
+    0 6px 20px rgba(252, 242, 33, 0.3);
+  white-space: nowrap;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  border: none;
+}
+
+.modal .modal-footer .yellow-dialogika-btn:hover {
+  font-family: "Poppins", sans-serif;
+  background-color: #0b2b6a;
+  color: black;
   background: linear-gradient(to bottom, #f1ac15 22%, #fcf221 100%);
   cursor: pointer;
   box-shadow: 0px 0px 10px 2px #fcf221;
