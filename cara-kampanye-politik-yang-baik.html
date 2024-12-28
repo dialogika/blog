@@ -1060,6 +1060,24 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <main-footer></main-footer>
     <!-- End Footer -->
 
+    <!-- Modal Iklan -->
+    <div class="modal fade" id="adModal" tabindex="-1" aria-labelledby="adModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adModalLabel">Program Kelas Online</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <a href="https://www.dialogika.co/program/basic-play.html" target="_blank">
+                        <img src="asset/img/iklan/basic-play-1x1-erico.webp" class="img-fluid rounded"
+                            alt="Program kelas online dialogika" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ======= Modal Nofication ======= -->
     <div class="modal fade" id="notifications" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -1161,6 +1179,13 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <form action="https://link.dialogika.co/blog-whatsapp">
         <button class="scroll__top scroll-to-target"><i class='bx bxl-whatsapp bx-tada'></i></button>
     </form>
+
+    <!-- Part JS -->
+    <script src="asset/part/counting-down/count.js"></script>
+    <script src="asset/part/cse-google/cse.js"></script>
+    <script src="asset/part/modals/modal-component.js"></script>
+    <script src="asset/part/modals/modal-iklan.js"></script>
+    <script src="asset/part/blog-content/blog.js"></script>
 
     <!--  Component JS -->
     <script src="assets/js/component/headerfooter.js"></script>
