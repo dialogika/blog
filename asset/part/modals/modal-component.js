@@ -1,3 +1,31 @@
+class PopupProgram extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.innerHTML = `
+        <!-- Modal Iklan -->
+  <div class="modal fade" id="adModal" tabindex="-1" aria-labelledby="adModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="adModalLabel">Program Kelas Online</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <a href="https://www.dialogika.co/program/basic-play.html" target="_blank">
+            <img src="asset/img/iklan/basic-play-1x1-erico.webp" class="img-fluid rounded"
+              alt="Program kelas online dialogika" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+      `;
+  }
+}
+
 class FooterModal extends HTMLElement {
   constructor() {
     super();
@@ -52,4 +80,5 @@ class FooterModal extends HTMLElement {
   }
 }
 
+customElements.define("pop-up-program", PopupProgram);
 customElements.define("footer-modal", FooterModal);
