@@ -890,7 +890,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 </div>
                             </div>
                             <div class="widget sidebar-widget"
-                                style="border-radius:8px; -box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-moz-box-shadow: 0px 9px 16px -6px  rgba(231, 24, 26, 1);">
+                                style="border-radius:8px; -box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1); box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-moz-box-shadow: 0px 9px 16px -6px  rgba(231, 24, 26, 1);">
                                 <div class="sidePost-active">
                                     <div class="sidePost__item"
                                         data-background="https://dialogika.co/assets/img/program/basic-p/small.jpg">
@@ -1060,23 +1060,11 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <main-footer></main-footer>
     <!-- End Footer -->
 
-    <!-- Modal Iklan -->
-    <div class="modal fade" id="adModal" tabindex="-1" aria-labelledby="adModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="adModalLabel">Program Kelas Online</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <a href="https://www.dialogika.co/program/basic-play.html" target="_blank">
-                        <img src="asset/img/iklan/basic-play-1x1-erico.webp" class="img-fluid rounded"
-                            alt="Program kelas online dialogika" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- ======= Modal Pop-up Form Gabung ======= -->
+    <footer-modal></footer-modal>
+
+    <!-- ======= Modal Pop-up Iklan Program ======= -->
+    <pop-up-program></pop-up-program>
 
     <!-- ======= Modal Nofication ======= -->
     <div class="modal fade" id="notifications" tabindex="-1">
