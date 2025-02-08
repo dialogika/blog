@@ -11,45 +11,41 @@ export default async function Home() {
 
   return (
     <>
-      <main className="main">
-        <Breadcrumbs
-          title="Article"
-          breadcrumbs={[
-            { title: "Home", link: "https://www.dialogika.co" },
-            { title: "Blog", link: "../blog" },
-          ]}
-        />
+      <Breadcrumbs
+        title="Article"
+        breadcrumbs={[
+          { title: "Home", link: "https://www.dialogika.co" },
+          { title: "Blog", link: "../blog" },
+        ]}
+      />
 
-        <section
-          id="blog-details"
-          className="blog-details section">
-          <div
-            className="container"
-            data-aos="fade-up"
-            data-aos-delay="100">
+      <section
+        id="blog-details"
+        className="blog-details section">
+        <div
+          className="container"
+          data-aos="fade-up"
+          data-aos-delay="100">
+          <div className="row">
+            <aside className="col-lg-1 mt-4">
+              <SidebarSocial />
+            </aside>
 
-            <div className="row">
-              <div className="col-lg-1 mt-4">
-                <SidebarSocial />
-              </div>
-
-              <div className="col-lg-7 mt-4">
-                <ArticleLists articles={articles} />
-              </div>
-
-              <aside className="col-lg-4 mt-4">
-                {/* pageType index atau article */}
-                <SidebarWidget
-                  imgPath={"logo-square.png"}
-                  pageType={"index"}
-                />
-                <SidebarProgramOffer />
-              </aside>
-              
+            <div className="col-lg-7 my-4">
+              <ArticleLists articles={articles} />
             </div>
+
+            <aside className="col-lg-4 mt-4">
+              {/* pageType index atau article */}
+              <SidebarWidget
+                imgPath={"logo-square.png"}
+                pageType={"index"}
+              />
+              <SidebarProgramOffer />
+            </aside>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </>
   );
 }

@@ -1,4 +1,5 @@
 "use client";
+import { store, tambahA } from "@/app/store";
 import { BlogArticleProps } from "@/public/data/dummyData";
 import { formatDate } from "@/utils/date";
 import Link from "next/link";
@@ -9,8 +10,14 @@ export interface articlesProps {
 }
 
 const ArticleLists = ({ articles }: articlesProps) => {
+  console.log(store.getState());
   return (
     <>
+      <button
+        type="button"
+        onClick={() => tambahA}>
+        Test Redux
+      </button>
       {articles.map((article, index) => (
         <article
           className="article"

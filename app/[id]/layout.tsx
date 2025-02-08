@@ -1,16 +1,14 @@
-/* eslint-disable @next/next/no-page-custom-font */
-import type { Metadata } from "next";
-import Script from "next/script";
-import "../styles/globals.css";
+// app/[id]/layout.tsx
 import { basePath } from "@/next.config";
-import Footer from "@/components/shared/Footer";
-import Header from "@/components/shared/Header";
-import BootstrapJS from "@/components/shared/utils/BootstrapJS";
-import TrackingScript from "@/components/shared/utils/TrackingScript";
-
+import { Metadata } from "next";
+import React from "react";
+import star from "@/public/assets/img/next.png";
+import Image from "next/image";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faStrava } from "@fortawesome/free-brands-svg-icons";
 // Global metadata
 export const metadata: Metadata = {
-  title: "Dialogika Blog - Kursus Public Speaking",
+  title: "Cara menggunakan .... - Kursus Public Speaking",
   description:
     "Dialogika Blog: Learn tips and best practices from our Dialogika mentor and team on topics from Mental Health & Social Science and Mindset to Public Speaking.",
   keywords: "Blog Dialogika, Blog, blog, dialogika",
@@ -39,49 +37,21 @@ export const metadata: Metadata = {
   },
 };
 
-export const GlobalScripts = () => (
-  <>
-    {/* Main Custom JS */}
-    <Script
-      src={`${basePath}/assets/js/main.js`}
-      strategy="lazyOnload"
-    />
-    <Script
-      src={`${basePath}/assets/js/cart.js`}
-      strategy="lazyOnload"
-    />
-
-    {/* Vendor JS */}
-    <Script
-      src={`${basePath}/assets/vendor/international-phone-number/intlTelInput.min.js`}
-      strategy="lazyOnload"
-    />
-    <Script
-      src={`${basePath}/assets/vendor/international-phone-number/script.js`}
-      strategy="lazyOnload"
-    />
-
-    {/* External Icons */}
-    <Script
-      src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"
-      strategy="lazyOnload"
-    />
-  </>
-);
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function articleLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id">
-      <TrackingScript />
-      <body className="antialiased">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-
-        {/* Global Scripts */}
-        <GlobalScripts />
-        <BootstrapJS />
-      </body>
-    </html>
+    <div className="antialiased">
+      {/* Main content */}
+      <main className="main">{children}</main>
+      <a
+        href="#tagging-up"
+        className="back-to-top d-flex align-items-center justify-content-center active">
+        <Image
+          src={`${star}`}
+          width={10}
+          height={10}
+          alt=""
+        />
+      </a>
+    </div>
   );
 }

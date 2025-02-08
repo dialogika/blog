@@ -11,17 +11,17 @@ const Header = () => {
   };
 
   useEffect(() => {
+    // Initialize with current scroll position
+    setShowTopbar(window.scrollY <= 100);
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <div
         id="topbar"
-        className={`d-flex align-items-center fixed-top ${!showTopbar && "topbar-scrolled"}`}>
+        className={`d-flex align-items-center fixed-top${!showTopbar ? " topbar-scrolled" : ""}`}>
         <div className="container d-flex justify-content-between">
           <div className="contact-info d-flex align-items-center">
             <i className="bi bi-envelope"></i> <Link href="mailto:admin@dialogika.co">admin@dialogika.co</Link>

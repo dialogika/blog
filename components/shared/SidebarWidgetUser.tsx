@@ -1,9 +1,14 @@
-import { basePath } from "@/next.config";
 import { faFacebookF, faInstagram, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const SidebarWidget = ({ imgPath, pageType }: { imgPath: string; pageType: string }) => {
+interface sideBardWidgetProps {
+  imgPath: string;
+  pageType?: string;
+  author?: string;
+}
+
+const SidebarWidget = ({ imgPath, pageType = "article", author }: sideBardWidgetProps) => {
   const socialLinks = [
     { href: "https://instagram.com/dialogika.co", icon: faInstagram, width: 20 },
     { href: "https://twitter.com/dialogika_co", icon: faTwitter, width: 20 },
@@ -12,19 +17,19 @@ const SidebarWidget = ({ imgPath, pageType }: { imgPath: string; pageType: strin
   ];
 
   return (
-    <div className="widget sidebar-widget-profile ">
+    <section className="widget sidebar-widget-profile ">
       <div className="tgAbout-me swiper-slider">
         <div className="tgAbout-thumb">
           <img
-            src={`${basePath}/assets/img/${imgPath}`}
+            src={`${imgPath}`} // Nanti tentukan ingin pake full img url atau base path
             className="img-thumbnail"
-            alt="Dialogika"
+            alt={`Gambar kak ${author}`}
           />
         </div>
         <div className="tgAbout-info">
           <p className="intro">
             {pageType == "index" ? "Welcome to " : "Penulis "}
-            <b>{pageType == "index" ? "Dialogika Blog" : `Author Name`}</b>
+            <b>{pageType == "index" ? "Dialogika Blog" : `${author}`}</b>
           </p>
 
           <span className="designation">
@@ -44,7 +49,7 @@ const SidebarWidget = ({ imgPath, pageType }: { imgPath: string; pageType: strin
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -49,15 +49,15 @@ export const blogArticleDummy: BlogArticleProps[] = [
     authors: [
       {
         authorName: "Jessica Caesya Agustin",
-        imgPath: "",
+        imgPath: "https://www.dialogika.co/blog/asset/img/intern/jessica-caesya-agustin.webp",
       },
       {
         authorName: "Yoga Pangestu",
-        imgPath: "",
+        imgPath: "https://www.dialogika.co/blog/asset/img/intern/yoga-pangestu.jpg",
       },
     ],
     writerNote: "Artikel ini ditulis untuk orang-orang",
-    publishedAt: new Date("2025-02-01").toISOString(),
+    publishedAt: "2025-05-13",
     keyTakeaway: ["key Takeaway 1", "key takeaway 2"],
     tags: ["tags 1", "tags 2"],
     articleQuote: { figure: "ligma", quote: "ballls" },
@@ -92,7 +92,7 @@ export const blogArticleDummy: BlogArticleProps[] = [
       },
     ],
     writerNote: "Artikel ini ditulis untuk orang-orang",
-    publishedAt: new Date("2025-02-01").toISOString(),
+    publishedAt: "2025-03-13",
     keyTakeaway: ["key Takeaway 1", "key takeaway 2"],
     tags: ["tags 1", "tags 2"],
     articleQuote: { figure: "ligma", quote: "ballls" },

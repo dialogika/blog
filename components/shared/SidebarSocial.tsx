@@ -4,7 +4,7 @@ import { faFacebookF, faTwitter, faLinkedinIn, faTiktok, faInstagram } from "@fo
 
 const SidebarSocial = () => {
   return (
-    <aside className="blog-details-social">
+    <div className="blog-details-social">
       <ul className="list-wrap">
         <li>
           <a
@@ -57,7 +57,7 @@ const SidebarSocial = () => {
           </a>
         </li>
       </ul>
-    </aside>
+    </div>
   );
 };
 

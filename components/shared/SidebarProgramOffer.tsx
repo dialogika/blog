@@ -52,7 +52,7 @@ const SidebarProgramOffer = () => {
   );
 
   return (
-    <div className="widget sidebar-widget-class mt-4 order-1 order-md-3">
+    <section className="widget sidebar-widget-class mt-4 order-1 order-md-3">
       {/* Our Program Section */}
       <section aria-label="Our internship program">
         <h3 className="sidebar-title">Our Program</h3>
@@ -79,7 +79,7 @@ const SidebarProgramOffer = () => {
           ))}
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 

@@ -1,20 +1,19 @@
 import Link from "next/link";
 import React from "react";
 
-const Breadcrumbs = ({
-  title,
-  breadcrumbs,
-}: {
+interface breadcrumbsProps {
   title: string;
   breadcrumbs: Array<{ title: string; link: string }>;
-}) => {
+}
+
+const Breadcrumbs = ({ title, breadcrumbs }: breadcrumbsProps) => {
   return (
     <section className="breadcrumbs">
       <nav className="container d-flex justify-content-between align-items-center">
-        <h2>{title}</h2>
+        <h2 className="text-wrap w-50" >{title}</h2>
         <ol>
           {breadcrumbs.map((item, index) => (
-            <li key={index}>
+            <li key={index} className="text-wrap" style={{maxWidth:350}}>
               <Link href={`${item.link}`}>{item.title}</Link>
             </li>
           ))}
