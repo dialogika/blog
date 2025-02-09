@@ -17,16 +17,13 @@ const showWarning = (inputId, warningId) => {
 
 // Function untuk ambil isi data dari clickup. Sangat diperlukan bila ingin menggunakan function deleteExistingTask
 const getClickupResponse = async (listId) => {
-  const getResponse = await fetch(
-    `https://api.clickup.com/api/v2/list/${listId}/task?subtasks=true`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: apiToken,
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const getResponse = await fetch(`https://api.clickup.com/api/v2/list/${listId}/task?subtasks=true`, {
+    method: "GET",
+    headers: {
+      Authorization: apiToken,
+      "Content-Type": "application/json",
+    },
+  });
   if (!getResponse.ok) throw new Error("Gagal terhubung ke server !.");
   return getResponse.json();
 };
@@ -45,43 +42,36 @@ const deleteExistingTask = async (tasks, whatsapp) => {
   });
 
   if (taskId) {
-    const deleteResponse = await fetch(
-      `https://api.clickup.com/api/v2/task/${taskId}`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: apiToken,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const deleteResponse = await fetch(`https://api.clickup.com/api/v2/task/${taskId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: apiToken,
+        "Content-Type": "application/json",
+      },
+    });
     if (!deleteResponse.ok) throw new Error("Gagal menghapus task lama.");
   }
 };
 
 // Function untuk buat data baru
 const createNewTask = async (listId, taskName, customFields, description) => {
-  const createTaskResponse = await fetch(
-    `https://api.clickup.com/api/v2/list/${listId}/task`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: apiToken,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: taskName,
-        description: description,
-        custom_fields: customFields,
-      }),
-    }
-  );
+  const createTaskResponse = await fetch(`https://api.clickup.com/api/v2/list/${listId}/task`, {
+    method: "POST",
+    headers: {
+      Authorization: apiToken,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: taskName,
+      description: description,
+      custom_fields: customFields,
+    }),
+  });
 
-  if (!createTaskResponse.ok)
-    throw new Error("Gagal mengirim data. Harap coba lagi !");
+  if (!createTaskResponse.ok) throw new Error("Gagal mengirim data. Harap coba lagi !");
 };
 
-const apiToken = "pk_3640079_B56O8X0HW6FAEIZJFFJAQW99IAHQMF8N";
+const apiToken = "pk_276677813_5LZTC2L1TYHRVBRRRK5BKXBZDVUU2X7E";
 
 // ? Function untuk kirim data form registrasi ke Chat Inbox di clickup
 const handleRegistrationEvent = async (event) => {
@@ -142,7 +132,7 @@ const handleRegistrationEvent = async (event) => {
 // ? Buat button dengan id "getClickupData" untuk menggunakan function ini
 const handleGetClickupIds = async (event) => {
   event.preventDefault();
-  const apiToken = "pk_3640079_B56O8X0HW6FAEIZJFFJAQW99IAHQMF8N";
+  const apiToken = "pk_276677813_5LZTC2L1TYHRVBRRRK5BKXBZDVUU2X7E";
   const listId = "14355106"; // Ganti dengan id yng sesuai. Contoh link https://app.clickup.com/2307700/v/li/14355106
   let taskId = null; // Variabel untuk menyimpan task ID
 
@@ -150,16 +140,13 @@ const handleGetClickupIds = async (event) => {
 
   try {
     // Langkah 1: Send GET Request ke Clickup
-    const checkTaskResponse = await fetch(
-      `https://api.clickup.com/api/v2/list/${listId}/field`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: apiToken,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const checkTaskResponse = await fetch(`https://api.clickup.com/api/v2/list/${listId}/field`, {
+      method: "GET",
+      headers: {
+        Authorization: apiToken,
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!checkTaskResponse.ok) {
       throw new Error("Gagal memeriksa duplikasi tugas.");
@@ -180,18 +167,11 @@ const handleGetClickupIds = async (event) => {
 // ? Function untuk kirim data user yang subscribe lewat footer dan gabung ke grup WA CEO Class.
 const handleSubFooterSubmission = async (event) => {
   event.preventDefault();
-  const inputSubFooterNama = document
-    .getElementById("inputSubFooterNama")
-    .value.trim();
+  const inputSubFooterNama = document.getElementById("inputSubFooterNama").value.trim();
   const inputSubFooterWhatsapp = subFooterIti.getNumber();
-  const inputSubFooterDomisili = document
-    .getElementById("inputSubFooterDomisili")
-    .value.trim();
-  const inputSubFooterEmail = document
-    .getElementById("inputSubFooterEmail")
-    .value.trim();
-  const description =
-    "Menambahkan member grup CEO Class melalui form subscribe";
+  const inputSubFooterDomisili = document.getElementById("inputSubFooterDomisili").value.trim();
+  const inputSubFooterEmail = document.getElementById("inputSubFooterEmail").value.trim();
+  const description = "Menambahkan member grup CEO Class melalui form subscribe";
   const success = document.getElementById("successOverlay");
 
   const listId = "901602772763";
@@ -212,13 +192,8 @@ const handleSubFooterSubmission = async (event) => {
     alert("Nama harus diisi.");
     return;
   }
-  if (
-    !inputSubFooterWhatsapp ||
-    !/^\+?\d{10,15}$/.test(inputSubFooterWhatsapp)
-  ) {
-    alert(
-      "Nomor WhatsApp tidak valid. Pastikan hanya angka dan panjang yang sesuai."
-    );
+  if (!inputSubFooterWhatsapp || !/^\+?\d{10,15}$/.test(inputSubFooterWhatsapp)) {
+    alert("Nomor WhatsApp tidak valid. Pastikan hanya angka dan panjang yang sesuai.");
     return;
   }
   if (!inputSubFooterEmail) {
@@ -241,16 +216,12 @@ const handleSubFooterSubmission = async (event) => {
 };
 
 // | Masukkan function handleRegistrationEvent ke elemen send_contact
-const sendRegistrationData = document.querySelector(
-  "#uploadForm .send_contact"
-);
-if (sendRegistrationData)
-  sendRegistrationData.addEventListener("click", handleRegistrationEvent);
+const sendRegistrationData = document.querySelector("#uploadForm .send_contact");
+if (sendRegistrationData) sendRegistrationData.addEventListener("click", handleRegistrationEvent);
 
 // | Masukkan function handleGetClickupIds ke element button dengan id getClickupData untuk mengambil id dan value custom_fields clickup
 const getClickupData = document.getElementById("getClickupData");
-if (getClickupData)
-  getClickupData.addEventListener("click", handleGetClickupIds);
+if (getClickupData) getClickupData.addEventListener("click", handleGetClickupIds);
 
 // Function untuk mengirim data saat send button di form di footer
 const subFooterBtn = document.getElementById("subFooterBtn");
