@@ -1,9 +1,11 @@
 import { faFacebookF, faInstagram, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import React from "react";
+import type { StaticImageData } from "next/image";
 
 interface sideBardWidgetProps {
-  imgPath: string;
+  imgPath: string | StaticImageData;
   pageType?: string;
   author?: string;
 }
@@ -19,11 +21,13 @@ const SidebarWidget = ({ imgPath, pageType = "article", author }: sideBardWidget
   return (
     <section className="widget sidebar-widget-profile ">
       <div className="tgAbout-me swiper-slider">
-        <div className="tgAbout-thumb">
-          <img
-            src={`${imgPath}`} // Nanti tentukan ingin pake full img url atau base path
+        <div className="tgAbout-thumb position-relative">
+          <Image
+            src={imgPath}
             className="img-thumbnail"
-            alt={`Gambar kak ${author}`}
+            height={200}
+            width={200}
+            alt={`Gambar ${author}`}
           />
         </div>
         <div className="tgAbout-info">

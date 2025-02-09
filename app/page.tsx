@@ -5,6 +5,7 @@ import SidebarProgramOffer from "@/components/shared/SidebarProgramOffer";
 import SidebarSocial from "@/components/shared/SidebarSocial";
 import SidebarWidget from "@/components/shared/SidebarWidgetUser";
 import { blogArticleDummy } from "@/public/data/dummyData";
+import logoDialogika from "@/public/assets/img/logo-square.png";
 
 export default async function Home() {
   const articles = await blogArticleDummy;
@@ -38,8 +39,9 @@ export default async function Home() {
             <aside className="col-lg-4 mt-4">
               {/* pageType index atau article */}
               <SidebarWidget
-                imgPath={"logo-square.png"}
-                pageType={"index"}
+                imgPath={logoDialogika}
+                author="Dialogika"
+                pageType="index"
               />
               <SidebarProgramOffer />
             </aside>

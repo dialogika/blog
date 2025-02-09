@@ -1,5 +1,6 @@
 "use client";
-import { basePath } from "@/next.config";
+import Image from "next/image";
+import logoDialogika from "@/public/assets/img/logo.webp";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 const Header = () => {
@@ -60,9 +61,11 @@ const Header = () => {
           <Link
             href="../index.html"
             className="logo me-auto">
-            <img
-              src={`${basePath}/assets/img/logo.webp`}
+            <Image
+              src={logoDialogika}
               alt="Logo Dialogika"
+              width={158}
+              height={31}
               className="img-fluid"
             />
           </Link>
@@ -251,11 +254,12 @@ const Header = () => {
             aria-labelledby="offcanvasNavbarLabel">
             <div className="offcanvas-header">
               <Link href="../index.html">
-                <img
-                  alt="logo dialogika"
-                  src={`${basePath}/assets/img/logo.webp`}
-                  className="offcanvas-title"
-                  id="offcanvasNavbarLabel"
+                <Image
+                  src={logoDialogika}
+                  alt="Logo Dialogika"
+                  width={158}
+                  height={31}
+                  className="img-fluid"
                 />
               </Link>
               <button

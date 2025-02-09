@@ -1,5 +1,7 @@
 import { basePath } from "@/next.config";
 import React from "react";
+import whiteLogo from "@/public/assets/img/white-logo.webp"
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -9,8 +11,10 @@ const Footer = () => {
           <div className="row justify-content-between">
             <div className="col-lg-3 col-md-6 footer-contact">
               <h3>
-                <img
-                  src={`${basePath}/assets/img/white-logo.webp`}
+                <Image
+                  src={whiteLogo}
+                  width={151}
+                  height={30}
                   className="footer-logo"
                   alt="Kelas Public Speaking Jogja"
                 />
