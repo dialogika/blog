@@ -1,6 +1,12 @@
-import { basePath } from "@/next.config";
 import React from "react";
-import whiteLogo from "@/public/assets/img/white-logo.webp"
+import whiteLogo from "@/public/assets/img/white-logo.webp";
+import igImg1 from "@/public/assets/img/ig/1.jpg";
+import igImg2 from "@/public/assets/img/ig/2.jpg";
+import igImg3 from "@/public/assets/img/ig/3.jpg";
+import igImg4 from "@/public/assets/img/ig/4.jpg";
+import bankSupport from "@/public/assets/img/bank.webp";
+import eWalletSupport from "@/public/assets/img/wallet.webp";
+import HAM from "@/public/assets/img/ham.webp";
 import Image from "next/image";
 
 const Footer = () => {
@@ -279,9 +285,9 @@ const Footer = () => {
                   </h4>
                   <ul>
                     <li className="clearfix">
-                      <img
+                      <Image
                         loading="lazy"
-                        src={`${basePath}/assets/img/ig/1.jpg`}
+                        src={igImg1}
                         alt=""
                         className="rounded ig-post float-left"
                         style={{ marginRight: 10, width: 70, height: 70, borderRadius: 10 }}
@@ -302,9 +308,9 @@ const Footer = () => {
                     </li>
                     <hr />
                     <li className="clearfix">
-                      <img
+                      <Image
                         loading="lazy"
-                        src={`${basePath}/assets/img/ig/2.jpg`}
+                        src={igImg2}
                         alt=""
                         className="rounded ig-post float-left"
                         style={{ marginRight: 10, width: 70, height: 70, borderRadius: 10 }}
@@ -325,9 +331,9 @@ const Footer = () => {
                     </li>
                     <hr />
                     <li className="clearfix">
-                      <img
+                      <Image
                         loading="lazy"
-                        src={`${basePath}/assets/img/ig/3.jpg`}
+                        src={igImg3}
                         alt=""
                         className="rounded ig-post float-left"
                         style={{ marginRight: 10, width: 70, height: 70, borderRadius: 10 }}
@@ -348,9 +354,9 @@ const Footer = () => {
                     </li>
                     <hr />
                     <li className="clearfix">
-                      <img
+                      <Image
                         loading="lazy"
-                        src={`${basePath}/assets/img/ig/4.jpg`}
+                        src={igImg4}
                         alt=""
                         className="rounded ig-post float-left"
                         style={{ marginRight: 10, width: 70, height: 70, borderRadius: 10 }}
@@ -408,10 +414,12 @@ const Footer = () => {
               <p>
                 <i className="bx bx-chevron-down"></i> Bank Transfer
               </p>
-              <img
+              <Image
                 alt="BCA Syariah, BSI (Bank Syariah Indonesia), ATM Bersama"
                 loading="lazy"
-                src={`${basePath}/assets/img/bank.webp`}
+                width={416}
+                height={78}
+                src={bankSupport}
                 className="w-100"
               />
               <br />
@@ -419,10 +427,12 @@ const Footer = () => {
               <p>
                 <i className="bx bx-chevron-down"></i> E-Wallet
               </p>
-              <img
+              <Image
                 alt="OVO, GOPAY, JENIUS, DANA"
                 loading="lazy"
-                src={`${basePath}/assets/img/wallet.webp`}
+                width={416}
+                height={78}
+                src={eWalletSupport}
                 className="w-100"
               />
 
@@ -430,10 +440,12 @@ const Footer = () => {
                 <li className="list-group-item">
                   <b>Telah Terdaftar Oleh</b>
                   <br />
-                  <img
+                  <Image
                     alt="HAM"
                     loading="lazy"
-                    src={`${basePath}/assets/img/ham.webp`}
+                    width={75}
+                    height={75}
+                    src={HAM}
                     className=""
                   />
                   <br />

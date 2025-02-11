@@ -32,7 +32,7 @@ export default async function Home() {
               <SidebarSocial />
             </aside>
 
-            <div className="col-lg-7 my-4">
+            <div className="col-lg-7 my-4 d-flex flex-column gap-4">
               <ArticleLists articles={articles} />
             </div>
 

@@ -21,7 +21,11 @@ export interface BlogArticleProps {
   publishedAt: string;
   keyTakeaway?: string[];
   tags?: string[];
-  articleQuote: {
+  outBoundLink?: {
+    title: string | "Medium Dialogika";
+    link: string | "https://medium.com/dialogika";
+  };
+  articleQuote?: {
     figure: string;
     quote: string;
   };
@@ -49,18 +53,23 @@ export const blogArticleDummy: BlogArticleProps[] = [
     authors: [
       {
         authorName: "Jessica Caesya Agustin",
+        quotes: "hello world",
         imgPath: "https://www.dialogika.co/blog/asset/img/intern/jessica-caesya-agustin.webp",
       },
       {
         authorName: "Yoga Pangestu",
+        quotes:
+          "Jangan takut akan perubahan. Kita mungkin kehilangan sesuatu yang baik, namun kita akan peroleh sesuatu yang lebih baik lagi",
         imgPath: "https://www.dialogika.co/blog/asset/img/intern/yoga-pangestu.jpg",
       },
     ],
-    writerNote: "Artikel ini ditulis untuk orang-orang",
-    publishedAt: "2025-05-13",
+    writerNote:
+      "Artikel ini menjelaskan pentingnya komunikasi yang baik di tempat kerja untuk meningkatkan produktivitas dan mengurangi kesalahan. Keterampilan mendengarkan dengan baik, menyampaikan pesan dengan jelas, dan membangun budaya komunikasi yang terbuka sangat penting untuk menciptakan lingkungan kerja yang lancar",
+    publishedAt: new Date().toISOString(),
     keyTakeaway: ["key Takeaway 1", "key takeaway 2"],
     tags: ["tags 1", "tags 2"],
     articleQuote: { figure: "ligma", quote: "ballls" },
+    outBoundLink: { title: "Medium", link: "https://medium.com/dialogika" },
   },
   {
     id: "mengapa-pitching-sangat-penting-dalam-dunia-bisnis-ini-dia-alasannya",
@@ -84,17 +93,22 @@ export const blogArticleDummy: BlogArticleProps[] = [
     authors: [
       {
         authorName: "Jessica Caesya Agustin",
+        quotes: "hello world",
         imgPath: "https://www.dialogika.co/blog/asset/img/intern/jessica-caesya-agustin.webp",
       },
       {
         authorName: "Yoga Pangestu",
+        quotes:
+          "Jangan takut akan perubahan. Kita mungkin kehilangan sesuatu yang baik, namun kita akan peroleh sesuatu yang lebih baik lagi",
         imgPath: "https://www.dialogika.co/blog/asset/img/intern/yoga-pangestu.jpg",
       },
     ],
-    writerNote: "Artikel ini ditulis untuk orang-orang",
-    publishedAt: "2025-03-13",
+    writerNote:
+      "Artikel ini menjelaskan pentingnya komunikasi yang baik di tempat kerja untuk meningkatkan produktivitas dan mengurangi kesalahan. Keterampilan mendengarkan dengan baik, menyampaikan pesan dengan jelas, dan membangun budaya komunikasi yang terbuka sangat penting untuk menciptakan lingkungan kerja yang lancar",
+    publishedAt: new Date().toISOString(),
     keyTakeaway: ["key Takeaway 1", "key takeaway 2"],
     tags: ["tags 1", "tags 2"],
     articleQuote: { figure: "ligma", quote: "ballls" },
+    outBoundLink: { title: "Medium", link: "https://medium.com/dialogika" },
   },
 ];

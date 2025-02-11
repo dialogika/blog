@@ -1,7 +1,7 @@
 "use client";
-import { store, tambahA } from "@/app/store";
 import { BlogArticleProps } from "@/public/data/dummyData";
 import { formatDate } from "@/utils/date";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -10,24 +10,19 @@ export interface articlesProps {
 }
 
 const ArticleLists = ({ articles }: articlesProps) => {
-  console.log(store.getState());
   return (
     <>
-      <button
-        type="button"
-        onClick={() => tambahA}>
-        Test Redux
-      </button>
       {articles.map((article, index) => (
         <article
           className="article"
           key={index}>
           <div className="post-img">
-            <img
+            <Image
               src={`${article.thumbnail}`}
               alt={`${article.keywords}`}
+              width={745}
+              height={400}
               className="img-fluid w-100 object-fit-cover"
-              style={{ maxHeight: 450 }}
             />
           </div>
 
@@ -41,26 +36,22 @@ const ArticleLists = ({ articles }: articlesProps) => {
 
           <div className="meta-top">
             <ul>
-              <li className="d-flex align-items-center">
-                <i className="bi bi-person"></i>{" "}
-                <Link
-                  href={`${article.id}`}
-                  target="_blank">
-                  Dinda Nur Anisa
-                </Link>
-              </li>
+              {/* List author yang menulis artikel */}
+              {article.authors.map((author, index) => (
+                <li
+                  className="d-flex align-items-center"
+                  key={index}>
+                  <i className="bi bi-person"></i>
+                  <Link
+                    href={`${article.id}`}
+                    target="_blank">
+                    {author.authorName}
+                  </Link>
+                </li>
+              ))}
 
               <li className="d-flex align-items-center">
-                <i className="bi bi-person"></i>{" "}
-                <Link
-                  href={`${article.id}`}
-                  target="_blank">
-                  Miftakhul Hudha
-                </Link>
-              </li>
-
-              <li className="d-flex align-items-center">
-                <i className="bi bi-clock"></i>{" "}
+                <i className="bi bi-clock"></i>
                 <Link href={`${article.id}`}>
                   <time dateTime={`${article.publishedAt}`}>{formatDate(article.publishedAt)}</time>
                 </Link>
