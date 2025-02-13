@@ -6,14 +6,17 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Magang di Yogyakarta</title>
-    <meta content="Penasaran nggk sih, gimana magang di Kota Pelajar? Ternyata di Yogyakarta selain perusahaan Ruangguru, ada juga perusahaan baru seperti Dialogika. Kami akan spill suasana magang di Dialogika Jogja…" name="description">
+    <meta
+        content="Penasaran nggk sih, gimana magang di Kota Pelajar? Ternyata di Yogyakarta selain perusahaan Ruangguru, ada juga perusahaan baru seperti Dialogika. Kami akan spill suasana magang di Dialogika Jogja…"
+        name="description">
     <meta content="Magang di Yogyakarta" name="keywords">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
     <meta property="og:site_name" content="Kelas Public Speaking" />
     <meta property="og:site" content="dialogika.co" />
     <meta property="og:title" content="Suasana Magang di Yogyakarta-Dialogika Intern" />
-    <meta property="og:description" content="Penasaran nggk sih, gimana magang di Kota Pelajar? Ternyata di Yogyakarta selain perusahaan Ruangguru, ada juga perusahaan baru seperti Dialogika. Kami akan spill suasana magang di Dialogika Jogja…" />
+    <meta property="og:description"
+        content="Penasaran nggk sih, gimana magang di Kota Pelajar? Ternyata di Yogyakarta selain perusahaan Ruangguru, ada juga perusahaan baru seperti Dialogika. Kami akan spill suasana magang di Dialogika Jogja…" />
     <meta property="og:image" content="assets/img/blog/magang-di-yogyakarta/Banner Blog.jpg" />
     <meta property="og:url" content="dialogika.co/blog/magang-di-yogyakarta.html" />
     <meta property="og:type" content="article" />
@@ -23,10 +26,13 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
@@ -67,7 +73,8 @@
     <link href="assets/css/style-blog.css" rel="stylesheet" />
 
     <!-- Spreadsheet API Form Pendaftaran -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script>
         function SubForm() {
             $.ajax({
@@ -78,11 +85,11 @@
                     accessKey: "0595b51bf05662292a7877f0d8289443",
                     secretKey: "59da58d9abe1e4312efa3150bda9738c"
                 },
-                success: function() {
+                success: function () {
                     // alert("Form Data Submitted :)")
                     $('#notifications').modal('show');
                 },
-                error: function() {
+                error: function () {
                     alert("There was an error :(")
                 }
             });
@@ -97,10 +104,10 @@
                     accessKey: "0595b51bf05662292a7877f0d8289443",
                     secretKey: "59da58d9abe1e4312efa3150bda9738c"
                 },
-                success: function() {
+                success: function () {
                     window.location.href = "assets/pdf/EDIT_FILE_LOCATION.pdf";
                 },
-                error: function() {
+                error: function () {
                     alert("There was an error :(")
                 }
             });
@@ -111,10 +118,10 @@
                 url: "https://api.apispreadsheets.com/data/18511/",
                 type: "post",
                 data: $("#subcriptions").serializeArray(),
-                success: function() {
+                success: function () {
                     $('#subcription-modal').modal('show');
                 },
-                error: function() {
+                error: function () {
                     alert("There was an error :(")
                 }
             });
@@ -126,9 +133,9 @@
     <!-- Pixel Facebook -->
     <!-- DEC 2021 -->
     <script>
-        ! function(f, b, e, v, n, t, s) {
+        ! function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function() {
+            n = f.fbq = function () {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -148,7 +155,7 @@
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=916674555903437&ev=PageView&noscript=1" /></noscript>
+            src="https://www.facebook.com/tr?id=916674555903437&ev=PageView&noscript=1" /></noscript>
     <!-- END DEC 2021 -->
     <!-- End Pixel Facebook -->
 
@@ -169,7 +176,7 @@
 
     <!-- Google Tag Manager -->
     <script>
-        (function(w, d, s, l, i) {
+        (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
                 'gtm.start': new Date().getTime(),
@@ -188,8 +195,8 @@
 
     <!-- Hotjar Tracking Code for https://dialogika.co -->
     <script>
-        (function(h, o, t, j, a, r) {
-            h.hj = h.hj || function() {
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
                 (h.hj.q = h.hj.q || []).push(arguments)
             };
             h._hjSettings = {
@@ -209,8 +216,8 @@
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
         function gtag_report_conversion(url) {
-            var callback = function() {
-                if (typeof(url) != 'undefined') {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
                     window.location = url;
                 }
             };
@@ -258,13 +265,17 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="col-lg-1 blog-details-area">
                         <div class="blog-details-social">
                             <ul class="list-wrap">
-                                <li><a href="https://facebook.com/dialogika.co" target="__blank"><i class="fab fa-facebook-f"></i></a>
+                                <li><a href="https://facebook.com/dialogika.co" target="__blank"><i
+                                            class="fab fa-facebook-f"></i></a>
                                 </li>
-                                <li><a href="https://twitter.com/dialogika_co" target="__blank"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://twitter.com/dialogika_co" target="__blank"><i
+                                            class="fab fa-twitter"></i></a></li>
                                 <li><a href="https://linkedin.com/company/dialogika" target="__blank"><i
-                      class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="https://tiktok.com/@dialogika.co" target="__blank"><i class="fab fa-tiktok"></i></a></li>
-                                <li><a href="https://instagram.com/dialogika.co" target="__blank"><i class="fab fa-instagram"></i></a>
+                                            class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="https://tiktok.com/@dialogika.co" target="__blank"><i
+                                            class="fab fa-tiktok"></i></a></li>
+                                <li><a href="https://instagram.com/dialogika.co" target="__blank"><i
+                                            class="fab fa-instagram"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -275,7 +286,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/blog/magang-di-yogyakarta/Banner Blog.jpg" alt="Magang di Yogyakarta" class="img-fluid" style="width: 100%;">
+                                <img src="assets/img/blog/magang-di-yogyakarta/Banner Blog.jpg"
+                                    alt="Magang di Yogyakarta" class="img-fluid" style="width: 100%;">
                             </div>
 
                             <h2 class="entry-title">
@@ -300,31 +312,45 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <!-- EDIT_ISI -->
 
                                 <!-- PARAGRAF_1 -->
-                                <p><span style="color: rgba(0, 0, 0, 0.5);"> Magang di Yogyakarta - </span> Magang bukan hanya tentang tugas dan tekanan, tetapi juga tentang petualangan yang tak terlupakan. Bagi kamu yang sedang mencari peluang magang di kota pelajar, ada beberapa opsi yang bisa kamu pilih.</p>
+                                <p><span style="color: rgba(0, 0, 0, 0.5);"> Magang di Yogyakarta - </span> Magang bukan
+                                    hanya tentang tugas dan tekanan, tetapi juga tentang petualangan yang tak
+                                    terlupakan. Bagi kamu yang sedang mencari peluang magang di kota pelajar, ada
+                                    beberapa opsi yang bisa kamu pilih.</p>
 
                                 <p>
-                                    Mulai perusahaan-perusahaan besar seperti Ruangguru, hingga kesempatan magang di perusahaan-perusahaan baru seperti Dialogika. 
-                                    Pertanyaannya adalah, “mengapa kamu harus mempertimbangkan Jogja sebagai tempat magang kamu?”     
+                                    Mulai perusahaan-perusahaan besar seperti Ruangguru, hingga kesempatan magang di
+                                    perusahaan-perusahaan baru seperti Dialogika.
+                                    Pertanyaannya adalah, “mengapa kamu harus mempertimbangkan Jogja sebagai tempat
+                                    magang kamu?”
                                 </p>
 
-                                <p>Jogja itu terkenal dengan keberagaman tempat wisatanya. Kalau kamu suka jalan-jalan pas weekend, di sini bisa banget! Kamu bisa pilih mau kunjungi wisata apa aja Seperti.</p>
-                  
+                                <p>Jogja itu terkenal dengan keberagaman tempat wisatanya. Kalau kamu suka jalan-jalan
+                                    pas weekend, di sini bisa banget! Kamu bisa pilih mau kunjungi wisata apa aja
+                                    Seperti.</p>
+
                                 <p>Candi-candi keren, pantai yang oke, atau makan enak di warung pinggir jalan</p>
-                               
-                                <p>Jadi, magang disini bukan cuman soal kerja, tapi juga tentang eksplorasi tempat-tempat seru</p>
+
+                                <p>Jadi, magang disini bukan cuman soal kerja, tapi juga tentang eksplorasi
+                                    tempat-tempat seru</p>
 
                                 <div class="alert alert-info alert-dismissible fade show" role="alert">
                                     <figcaption class="blockquote-footer" style="margin: 0px;">
-                                      <i>Baca Juga : <b><a href="https://www.dialogika.co/blog/basic-manner-dalam-komunikasi.html" target="__blank">Basic Manner dalam Komunikasi yang Harus Kita Tahu</a></b></cite></i>
+                                        <i>Baca Juga : <b><a
+                                                    href="https://www.dialogika.co/blog/basic-manner-dalam-komunikasi.html"
+                                                    target="__blank">Basic Manner dalam Komunikasi yang Harus Kita
+                                                    Tahu</a></b></cite></i>
                                     </figcaption>
-                                  </div>
+                                </div>
 
-                                  <p>Yang tidak kalah penting yaitu suasana nyaman dan biaya hidup yang terjangkau. Tempat tinggal di kota ini, tidak akan nguras isi dompet kalian. Dan yang bikin jogja itu beda, adalah orang-orang yang ramah. Ini bisa kamu rasakan juga saat magang di Dialogika.</p>
+                                <p>Yang tidak kalah penting yaitu suasana nyaman dan biaya hidup yang terjangkau. Tempat
+                                    tinggal di kota ini, tidak akan nguras isi dompet kalian. Dan yang bikin jogja itu
+                                    beda, adalah orang-orang yang ramah. Ini bisa kamu rasakan juga saat magang di
+                                    Dialogika.</p>
 
-                                  <p>So, Buat kamu yang masih stay baca artikel ini. Selamat karena…</p>
-                                  <p>Kami akan spill sedikit suasana magang di Dialogika Jogja</p>
+                                <p>So, Buat kamu yang masih stay baca artikel ini. Selamat karena…</p>
+                                <p>Kami akan spill sedikit suasana magang di Dialogika Jogja</p>
 
-                                  
+
 
 
 
@@ -334,152 +360,172 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <h2>Santai tapi Produktif</h2>
 
                                 <!--  BUAT GAMBAR DESKTOP -->
-                                    <p><img src="assets/img/blog/magang-di-yogyakarta/1.jpg" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="Magang di Yogyakarta"></p>
+                                <p><img src="assets/img/blog/magang-di-yogyakarta/1.jpg"
+                                        class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;"
+                                        alt="Magang di Yogyakarta"></p>
 
-                                    <!--  BUAT GAMBAR MOBILE -->
-                                    <p><img src="assets/img/blog/magang-di-yogyakarta/1.jpg" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="Magang di Yogyakarta"></p>
+                                <!--  BUAT GAMBAR MOBILE -->
+                                <p><img src="assets/img/blog/magang-di-yogyakarta/1.jpg"
+                                        class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;"
+                                        alt="Magang di Yogyakarta"></p>
 
-                                <p>Di Dialogika, suasana kerja tidak akan membuat kamu merasa seperti tengah berpacu dengan deadline yang ketat. Dialogika mempercayai kemampuan kamu untuk mengatur waktu dan pekerjaan kamu sendiri.</p>
-                              <p>
-                                Yang penting adalah mencapai target yang telah ditentukan, dan kamu memiliki kebebasan untuk menentukan cara terbaik untuk menyelesaikannya. </p>
+                                <p>Di Dialogika, suasana kerja tidak akan membuat kamu merasa seperti tengah berpacu
+                                    dengan deadline yang ketat. Dialogika mempercayai kemampuan kamu untuk mengatur
+                                    waktu dan pekerjaan kamu sendiri.</p>
+                                <p>
+                                    Yang penting adalah mencapai target yang telah ditentukan, dan kamu memiliki
+                                    kebebasan untuk menentukan cara terbaik untuk menyelesaikannya. </p>
 
-                                <p>Jangan khawatir, ini bukan berarti pekerjaan dapat diabaikan, sebaliknya, Dialogika mendukung kamu untuk mandiri dan bertanggung jawab terhadap pekerjaanmu. </p>
+                                <p>Jangan khawatir, ini bukan berarti pekerjaan dapat diabaikan, sebaliknya, Dialogika
+                                    mendukung kamu untuk mandiri dan bertanggung jawab terhadap pekerjaanmu. </p>
 
                                 <p>
-                                    Jadi, suasana yang santai tetapi Produktif ini akan membuat kamu merasa nyaman. Ini menghilangkan tekanan berlebihan dan stres yang bisa mengganggu produktivitas. </p>
+                                    Jadi, suasana yang santai tetapi Produktif ini akan membuat kamu merasa nyaman. Ini
+                                    menghilangkan tekanan berlebihan dan stres yang bisa mengganggu produktivitas. </p>
 
-                                    <p>Dengan begitu, kamu dapat lebih fokus pada pekerjaan tanpa perlu panik karena tenggat waktu yang mendekat. Kamu dapat bekerja dengan santai tetapi hasilnya tetap maksimal.</p>
+                                <p>Dengan begitu, kamu dapat lebih fokus pada pekerjaan tanpa perlu panik karena tenggat
+                                    waktu yang mendekat. Kamu dapat bekerja dengan santai tetapi hasilnya tetap
+                                    maksimal.</p>
 
-                                    <div class="alert alert-info alert-dismissible fade show" role="alert">
-                                        <figcaption class="blockquote-footer" style="margin: 0px;">
-                                          <i>Baca Juga : <b><a href="https://www.dialogika.co/blog/dibully-karena-logat.html" target="__blank">Dibully Karena Logat? Pembully Wajib Baca Ini! (The Culture Maps Book)</a></b></cite></i>
-                                        </figcaption>
-                                      </div>
-                              
-                                      <h2>Tim Kerja yang Solid</h2>
+                                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                    <figcaption class="blockquote-footer" style="margin: 0px;">
+                                        <i>Baca Juga : <b><a
+                                                    href="https://www.dialogika.co/blog/dibully-karena-logat.html"
+                                                    target="__blank">Dibully Karena Logat? Pembully Wajib Baca Ini! (The
+                                                    Culture Maps Book)</a></b></cite></i>
+                                    </figcaption>
+                                </div>
 
-                                       <!--  BUAT GAMBAR DESKTOP -->
-                                    <p><img src="assets/img/blog/magang-di-yogyakarta/2.jpg" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="Magang di Yogyakarta"></p>
+                                <h2>Tim Kerja yang Solid</h2>
 
-                                    <!--  BUAT GAMBAR MOBILE -->
-                                    <p><img src="assets/img/blog/magang-di-yogyakarta/2.jpg" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="Magang di Yogyakarta"></p>
+                                <!--  BUAT GAMBAR DESKTOP -->
+                                <p><img src="assets/img/blog/magang-di-yogyakarta/2.jpg"
+                                        class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;"
+                                        alt="Magang di Yogyakarta"></p>
 
-                                    <p>Magang di sini akan membuat kamu merasa seperti bagian dari tim yang aktif dan penuh kolaborasi. Kamu tidak akan bekerja sendirian, tetapi akan bekerja bersama rekan-rekan magang lainnya. </p>
-                                      <p>Ini memungkinkan kamu untuk membangun hubungan yang erat dengan mereka karena kamu akan sering berinteraksi. Yang lebih menarik lagi, kamu akan belajar banyak dari mereka karena setiap individu memiliki keahlian dan pengalaman yang berbeda.</p>
+                                <!--  BUAT GAMBAR MOBILE -->
+                                <p><img src="assets/img/blog/magang-di-yogyakarta/2.jpg"
+                                        class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;"
+                                        alt="Magang di Yogyakarta"></p>
 
-                                      <p>Suasana seperti ini membuat pengalaman magang kamu menjadi lebih berwarna dan berharga.</p>
-                              
-                                      <h3>Kesempatan Belajar yang Luas</h3>
+                                <p>Magang di sini akan membuat kamu merasa seperti bagian dari tim yang aktif dan penuh
+                                    kolaborasi. Kamu tidak akan bekerja sendirian, tetapi akan bekerja bersama
+                                    rekan-rekan magang lainnya. </p>
+                                <p>Ini memungkinkan kamu untuk membangun hubungan yang erat dengan mereka karena kamu
+                                    akan sering berinteraksi. Yang lebih menarik lagi, kamu akan belajar banyak dari
+                                    mereka karena setiap individu memiliki keahlian dan pengalaman yang berbeda.</p>
 
-                                       <!--  BUAT GAMBAR DESKTOP -->
-                                    <p><img src="assets/img/blog/magang-di-yogyakarta/3.jpg" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="Magang di Yogyakarta"></p>
+                                <p>Suasana seperti ini membuat pengalaman magang kamu menjadi lebih berwarna dan
+                                    berharga.</p>
 
-                                    <!--  BUAT GAMBAR MOBILE -->
-                                    <p><img src="assets/img/blog/magang-di-yogyakarta/3.jpg" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="Magang di Yogyakarta"></p>
+                                <h3>Kesempatan Belajar yang Luas</h3>
 
-                                    <p>
-                                        Pengalaman magang di Dialogika dapat ditemukan dalam kesempatan belajar yang sangat luas yang disediakan bagi setiap intern yang bergabung. </p>
+                                <!--  BUAT GAMBAR DESKTOP -->
+                                <p><img src="assets/img/blog/magang-di-yogyakarta/3.jpg"
+                                        class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;"
+                                        alt="Magang di Yogyakarta"></p>
 
-                                        <p>Di sini, Dialogika memahami betapa pentingnya pengembangan keterampilan dan pengetahuan bagi para calon professional muda.</p>
+                                <!--  BUAT GAMBAR MOBILE -->
+                                <p><img src="assets/img/blog/magang-di-yogyakarta/3.jpg"
+                                        class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;"
+                                        alt="Magang di Yogyakarta"></p>
 
-                                                                                    <!--  QUOTE  -->
-                                            <p><blockquote class="blockquote">
-                                                <p>“magang adalah kesempatan untuk mencoba sebelum kita benaer-benar meemutuskan”</p>
-                                                <cite>Angela Duckworth</cite>
-                                            </blockquote></p>
+                                <p>
+                                    Pengalaman magang di Dialogika dapat ditemukan dalam kesempatan belajar yang sangat
+                                    luas yang disediakan bagi setiap intern yang bergabung. </p>
 
-                                            <p>Selain itu, <mark class="yellow">Dialogika memberikan perhatian khusus pada pengembangan keterampilan berbicara di depan umum, Kami percaya ini adalah salah satu aset yang berharga dalam dunia professional.</mark></p>
-                                            
-                                            <p>
-                                                Dan jika kamu tertarik dengan kemampuan berkomunikasi, Dialogika juga memiliki lingkungan yang mendukung perkembangan keterampilan ini. Kamu bisa mengikuti kelas public speaking, mungkin kamu bisa coba kelas ini!
-                                                </p>
+                                <p>Di sini, Dialogika memahami betapa pentingnya pengembangan keterampilan dan
+                                    pengetahuan bagi para calon professional muda.</p>
 
-                                                <h2>Sering Deeptalk</h2>
+                                <!--  QUOTE  -->
+                                <p>
+                                <blockquote class="blockquote">
+                                    <p>“magang adalah kesempatan untuk mencoba sebelum kita benaer-benar meemutuskan”
+                                    </p>
+                                    <cite>Angela Duckworth</cite>
+                                </blockquote>
+                                </p>
 
-                                                       <!--  BUAT GAMBAR DESKTOP -->
-                                    <p><img src="assets/img/blog/magang-di-yogyakarta/4.jpg" class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;" alt="Magang di Yogyakarta"></p>
+                                <p>Selain itu, <mark class="yellow">Dialogika memberikan perhatian khusus pada
+                                        pengembangan keterampilan berbicara di depan umum, Kami percaya ini adalah salah
+                                        satu aset yang berharga dalam dunia professional.</mark></p>
 
-                                    <!--  BUAT GAMBAR MOBILE -->
-                                    <p><img src="assets/img/blog/magang-di-yogyakarta/4.jpg" class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;" alt="Magang di Yogyakarta"></p>
+                                <p>
+                                    Dan jika kamu tertarik dengan kemampuan berkomunikasi, Dialogika juga memiliki
+                                    lingkungan yang mendukung perkembangan keterampilan ini. Kamu bisa mengikuti kelas
+                                    public speaking, mungkin kamu bisa coba kelas ini!
+                                </p>
 
-                                        <p>Salah satu hal yang membuat magang di Dialogika unik adalah suasana Deeptalk. Di sini, kamu tidak hanya akan bekerja terus-menerus, tetapi juga akan ada waktu untuk:</p>
-                                            <p>Berbicara santai, berkumpul dalam diskusi yang menarik, berbagi ide dan pemikiran</p>
+                                <h2>Sering Deeptalk</h2>
 
-                                            <p>Bayangkan, dalam satu hari para internship di Dialogika dapat berbicara tentang pekerjaan dengan rekan tim mereka, lalu tiba-tiba beralih ke obrolan santai tentang hobi, film, musik, atau bahkan topik yang sedang tren. </p>
+                                <!--  BUAT GAMBAR DESKTOP -->
+                                <p><img src="assets/img/blog/magang-di-yogyakarta/4.jpg"
+                                        class="img-fluid  d-none d-sm-block" style="width: 100%; border-radius: 10px;"
+                                        alt="Magang di Yogyakarta"></p>
 
-                                            <p>Jadi, tidak heran Dialogika buka kelas public speaking, Masa yang magang anaknya pendiem-pendiem.</p>
+                                <!--  BUAT GAMBAR MOBILE -->
+                                <p><img src="assets/img/blog/magang-di-yogyakarta/4.jpg"
+                                        class="img-fluid  d-md-none d-block" style="width: 100%; border-radius: 10px;"
+                                        alt="Magang di Yogyakarta"></p>
+
+                                <p>Salah satu hal yang membuat magang di Dialogika unik adalah suasana Deeptalk. Di
+                                    sini, kamu tidak hanya akan bekerja terus-menerus, tetapi juga akan ada waktu untuk:
+                                </p>
+                                <p>Berbicara santai, berkumpul dalam diskusi yang menarik, berbagi ide dan pemikiran</p>
+
+                                <p>Bayangkan, dalam satu hari para internship di Dialogika dapat berbicara tentang
+                                    pekerjaan dengan rekan tim mereka, lalu tiba-tiba beralih ke obrolan santai tentang
+                                    hobi, film, musik, atau bahkan topik yang sedang tren. </p>
+
+                                <p>Jadi, tidak heran Dialogika buka kelas public speaking, Masa yang magang anaknya
+                                    pendiem-pendiem.</p>
                                 <!-- /END PARAGRAF_2 -->
 
-                                <p><div class="cta-card" style="width:100%">
+                                <p>
+                                <div class="cta-card" style="width:100%">
                                     <div class="cta-card__container">
-                                    <header class="cta-card__header">
-                                      <h1 class="cta-card__title">Join Sekarang! Dapatkan pembelajaran Kelas Public Speaking Offline dan bimbingan dari Mentor selama 1 bulan dan Bergaransi. Daftar Sekarang.</h1>
-                                      <p class="cta-card__description">
-                                        Join Our Classes, Mentoring Langsung Bersama Mentor Dialogika, Konsultasikan Kebutuhan Anda Sekarang
-                                      </p>
-                                    </header>
-                                    <form action="javascript:void" method="post" id="myForm">
-                                    <div class="cta-card__input-box">
-                                      <select class="d-none" name="Timestamp">
-                                        <option id="timestamp"></option>
-                                      </select>
-                                      <input
-                                        class="cta-card__input"
-                                        type="tel"
-                                        name="Whatsapp"
-                                        placeholder="whatsapp number"
-                                      />
-                                      <button class="cta-card__button" type="submit" data-bs-toggle="modal" data-bs-target="#notifications" onclick="SubForm()">
-                                        <svg
-                                          width="32"
-                                          height="32"
-                                          viewBox="0 0 32 32"
-                                          fill="none"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            d="M6.66669 16H25.3334"
-                                            stroke="#3D476D"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <path
-                                            d="M20 21.3333L25.3333 16"
-                                            stroke="#3D476D"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                          <path
-                                            d="M20 10.6667L25.3333 16"
-                                            stroke="#3D476D"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                          />
-                                        </svg>
-                                      </button>
+                                        <header class="cta-card__header">
+                                            <h1 class="cta-card__title">Join Sekarang! Dapatkan pembelajaran Kelas
+                                                Public Speaking Offline dan bimbingan dari Mentor selama 1 bulan dan
+                                                Bergaransi. Daftar Sekarang.</h1>
+                                            <p class="cta-card__description">
+                                                Join Our Classes, Mentoring Langsung Bersama Mentor Dialogika,
+                                                Konsultasikan Kebutuhan Anda Sekarang
+                                            </p>
+                                        </header>
+                                        <form action="javascript:void" method="post" id="myForm">
+                                            <div class="cta-card__input-box">
+                                                <select class="d-none" name="Timestamp">
+                                                    <option id="timestamp"></option>
+                                                </select>
+                                                <input class="cta-card__input" type="tel" name="Whatsapp"
+                                                    placeholder="whatsapp number" />
+                                                <button class="cta-card__button" type="submit" data-bs-toggle="modal"
+                                                    data-bs-target="#notifications" onclick="SubForm()">
+                                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6.66669 16H25.3334" stroke="#3D476D" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M20 21.3333L25.3333 16" stroke="#3D476D"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                        <path d="M20 10.6667L25.3333 16" stroke="#3D476D"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="cta-card__img-box justify-content-center">
+                                                <img class="cta-card__img" src="assets/img/mentor/fanny.jpg"
+                                                    alt="User" />
+                                                <img class="cta-card__img" src="assets/img/mentor/tiya.jpg"
+                                                    alt="User" />
+                                                <img class="cta-card__img" src="assets/img/mentor/audi.jpg"
+                                                    alt="User" />
+                                            </div>
                                     </div>
-                                    <div class="cta-card__img-box justify-content-center">
-                                      <img
-                                        class="cta-card__img"
-                                        src="assets/img/mentor/fanny.jpg"
-                                        alt="User"
-                                      />
-                                      <img
-                                        class="cta-card__img"
-                                        src="assets/img/mentor/tiya.jpg"
-                                        alt="User"
-                                      />
-                                      <img
-                                        class="cta-card__img"
-                                        src="assets/img/mentor/audi.jpg"
-                                        alt="User"
-                                      />
-                                    </div>
-                                  </div>
-                                </div></p>
+                                </div>
+                                </p>
 
                                 <!-- /BATAS ISI -->
                                 <div class="entry-footer clearfix">
@@ -488,12 +534,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                         <i class='bx bxs-file'></i>
                                         <ul class="cats">
                                             <li><a href="EDIT_LINK" target="__blank">
-                          Reference</a></li>
+                                                    Reference</a></li>
                                         </ul>
                                         <i class='bx bxs-edit-alt'></i>
                                         <ul class="tags">
                                             <li><a href="EDIT_LINK" target="__blank">
-                          REFERENSI </a></li>
+                                                    REFERENSI </a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -519,11 +565,16 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                         <div class="blog-details-share">
                                             <h6 class="share-title">Follow Us:</h6>
                                             <ul class="list-wrap mb-0">
-                                                <li><a href="https://instagram.com/dialogika.co"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="https://tiktok.com/@dialogika.co"><i class="fab fa-tiktok"></i></a></li>
-                                                <li><a href="https://linkedin.com/company/dilogika"><i class="fab fa-linkedin-in"></i></a></li>
-                                                <li><a href="https://facebook.com/dialogika.co"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="https://twitter.com/dialogika_co"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="https://instagram.com/dialogika.co"><i
+                                                            class="fab fa-instagram"></i></a></li>
+                                                <li><a href="https://tiktok.com/@dialogika.co"><i
+                                                            class="fab fa-tiktok"></i></a></li>
+                                                <li><a href="https://linkedin.com/company/dilogika"><i
+                                                            class="fab fa-linkedin-in"></i></a></li>
+                                                <li><a href="https://facebook.com/dialogika.co"><i
+                                                            class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="https://twitter.com/dialogika_co"><i
+                                                            class="fab fa-twitter"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -534,7 +585,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <div class="blog-author clearfix">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img src="assets/img/intern/seli.jpg" class="rounded-circle float-left img-thumbnail" alt="Seli">
+                                    <img src="assets/img/intern/seli.jpg"
+                                        class="rounded-circle float-left img-thumbnail" alt="Seli">
                                 </div>
 
                                 <div class="col-md-10">
@@ -552,7 +604,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <div class="blog-author clearfix">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img src="assets/img/intern/maya.jpg" class="rounded-circle float-left img-thumbnail" alt="Maya">
+                                    <img src="assets/img/intern/maya.webp"
+                                        class="rounded-circle float-left img-thumbnail" alt="Maya">
                                 </div>
 
                                 <div class="col-md-10">
@@ -561,7 +614,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                         <b>Intern - Content Writer</b>
                                     </div>
                                     <hr />
-                                    <p>Life must go on. Get out of comfort zone and do what you've been worried about all this time</p>
+                                    <p>Life must go on. Get out of comfort zone and do what you've been worried about
+                                        all this time</p>
                                 </div>
                             </div>
                         </div>
@@ -570,7 +624,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                         <div class="blog-author clearfix">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <img src="assets/img/intern/ardix.jpg" class="rounded-circle float-left img-thumbnail" alt="Ardian">
+                                    <img src="assets/img/intern/ardix.jpg"
+                                        class="rounded-circle float-left img-thumbnail" alt="Ardian">
                                 </div>
 
                                 <div class="col-md-10">
@@ -591,45 +646,51 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                     <h2 class="kiri text-start">Pay Us By Leaving</h2>
                                     <h1 class="kiri text-start">Your Rating</h1>
                                     <p class="text-start" style="line-height:22px;">
-                                        Support <b>semangat penulis</b> dengan memberikan komentar dan masukan plus <b>komentarmu akan kami
-                      masukkan</b> ke website ini dalam bentuk anonimus
+                                        Support <b>semangat penulis</b> dengan memberikan komentar dan masukan plus
+                                        <b>komentarmu akan kami
+                                            masukkan</b> ke website ini dalam bentuk anonimus
                                     </p>
                                 </div>
                                 <form action="javascript:void" method="post" id="myForm">
                                     <div class="row">
                                         <div class="col-md-6 form-group">
-                                            <input name="Domicile" type="text" class="form-control" placeholder="Kota Tempat Tinggalmu*">
+                                            <input name="Domicile" type="text" class="form-control"
+                                                placeholder="Kota Tempat Tinggalmu*">
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <input name="Work" type="text" class="form-control" placeholder="Profesimu Saat Ini*">
+                                            <input name="Work" type="text" class="form-control"
+                                                placeholder="Profesimu Saat Ini*">
                                         </div>
                                     </div>
                                     <select class="d-none" name="Timestamp">
-                    <option id="timestamp"></option>
-                  </select>
+                                        <option id="timestamp"></option>
+                                    </select>
                                     <select class="d-none" name="Keyword">
-                    <option id="keyword">EDIT_SESUAI_JUDUL</option>
-                  </select>
+                                        <option id="keyword">EDIT_SESUAI_JUDUL</option>
+                                    </select>
                                     <div class="row">
                                         <div class="col form-group">
                                             <select name="Rating" id="ratings" class="form-select" required>
-                        <option value="" selected disabled value="">Rating this Blog</option>
-                        <optgroup label="------------">
-                          <option>★★★★★</option>
-                          <option>★★★★☆</option>
-                          <option>★★★☆☆</option>
-                          <option>★★☆☆☆</option>
-                          <option>★☆☆☆☆</option>
-                        </optgroup>
-                      </select>
+                                                <option value="" selected disabled value="">Rating this Blog</option>
+                                                <optgroup label="------------">
+                                                    <option>★★★★★</option>
+                                                    <option>★★★★☆</option>
+                                                    <option>★★★☆☆</option>
+                                                    <option>★★☆☆☆</option>
+                                                    <option>★☆☆☆☆</option>
+                                                </optgroup>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col form-group">
-                                            <textarea name="Comment" class="form-control" rows="7" placeholder="Komentar Anda*"></textarea>
+                                            <textarea name="Comment" class="form-control" rows="7"
+                                                placeholder="Komentar Anda*"></textarea>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn-primary" style="border: 0px; margin-left:0px;" data-bs-toggle="modal" data-bs-target="#notifications" onclick="SubForm()">Post Comment</button>
+                                    <button type="submit" class="btn-primary" style="border: 0px; margin-left:0px;"
+                                        data-bs-toggle="modal" data-bs-target="#notifications" onclick="SubForm()">Post
+                                        Comment</button>
 
                                 </form>
                             </div>
@@ -650,33 +711,50 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                         <span class="designation">Intern - Content Writer - Dialogika</span>
                                     </div>
                                     <div class="tgAbout-social">
-                                        <a href="https://instagram.com/dialogika.co"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://instagram.com/dialogika.co"><i
+                                                class="fab fa-instagram"></i></a>
                                         <a href="https://twitter.com/dialogika_co"><i class="fab fa-twitter"></i></a>
                                         <a href="https://facebook.com/dialgika.co"><i class="fab fa-facebook-f"></i></a>
                                         <a href="https://youtube.com/@dialogika_co"><i class="fab fa-youtube"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="widget sidebar-widget" style="border-radius:8px; -box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-moz-box-shadow: 0px 9px 16px -6px  rgba(231, 24, 26, 1);">
+                            <div class="widget sidebar-widget"
+                                style="border-radius:8px; -box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(231, 24, 26, 1);-moz-box-shadow: 0px 9px 16px -6px  rgba(231, 24, 26, 1);">
                                 <div class="sidePost-active">
-                                    <div class="sidePost__item" data-background="https://dialogika.co/assets/img/program/basic-p/small.jpg">
+                                    <div class="sidePost__item"
+                                        data-background="https://dialogika.co/assets/img/program/basic-p/small.jpg">
                                         <div class="sidePost__content">
-                                            <a href="https://dialogika.co/program/basic-plus.html" class="tag">Online Class</a>
-                                            <h5 class="title tgcommon__hover"><a href="https://dialogika.co/program/basic-plus.html" target="__blank">Kelas Basic : Public Speaking Dialogika, Bergaransi, Selama Sebulan</a></h5>
+                                            <a href="https://dialogika.co/program/basic-plus.html" class="tag">Online
+                                                Class</a>
+                                            <h5 class="title tgcommon__hover"><a
+                                                    href="https://dialogika.co/program/basic-plus.html"
+                                                    target="__blank">Kelas Basic : Public Speaking Dialogika,
+                                                    Bergaransi, Selama Sebulan</a></h5>
                                         </div>
                                     </div>
-                                    <div class="sidePost__item" data-background="https://dialogika.co/assets/img/program/first-c/home.jpg">
+                                    <div class="sidePost__item"
+                                        data-background="https://dialogika.co/assets/img/program/first-c/home.jpg">
                                         <div class="sidePost__content">
-                                            <a href="https://dialogika.co/program/first-class.html" class="tag">Offline Class</a>
-                                            <h5 class="title tgcommon__hover"><a href="https://dialogika.co/program/first-class.html" target="__blank">Kelas Offline Public Speaking di Jogja, Bergaransi Selama 2 Bulan, Seat
-                          Terbatas</a></h5>
+                                            <a href="https://dialogika.co/program/first-class.html" class="tag">Offline
+                                                Class</a>
+                                            <h5 class="title tgcommon__hover"><a
+                                                    href="https://dialogika.co/program/first-class.html"
+                                                    target="__blank">Kelas Offline Public Speaking di Jogja, Bergaransi
+                                                    Selama 2 Bulan, Seat
+                                                    Terbatas</a></h5>
                                         </div>
                                     </div>
-                                    <div class="sidePost__item" data-background="https://dialogika.co/assets/img/program/kids-c/banner.jpg">
+                                    <div class="sidePost__item"
+                                        data-background="https://dialogika.co/assets/img/program/kids-c/banner.jpg">
                                         <div class="sidePost__content">
-                                            <a href="https://dialogika.co/subscribe/kids-play.html" class="tag">Kelas Anak</a>
-                                            <h5 class="title tgcommon__hover"><a href="https://dialogika.co/subscribe/kids-play.html" target="__blank">Kursus Public Speaking Online Anak Selama Sebulan dari umur 5 hingga 15
-                          tahun</a></h5>
+                                            <a href="https://dialogika.co/subscribe/kids-play.html" class="tag">Kelas
+                                                Anak</a>
+                                            <h5 class="title tgcommon__hover"><a
+                                                    href="https://dialogika.co/subscribe/kids-play.html"
+                                                    target="__blank">Kursus Public Speaking Online Anak Selama Sebulan
+                                                    dari umur 5 hingga 15
+                                                    tahun</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -685,10 +763,12 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <div class="sidebarInsta__wrap">
                                     <div class="sidebarInsta__top">
                                         <div class="sidebarInsta__logo">
-                                            <img src="assets/img/logo-square.png" alt="Logo Kelas Public Speaking Dialogika">
+                                            <img src="assets/img/logo-square.png"
+                                                alt="Logo Kelas Public Speaking Dialogika">
                                         </div>
                                         <div class="blog-details-area sidebarInsta__info">
-                                            <h6 class="name"><a href="https://instagram.com/dialogika.co">@dialogika.co</a></h6>
+                                            <h6 class="name"><a
+                                                    href="https://instagram.com/dialogika.co">@dialogika.co</a></h6>
                                             <span class="designation">Kelas Public Speaking Jogja</span>
                                         </div>
                                     </div>
@@ -696,39 +776,55 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                         <div class="swiper-container sidebarInsta-active">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/p/CoJeVGjLVZJ/?utm_source=ig_web_copy_link" target="_blank"><img src="assets/img/instagram/01.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/p/CoJeVGjLVZJ/?utm_source=ig_web_copy_link"
+                                                        target="_blank"><img src="assets/img/instagram/01.jpg"
+                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/02.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co"
+                                                        target="_blank"><img src="assets/img/instagram/02.jpg"
+                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/03.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co"
+                                                        target="_blank"><img src="assets/img/instagram/03.jpg"
+                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/04.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co"
+                                                        target="_blank"><img src="assets/img/instagram/04.jpg"
+                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="swiper-container sidebarInsta-active-2" dir="rtl">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/05.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co"
+                                                        target="_blank"><img src="assets/img/instagram/05.jpg"
+                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/06.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co"
+                                                        target="_blank"><img src="assets/img/instagram/06.jpg"
+                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/07.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co"
+                                                        target="_blank"><img src="assets/img/instagram/07.jpg"
+                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <a href="https://www.instagram.com/dialogika.co" target="_blank"><img src="assets/img/instagram/08.jpg" alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
+                                                    <a href="https://www.instagram.com/dialogika.co"
+                                                        target="_blank"><img src="assets/img/instagram/08.jpg"
+                                                            alt="Instagram Kelas Public Speaking Jogja : Dialogika"></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="sidebarInsta__bottom">
                                         <a href="https://www.instagram.com/dialogika.co" target="_blank" class="btn"><i
-                        class="fab fa-instagram"></i><span class="text">Follow Us</span></a>
+                                                class="fab fa-instagram"></i><span class="text">Follow Us</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -736,38 +832,41 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                                 <h4 class="widget-title">Follow Us</h4>
                                 <ul class="list-wrap">
                                     <li class="align-items-center">
-                                        <div class="thumb"><a href="https://tiktok.com/@dialogika.co"><i class='bx bxl-tiktok'></i></a>
+                                        <div class="thumb"><a href="https://tiktok.com/@dialogika.co"><i
+                                                    class='bx bxl-tiktok'></i></a>
                                         </div>
                                         <b><a href="https://tiktok.com/@dialogika.co">Tiktok</a></b>
                                         <span class="float-right">9,57K</span>
                                     </li>
                                     <li>
                                         <div class="thumb"><a href="https://instagram.com/dialogika.co"><i
-                          class='bx bxl-instagram-alt'></i></a></div>
+                                                    class='bx bxl-instagram-alt'></i></a></div>
                                         <b><a href="https://instagram.com/dialogika.co">Instagram</a></b>
                                         <span class="float-right">13,78K</span>
                                     </li>
                                     <li>
-                                        <div class="thumb"><a href="https://twitter.com/dialogika_co"><i class='bx bxl-twitter'></i></a>
+                                        <div class="thumb"><a href="https://twitter.com/dialogika_co"><i
+                                                    class='bx bxl-twitter'></i></a>
                                         </div>
                                         <b><a href="https://twitter.com/dialogika_co">Twitter</a></b>
                                         <span class="float-right">0.23K</span>
                                     </li>
                                     <li>
                                         <div class="thumb"><a href="https://facebook.com/dialogika.co"><i
-                          class='bx bxl-facebook-circle'></i></a></div>
+                                                    class='bx bxl-facebook-circle'></i></a></div>
                                         <b><a href="https://facebook.com/dialogika.co">Facebook</a></b>
                                         <span class="float-right">0.42K</span>
                                     </li>
                                     <li>
-                                        <div class="thumb"><a href="https://youtube.com/@dialogika_co"><i class='bx bxl-youtube'></i></a>
+                                        <div class="thumb"><a href="https://youtube.com/@dialogika_co"><i
+                                                    class='bx bxl-youtube'></i></a>
                                         </div>
                                         <b><a href="https://youtube.com/@dialogika_co">Youtube</a></b>
                                         <span class="float-right">0.03K</span>
                                     </li>
                                     <li>
                                         <div class="thumb"><a href="https://linkedin.com/company/dialogika"><i
-                          class='bx bxl-linkedin-square'></i></a></div>
+                                                    class='bx bxl-linkedin-square'></i></a></div>
                                         <b><a href="https://linkedin.com/company/dialogika">LinkedIn</a></b>
                                         <span class="float-right">2.72K</span>
                                     </li>
@@ -802,7 +901,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                     <div class="section-title">
                         <h2 class="dumpil">Rating</h2>
                         <h2 class="tengah">Thank You For Rating</h2>
-                        <p>Ratingmu sama berharganya dengan <b>emas</b> yang memberikan kami semangat untuk terus berbagi</p>
+                        <p>Ratingmu sama berharganya dengan <b>emas</b> yang memberikan kami semangat untuk terus
+                            berbagi</p>
                     </div>
                     <a href="#" class="blue-btn" data-bs-dismiss="modal">Close This Message</a>
                 </div>
@@ -817,14 +917,18 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <!-- ======= Modal Downloads ======= -->
     <div class="modal fade" id="downloads" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content contact" style="border-radius: 10px;box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1);-moz-box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1)">
+            <div class="modal-content contact"
+                style="border-radius: 10px;box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1);-webkit-box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1);-moz-box-shadow: 0px 9px 16px -6px rgba(249, 199, 46, 1)">
                 <div class="modal-body">
-                    <form action="javascript:void" method="post" id="formDownload" enctype="text/plain" role="form" class="php-email-form needs-validation" style="box-shadow:none;">
+                    <form action="javascript:void" method="post" id="formDownload" enctype="text/plain" role="form"
+                        class="php-email-form needs-validation" style="box-shadow:none;">
                         <div class="form-group m-b30">
                             <a href="#" onclick="return false;" class="category-box dlab-box">
                                 <div class="dlab-media dlab-img-effect zoom">
-                                    <img src="https://media.istockphoto.com/id/1191184417/id/vektor/latar-belakang-putih-vektor.jpg?s=612x612&w=0&k=20&c=iMfQeeSAwOorZ1cXy0RCdDreYtTNfUbjVVQmswwPP_w=" alt="EDIT_ALT">
-                                    <div class="top-lefts"><span class="badge rounded-pill rounded-red">Thank You</span></div>
+                                    <img src="https://media.istockphoto.com/id/1191184417/id/vektor/latar-belakang-putih-vektor.jpg?s=612x612&w=0&k=20&c=iMfQeeSAwOorZ1cXy0RCdDreYtTNfUbjVVQmswwPP_w="
+                                        alt="EDIT_ALT">
+                                    <div class="top-lefts"><span class="badge rounded-pill rounded-red">Thank You</span>
+                                    </div>
                                 </div>
                                 <div class="icon-content">
                                     <h2 class="dlab-tilte">Download File</h2>
@@ -834,42 +938,46 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                             </a>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="Name" id="names" class="form-control" pattern="[a-zA-Z\s]{3,100}" placeholder="Nama Lengkap*" required>
+                            <input type="text" name="Name" id="names" class="form-control" pattern="[a-zA-Z\s]{3,100}"
+                                placeholder="Nama Lengkap*" required>
                             <div class="validate"></div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-4 form-group">
-                                <input type="tel" class="form-control" name="Whatsapp" id="whatsapps" pattern="[0-9]{10,15}" placeholder="Whatsapp*" required="">
+                                <input type="tel" class="form-control" name="Whatsapp" id="whatsapps"
+                                    pattern="[0-9]{10,15}" placeholder="Whatsapp*" required="">
                                 <div class="validate"></div>
                             </div>
                             <div class="col-md-4 form-group">
-                                <input type="text" class="form-control" name="Work" id="works" pattern="[a-zA-Z\s]{3,100}" placeholder="Profesi*" required>
+                                <input type="text" class="form-control" name="Work" id="works"
+                                    pattern="[a-zA-Z\s]{3,100}" placeholder="Profesi*" required>
                                 <div class="validate"></div>
                             </div>
                             <div class="col-md-4 form-group">
-                                <input type="text" class="form-control" name="Domicile" id="domiciles" pattern="[a-zA-Z\s]{3,100}" placeholder="Domisili*" required>
+                                <input type="text" class="form-control" name="Domicile" id="domiciles"
+                                    pattern="[a-zA-Z\s]{3,100}" placeholder="Domisili*" required>
                                 <div class="validate"></div>
                             </div>
                         </div>
                         <div class="form-check">
                             <input type="checkbox" id="disabledFieldsetCheck">
                             <label class="form-check-label" for="disabledFieldsetCheck">
-                Data yang saya isikan sudah benar
-              </label>
+                                Data yang saya isikan sudah benar
+                            </label>
                             <div class="form-text" style="margin-top: 0px;">
                                 *Tombol akan menyala apabila nama, nomor hp, profesi dan domisili telah terisi.
                             </div>
                         </div>
                         <div class="form-group">
                             <select name="Keyword" class="form-select d-none" required>
-                <option>EDIT_JUDUL_MODAL</option>
-              </select>
+                                <option>EDIT_JUDUL_MODAL</option>
+                            </select>
                             <div class="validate"></div>
                         </div>
                         <select class="d-none" name="Timestamp">
-              <option id="timestamp"></option>
-            </select>
+                            <option id="timestamp"></option>
+                        </select>
                         <div class="text-end">
                             <button type="submit" id="submits" onclick="downloadsForm()">Download</button>
                         </div>
@@ -917,9 +1025,9 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <script src="assets/js/bar.js"></script>
     <script src="assets/js/whatsapp.js"></script>
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             $('#submits').attr('disabled', true);
-            $('#formDownload').change(function() {
+            $('#formDownload').change(function () {
                 if ($('#names').val() != '' && $('#works').val() != '' && $('#domiciles').val() != '' && $('#whatsapps').val() != '') {
                     $('#submits').attr('disabled', false);
                 } else {
