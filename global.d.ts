@@ -1,8 +1,12 @@
-// Bagian ini sudah tidak dipakai lagi. Safe to delete
-declare namespace JSX {
-    interface IntrinsicElements {
-      'main-header': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-      'main-footer': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-    }
-  }
-  
+// global.d.ts
+
+import mongoose from "mongoose";
+
+declare global {
+  var mongoose: {
+    conn: mongoose.Connection | null;
+    promise: Promise<mongoose.Connection> | null;
+  };
+}
+
+export {}; // Ensure it's a module
