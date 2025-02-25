@@ -11,6 +11,7 @@ const AuthorSchema = new Schema({
   quotes: { type: String, default: "No quotes from me 🤪" },
 });
 
+
 // Define the sub-schema for outbound links
 const OutBoundLinkSchema = new Schema({
   title: { type: String, default: "Medium Dialogika" },
