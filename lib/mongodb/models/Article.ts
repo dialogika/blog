@@ -11,7 +11,6 @@ const AuthorSchema = new Schema({
   quotes: { type: String, default: "No quotes from me 🤪" },
 });
 
-
 // Define the sub-schema for outbound links
 const OutBoundLinkSchema = new Schema({
   title: { type: String, default: "Medium Dialogika" },
@@ -70,7 +69,6 @@ const articleSchema = new Schema<IArticle>(
 
 // Use the model if it exists, or create a new one.
 const Article: Model<IArticle> =
-  (mongoose.models.Article as Model<IArticle>) ||
-  mongoose.model<IArticle>("Article", articleSchema);
+  (mongoose.models.Article as Model<IArticle>) || mongoose.model<IArticle>("Article", articleSchema);
 
 export default Article;

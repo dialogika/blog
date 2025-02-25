@@ -1,4 +1,3 @@
-// Dari 23-02-2025 discontinued, kemungkinan tidak akan dipakai bersamaan dengan file api/admin/authors.route.ts
 import mongoose, { Schema } from "mongoose";
 
 const authorSchema = new Schema({

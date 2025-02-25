@@ -17,7 +17,6 @@ export const GET = async (request: Request) => {
     if (!idArticle) {
       return NextResponse.json({ status: 404, message: "idArticle not found" }, { status: 404, headers: corsHeaders });
     }
-
     const response = await Article.findOne({ idArticle }).lean();
 
     if (!response) {

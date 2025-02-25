@@ -1,12 +1,13 @@
-// global.d.ts
-
+// Bagian ini sudah tidak dipakai lagi. Safe to delete
 import mongoose from "mongoose";
-
-declare global {
-  var mongoose: {
-    conn: mongoose.Connection | null;
-    promise: Promise<mongoose.Connection> | null;
-  };
+declare namespace JSX {
+  interface IntrinsicElements {
+    "main-header": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+    "main-footer": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+  }
 }
 
-export {}; // Ensure it's a module
+declare global {
+  // eslint-disable-next-line no-var
+  var mongoose: { conn: mongoose.Connection | null; promise: Promise<mongoose.Connection> | null };
+}
