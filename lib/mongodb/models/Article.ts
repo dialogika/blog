@@ -1,20 +1,24 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Document, Model } from "mongoose";
+import { BlogArticleProps } from "@/types";
 
+// Omit the _id property from BlogArticleProps because Document already defines it.
+export interface IArticle extends Omit<BlogArticleProps, "_id">, Document {}
 
-
+// Define the sub-schema for authors
 const AuthorSchema = new Schema({
   authorName: { type: String, required: true },
   imgPath: { type: String, required: true },
-  quotes: { type: String },
+  quotes: { type: String, default: "No quotes from me 🤪" },
 });
 
+// Define the sub-schema for outbound links
 const OutBoundLinkSchema = new Schema({
   title: { type: String, default: "Medium Dialogika" },
   link: { type: String, default: "https://medium.com/dialogika" },
 });
 
-// Skema article untuk database di mongoDB
-const articleSchema = new Schema(
+// Define the main Article schema using the IArticle interface
+const articleSchema = new Schema<IArticle>(
   {
     idArticle: {
       type: String,
@@ -37,14 +41,14 @@ const articleSchema = new Schema(
       type: String,
       required: [true, "Please provide keywords"],
     },
-    cta: String,
-    cardsDescription: String,
-    canonical: String,
+    cta: { type: String, default: undefined },
+    cardsDescription: { type: String, default: undefined },
+    canonical: { type: String, default: undefined },
     content: {
       type: String,
       required: [true, "Please provide the content for this article"],
     },
-    authors: [AuthorSchema],
+    authors: { type: [AuthorSchema], required: true },
     writerNote: {
       type: String,
       required: [true, "Please provide writer note"],
@@ -53,9 +57,9 @@ const articleSchema = new Schema(
       type: String,
       required: [true, "Please provide publication date"],
     },
-    keyTakeaway: [String],
-    tags: [String],
-    outBoundLink: OutBoundLinkSchema,
+    keyTakeaway: { type: [String], default: undefined },
+    tags: { type: [String], default: undefined },
+    outBoundLink: { type: OutBoundLinkSchema, default: undefined },
   },
   {
     timestamps: true,
@@ -63,13 +67,9 @@ const articleSchema = new Schema(
   }
 );
 
-// If id is not provided, generate a new one
-// articleSchema.pre("save", function (next) {
-//   if (!this.idArticle) {
-//     this.idArticle = this._id.toString();
-//   }
-//   next();
-// });
+// Use the model if it exists, or create a new one.
+const Article: Model<IArticle> =
+  (mongoose.models.Article as Model<IArticle>) ||
+  mongoose.model<IArticle>("Article", articleSchema);
 
-const Article = mongoose.models.Article || mongoose.model("Article", articleSchema);
 export default Article;
