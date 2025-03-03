@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./styles/globals.css";
 import { basePath } from "@/next.config";
-import Footer from "@/components/shared/Footer";
-import Header from "@/components/shared/Header";
-import BootstrapJS from "@/components/shared/utils/BootstrapJS";
-import TrackingScript from "@/components/shared/utils/TrackingScript";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import BootstrapJS from "@/components/utils/BootstrapJS";
+import TrackingScript from "@/components/utils/TrackingScript";
+import ReduxProvider from "@/components/utils/ReduxProvider";
 
 // Global metadata
 export const metadata: Metadata = {
@@ -34,8 +35,8 @@ export const metadata: Metadata = {
     images: ["https://www.dialogika.co/assets/img/logo.webp"],
   },
   icons: {
-    icon: `${basePath}/assets/img/favicon.webp`,
-    apple: `/${basePath}assets/img/apple-touch-icon.webp`,
+    icon: `https://www.dialogika.co/assets/img/favicon.webp`,
+    apple: `https://www.dialogika.co/assets/img/apple-touch-icon.webp`,
   },
 };
 
@@ -46,20 +47,10 @@ export const GlobalScripts = () => (
       src={`${basePath}/assets/js/main.js`}
       strategy="lazyOnload"
     />
-    <Script
-      src={`${basePath}/assets/js/cart.js`}
-      strategy="lazyOnload"
-    />
 
     {/* Vendor JS */}
-    <Script
-      src={`${basePath}/assets/vendor/international-phone-number/intlTelInput.min.js`}
-      strategy="lazyOnload"
-    />
-    <Script
-      src={`${basePath}/assets/vendor/international-phone-number/script.js`}
-      strategy="lazyOnload"
-    />
+    <Script src={`../public/assets/vendor/international-phone-number/intlTelInput.min.js`} />
+    <Script src={`../public/assets/vendor/international-phone-number/script.js`} />
 
     {/* External Icons */}
     <Script
@@ -73,11 +64,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="id">
       <body className="antialiased">
-        <Header />
         <TrackingScript />
-        <main className="main mb-4">{children}</main>
-        <Footer />
-
+        <ReduxProvider>
+          <Header />
+          <main className="main mb-4">{children}</main>
+          <Footer />
+        </ReduxProvider>
         {/* Global Scripts */}
         <GlobalScripts />
         <BootstrapJS />

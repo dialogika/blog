@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/shared/Breadcrumbs";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { basePath } from "@/next.config";
 import { Metadata } from "next";
 import React from "react";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
   icons: {
     icon: `${basePath}/assets/img/favicon.webp`,
-    apple: `/${basePath}assets/img/apple-touch-icon.webp`,
+    apple: `${basePath}/assets/img/apple-touch-icon.webp`,
   },
 };
 

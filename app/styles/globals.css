@@ -5,8 +5,8 @@
 /* /blog merupakan basePath dari repo ini, sesuaikan dengan basePath di file next.config.ts  */
 
 /* Vendor CSS */
-@import "/blog/assets/vendor/international-phone-number/intlTelInput.css";
-@import "/blog/assets/css/icomoon.css";
+@import "../../public/assets/vendor/international-phone-number/intlTelInput.css";
+@import "/blog/css/icomoon.css";
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 @import "boxicons/css/boxicons.min.css";

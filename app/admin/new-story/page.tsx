@@ -1,9 +1,21 @@
-import FormArticle from "@/components/admin-page-component/create-article-page-component/FormArticle";
-import Breadcrumbs from "@/components/shared/Breadcrumbs";
+import FormArticle from "@/components/article/editor/FormArticle";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import React from "react";
 import "./style.css";
+import { BlogAuthorProps } from "@/types";
+import ErrorPage from "@/components/layout/ErrorPage";
+import { authorData } from "@/public/data/authorData";
 
-const page = () => {
+const page = async () => {
+  let authors: BlogAuthorProps[] = [];
+  try {
+    authors = authorData;
+  } catch (error) {
+    console.error("Error fetching authors:", error);
+    // Return a fallback UI for errors
+    return <ErrorPage message="Gagal mengambil list author. Silakan coba lagi nanti." />;
+  }
+
   return (
     <>
       <Breadcrumbs
@@ -16,7 +28,7 @@ const page = () => {
         ]}
       />
       <section className="section container">
-        <FormArticle />
+        <FormArticle authors={authors} />
       </section>
     </>
   );
