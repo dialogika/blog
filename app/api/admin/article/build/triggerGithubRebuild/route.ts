@@ -12,7 +12,7 @@ const corsHeaders = {
 //  Intinya automatisasi push blog/deploy blog
 export const POST = async (request: Request) => {
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-  const owner = process.env.GITHUB_OWNER; // e.g. "your-username"
+  const owner = process.env.GITHUB_OWNER; // "your-username"
   const repo = process.env.GITHUB_REPO;
   try {
     await dbConnect();
