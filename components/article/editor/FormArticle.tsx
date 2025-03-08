@@ -1,6 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { TextInput, DynamicInput, DynamicAuthorInput, LabelInput } from "@/components/forms";
+import {
+  TextInput,
+  DynamicInput,
+  DynamicAuthorInput,
+  LabelInput,
+} from "@/components/forms";
 import { BlogArticleProps, BlogAuthorProps } from "@/types";
 import { useDispatch, useSelector } from "react-redux";
 import { updateAuthorsState } from "@/app/store/authorsSlice";
@@ -16,12 +21,15 @@ interface FormArticleProps {
 }
 
 const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
-  const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail);
+  const availableAuthors = useSelector(
+    (state: RootState) => state.authors.authorsDetail
+  );
   const dispatch = useDispatch();
   const [showGuide, setShowGuide] = useState(false); // State untuk menampilkan model GUIDE penggunaan text editor
   const [isSuccess, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
+  const [totalKeyword, setTotalkeyword] = useState(0);
   // Gunakan useEffect untuk meng-update store dengan data author yang diterima
   useEffect(() => {
     dispatch(updateAuthorsState(authors));
@@ -60,7 +68,9 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       return;
     }
     if (metadata.length > 160) {
-      alert("Metada tidak boleh lebih dari 160 karakter. Spasi, angka, simbol termasuk karakter !!");
+      alert(
+        "Metada tidak boleh lebih dari 160 karakter. Spasi, angka, simbol termasuk karakter !!"
+      );
       return;
     }
     payload.metaData = metadata;
@@ -115,10 +125,13 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
     const authorsPayload: BlogAuthorProps[] = [];
     for (let i = 0; i < 3; i++) {
       const selectedAuthorNames = formData.get(`authors-${i}`); // Ambil nama-nama author yang ada dari input
-      if (selectedAuthorNames) selectedAuthors.push(selectedAuthorNames.toString());
+      if (selectedAuthorNames)
+        selectedAuthors.push(selectedAuthorNames.toString());
     }
     selectedAuthors.forEach((author) => {
-      const findAuhor = availableAuthors.find((item) => item.authorName == author);
+      const findAuhor = availableAuthors.find(
+        (item) => item.authorName == author
+      );
       if (findAuhor) authorsPayload.push(findAuhor);
     });
     payload.authors = authorsPayload;
@@ -133,13 +146,16 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       setIsFailed(false);
       event.preventDefault();
       console.log("Submitting Article ...");
-      const res = await fetch("https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch(
+        "https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
       if (!res.ok) {
         setIsLoading(false);
         setSuccess(false);
@@ -162,7 +178,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       // } else {
       //   console.log("Berhasil redeploy github pages");
       // }
-
 
       // UNCOMMENT MEN BRANCH main-nextjs READY
       // const rebuildGithub = await fetch(
@@ -194,9 +209,12 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         id="FormArticle"
         onSubmit={handleFormSubmit}
         className="w-100 d-flex flex-column mt-5 mt-md-0 p-3 "
-        style={{ height: "auto" }}>
+        style={{ height: "auto" }}
+      >
         <ImageUrl
-          inputPlaceholder={"Masukkan link gambar untuk thumbnail. Disarankan untuk menggunakan gambar Landscape"}
+          inputPlaceholder={
+            "Masukkan link gambar untuk thumbnail. Disarankan untuk menggunakan gambar Landscape"
+          }
           name={"thumbnail-image"}
         />
         {/* Input untuk judul blog */}
@@ -219,7 +237,12 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           placeholder="Masukkan metadata blog disini"
           divClassName="mt-4"
           inputClassName="text-input fs-6 w-100"
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            const valueLength = event.target.value.length;
+            setTotalkeyword(valueLength);
+          }}
         />
+        <p className="text-secondary">Metadata Characters : {totalKeyword}</p>
         <TextInput
           type="text"
           name="blogDescription"
@@ -280,11 +303,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               required={true}
               title={"Tags"}
             />
-            <DynamicInput
-              name="tags"
-              maxInputs={8}
-              placeholder="#tags"
-            />
+            <DynamicInput name="tags" maxInputs={8} placeholder="#tags" />
           </div>
         </div>
 
@@ -302,19 +321,15 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           type="button"
           className="appointment-btn"
           onClick={() => setShowGuide(true)}
-          style={{ width: "fit-content" }}>
+          style={{ width: "fit-content" }}
+        >
           Buka Guide
         </button>
-        <EditorModal
-          show={showGuide}
-          onHide={() => setShowGuide(false)}
-        />
+        <EditorModal show={showGuide} onHide={() => setShowGuide(false)} />
         {/* NOTES : GUNAKAN JODIT REGULAR BILA ADA MASALAH DENGAN UI/UX KARNA LEBIH STABIL YANG REGULAR DIBANDINGKAN DENGAN PRO */}
         <JoditRegularEditor />
 
-        <button
-          type="submit"
-          className="appointment-btn mt-4 align-self-end">
+        <button type="submit" className="appointment-btn mt-4 align-self-end">
           Publish Article
         </button>
       </form>
@@ -333,16 +348,9 @@ interface IndicatorProps {
 
 const SuccessIndicator: React.FC<IndicatorProps> = ({ onClose }) => (
   <div className="fixed-top gap-3 d-flex flex-column justify-content-center align-items-center w-100 h-100 alert alert-success">
-    <FontAwesomeIcon
-      icon={faCheck}
-      beat
-      style={{ width: 50, height: 50 }}
-    />
+    <FontAwesomeIcon icon={faCheck} beat style={{ width: 50, height: 50 }} />
     <strong>Success!</strong> Article submitted successfully.
-    <button
-      type="button"
-      className="btn btn-primary"
-      onClick={onClose}>
+    <button type="button" className="btn btn-primary" onClick={onClose}>
       Close
     </button>
   </div>
@@ -350,27 +358,16 @@ const SuccessIndicator: React.FC<IndicatorProps> = ({ onClose }) => (
 
 const LoadingIndicator: React.FC<IndicatorProps> = () => (
   <div className="fixed-top gap-3 d-flex flex-column justify-content-center align-items-center w-100 h-100 alert alert-warning">
-    <FontAwesomeIcon
-      icon={faSpinner}
-      spin
-      style={{ width: 50, height: 50 }}
-    />
+    <FontAwesomeIcon icon={faSpinner} spin style={{ width: 50, height: 50 }} />
     <strong>Uploading !</strong> Please Wait.
   </div>
 );
 
 const FailedIndicator: React.FC<IndicatorProps> = ({ onClose }) => (
   <div className="fixed-top gap-3 d-flex flex-column justify-content-center align-items-center w-100 h-100 alert alert-danger">
-    <FontAwesomeIcon
-      icon={faSpinner}
-      spin
-      style={{ width: 50, height: 50 }}
-    />
+    <FontAwesomeIcon icon={faSpinner} spin style={{ width: 50, height: 50 }} />
     <strong>Failed ! Cant publish new article</strong> Please try again later!
-    <button
-      type="button"
-      className="btn btn-primary"
-      onClick={onClose}>
+    <button type="button" className="btn btn-primary" onClick={onClose}>
       Close
     </button>
   </div>
