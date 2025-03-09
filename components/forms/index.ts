@@ -3,3 +3,4 @@ export { default as LabelInput } from "./LabelInput";
 export { default as TextInput } from "./TextInput";
 export { default as UploadImage } from "./UploadImage";
 export { default as DynamicAuthorInput } from "./DynamicAuthorInput";
+export { default as TextAreaInput } from "./TextAreaInput";

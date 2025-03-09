@@ -7,17 +7,22 @@ interface LabelInputProps {
   title: string;
   description?: string;
   required?: boolean;
+  hideAsterisk?: boolean; // Add this to the interface
 }
 
-const LabelInput = ({ htmlFor, title, description, required }: LabelInputProps) => {
+const LabelInput = ({
+  htmlFor,
+  title,
+  description,
+  required,
+  hideAsterisk,
+}: LabelInputProps) => {
   return (
     <label htmlFor={htmlFor}>
       {title}
-      {required && <span style={{ color: "red" }}> *</span>}
+      {required && !hideAsterisk && <span style={{ color: "red" }}> *</span>}
       {description && (
-        <span
-          className="tooltip-icon ms-2"
-          title={description}>
+        <span className="tooltip-icon ms-2" title={description}>
           <FontAwesomeIcon icon={faQuestionCircle} />
         </span>
       )}
