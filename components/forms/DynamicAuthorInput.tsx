@@ -61,75 +61,82 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
             authors.find((author) => author.authorName === values[index]) ||
             authors[0];
           return (
-            <div
-              key={index}
-              id={`author-card-${index}`}
-              className="d-flex gap-3 flex-column h-auto align-items-center justify-content-around position-relative"
-            >
-              <div className="d-flex gap-2 justify-content-around">
-                <select
-                  name={`${props.name}-${index}`}
-                  id={`${props.name}-${index}`}
-                  value={values[index]}
-                  onChange={(e) => handleSelectChange(index, e.target.value)}
-                >
-                  <option className="fst-italic" value="">
-                    Select Author
-                  </option>
-                  {authors.map((author, idx) => (
-                    <option key={idx} value={author.authorName}>
-                      {author.authorName}
-                    </option>
-                  ))}
-                </select>
-                {totalInputs.length > 1 && (
-                  <button
-                    type="button"
-                    onClick={() => handleRemoveInput(index)}
-                    className="bg-transparent border-0"
-                  >
-                    <FontAwesomeIcon
-                      icon={faCircleXmark}
-                      style={{ width: 20, height: 20 }}
-                    />
-                  </button>
-                )}
-              </div>
+            <div className="flex flex-wrap gap-3 justify-content-space-between">
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                  minHeight: 380,
-                  width: 250,
-                  padding: "10px",
-                  boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-                  borderRadius: "8px",
-                  backgroundColor: "#fff",
-                }}
+                key={index}
+                id={`author-card-${index}`}
+                className={`d-flex gap-3 flex-column h-auto align-items-center justify-content-around position-relative ${
+                  index % 3 === 2 ? "order-first" : ""
+                }`}
               >
-                <Image
-                  src={selectedAuthor.imgPath}
-                  width={250}
-                  height={250}
-                  className="rounded"
-                  alt={selectedAuthor.authorName}
-                />
-                <p
-                  className="fst-italic text-center w-100 mx-auto"
+                <div className="d-flex gap-2 justify-content-around justify-items-start">
+                  <select
+                    name={`author-${index}`}
+                    id={`author-${index}`}
+                    value={values[index]}
+                    onChange={(e) => handleSelectChange(index, e.target.value)}
+                  >
+                    <option className="fst-italic" value="">
+                      Select Author
+                    </option>
+                    {authors.map((author, idx) => (
+                      <option key={idx} value={author.authorName}>
+                        {author.authorName}
+                      </option>
+                    ))}
+                  </select>
+                  {totalInputs.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveInput(index)}
+                      className="bg-transparent border-0"
+                    >
+                      <FontAwesomeIcon
+                        icon={faCircleXmark}
+                        style={{ width: 20, height: 20 }}
+                      />
+                    </button>
+                  )}
+                </div>
+                <div
                   style={{
-                    maxHeight: 100,
-                    whiteSpace: "normal",
-                    overflowY: "auto",
-                    textOverflow: "ellipsis",
-                    marginTop: 10,
-                    marginBottom: 0,
-                    display: "block",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    minHeight: 250,
+                    width: 250,
+                    padding: "10px",
+                    boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
+                    borderRadius: "12px",
+                    background: "rgba(255, 255, 255, 0.3)",
+                    backdropFilter: "blur(10px)",
+                    WebkitBackdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255, 255, 255, 0.2)",
                   }}
                 >
-                  {selectedAuthor.quotes}
-                </p>
+                  <Image
+                    src={selectedAuthor.imgPath || "/placeholder.jpg"}
+                    width={250}
+                    height={240}
+                    className="rounded"
+                    alt={selectedAuthor.authorName || "Unknown"}
+                  />
+                  <p
+                    className="fst-italic text-center w-100 mx-auto"
+                    style={{
+                      maxHeight: 100,
+                      whiteSpace: "normal",
+                      overflowY: "auto",
+                      textOverflow: "ellipsis",
+                      marginTop: 10,
+                      marginBottom: 0,
+                      display: "block",
+                    }}
+                  >
+                    {selectedAuthor.quotes || "No Quote Yet"}
+                  </p>
+                </div>
               </div>
             </div>
           );

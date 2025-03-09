@@ -5,6 +5,7 @@ import {
   DynamicInput,
   DynamicAuthorInput,
   LabelInput,
+  TextAreaInput,
 } from "@/components/forms";
 import { BlogArticleProps, BlogAuthorProps } from "@/types";
 import { useDispatch, useSelector } from "react-redux";
@@ -211,48 +212,59 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         className="w-100 d-flex flex-column mt-5 mt-md-0 p-3 "
         style={{ height: "auto" }}
       >
-        <ImageUrl
-          inputPlaceholder={
-            "Masukkan link gambar untuk thumbnail. Disarankan untuk menggunakan gambar Landscape"
-          }
-          name={"thumbnail-image"}
-        />
-        {/* Input untuk judul blog */}
-        <TextInput
-          type="text"
-          name="title"
-          labelTitle="Judul"
-          required={true}
-          placeholder="Masukkan judul blog disini"
-          inputClassName="text-input fs-4 w-100"
-        />
+        <div className="blog-form-container p-4">
+          {/* Thumbnail Image Section */}
+          <div className="mb-4">
+            <div className="d-flex align-items-center mb-2">
+              <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+                <i className="fas fa-image text-primary"></i>
+              </div>
+              <h5 className="mb-0 fw-bold text-primary">Thumbnail</h5>
+            </div>
+            <div className="p-3 border border-dashed rounded-3 bg-light">
+              <ImageUrl
+                inputPlaceholder={
+                  "Masukkan link gambar untuk thumbnail. Disarankan untuk menggunakan gambar Landscape"
+                }
+                name={"thumbnail-image"}
+              />
+              <div className="mt-2 text-muted small">
+                <i className="fas fa-info-circle me-1"></i>
+                Gambar landscape akan ditampilkan lebih baik di halaman utama
+                blog
+              </div>
+            </div>
+          </div>
 
-        {/* Input untuk metadata, deskripsi, keyword, writer's note */}
-        <TextInput
-          type="text"
-          name="metadata"
-          labelTitle="Metadata"
-          required={true}
-          description="Metadata antara 150-160 karakter. Spasi termasuk"
-          placeholder="Masukkan metadata blog disini"
-          divClassName="mt-4"
-          inputClassName="text-input fs-6 w-100"
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            const valueLength = event.target.value.length;
-            setTotalkeyword(valueLength);
-          }}
-        />
-        <p className="text-secondary">Metadata Characters : {totalKeyword}</p>
-        <TextInput
-          type="text"
-          name="blogDescription"
-          labelTitle="Deskripsi Blog"
-          required={true}
-          description="Deskripsi blog akan digunakan di halaman utama blog"
-          placeholder="Masukkan deskripsi blog disini"
-          divClassName="mt-4"
-          inputClassName="text-input fs-6 w-100"
-        />
+          {/* Judul */}
+          <div className="mb-4">
+            <div className="d-flex align-items-center mb-2 pt-4">
+              <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+                <i className="fas fa-heading text-primary"></i>
+              </div>
+              <h5 className="mb-0 fw-bold text-primary">
+                Judul <span className="text-danger">*</span>
+              </h5>
+            </div>
+            <div className="p-2">
+              <TextInput
+                type="text"
+                name="title"
+                // labelTitle="Judul"
+                required={true}
+                hideAsterisk={true}
+                placeholder="Masukkan judul blog yang menarik"
+                inputClassName="text-input fs-6 w-100 p-3 border border-light shadow-sm rounded-3"
+              />
+              <div className="mt-2 text-muted small">
+                <i className="fas fa-lightbulb me-1"></i>
+                Judul yang baik biasanya memiliki 8-15 kata dan mengandung kata
+                kunci utama
+              </div>
+            </div>
+          </div>
+        </div>
+
         <TextInput
           type="text"
           name="keyword"
@@ -263,7 +275,129 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           divClassName="mt-4"
           inputClassName="text-input fs-6 w-100"
         />
-        <TextInput
+
+        {/* Keyword */}
+        <div className="mb-4">
+          <div className="d-flex align-items-center mb-2 pt-4">
+            <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+              <i className="fas fa-heading text-primary"></i>
+            </div>
+            <h5 className="mb-0 fw-bold text-primary">Keyword Blog</h5>
+          </div>
+          <div className="p-2">
+            <TextInput
+              type="text"
+              name="keyword"
+              labelTitle="Judul"
+              required={true}
+              placeholder="Masukkan judul blog yang menarik"
+              inputClassName="text-input fs-6 w-100 p-3 border border-light shadow-sm rounded-3"
+            />
+            <div className="mt-2 text-muted small">
+              <i className="fas fa-lightbulb me-1"></i>
+              Judul yang baik biasanya memiliki 8-15 kata dan mengandung kata
+              kunci utama
+            </div>
+          </div>
+        </div>
+
+        {/* Input untuk metadata, deskripsi, keyword, writer's note */}
+        <div className="card border-0 shadow rounded-4 overflow-hidden my-4">
+          <div className="card-header bg-primary bg-gradient text-white p-3 d-flex align-items-center">
+            <i className="fas fa-pencil-alt me-2"></i>
+            <h5 className="mb-0 fw-bold">Metadata</h5>
+          </div>
+
+          <div className="card-body p-4">
+            <div className="d-flex align-items-center mb-3">
+              <div className="bg-light p-2 rounded-circle me-3">
+                <i className="fas fa-info text-primary"></i>
+              </div>
+              <p
+                className="text-secondary mb-0 fst-italic"
+                style={{ fontSize: "0.9rem" }}
+              >
+                Metadata antara 150-160 karakter. Spasi termasuk
+              </p>
+            </div>
+            <div className="position-relative mt-3">
+              <TextAreaInput
+                maxLength="160"
+                rows="8"
+                name="metadata"
+                placeholder="Masukkan metadata blog disini..."
+                divClassName="mb-0"
+                textAreaClassName="form-control fs-6 w-100 border border-light-subtle rounded-3 shadow-sm p-3"
+                style={{ resize: "none", backgroundColor: "#f8f9fa" }}
+                onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
+                  const valueLength = event.target.value.length;
+                  setTotalkeyword(valueLength);
+                }}
+              />
+              <div className="position-absolute bottom-0 end-0 p-3">
+                <div className="text-muted small">
+                  <div className="text-end mt-1">
+                    <small
+                      className={`${
+                        totalKeyword > 160
+                          ? "text-danger"
+                          : totalKeyword >= 150
+                          ? "text-success"
+                          : "text-muted"
+                      }`}
+                    >
+                      {totalKeyword}/160 karakter
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <TextInput
+          type="text"
+          name="blogDescription"
+          labelTitle="Deskripsi Blog"
+          required={true}
+          description="Deskripsi blog akan digunakan di halaman utama blog"
+          placeholder="Masukkan deskripsi blog disini"
+          divClassName="mt-4"
+          inputClassName="text-input fs-6 w-100"
+        /> */}
+
+        <div className="card border-0 shadow rounded-4 overflow-hidden my-4">
+          <div className="card-header bg-primary bg-gradient text-white p-3 d-flex align-items-center">
+            <i className="fas fa-pencil-alt me-2"></i>
+            <h5 className="mb-0 fw-bold">Deskripsi Blog</h5>
+          </div>
+
+          <div className="card-body p-4">
+            <div className="d-flex align-items-center mb-3">
+              <div className="bg-light p-2 rounded-circle me-3">
+                <i className="fas fa-info text-primary"></i>
+              </div>
+              <p
+                className="text-secondary mb-0 fst-italic"
+                style={{ fontSize: "0.9rem" }}
+              >
+                Deskripsi blog akan digunakan di halaman utama blog
+              </p>
+            </div>
+            <div className="position-relative mt-3">
+              <TextAreaInput
+                rows="8"
+                name="blogDescription"
+                placeholder="Masukkan deskripsi blog disini..."
+                divClassName="mb-0"
+                textAreaClassName="form-control fs-6 w-100 border border-light-subtle rounded-3 shadow-sm p-3"
+                style={{ resize: "none", backgroundColor: "#f8f9fa" }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* <TextInput
           type="text"
           name="writernote"
           labelTitle="Writer's Note"
@@ -272,9 +406,48 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           placeholder="Masukkan writer's note disini"
           divClassName="mt-4"
           inputClassName="text-input fs-6 w-100"
-        />
+        /> */}
+
+        <div className="card border-0 shadow rounded-4 overflow-hidden my-4">
+          <div className="card-header bg-primary bg-gradient text-white p-3 d-flex align-items-center">
+            <i className="fas fa-pencil-alt me-2"></i>
+            <h5 className="mb-0 fw-bold">Writer's Note</h5>
+          </div>
+
+          <div className="card-body p-4">
+            <div className="d-flex align-items-center mb-3">
+              <div className="bg-light p-2 rounded-circle me-3">
+                <i className="fas fa-info text-primary"></i>
+              </div>
+              <p
+                className="text-secondary mb-0 fst-italic"
+                style={{ fontSize: "0.9rem" }}
+              >
+                Menjelaskan blog ini ditujukan untuk siapa. Mahasiswa?, Orang
+                tua?, Guru?, dll
+              </p>
+            </div>
+            <div className="position-relative mt-3">
+              <TextAreaInput
+                rows="8"
+                name="writenote"
+                placeholder="Masukkan writer's note disini..."
+                divClassName="mb-0"
+                textAreaClassName="form-control fs-6 w-100 border border-light-subtle rounded-3 shadow-sm p-3"
+                style={{ resize: "none", backgroundColor: "#f8f9fa" }}
+              />
+              {/* <div className="position-absolute bottom-0 end-0 p-3">
+                <div className="text-muted small">
+                  <i className="far fa-edit me-1"></i>
+                  Tuliskan siapa target audiensmu
+                </div>
+              </div> */}
+            </div>
+          </div>
+        </div>
+
         {/* Input untuk outbound link */}
-        <div className="d-inline-flex flex-row gap-4 my-4 overflow-hidden">
+        {/* <div className="d-inline-flex flex-row gap-4 my-4 overflow-hidden">
           <TextInput
             type="text"
             name="externalTitle"
@@ -292,6 +465,32 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             divClassName="col-5 col-md-6"
             inputClassName="text-input fs-6 w-100"
           />
+        </div> */}
+
+        <div className="card p-3 my-4 border-0 shadow-sm">
+          <div className="d-flex flex-row gap-4 flex-wrap justify-content-between">
+            <div className="col-12 col-md-6 mb-3">
+              <TextInput
+                type="text"
+                name="externalTitle"
+                labelTitle="Outbound Title"
+                description="Link yang mengarah ke blog se-topik yang diluar dari dialogika. Misal blog dari medium"
+                placeholder="Stoicism: Kunci Kebijaksanaan dan Hidup Tenang"
+                divClassName="w-100"
+                inputClassName="form-control fs-6 w-100 border-0 shadow-sm rounded-2"
+              />
+            </div>
+            <div className="col-12 col-md-6 mb-3">
+              <TextInput
+                type="text"
+                name="externalLink"
+                labelTitle="Outbound Link"
+                placeholder="https://medium.com/dialogika"
+                divClassName="w-100"
+                inputClassName="form-control fs-6 w-100 border-0 shadow-sm rounded-2"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Input untuk Tags dan Key Takeaway */}

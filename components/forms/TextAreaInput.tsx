@@ -2,52 +2,47 @@
 import React from "react";
 import LabelInput from "./LabelInput";
 
-export interface InputProps {
+export interface TextAreaProps {
+  maxLength?: number;
   name: string;
   labelTitle: string;
-  type?: React.HTMLInputTypeAttribute;
   placeholder?: string;
   divClassName?: string;
-  inputClassName?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  textAreaClassName?: string;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onClick?: () => void;
   description?: string;
   required?: boolean;
-  hideAsterisk?: boolean;
 }
 
-const TextInput: React.FC<InputProps> = ({
+const TextAreaInput: React.FC<TextAreaProps> = ({
   name,
-  type = "text",
   placeholder,
+  maxLength,
   description,
   divClassName,
-  inputClassName,
+  textAreaClassName,
   labelTitle,
-  hideAsterisk,
-  required,
-  ...otherProps
+  ...props
 }) => {
   return (
     <div className={divClassName}>
       <LabelInput
         htmlFor={name}
         title={labelTitle}
-        required={required}
-        hideAsterisk={hideAsterisk}
+        required={props.required}
         description={description}
       />
-      <input
-        type={type}
+      <textarea
+        maxLength={maxLength}
         name={name}
         id={name}
-        className={inputClassName}
+        className={textAreaClassName}
         placeholder={placeholder}
-        required={required}
-        {...otherProps}
+        {...props}
       />
     </div>
   );
 };
 
-export default TextInput;
+export default TextAreaInput;
