@@ -60,6 +60,9 @@ import virdaManikArdhana from "@/public/assets/img/intern/virda-manik-ardhana.jp
 import yunitaSara from "@/public/assets/img/intern/yunita-sara.jpg";
 import yusufNurohman from "@/public/assets/img/intern/yusuf-nurohman.jpg";
 import winemaAleshanee from "@/public/assets/img/intern/winema-aleshanee.webp";
+import jessicaCaesyaAgustin from "@/public/assets/img/intern/jessica-caesya-agustin.webp";
+import nurfinkaLailasari from "@/public/assets/img/intern/pingka.jpg";
+import damarAdiNugroho from "@/public/assets/img/intern/damar-adi.webp";
 
 const internImages = {
   yogaPangestu,
@@ -68,6 +71,9 @@ const internImages = {
   nasrudinFahmi,
   darmaPutraKusuma,
   adel,
+  damarAdiNugroho,
+  nurfinkaLailasari,
+  jessicaCaesyaAgustin,
   agathaBetasabrinaSampebua,
   salsabillaAghisa,
   habibahNureniati,

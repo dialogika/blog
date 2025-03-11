@@ -2,7 +2,7 @@ name: Deploy Next.js site to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main-nextjs"]
   repository_dispatch:
     types: [trigger-pages-rebuild]
   workflow_dispatch:
@@ -73,6 +73,11 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+
+        # Ping google to index blog pages
+      - name: Ping Google with Sitemap
+        run: |
+          curl "http://www.google.com/ping?sitemap=https://www.dialogika.co/sitemap.xml"
 
   deploy:
     runs-on: ubuntu-latest

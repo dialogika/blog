@@ -1,4 +1,5 @@
 "use client";
+import { LabelInput } from "@/components/forms";
 import dynamic from "next/dynamic";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
@@ -33,7 +34,13 @@ const JoditRegularEditor = () => {
             </ul>
         </div>
     </div>
-    <p>Sisa kontent dimasukkan kesini, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+    <p><br></p>
+    <p>Konten-konten dimasukkan kesini. Replace bagian ini dengan isi dari artikelnya, Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. </p>
+    <p><br></p>
 
     <div id="call-to-action" class="call-to-action">
         <img src="https://img.freepik.com/free-photo/woman-asking-questions-podcast_23-2149029335.jpg?w=2000&amp;t=st=1702424624~exp=1702425224~hmac=8ef22a8fb4c913b576a1fefecfe57e6e9f84a118e0f24b78674d7e4105d2d7b1"
@@ -52,9 +59,21 @@ const JoditRegularEditor = () => {
         </div>
     </div>
 
+    <p><br></p>
     <h2>Penutup/Kesimpulan (Pilih satu)</h2>
     <p>Isi penutup/kesimpulan</p>
 
+    <blockquote>
+        <p>
+            <br>
+        </p>
+        <figcaption class="blockquote-footer">
+            Ann Lander
+        </figcaption>
+        “Bukan apa yang Anda lakukan untuk anak-anak Anda, tapi apa yang Anda ajarkan kepada mereka untuk
+        dilakukan bagi diri mereka sendiri, itulah yang akan menjadikan mereka manusia sukses.”
+        <p><br></p>
+    </blockquote>
 </div>`
   ); // Isi dari text/Jodit editor disimpan disini
   useEffect(() => {
@@ -87,6 +106,13 @@ const JoditRegularEditor = () => {
         onClick={() => console.log("ini value jodit :", editorValue)}>
         Get Jodit Value (tim HTML)
       </button> */}
+      <div className="mb-3 mt-5">
+        <LabelInput
+          htmlFor="formEditor"
+          title="Isi Artikel Blog"
+          required
+        />
+      </div>
       <LoadJoditRegular
         editorRef={(ref) => (editor.current = ref)}
         value={editorValue}

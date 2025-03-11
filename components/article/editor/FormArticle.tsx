@@ -18,6 +18,7 @@ interface FormArticleProps {
 const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
   const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail);
   const dispatch = useDispatch();
+  const [totalKeyword, setTotalkeyword] = useState(0);
   const [showGuide, setShowGuide] = useState(false); // State untuk menampilkan model GUIDE penggunaan text editor
   const [isSuccess, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -163,7 +164,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       //   console.log("Berhasil redeploy github pages");
       // }
 
-
       // UNCOMMENT MEN BRANCH main-nextjs READY
       // const rebuildGithub = await fetch(
       //   "https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/build/triggerGithubRebuild/",
@@ -190,6 +190,10 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
 
   return (
     <>
+      <EditorModal
+        show={showGuide}
+        onHide={() => setShowGuide(false)}
+      />
       <form
         id="FormArticle"
         onSubmit={handleFormSubmit}
@@ -209,6 +213,15 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           inputClassName="text-input fs-4 w-100"
         />
 
+        <button
+          type="button"
+          className="appointment-btn"
+          onClick={() => setShowGuide(true)}
+          style={{ width: "fit-content" }}>
+          Buka Guide
+        </button>
+        <JoditRegularEditor />
+
         {/* Input untuk metadata, deskripsi, keyword, writer's note */}
         <TextInput
           type="text"
@@ -219,7 +232,12 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           placeholder="Masukkan metadata blog disini"
           divClassName="mt-4"
           inputClassName="text-input fs-6 w-100"
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            const valueLength = event.target.value.length;
+            setTotalkeyword(valueLength);
+          }}
         />
+        <p className="text-secondary">Metadata Characters : {totalKeyword}</p>
         <TextInput
           type="text"
           name="blogDescription"
@@ -298,19 +316,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             required={true}
           />
         </div>
-        <button
-          type="button"
-          className="appointment-btn"
-          onClick={() => setShowGuide(true)}
-          style={{ width: "fit-content" }}>
-          Buka Guide
-        </button>
-        <EditorModal
-          show={showGuide}
-          onHide={() => setShowGuide(false)}
-        />
-        {/* NOTES : GUNAKAN JODIT REGULAR BILA ADA MASALAH DENGAN UI/UX KARNA LEBIH STABIL YANG REGULAR DIBANDINGKAN DENGAN PRO */}
-        <JoditRegularEditor />
 
         <button
           type="submit"

@@ -24,7 +24,7 @@ const ArticleLists = ({ articles }: articlesProps) => {
           key={index}>
           <div className="post-img">
             <Image
-              src={article.thumbnail}
+              src={article.thumbnail.trimEnd()}
               alt={article.keywords}
               width={745}
               height={400}

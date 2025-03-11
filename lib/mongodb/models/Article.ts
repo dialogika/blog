@@ -58,7 +58,7 @@ const articleSchema = new Schema(
     collection: "articleCollections",
   }
 );
-
+// testingArticleCollections
 // If id is not provided, generate a new one
 // articleSchema.pre("save", function (next) {
 //   if (!this.idArticle) {

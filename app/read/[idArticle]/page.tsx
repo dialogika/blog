@@ -105,7 +105,7 @@ export default async function Page(props: { params: pageParams }) {
                     className="post-img position-relative m-0"
                     style={{ borderRadius: 10 }}>
                     <Image
-                      src={article.thumbnail}
+                      src={article.thumbnail.trimEnd()}
                       alt="Kesalahan Komunikasi"
                       className="img-fluid"
                       width={800}

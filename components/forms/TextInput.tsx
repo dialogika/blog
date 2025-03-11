@@ -9,7 +9,7 @@ export interface InputProps {
   placeholder?: string;
   divClassName?: string;
   inputClassName?: string;
-  onChange?: () => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: () => void;
   description?: string; // Property ini untuk menjelaskan tentang input
   required?: boolean;

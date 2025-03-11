@@ -17,14 +17,12 @@ const EditorModal = ({ show, onHide }: editorModalProps) => {
       id="guideModal"
       show={show}
       onHide={onHide}
-      className="fade show modal-xl"
+      className="modal-xl"
       dialogClassName="modal-90w" // custom class
       aria-labelledby="guide-modal">
       <Modal.Header closeButton>Guide & Tips untuk editor</Modal.Header>
       <Modal.Body>
-        <Accordion
-          defaultActiveKey={["0"]}
-          alwaysOpen>
+        <Accordion>
           {/* Start of Guide memasukkan Gambar */}
           <Accordion.Item eventKey="0">
             <Accordion.Header>Cara Memasukkan Gambar</Accordion.Header>
@@ -114,7 +112,6 @@ const EditorModal = ({ show, onHide }: editorModalProps) => {
             <Accordion.Header>Guide 4</Accordion.Header>
             <Accordion.Body>Isi Guide 4</Accordion.Body>
           </Accordion.Item>
-          
         </Accordion>
       </Modal.Body>
       <Modal.Footer></Modal.Footer>

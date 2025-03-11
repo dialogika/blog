@@ -3,6 +3,21 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 
 export const authorData: BlogAuthorProps[] = [
   {
+    authorName: "Damar Adi Nugroho",
+    imgPath: internImages.damarAdiNugroho.src,
+    quotes: `Kalau hidup lagi timeout, mungkin waktunya refresh token biar semangat lagi!  `,
+  },
+  {
+    authorName: "Nurfinka Lailasari",
+    imgPath: internImages.nurfinkaLailasari.src,
+    quotes: `With overflowing creativity, a blazing spirit, and relentless perseverance, someone will carve extraordinary achievements that become a beacon of inspiration for many. `,
+  },
+  {
+    authorName: "Jessica Caesya Agustin",
+    imgPath: internImages.jessicaCaesyaAgustin.src,
+    quotes: `Setiap orang memiliki jalannya masing-masing. Tak perlu terlalu terburu-buru. Pada akhirnya, hidup bukanlah sebuah kompetisi. `,
+  },
+  {
     authorName: "Winema Aleshanee",
     imgPath: internImages.winemaAleshanee.src,
     quotes: `No quote! ~~`,
@@ -205,7 +220,7 @@ export const authorData: BlogAuthorProps[] = [
     quotes: "~~",
   },
   {
-    authorName: "An Nisa Nur Rizky Aghisa",
+    authorName: "An Nisa Nur Rizky",
     imgPath: internImages.anNisaNurRizky.src,
     quotes:
       "Tidak ada kata terlambat untuk memulai hal yang baru. Selama kita masih punya tekad dan semangat, kenapa tidak? ",
@@ -261,7 +276,7 @@ export const authorData: BlogAuthorProps[] = [
     quotes: "Push Your Limit",
   },
   {
-    authorName: "Darma Putra Kusuma",
+    authorName: "Darma Putra",
     imgPath: internImages.darmaPutraKusuma.src,
     quotes: "Be Good and Be Right",
   },

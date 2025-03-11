@@ -19,14 +19,12 @@ export async function OPTIONS() {
 export const POST = async (request: Request) => {
   try {
     await dbConnect();
-    console.log("connected to mongoDB");
 
     const payload: Partial<BlogArticleProps> = await request.json();
 
     // Update artikel blog bila artikel dengan idArticle sudah ada, bila tidak ada maka buat baru
     const result = await Article.updateOne({ idArticle: payload.idArticle }, { $set: payload }, { upsert: true });
 
-    console.log("Data sent to mongoDB");
     return NextResponse.json({ status: "success", result }, { status: 200, headers: corsHeaders });
   } catch (error: any) {
     console.error("Error in API route:", error);

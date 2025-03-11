@@ -31,8 +31,14 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
   return (
     <div
       id="upload-thumbnail-container"
-      className="overflow-hidden my-5 mt-md-0 rounded position-relative d-flex flex-column justify-content-center align-items-center gap-4"
-      style={{ minHeight: 250, width: "100%" }}>
+      className={`overflow-hidden mt-md-0 mb-5 px-3 gap-4 rounded position-relative d-flex flex-column justify-content-center align-items-center ${
+        submittedUrl != null ? "" : "border border-secondary"
+      }`}
+      style={{
+        minHeight: 250,
+        width: "100%",
+        background: "#F4F2EE",
+      }}>
       {submittedUrl ? (
         <div className="position-relative w-100 h-100">
           {isLoading && (
@@ -50,7 +56,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
               onLoad={() => setIsLoading(false)}
             />
           </div>
-          {/* Input ini diperlukan agar FormData bisa mengambil value/link dari gambar thumbnail */}
+          {/* Input ini dihide & diperlukan agar FormData bisa mengambil value/link dari gambar thumbnail */}
           <input
             name={name}
             id={name}
@@ -70,7 +76,9 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
           </button>
         </div>
       ) : (
-        <>
+        <div
+          className="w-100 d-flex flex-column justify-content-center align-items-center px-3 gap-4"
+          style={{ padding: "30px 0px 30px 0px" }}>
           <FontAwesomeIcon
             icon={faImage}
             style={{ color: "#0f5da3", width: 50, height: 50 }}
@@ -84,11 +92,12 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
             {/* Input ini diperlukan agar user dapat memasukkan link thumbnailnya */}
             <input
               type="text"
-              className="my-auto form-control"
+              className="my-auto form-control border border-dark"
               placeholder="contoh : https://images.pexels.com/photos/2235/music-sound-communication-audio.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               value={urlInput}
               onChange={handleInputChange}
               required
+              style={{ background: "#F4F2EE" }}
             />
             <button
               type="button"
@@ -97,7 +106,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
               Submit Image
             </button>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
