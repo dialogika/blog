@@ -11,7 +11,7 @@ import { formatDate } from "@/components/utils/date";
 import { Metadata } from "next";
 import Script from "next/script";
 
-type PageParams = { idArticle: string };
+type PageParams = Promise<{ idArticle: string[] }>;
 export default async function Page(props: { params: PageParams }) {
   const { idArticle } = await props.params;
   const categoriesList = ["Confidence", "Interview", "Productivity", "Introvert", "Communication", "Presentation"];
