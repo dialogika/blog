@@ -59,6 +59,7 @@ export default async function Home() {
                 <ArticleLists articles={articles} />
               </div>
 
+
               <aside className="col-lg-4 mt-4">
                 {/* pageType index atau article */}
                 <Widget
