@@ -11,8 +11,8 @@ import { formatDate } from "@/components/utils/date";
 import { Metadata } from "next";
 import Script from "next/script";
 
-type pageParams = Promise<{ idArticle: string[] }>;
-export default async function Page(props: { params: pageParams }) {
+type PageParams = { idArticle: string };
+export default async function Page(props: { params: PageParams }) {
   const { idArticle } = await props.params;
   const categoriesList = ["Confidence", "Interview", "Productivity", "Introvert", "Communication", "Presentation"];
 
@@ -245,7 +245,7 @@ export async function generateStaticParams() {
 }
 
 // Generate dynamic metadata for each article page.
-export async function generateMetadata(props: { params: pageParams }): Promise<Metadata> {
+export async function generateMetadata(props: { params: PageParams }): Promise<Metadata> {
   const { idArticle } = await props.params;
   try {
     const response = await fetch(
