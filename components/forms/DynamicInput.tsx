@@ -20,10 +20,14 @@ const DynamicInput = ({ name, placeholder, maxInputs }: dynamicInputProps) => {
 
   // Filter totalInputs dan values, kemudian hanya mengembalikan elemen yang nomor indexnya tidak sama dengan index dari parameter
   const handleRemoveInput = (index: number) => {
-    const newInput = totalInputs.filter((bagianTidakDiPakai, thisIndex) => thisIndex !== index);
+    const newInput = totalInputs.filter(
+      (bagianTidakDiPakai, thisIndex) => thisIndex !== index
+    );
     setTotalInputs(newInput);
 
-    const newInputValue = values.filter((bagianTidakDiPakai, thisIndex) => thisIndex !== index);
+    const newInputValue = values.filter(
+      (bagianTidakDiPakai, thisIndex) => thisIndex !== index
+    );
     setValues(newInputValue);
   };
 
@@ -39,9 +43,7 @@ const DynamicInput = ({ name, placeholder, maxInputs }: dynamicInputProps) => {
   return (
     <>
       {totalInputs.map((input, index) => (
-        <div
-          key={index}
-          className="flex gap-4 mb-2">
+        <div key={index} className="flex gap-4 mb-2">
           <input
             type="text"
             id={`${name}-${index}`}
@@ -55,7 +57,8 @@ const DynamicInput = ({ name, placeholder, maxInputs }: dynamicInputProps) => {
             <button
               type="button"
               onClick={() => handleRemoveInput(index)}
-              className="bg-transparent border-0 ">
+              className="bg-transparent border-0 "
+            >
               <FontAwesomeIcon
                 icon={faCircleXmark}
                 style={{ color: "red", width: 20, height: 20 }}
@@ -69,8 +72,9 @@ const DynamicInput = ({ name, placeholder, maxInputs }: dynamicInputProps) => {
         <button
           type="button"
           onClick={handleAddInput}
-          className="w-full d-flex align-items-center justify-content-center gap-2 p-2 mt-2 border border-gray-300 rounded hover:bg-gray-50">
-          <FontAwesomeIcon icon={faPlus} />
+          className="rev-appointment-btn d-flex align-items-center justify-content-center gap-2"
+        >
+          <FontAwesomeIcon icon={faPlus} className="fs-5" />
           <span>Add {name}</span>
         </button>
       )}

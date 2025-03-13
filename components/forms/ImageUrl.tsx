@@ -97,7 +97,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
             />
             <button
               type="button"
-              className="appointment-btn ms-0"
+              className="rev-appointment-btn ms-0"
               onClick={handleSubmit}
             >
               Submit Image

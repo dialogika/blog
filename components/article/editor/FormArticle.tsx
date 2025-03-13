@@ -237,7 +237,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           </div>
 
           {/* Judul */}
-          <div className="mb-4">
+          <div className="">
             <div className="d-flex align-items-center mb-2 pt-4">
               <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
                 <i className="fas fa-heading text-primary"></i>
@@ -250,22 +250,30 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <TextInput
                 type="text"
                 name="title"
-                // labelTitle="Judul"
+                labelTitle=""
                 required={true}
                 hideAsterisk={true}
-                placeholder="Masukkan judul blog yang menarik"
+                placeholder="Masukkan judul blog yang menarik..."
                 inputClassName="text-input fs-6 w-100 p-3 border border-light shadow-sm rounded-3"
               />
-              <div className="mt-2 text-muted small">
-                <i className="fas fa-lightbulb me-1"></i>
-                Judul yang baik biasanya memiliki 8-15 kata dan mengandung kata
-                kunci utama
+              <div className="mt-2 text-muted small d-flex align-items-start gap-2">
+                <i className="fas fa-lightbulb text-warning mt-1"></i>
+                <span
+                  className="fst-italic"
+                  style={{ fontSize: "12px", opacity: "0.9" }}
+                >
+                  Pastikan judul representatif, mengandung keyword, dan menarik
+                  perhatian pembaca. Idealnya di bawah 60 karakter agar tidak
+                  terpotong di hasil pencarian.
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        <TextInput
+        {/* Keyword */}
+
+        {/* <TextInput
           type="text"
           name="keyword"
           labelTitle="Keyword Blog"
@@ -274,53 +282,112 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           placeholder="Masukkan keyword disini"
           divClassName="mt-4"
           inputClassName="text-input fs-6 w-100"
-        />
+        /> */}
 
-        {/* Keyword */}
-        <div className="mb-4">
+        <div className="mb-4 px-4">
           <div className="d-flex align-items-center mb-2 pt-4">
             <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
               <i className="fas fa-heading text-primary"></i>
             </div>
-            <h5 className="mb-0 fw-bold text-primary">Keyword Blog</h5>
+            <h5 className="mb-0 fw-bold text-primary">
+              Keyword Blog <span className="text-danger">*</span>
+            </h5>
           </div>
           <div className="p-2">
             <TextInput
               type="text"
               name="keyword"
-              labelTitle="Judul"
+              labelTitle=""
+              hideAsterisk={true}
               required={true}
-              placeholder="Masukkan judul blog yang menarik"
+              placeholder="Masukkan keyword disini..."
               inputClassName="text-input fs-6 w-100 p-3 border border-light shadow-sm rounded-3"
             />
-            <div className="mt-2 text-muted small">
-              <i className="fas fa-lightbulb me-1"></i>
-              Judul yang baik biasanya memiliki 8-15 kata dan mengandung kata
-              kunci utama
+            <div className="mt-2 text-muted small d-flex align-items-start gap-2">
+              <i className="fas fa-lightbulb text-warning mt-1"></i>
+              <span
+                className="fst-italic"
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Berupa kata, frasa, dan klausa yang relevan dalam artikel
+                (berjumlah 2-4). Keyword harus ada pada judul, meta description,
+                dan berulang pada isi artikel (1-2% dari total kata).
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* outbound link */}
+        <div className="mb-4 px-4">
+          <div className="d-flex align-items-center mb-2 pt-4">
+            <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+              <i className="fas fa-link text-primary"></i>{" "}
+              {/* Ganti ikon jadi link biar relevan */}
+            </div>
+            <h5 className="mb-0 fw-bold text-primary">Outbound</h5>
+          </div>
+
+          <div className="p-2">
+            <TextInput
+              type="text"
+              name="externalTitle"
+              labelTitle="Outbound Title"
+              hideAsterisk={true}
+              required={true}
+              placeholder="Stoicism: Kunci Kebijaksanaan dan Hidup Tenang"
+              inputClassName="text-input fs-6 w-100 p-3 border border-light shadow-sm rounded-3"
+            />
+            <div className="mt-2 text-muted small d-flex align-items-start gap-2">
+              <i className="fas fa-lightbulb text-warning mt-1"></i>
+              <span
+                className="fst-italic"
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Judul tautan yang mengarah ke situs lain
+              </span>
+            </div>
+          </div>
+
+          <div className="p-2">
+            <TextInput
+              type="text"
+              name="externalLink"
+              labelTitle="Outbound Link"
+              hideAsterisk={true}
+              required={true}
+              placeholder="https://medium.com/dialogika"
+              inputClassName="text-input fs-6 w-100 p-3 border border-light shadow-sm rounded-3"
+            />
+            <div className="mt-2 text-muted small d-flex align-items-start gap-2">
+              <i className="fas fa-lightbulb text-warning mt-1"></i>
+              <span
+                className="fst-italic"
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Tautan yang mengarah ke situs lain. Tautkan ke situs yang
+                kredibel (seperti jurnal penelitian) dan relevan dengan isi
+                artikel.
+              </span>
             </div>
           </div>
         </div>
 
         {/* Input untuk metadata, deskripsi, keyword, writer's note */}
-        <div className="card border-0 shadow rounded-4 overflow-hidden my-4">
-          <div className="card-header bg-primary bg-gradient text-white p-3 d-flex align-items-center">
-            <i className="fas fa-pencil-alt me-2"></i>
-            <h5 className="mb-0 fw-bold">Metadata</h5>
+        <div className="px-4">
+          <div className="">
+            <div className="d-flex align-items-center pt-4">
+              <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+                <i className="fas fa-link text-primary"></i>{" "}
+                {/* Ganti ikon jadi link biar relevan */}
+              </div>
+              <h5 className="mb-0 fw-bold text-primary">
+                Meta Description <span className="text-danger">*</span>
+              </h5>
+            </div>
           </div>
 
-          <div className="card-body p-4">
-            <div className="d-flex align-items-center mb-3">
-              <div className="bg-light p-2 rounded-circle me-3">
-                <i className="fas fa-info text-primary"></i>
-              </div>
-              <p
-                className="text-secondary mb-0 fst-italic"
-                style={{ fontSize: "0.9rem" }}
-              >
-                Metadata antara 150-160 karakter. Spasi termasuk
-              </p>
-            </div>
-            <div className="position-relative mt-3">
+          <div className="card-body">
+            <div className="position-relative">
               <TextAreaInput
                 maxLength="160"
                 rows="8"
@@ -352,6 +419,16 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                 </div>
               </div>
             </div>
+            <div className="mt-2 text-muted small d-flex align-items-start gap-2">
+              <i className="fas fa-lightbulb text-warning mt-1"></i>
+              <span
+                className="fst-italic"
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Ringkasan artikel yang terdiri 150–160 karakter. Usahakan
+                menarik atau membuat pembaca penasaran. 
+              </span>
+            </div>
           </div>
         </div>
 
@@ -366,26 +443,24 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           inputClassName="text-input fs-6 w-100"
         /> */}
 
-        <div className="card border-0 shadow rounded-4 overflow-hidden my-4">
-          <div className="card-header bg-primary bg-gradient text-white p-3 d-flex align-items-center">
-            <i className="fas fa-pencil-alt me-2"></i>
-            <h5 className="mb-0 fw-bold">Deskripsi Blog</h5>
+        {/* deskripsi blog */}
+        <div className="px-4">
+          <div className="">
+            <div className="d-flex align-items-center pt-4">
+              <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+                <i className="fas fa-link text-primary"></i>{" "}
+                {/* Ganti ikon jadi link biar relevan */}
+              </div>
+              <h5 className="mb-0 fw-bold text-primary">
+                Deskripsi Blog <span className="text-danger">*</span>
+              </h5>
+            </div>
           </div>
 
-          <div className="card-body p-4">
-            <div className="d-flex align-items-center mb-3">
-              <div className="bg-light p-2 rounded-circle me-3">
-                <i className="fas fa-info text-primary"></i>
-              </div>
-              <p
-                className="text-secondary mb-0 fst-italic"
-                style={{ fontSize: "0.9rem" }}
-              >
-                Deskripsi blog akan digunakan di halaman utama blog
-              </p>
-            </div>
-            <div className="position-relative mt-3">
+          <div className="card-body">
+            <div className="position-relative">
               <TextAreaInput
+                maxLength="160"
                 rows="8"
                 name="blogDescription"
                 placeholder="Masukkan deskripsi blog disini..."
@@ -393,6 +468,19 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                 textAreaClassName="form-control fs-6 w-100 border border-light-subtle rounded-3 shadow-sm p-3"
                 style={{ resize: "none", backgroundColor: "#f8f9fa" }}
               />
+            </div>
+
+            <div className="mt-2 text-muted small d-flex align-items-start gap-2">
+              <i className="fas fa-lightbulb text-warning mt-1"></i>
+              <span
+                className="fst-italic"
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Berbeda dengan Meta Description, bagian ini menjelaskan isi blog
+                secara overview (bukan ringkasan). Contoh: “Artikel ini
+                menjelaskan cara menulis blog, mulai dari brainstorming hingga
+                penulisan HTML.”
+              </span>
             </div>
           </div>
         </div>
@@ -408,40 +496,39 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           inputClassName="text-input fs-6 w-100"
         /> */}
 
-        <div className="card border-0 shadow rounded-4 overflow-hidden my-4">
-          <div className="card-header bg-primary bg-gradient text-white p-3 d-flex align-items-center">
-            <i className="fas fa-pencil-alt me-2"></i>
-            <h5 className="mb-0 fw-bold">Writer's Note</h5>
+        {/* writer's note */}
+        <div className="px-4">
+          <div className="">
+            <div className="d-flex align-items-center pt-4">
+              <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+                <i className="fas fa-link text-primary"></i>{" "}
+                {/* Ganti ikon jadi link biar relevan */}
+              </div>
+              <h5 className="mb-0 fw-bold text-primary">Writer's Note</h5>
+            </div>
           </div>
 
-          <div className="card-body p-4">
-            <div className="d-flex align-items-center mb-3">
-              <div className="bg-light p-2 rounded-circle me-3">
-                <i className="fas fa-info text-primary"></i>
-              </div>
-              <p
-                className="text-secondary mb-0 fst-italic"
-                style={{ fontSize: "0.9rem" }}
-              >
-                Menjelaskan blog ini ditujukan untuk siapa. Mahasiswa?, Orang
-                tua?, Guru?, dll
-              </p>
-            </div>
-            <div className="position-relative mt-3">
+          <div className="card-body">
+            <div className="position-relative">
               <TextAreaInput
+                maxLength="160"
                 rows="8"
-                name="writenote"
+                name="writernote"
                 placeholder="Masukkan writer's note disini..."
                 divClassName="mb-0"
                 textAreaClassName="form-control fs-6 w-100 border border-light-subtle rounded-3 shadow-sm p-3"
                 style={{ resize: "none", backgroundColor: "#f8f9fa" }}
               />
-              {/* <div className="position-absolute bottom-0 end-0 p-3">
-                <div className="text-muted small">
-                  <i className="far fa-edit me-1"></i>
-                  Tuliskan siapa target audiensmu
-                </div>
-              </div> */}
+            </div>
+
+            <div className="mt-2 text-muted small d-flex align-items-start gap-2">
+              <i className="fas fa-lightbulb text-warning mt-1"></i>
+              <span
+                className="fst-italic"
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Catatan dari penulis. Isinya bebas. So be creative!
+              </span>
             </div>
           </div>
         </div>
@@ -467,34 +554,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           />
         </div> */}
 
-        <div className="card p-3 my-4 border-0 shadow-sm">
-          <div className="d-flex flex-row gap-4 flex-wrap justify-content-between">
-            <div className="col-12 col-md-6 mb-3">
-              <TextInput
-                type="text"
-                name="externalTitle"
-                labelTitle="Outbound Title"
-                description="Link yang mengarah ke blog se-topik yang diluar dari dialogika. Misal blog dari medium"
-                placeholder="Stoicism: Kunci Kebijaksanaan dan Hidup Tenang"
-                divClassName="w-100"
-                inputClassName="form-control fs-6 w-100 border-0 shadow-sm rounded-2"
-              />
-            </div>
-            <div className="col-12 col-md-6 mb-3">
-              <TextInput
-                type="text"
-                name="externalLink"
-                labelTitle="Outbound Link"
-                placeholder="https://medium.com/dialogika"
-                divClassName="w-100"
-                inputClassName="form-control fs-6 w-100 border-0 shadow-sm rounded-2"
-              />
-            </div>
-          </div>
-        </div>
-
         {/* Input untuk Tags dan Key Takeaway */}
-        <div className="d-inline-flex flex-column flex-md-row justify-content-md-around gap-4 my-4">
+        {/* <div className="d-inline-flex flex-column flex-md-row justify-content-md-around gap-4 my-4">
           <div className="d-inline-flex justify-content-start align-items-start flex-column gap-3">
             <LabelInput
               htmlFor={"tags"}
@@ -504,9 +565,59 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             />
             <DynamicInput name="tags" maxInputs={8} placeholder="#tags" />
           </div>
+        </div> */}
+
+        <div className="mb-4 px-4">
+          <div
+            className="d-flex align-items-center
+           pt-4"
+          >
+            <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+              <i className="fas fa-tags text-primary"></i>{" "}
+              {/* Ikon tags buat relevan */}
+            </div>
+            <h5 className="mb-0 fw-bold text-primary">
+              Tags <span className="text-danger">*</span>
+            </h5>
+          </div>
+
+          <div className="px-2">
+            <LabelInput
+              htmlFor="tags"
+              required={true}
+              hideAsterisk={true}
+              title={""}
+            />
+            <DynamicInput
+              name="tags"
+              maxInputs={5}
+              placeholder="#tags"
+              className="text-input fs-6 w-100 p-2 border border-light shadow-sm rounded-2"
+            />
+            <div className="mt-2 text-muted small d-flex align-items-start gap-2">
+              <i className="fas fa-lightbulb text-warning mt-1"></i>
+              <span
+                className="fst-italic"
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Masukkan 4-6 tags yang berkaitan dengan artikel (dapat berasal
+                dari keywords). Selalu masukkan #PublicSpeaking meski tidak
+                banyak berkaitan dengan isi.
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Input untuk Author */}
+        <div className="d-flex align-items-center px-4 pt-4">
+          <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
+            <i className="fas fa-link text-primary"></i>{" "}
+            {/* Ganti ikon jadi link biar relevan */}
+          </div>
+          <h5 className="mb-0 fw-bold text-primary">
+            Authors <span className="text-danger">*</span>
+          </h5>
+        </div>
         <div className="row mb-5">
           <DynamicAuthorInput
             maxInputs={3}
@@ -516,19 +627,24 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             required={true}
           />
         </div>
+
         <button
           type="button"
-          className="appointment-btn"
+          className="rev-appointment-btn"
           onClick={() => setShowGuide(true)}
           style={{ width: "fit-content" }}
         >
           Buka Guide
         </button>
+
         <EditorModal show={showGuide} onHide={() => setShowGuide(false)} />
         {/* NOTES : GUNAKAN JODIT REGULAR BILA ADA MASALAH DENGAN UI/UX KARNA LEBIH STABIL YANG REGULAR DIBANDINGKAN DENGAN PRO */}
         <JoditRegularEditor />
 
-        <button type="submit" className="appointment-btn mt-4 align-self-end">
+        <button
+          type="submit"
+          className="rev-appointment-btn mt-4 align-self-end"
+        >
           Publish Article
         </button>
       </form>

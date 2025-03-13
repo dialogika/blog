@@ -48,12 +48,12 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
 
   return (
     <>
-      <LabelInput
+      {/* <LabelInput
         htmlFor={props.name}
         title="Authors"
         description={props.description}
         required={props.required}
-      />
+      /> */}
       <div className=" d-flex flex-wrap gap-3 mt-4 align-items-stretch justify-content-center">
         {totalInputs.map((tidakDipakai, index) => {
           // Find the selected author object based on the current value.
@@ -61,9 +61,11 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
             authors.find((author) => author.authorName === values[index]) ||
             authors[0];
           return (
-            <div className="flex flex-wrap gap-3 justify-content-space-between">
+            <div
+              key={index}
+              className="flex flex-wrap gap-3 justify-content-space-between"
+            >
               <div
-                key={index}
                 id={`author-card-${index}`}
                 className={`d-flex gap-3 flex-column h-auto align-items-center justify-content-around position-relative ${
                   index % 3 === 2 ? "order-first" : ""
@@ -145,7 +147,7 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
           <button
             type="button"
             onClick={handleAddInput}
-            className="w-full d-flex align-items-center justify-content-center gap-1 p-2 border border-gray-300 rounded hover:bg-gray-50"
+            className="rev-appointment-btn h-10"
           >
             <FontAwesomeIcon icon={faPlus} />
             <span>Add {props.name}</span>
