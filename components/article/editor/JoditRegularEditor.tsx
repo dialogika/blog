@@ -81,7 +81,7 @@ const JoditRegularEditor = () => {
   );
 
   return (
-    <div>
+    <div className="mt-4">
       {/* <button
         type="button"
         onClick={() => console.log("ini value jodit :", editorValue)}>
