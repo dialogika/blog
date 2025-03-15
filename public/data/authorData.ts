@@ -137,7 +137,8 @@ export const authorData: BlogAuthorProps[] = [
   {
     authorName: "Gisella Keilsa",
     imgPath: internImages.gisellaKeilsa.src,
-    quotes: "Setiap tantangan adalah kesempatan untuk tumbuh, biarkan semangatmu membimbingmu menuju impian",
+    quotes:
+      "Setiap tantangan adalah kesempatan untuk tumbuh, biarkan semangatmu membimbingmu menuju impian",
   },
   {
     authorName: "Fisalma Fadhia",
@@ -248,7 +249,8 @@ export const authorData: BlogAuthorProps[] = [
   {
     authorName: "Maya Alif Bunga Marshanda",
     imgPath: internImages.mayaAlifBungaMarshanda.src,
-    quotes: "Life must go on. Get out of comfort zone and do what you've been worried about all this time",
+    quotes:
+      "Life must go on. Get out of comfort zone and do what you've been worried about all this time",
   },
   {
     authorName: "Cipto Ardiantoro",
@@ -291,5 +293,23 @@ export const authorData: BlogAuthorProps[] = [
     imgPath: internImages.nasrudinFahmi.src,
     quotes:
       "Coding itu seperti menyusuri labirin tanpa peta. Meski seringkali terasa sendiri, tersesat, dan kadang hilang arah pada akhirnya kita akan sampai ke tempat yang lebih baik, nikmati prosesnya.",
+  },
+  {
+    authorName: "Damar Adi Nugroho",
+    imgPath: internImages.DamarAdi.src,
+    quotes:
+      "Hidup itu seperti CSS Grid, kalau berantakan, mungkin butuh justify-content: center; atau align-items: center;",
+  },
+  {
+    authorName: "Nurfinka Lailasari",
+    imgPath: internImages.nurfinkaLailasari.src,
+    quotes:
+      "With overflowing creativity, a blazing spirit, and relentless perseverance, someone will carve extraordinary achievements that become a beacon of inspiration for many.",
+  },
+  {
+    authorName: "Jessica Caesya Agustin",
+    imgPath: internImages.jessicaCaesyaAgustin.src,
+    quotes:
+      "Setiap orang memiliki jalannya masing-masing. Tak perlu terlalu terburu-buru. Pada akhirnya, hidup bukanlah sebuah kompetisi.",
   },
 ];

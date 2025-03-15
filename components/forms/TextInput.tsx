@@ -5,14 +5,15 @@ import LabelInput from "./LabelInput";
 export interface InputProps {
   name: string;
   labelTitle: string;
-  type?: React.HTMLInputTypeAttribute; // default untuk input adalah "text"
+  type?: React.HTMLInputTypeAttribute;
   placeholder?: string;
   divClassName?: string;
   inputClassName?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: () => void;
-  description?: string; // Property ini untuk menjelaskan tentang input
+  description?: string;
   required?: boolean;
+  hideAsterisk?: boolean;
 }
 
 const TextInput: React.FC<InputProps> = ({
@@ -20,18 +21,20 @@ const TextInput: React.FC<InputProps> = ({
   type = "text",
   placeholder,
   description,
-
   divClassName,
   inputClassName,
   labelTitle,
-  ...props
+  hideAsterisk,
+  required,
+  ...otherProps
 }) => {
   return (
     <div className={divClassName}>
       <LabelInput
         htmlFor={name}
         title={labelTitle}
-        required={props.required}
+        required={required}
+        hideAsterisk={hideAsterisk}
         description={description}
       />
       <input
@@ -40,7 +43,8 @@ const TextInput: React.FC<InputProps> = ({
         id={name}
         className={inputClassName}
         placeholder={placeholder}
-        {...props}
+        required={required}
+        {...otherProps}
       />
     </div>
   );

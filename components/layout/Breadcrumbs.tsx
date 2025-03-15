@@ -12,7 +12,7 @@ const Breadcrumbs = ({ title, breadcrumbs }: breadcrumbsProps) => {
       <nav className="container d-flex justify-content-between align-items-center">
         <h2
           className="text-wrap breadcrumb-header-2"
-          style={{ color: "#0B2B6A" }}>
+          style={{ color: "black" }}>
           {title}
         </h2>
         <ol>
