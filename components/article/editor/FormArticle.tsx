@@ -26,7 +26,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
     (state: RootState) => state.authors.authorsDetail
   );
   const dispatch = useDispatch();
-  const [totalKeyword, setTotalkeyword] = useState(0);
   const [showGuide, setShowGuide] = useState(false); // State untuk menampilkan model GUIDE penggunaan text editor
   const [isSuccess, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -114,13 +113,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
     }
     payload.tags = tags;
 
-    // Ambil nilai input untuk keyTakeaway (keyTakeaway-0, keyTakeaway-1, ...)
-    // const keyTakeaway: string[] = [];
-    // for (let i = 0; i < 10; i++) {
-    //   const takeawayValue = formData.get(`keyTakeaway-${i}`);
-    //   if (takeawayValue) keyTakeaway.push(takeawayValue.toString());
-    // }
-    // payload.keyTakeaway = keyTakeaway;
 
     // Ambil value authors
     const selectedAuthors: string[] = [];

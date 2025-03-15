@@ -4,7 +4,7 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 export const authorData: BlogAuthorProps[] = [
   {
     authorName: "Damar Adi Nugroho",
-    imgPath: internImages.damarAdiNugroho.src,
+    imgPath: internImages.DamarAdi.src,
     quotes: `Kalau hidup lagi timeout, mungkin waktunya refresh token biar semangat lagi!  `,
   },
   {

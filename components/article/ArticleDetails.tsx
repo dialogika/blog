@@ -152,7 +152,7 @@ const ArticleDetails = ({ authors, publishedAt, writerNote }: BlogArticleProps) 
                   className="d-flex gap-3">
                   <Image
                     src={`${author.imgPath}`}
-                    alt={author.authorName}
+                    alt={`Author ke-${index+1}`}
                     loading="lazy"
                     width={60}
                     height={60}
