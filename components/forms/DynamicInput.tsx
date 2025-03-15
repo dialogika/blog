@@ -43,7 +43,7 @@ const DynamicInput = ({ name, placeholder, maxInputs }: dynamicInputProps) => {
   return (
     <>
       {totalInputs.map((input, index) => (
-        <div key={index} className="flex gap-4 mb-2">
+        <div key={index} className="flex gap-4 mb-2 pt-3">
           <input
             type="text"
             id={`${name}-${index}`}

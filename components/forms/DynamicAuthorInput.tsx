@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import LabelInput from "./LabelInput";
+// import LabelInput from "./LabelInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";

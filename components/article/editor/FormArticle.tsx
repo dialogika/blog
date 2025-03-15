@@ -4,7 +4,7 @@ import {
   TextInput,
   DynamicInput,
   DynamicAuthorInput,
-  LabelInput,
+  // LabelInput,
   TextAreaInput,
 } from "@/components/forms";
 import { BlogArticleProps, BlogAuthorProps } from "@/types";
@@ -389,8 +389,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           <div className="card-body">
             <div className="position-relative">
               <TextAreaInput
-                maxLength="160"
-                rows="8"
+                rows={8}
+                maxLength={160}
                 name="metadata"
                 placeholder="Masukkan metadata blog disini..."
                 divClassName="mb-0"
@@ -460,8 +460,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           <div className="card-body">
             <div className="position-relative">
               <TextAreaInput
-                maxLength="160"
-                rows="8"
+                maxLength={160}
+                rows={8}
                 name="blogDescription"
                 placeholder="Masukkan deskripsi blog disini..."
                 divClassName="mb-0"
@@ -504,15 +504,15 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                 <i className="fas fa-link text-primary"></i>{" "}
                 {/* Ganti ikon jadi link biar relevan */}
               </div>
-              <h5 className="mb-0 fw-bold text-primary">Writer's Note</h5>
+              <h5 className="mb-0 fw-bold text-primary">Writer`s Note</h5>
             </div>
           </div>
 
           <div className="card-body">
             <div className="position-relative">
               <TextAreaInput
-                maxLength="160"
-                rows="8"
+                maxLength={160}
+                rows={8}
                 name="writernote"
                 placeholder="Masukkan writer's note disini..."
                 divClassName="mb-0"
@@ -582,17 +582,17 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           </div>
 
           <div className="px-2">
-            <LabelInput
+            {/* <LabelInput
               htmlFor="tags"
               required={true}
               hideAsterisk={true}
               title={""}
-            />
+            /> */}
             <DynamicInput
               name="tags"
               maxInputs={5}
               placeholder="#tags"
-              className="text-input fs-6 w-100 p-2 border border-light shadow-sm rounded-2"
+              // className="text-input fs-6 w-100 p-2 border border-light shadow-sm rounded-2"
             />
             <div className="mt-2 text-muted small d-flex align-items-start gap-2">
               <i className="fas fa-lightbulb text-warning mt-1"></i>
@@ -642,9 +642,13 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         <JoditRegularEditor />
 
         <button
-          type="submit"
-          className="rev-appointment-btn mt-4 align-self-end"
+          type="button"
+          className="rev-appointment-btn mt-4 align-self-end mb-4"
         >
+          Preview Blog
+        </button>
+
+        <button type="submit" className="rev-appointment-btn ">
           Publish Article
         </button>
       </form>
