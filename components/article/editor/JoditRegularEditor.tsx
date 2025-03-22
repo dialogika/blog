@@ -1,5 +1,4 @@
 "use client";
-import { LabelInput } from "@/components/forms";
 import dynamic from "next/dynamic";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
@@ -101,17 +100,13 @@ const JoditRegularEditor = () => {
 
   return (
     <div className="mt-4">
-      {/* <button
+      {/* <button   22-Maret-2025 Hapus saja button ini.
         type="button"
         onClick={() => console.log("ini value jodit :", editorValue)}>
         Get Jodit Value (tim HTML)
       </button> */}
       <div className="mb-3 mt-5">
-        <LabelInput
-          htmlFor="formEditor"
-          title="Isi Artikel Blog"
-          required
-        />
+        <label htmlFor="formEditor" className="mb-0 fw-bold text-primary fs-5">Isi Artikel Blog</label>
       </div>
       <LoadJoditRegular
         editorRef={(ref) => (editor.current = ref)}

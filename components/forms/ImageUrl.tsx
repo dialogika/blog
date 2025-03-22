@@ -47,7 +47,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
           )}
           <div className="post-img position-relative m-0">
             <Image
-              src={submittedUrl}
+              src={submittedUrl.trim()}
               alt="Preview image"
               width={800}
               height={490}

@@ -63,8 +63,10 @@ import winemaAleshanee from "@/public/assets/img/intern/winema-aleshanee.webp";
 import DamarAdi from "@/public/assets/img/intern/damar-adi.webp";
 import jessicaCaesyaAgustin from "@/public/assets/img/intern/jessica-caesya-agustin.webp";
 import nurfinkaLailasari from "@/public/assets/img/intern/pingka.jpg";
+import fitriani from "@/public/assets/img/intern/fitriani.webp";
 
 const internImages = {
+  fitriani,
   yogaPangestu,
   miftakhulHudha,
   arifulFathoni,

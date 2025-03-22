@@ -22,9 +22,7 @@ interface FormArticleProps {
 }
 
 const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
-  const availableAuthors = useSelector(
-    (state: RootState) => state.authors.authorsDetail
-  );
+  const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail);
   const dispatch = useDispatch();
   const [showGuide, setShowGuide] = useState(false); // State untuk menampilkan model GUIDE penggunaan text editor
   const [isSuccess, setSuccess] = useState(false);
@@ -69,9 +67,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       return;
     }
     if (metadata.length > 160) {
-      alert(
-        "Metada tidak boleh lebih dari 160 karakter. Spasi, angka, simbol termasuk karakter !!"
-      );
+      alert("Metada tidak boleh lebih dari 160 karakter. Spasi, angka, simbol termasuk karakter !!");
       return;
     }
     payload.metaData = metadata;
@@ -90,9 +86,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
 
     // Ambil writer notes untuk blog
     const writernote = formData.get("writernote")?.toString();
-    if (!writernote) return;
-
-    payload.writerNote = writernote;
+    if (writernote) payload.writerNote = writernote;
 
     // Ambil outbound title untuk blog
     const externalTitle = formData.get("externalTitle")?.toString();
@@ -113,19 +107,15 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
     }
     payload.tags = tags;
 
-
     // Ambil value authors
     const selectedAuthors: string[] = [];
     const authorsPayload: BlogAuthorProps[] = [];
     for (let i = 0; i < 3; i++) {
       const selectedAuthorNames = formData.get(`authors-${i}`); // Ambil nama-nama author yang ada dari input
-      if (selectedAuthorNames)
-        selectedAuthors.push(selectedAuthorNames.toString());
+      if (selectedAuthorNames) selectedAuthors.push(selectedAuthorNames.toString());
     }
     selectedAuthors.forEach((author) => {
-      const findAuhor = availableAuthors.find(
-        (item) => item.authorName == author
-      );
+      const findAuhor = availableAuthors.find((item) => item.authorName == author);
       if (findAuhor) authorsPayload.push(findAuhor);
     });
     payload.authors = authorsPayload;
@@ -140,16 +130,13 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       setIsFailed(false);
       event.preventDefault();
       console.log("Submitting Article ...");
-      const res = await fetch(
-        "https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/",
-        {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+      const res = await fetch("https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
       if (!res.ok) {
         setIsLoading(false);
         setSuccess(false);
@@ -207,8 +194,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         id="FormArticle"
         onSubmit={handleFormSubmit}
         className="w-100 d-flex flex-column mt-5 mt-md-0 p-3 "
-        style={{ height: "auto" }}
-      >
+        style={{ height: "auto" }}>
         <div className="blog-form-container p-4">
           {/* Thumbnail Image Section */}
           <div className="mb-4">
@@ -221,14 +207,13 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             <div className="p-3 border border-dashed rounded-3 bg-light">
               <ImageUrl
                 inputPlaceholder={
-                  "Masukkan link gambar untuk thumbnail. Disarankan untuk menggunakan gambar Landscape"
+                  "Masukkan link gambar untuk thumbnail. Disarankan untuk menggunakan gambar Landscape dibandingkan Portrait"
                 }
                 name={"thumbnail-image"}
               />
               <div className="mt-2 text-muted small">
                 <i className="fas fa-info-circle me-1"></i>
-                Gambar landscape akan ditampilkan lebih baik di halaman utama
-                blog
+                Gambar landscape akan ditampilkan lebih baik dibandingkan portrait di halaman utama blog
               </div>
             </div>
           </div>
@@ -257,11 +242,9 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                 <i className="fas fa-lightbulb text-warning mt-1"></i>
                 <span
                   className="fst-italic"
-                  style={{ fontSize: "12px", opacity: "0.9" }}
-                >
-                  Pastikan judul representatif, mengandung keyword, dan menarik
-                  perhatian pembaca. Idealnya di bawah 60 karakter agar tidak
-                  terpotong di hasil pencarian.
+                  style={{ fontSize: "12px", opacity: "0.9" }}>
+                  Pastikan judul representatif, mengandung keyword, dan menarik perhatian pembaca. Idealnya di bawah 60
+                  karakter agar tidak terpotong di hasil pencarian.
                 </span>
               </div>
             </div>
@@ -269,17 +252,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         </div>
 
         {/* Keyword */}
-
-        {/* <TextInput
-          type="text"
-          name="keyword"
-          labelTitle="Keyword Blog"
-          required={true}
-          description="Keyword bisa lebih dari 1. Gunakan koma (,)"
-          placeholder="Masukkan keyword disini"
-          divClassName="mt-4"
-          inputClassName="text-input fs-6 w-100"
-        /> */}
 
         <div className="mb-4 px-4">
           <div className="d-flex align-items-center mb-2 pt-4">
@@ -304,11 +276,9 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}
-              >
-                Berupa kata, frasa, dan klausa yang relevan dalam artikel
-                (berjumlah 2-4). Keyword harus ada pada judul, meta description,
-                dan berulang pada isi artikel (1-2% dari total kata).
+                style={{ fontSize: "12px", opacity: "0.9" }}>
+                Berupa kata, frasa, dan klausa yang relevan dalam artikel (berjumlah 2-4). Keyword harus ada pada judul,
+                meta description, dan berulang pada isi artikel (1-2% dari total kata).
               </span>
             </div>
           </div>
@@ -318,8 +288,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         <div className="mb-4 px-4">
           <div className="d-flex align-items-center mb-2 pt-4">
             <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-              <i className="fas fa-link text-primary"></i>{" "}
-              {/* Ganti ikon jadi link biar relevan */}
+              <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
             </div>
             <h5 className="mb-0 fw-bold text-primary">Outbound</h5>
           </div>
@@ -330,7 +299,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               name="externalTitle"
               labelTitle="Outbound Title"
               hideAsterisk={true}
-              required={true}
+              required={false}
               placeholder="Stoicism: Kunci Kebijaksanaan dan Hidup Tenang"
               inputClassName="text-input fs-6 w-100 p-3 border border-light shadow-sm rounded-3"
             />
@@ -338,8 +307,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}
-              >
+                style={{ fontSize: "12px", opacity: "0.9" }}>
                 Judul tautan yang mengarah ke situs lain
               </span>
             </div>
@@ -351,7 +319,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               name="externalLink"
               labelTitle="Outbound Link"
               hideAsterisk={true}
-              required={true}
+              required={false}
               placeholder="https://medium.com/dialogika"
               inputClassName="text-input fs-6 w-100 p-3 border border-light shadow-sm rounded-3"
             />
@@ -359,11 +327,9 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}
-              >
-                Tautan yang mengarah ke situs lain. Tautkan ke situs yang
-                kredibel (seperti jurnal penelitian) dan relevan dengan isi
-                artikel.
+                style={{ fontSize: "12px", opacity: "0.9" }}>
+                Tautan yang mengarah ke situs lain. Tautkan ke situs yang kredibel (seperti jurnal penelitian) dan
+                relevan dengan isi artikel.
               </span>
             </div>
           </div>
@@ -374,8 +340,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           <div className="">
             <div className="d-flex align-items-center pt-4">
               <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-                <i className="fas fa-link text-primary"></i>{" "}
-                {/* Ganti ikon jadi link biar relevan */}
+                <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
               </div>
               <h5 className="mb-0 fw-bold text-primary">
                 Meta Description <span className="text-danger">*</span>
@@ -403,13 +368,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                   <div className="text-end mt-1">
                     <small
                       className={`${
-                        totalKeyword > 160
-                          ? "text-danger"
-                          : totalKeyword >= 150
-                          ? "text-success"
-                          : "text-muted"
-                      }`}
-                    >
+                        totalKeyword > 160 ? "text-danger" : totalKeyword >= 150 ? "text-success" : "text-muted"
+                      }`}>
                       {totalKeyword}/160 karakter
                     </small>
                   </div>
@@ -420,33 +380,19 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}
-              >
-                Ringkasan artikel yang terdiri 150–160 karakter. Usahakan
-                menarik atau membuat pembaca penasaran. 
+                style={{ fontSize: "12px", opacity: "0.9" }}>
+                Ringkasan artikel yang terdiri 150–160 karakter. Usahakan menarik atau membuat pembaca penasaran. 
               </span>
             </div>
           </div>
         </div>
-
-        {/* <TextInput
-          type="text"
-          name="blogDescription"
-          labelTitle="Deskripsi Blog"
-          required={true}
-          description="Deskripsi blog akan digunakan di halaman utama blog"
-          placeholder="Masukkan deskripsi blog disini"
-          divClassName="mt-4"
-          inputClassName="text-input fs-6 w-100"
-        /> */}
 
         {/* deskripsi blog */}
         <div className="px-4">
           <div className="">
             <div className="d-flex align-items-center pt-4">
               <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-                <i className="fas fa-link text-primary"></i>{" "}
-                {/* Ganti ikon jadi link biar relevan */}
+                <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
               </div>
               <h5 className="mb-0 fw-bold text-primary">
                 Deskripsi Blog <span className="text-danger">*</span>
@@ -471,35 +417,20 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}
-              >
-                Berbeda dengan Meta Description, bagian ini menjelaskan isi blog
-                secara overview (bukan ringkasan). Contoh: “Artikel ini
-                menjelaskan cara menulis blog, mulai dari brainstorming hingga
-                penulisan HTML.”
+                style={{ fontSize: "12px", opacity: "0.9" }}>
+                Berbeda dengan Meta Description, bagian ini menjelaskan isi blog secara overview (bukan ringkasan).
+                Contoh: “Artikel ini menjelaskan cara menulis blog, mulai dari brainstorming hingga penulisan HTML.”
               </span>
             </div>
           </div>
         </div>
-
-        {/* <TextInput
-          type="text"
-          name="writernote"
-          labelTitle="Writer's Note"
-          required={true}
-          description="Menjelaskan blog ini ditujukan untuk siapa. Mahasiswa?, Orang tua?, Guru?, dll "
-          placeholder="Masukkan writer's note disini"
-          divClassName="mt-4"
-          inputClassName="text-input fs-6 w-100"
-        /> */}
 
         {/* writer's note */}
         <div className="px-4">
           <div className="">
             <div className="d-flex align-items-center pt-4">
               <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-                <i className="fas fa-link text-primary"></i>{" "}
-                {/* Ganti ikon jadi link biar relevan */}
+                <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
               </div>
               <h5 className="mb-0 fw-bold text-primary">Writer`s Note</h5>
             </div>
@@ -510,6 +441,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <TextAreaInput
                 maxLength={160}
                 rows={8}
+                required={false}
                 name="writernote"
                 placeholder="Masukkan writer's note disini..."
                 divClassName="mb-0"
@@ -522,56 +454,19 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}
-              >
+                style={{ fontSize: "12px", opacity: "0.9" }}>
                 Catatan dari penulis. Isinya bebas. So be creative!
               </span>
             </div>
           </div>
         </div>
 
-        {/* Input untuk outbound link */}
-        {/* <div className="d-inline-flex flex-row gap-4 my-4 overflow-hidden">
-          <TextInput
-            type="text"
-            name="externalTitle"
-            labelTitle="Outbound Title"
-            description="Link yang mengarah ke blog se-topik yang diluar dari dialogika. Misal blog dari medium"
-            placeholder="Stoicism: Kunci Kebijaksanaan dan Hidup Tenang"
-            divClassName="col-5 col-md-6"
-            inputClassName="text-input fs-6 w-100"
-          />
-          <TextInput
-            type="text"
-            name="externalLink"
-            labelTitle="Outbound Link"
-            placeholder="https://medium.com/dialogika"
-            divClassName="col-5 col-md-6"
-            inputClassName="text-input fs-6 w-100"
-          />
-        </div> */}
-
-        {/* Input untuk Tags dan Key Takeaway */}
-        {/* <div className="d-inline-flex flex-column flex-md-row justify-content-md-around gap-4 my-4">
-          <div className="d-inline-flex justify-content-start align-items-start flex-column gap-3">
-            <LabelInput
-              htmlFor={"tags"}
-              // description={description}
-              required={true}
-              title={"Tags"}
-            />
-            <DynamicInput name="tags" maxInputs={8} placeholder="#tags" />
-          </div>
-        </div> */}
-
         <div className="mb-4 px-4">
           <div
             className="d-flex align-items-center
-           pt-4"
-          >
+           pt-4">
             <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-              <i className="fas fa-tags text-primary"></i>{" "}
-              {/* Ikon tags buat relevan */}
+              <i className="fas fa-tags text-primary"></i> {/* Ikon tags buat relevan */}
             </div>
             <h5 className="mb-0 fw-bold text-primary">
               Tags <span className="text-danger">*</span>
@@ -579,12 +474,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           </div>
 
           <div className="px-2">
-            {/* <LabelInput
-              htmlFor="tags"
-              required={true}
-              hideAsterisk={true}
-              title={""}
-            /> */}
             <DynamicInput
               name="tags"
               maxInputs={5}
@@ -595,11 +484,9 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}
-              >
-                Masukkan 4-6 tags yang berkaitan dengan artikel (dapat berasal
-                dari keywords). Selalu masukkan #PublicSpeaking meski tidak
-                banyak berkaitan dengan isi.
+                style={{ fontSize: "12px", opacity: "0.9" }}>
+                Masukkan 4-6 tags yang berkaitan dengan artikel (dapat berasal dari keywords). Selalu masukkan
+                #PublicSpeaking meski tidak banyak berkaitan dengan isi.
               </span>
             </div>
           </div>
@@ -608,8 +495,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         {/* Input untuk Author */}
         <div className="d-flex align-items-center px-4 pt-4">
           <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-            <i className="fas fa-link text-primary"></i>{" "}
-            {/* Ganti ikon jadi link biar relevan */}
+            <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
           </div>
           <h5 className="mb-0 fw-bold text-primary">
             Authors <span className="text-danger">*</span>
@@ -629,23 +515,25 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           type="button"
           className="rev-appointment-btn"
           onClick={() => setShowGuide(true)}
-          style={{ width: "fit-content" }}
-        >
+          style={{ width: "fit-content" }}>
           Buka Guide
         </button>
 
-        <EditorModal show={showGuide} onHide={() => setShowGuide(false)} />
-        {/* NOTES : GUNAKAN JODIT REGULAR BILA ADA MASALAH DENGAN UI/UX KARNA LEBIH STABIL YANG REGULAR DIBANDINGKAN DENGAN PRO */}
+        <EditorModal
+          show={showGuide}
+          onHide={() => setShowGuide(false)}
+        />
         <JoditRegularEditor />
 
         <button
           type="button"
-          className="rev-appointment-btn mt-4 align-self-end mb-4"
-        >
+          className="rev-appointment-btn mt-4 align-self-end mb-4">
           Preview Blog
         </button>
 
-        <button type="submit" className="rev-appointment-btn ">
+        <button
+          type="submit"
+          className="rev-appointment-btn ">
           Publish Article
         </button>
       </form>
@@ -658,15 +546,26 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
 
 export default FormArticle;
 
+/* ==============================
+22-03-2025
+Dibawah ini komponen untuk menampilkan indikator proses publish : loading, success, dan failed
+============================== */
 interface IndicatorProps {
   onClose?: () => void;
 }
 
 const SuccessIndicator: React.FC<IndicatorProps> = ({ onClose }) => (
   <div className="fixed-top gap-3 d-flex flex-column justify-content-center align-items-center w-100 h-100 alert alert-success">
-    <FontAwesomeIcon icon={faCheck} beat style={{ width: 50, height: 50 }} />
+    <FontAwesomeIcon
+      icon={faCheck}
+      beat
+      style={{ width: 50, height: 50 }}
+    />
     <strong>Success!</strong> Article submitted successfully.
-    <button type="button" className="btn btn-primary" onClick={onClose}>
+    <button
+      type="button"
+      className="btn btn-primary"
+      onClick={onClose}>
       Close
     </button>
   </div>
@@ -674,16 +573,27 @@ const SuccessIndicator: React.FC<IndicatorProps> = ({ onClose }) => (
 
 const LoadingIndicator: React.FC<IndicatorProps> = () => (
   <div className="fixed-top gap-3 d-flex flex-column justify-content-center align-items-center w-100 h-100 alert alert-warning">
-    <FontAwesomeIcon icon={faSpinner} spin style={{ width: 50, height: 50 }} />
+    <FontAwesomeIcon
+      icon={faSpinner}
+      spin
+      style={{ width: 50, height: 50 }}
+    />
     <strong>Uploading !</strong> Please Wait.
   </div>
 );
 
 const FailedIndicator: React.FC<IndicatorProps> = ({ onClose }) => (
   <div className="fixed-top gap-3 d-flex flex-column justify-content-center align-items-center w-100 h-100 alert alert-danger">
-    <FontAwesomeIcon icon={faSpinner} spin style={{ width: 50, height: 50 }} />
+    <FontAwesomeIcon
+      icon={faSpinner}
+      spin
+      style={{ width: 50, height: 50 }}
+    />
     <strong>Failed ! Cant publish new article</strong> Please try again later!
-    <button type="button" className="btn btn-primary" onClick={onClose}>
+    <button
+      type="button"
+      className="btn btn-primary"
+      onClick={onClose}>
       Close
     </button>
   </div>

@@ -1,7 +1,13 @@
+/* ==============================
+22-03-2025
+Component ini digunakan di dalam component ArticleSection.tsx
+Untuk bagian bawah setelah konten artikel.
+Isi component ini : Rate this article, writer's note, Writers detail dan kolom komentar
+============================== */
+
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import Script from "next/script";
 import React from "react";
 import { faCircleChevronRight, faFeather } from "@fortawesome/free-solid-svg-icons";
 import { BlogArticleProps } from "@/types";

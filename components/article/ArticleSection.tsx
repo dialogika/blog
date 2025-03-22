@@ -1,24 +1,33 @@
+/* ==============================
+22-03-2025
+Component ini digunakan di page konten blog atau di dialogika.co/blog/read/id-article
+DAN di page preview blog atau /blog/admin/new-story/preview-article agar tim copywriter dapat melihat tampilan blognya seperti apa sebelum mereka memutuskan men-publish artikelnya
+
+============================== */
+
 "use client";
 import React from "react";
 import Breadcrumbs from "../layout/Breadcrumbs";
-import { ProgramOffer, Social, Widget } from "../sidebars";
+import { BottomRightBtn, ProgramOffer, Social, Widget } from "../sidebars";
 import Image from "next/image";
 import Link from "next/link";
 import ArticleDetails from "./ArticleDetails";
 import { formatDate } from "../utils/date";
-import star from "@/public/assets/img/next.png";
 import { BlogArticleProps } from "@/types";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 
 const ArticleSection = ({ article }: { article: BlogArticleProps }) => {
   const categoriesList = ["Confidence", "Interview", "Productivity", "Introvert", "Communication", "Presentation"];
   return (
     <>
+      <Header />
       <Breadcrumbs
         title={article.title}
         breadcrumbs={[
           { title: "Home", link: "https://www.dialogika.co" },
-          { title: "Blog", link: "../" },
-          { title: article.keywords, link: "../blog" },
+          { title: "Blog", link: "../../" },
+          { title: article.keywords, link: "#" },
         ]}
       />
       <section
@@ -40,13 +49,16 @@ const ArticleSection = ({ article }: { article: BlogArticleProps }) => {
                 <div
                   className="post-img position-relative m-0"
                   style={{ borderRadius: 10 }}>
-                  <Image
-                    src={article.thumbnail.trimEnd()}
-                    alt="Kesalahan Komunikasi"
-                    className="img-fluid"
-                    width={800}
-                    height={490}
-                  />
+                  {article.thumbnail &&
+                    article.thumbnail.length > 0 && ( // Cek apakah thumbnail untuk blog ini ada atau tidak
+                      <Image
+                        src={article.thumbnail.trimEnd()}
+                        alt={article.keywords}
+                        className="img-fluid"
+                        width={800}
+                        height={490}
+                      />
+                    )}
                 </div>
 
                 <h1 className="title mt-0 px-4 mt-4">{article.title}</h1>
@@ -58,16 +70,12 @@ const ArticleSection = ({ article }: { article: BlogArticleProps }) => {
                         className="d-flex align-items-center"
                         key={index}>
                         <i className="bi bi-person"></i>
-                        <Link
-                          href={`${article.idArticle}`}
-                          target="_blank">
-                          {author.authorName.toString()}
-                        </Link>
+                        <Link href={`#`}>{author.authorName.toString()}</Link>
                       </li>
                     ))}
                     <li className="d-flex align-items-center">
                       <i className="bi bi-clock"></i>
-                      <Link href={`${article.idArticle}`}>
+                      <Link href={`#`}>
                         <time dateTime={`${article.publishedAt.toString()}`}>
                           {formatDate(article.publishedAt.toString())}
                         </time>
@@ -125,7 +133,8 @@ const ArticleSection = ({ article }: { article: BlogArticleProps }) => {
                   <ul className="mt-3">
                     {article.tags?.map((item, index) => (
                       <li key={index}>
-                        <a>{item}</a>
+                        {/* Menambahkan hastag ('#') bila tidak ada */}
+                        <a>{item.includes("#") ? `${item}` : `#${item}`}</a>
                       </li>
                     ))}
                   </ul>
@@ -136,18 +145,9 @@ const ArticleSection = ({ article }: { article: BlogArticleProps }) => {
             </aside>
           </div>
         </div>
-
-        <a
-          href="#tagging-up"
-          className="back-to-top d-flex align-items-center justify-content-center active">
-          <Image
-            src={`${star}`}
-            width={10}
-            height={10}
-            alt=""
-          />
-        </a>
+        <BottomRightBtn />
       </section>
+      <Footer />
     </>
   );
 };

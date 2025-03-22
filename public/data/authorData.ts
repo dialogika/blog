@@ -1,11 +1,18 @@
+/* ==============================
+22-03-2025
+Bila ada intern/copywriter baru. Masukkan data mereka disini : nama, quotes dan gambarnya
+Untuk gambar intern di masukkan ke folder public/assets/img/intern. Jangan lupa di compress dan convert ke .webp dulu
+Import gambar intern di file importIndex.ts
+============================== */
+
 import { BlogAuthorProps } from "@/types";
 import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LEWAT SINI
 
 export const authorData: BlogAuthorProps[] = [
   {
-    authorName: "Damar Adi Nugroho",
-    imgPath: internImages.DamarAdi.src,
-    quotes: `Kalau hidup lagi timeout, mungkin waktunya refresh token biar semangat lagi!  `,
+    authorName: "Fitriani",
+    imgPath: internImages.fitriani.src,
+    quotes: `The only way to do great work is to love what u do`,
   },
   {
     authorName: "Nurfinka Lailasari",
@@ -137,8 +144,7 @@ export const authorData: BlogAuthorProps[] = [
   {
     authorName: "Gisella Keilsa",
     imgPath: internImages.gisellaKeilsa.src,
-    quotes:
-      "Setiap tantangan adalah kesempatan untuk tumbuh, biarkan semangatmu membimbingmu menuju impian",
+    quotes: "Setiap tantangan adalah kesempatan untuk tumbuh, biarkan semangatmu membimbingmu menuju impian",
   },
   {
     authorName: "Fisalma Fadhia",
@@ -249,8 +255,7 @@ export const authorData: BlogAuthorProps[] = [
   {
     authorName: "Maya Alif Bunga Marshanda",
     imgPath: internImages.mayaAlifBungaMarshanda.src,
-    quotes:
-      "Life must go on. Get out of comfort zone and do what you've been worried about all this time",
+    quotes: "Life must go on. Get out of comfort zone and do what you've been worried about all this time",
   },
   {
     authorName: "Cipto Ardiantoro",

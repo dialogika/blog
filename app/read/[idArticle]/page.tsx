@@ -5,6 +5,8 @@ import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import { Metadata } from "next";
 import Script from "next/script";
 import ArticleSection from "@/components/article/ArticleSection";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 
 type PageParams = Promise<{ idArticle: string[] }>;
 export default async function Page(props: { params: PageParams }) {
@@ -24,6 +26,7 @@ export default async function Page(props: { params: PageParams }) {
     if (!res.ok) {
       return (
         <>
+          <Header />
           <Breadcrumbs
             title="Article"
             breadcrumbs={[
@@ -34,6 +37,7 @@ export default async function Page(props: { params: PageParams }) {
           <section className="section min-vh-100 pt-5">
             <h1 className="text-black mt-5">Error: blogArticle Not Found!</h1>
           </section>
+          <Footer />
         </>
       );
     }

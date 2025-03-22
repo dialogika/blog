@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./styles/globals.css";
 import { basePath } from "@/next.config";
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
 import BootstrapJS from "@/components/utils/BootstrapJS";
 import TrackingScript from "@/components/utils/TrackingScript";
 import ReduxProvider from "@/components/utils/ReduxProvider";
@@ -66,9 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         <TrackingScript />
         <ReduxProvider>
-          <Header />
-          <main className="main mb-4">{children}</main>
-          <Footer />
+          <main >{children}</main>
         </ReduxProvider>
         {/* Global Scripts */}
         <GlobalScripts />
