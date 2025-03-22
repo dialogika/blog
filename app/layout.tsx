@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const GlobalScripts = () => (
+const GlobalScripts = () => (
   <>
     {/* Main Custom JS */}
     <Script
