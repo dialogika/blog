@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import ArticleLists from "@/components/article/ArticleLists";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
-import { ProgramOffer, Social, Widget } from "@/components/sidebars";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { BottomRightBtn, ProgramOffer, Social, Widget } from "@/components/sidebars";
 import logoDialogika from "@/public/assets/img/logo-square.png";
 import { BlogArticleProps } from "@/types";
 
@@ -35,6 +37,7 @@ export default async function Home() {
     const articles: BlogArticleProps[] = response.data;
     return (
       <>
+        <Header />
         <Breadcrumbs
           title="Article"
           breadcrumbs={[
@@ -70,7 +73,9 @@ export default async function Home() {
               </aside>
             </div>
           </div>
+          <BottomRightBtn />
         </section>
+        <Footer />
       </>
     );
   } catch (error: any) {

@@ -47,7 +47,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
           )}
           <div className="post-img position-relative m-0">
             <Image
-              src={submittedUrl}
+              src={submittedUrl.trim()}
               alt="Preview image"
               width={800}
               height={490}
@@ -55,6 +55,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
               onLoad={() => setIsLoading(false)}
             />
           </div>
+          {/* Input ini dihide & diperlukan agar FormData bisa mengambil value/link dari gambar thumbnail */}
           <input
             name={name}
             id={name}
@@ -75,7 +76,9 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
           </button>
         </div>
       ) : (
-        <>
+        <div
+          className="w-100 d-flex flex-column justify-content-center align-items-center px-3 gap-4"
+          style={{ padding: "30px 0px 30px 0px" }}>
           <FontAwesomeIcon
             icon={faImage}
             style={{ color: "#0f5da3", width: 50, height: 50 }}
@@ -94,6 +97,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
               value={urlInput}
               onChange={handleInputChange}
               required
+              style={{ background: "#F4F2EE" }}
             />
             <button
               type="button"
@@ -103,7 +107,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
               Submit Image
             </button>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

@@ -1,7 +1,13 @@
+/* ==============================
+22-03-2025
+Component ini digunakan di dalam component ArticleSection.tsx
+Untuk bagian bawah setelah konten artikel.
+Isi component ini : Rate this article, writer's note, Writers detail dan kolom komentar
+============================== */
+
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import Script from "next/script";
 import React from "react";
 import { faCircleChevronRight, faFeather } from "@fortawesome/free-solid-svg-icons";
 import { BlogArticleProps } from "@/types";
@@ -152,7 +158,7 @@ const ArticleDetails = ({ authors, publishedAt, writerNote }: BlogArticleProps) 
                   className="d-flex gap-3">
                   <Image
                     src={`${author.imgPath}`}
-                    alt={author.authorName}
+                    alt={`Author ke-${index+1}`}
                     loading="lazy"
                     width={60}
                     height={60}

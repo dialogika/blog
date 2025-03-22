@@ -1,3 +1,9 @@
+/* ==============================
+22-03-2025
+Component ini digunakan di home page blog atau di dialogika.co/blog
+Untuk menampilkan list artikel blog terbaru. Secara default hanya menampilkan 3 artikel blog terbaru.
+============================== */
+
 "use client";
 import { BlogArticleProps } from "@/types";
 import { formatDate } from "@/components/utils/date";
@@ -24,7 +30,7 @@ const ArticleLists = ({ articles }: articlesProps) => {
           key={index}>
           <div className="post-img">
             <Image
-              src={article.thumbnail}
+              src={article.thumbnail.trim()}
               alt={article.keywords}
               width={745}
               height={400}

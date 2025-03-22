@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 const Header = () => {
   const [showTopbar, setShowTopbar] = useState(true);
-  const [hideHeader, setHideHeader] = useState(true);
   const path = usePathname();
 
   const handleScroll = () => {
@@ -15,12 +14,6 @@ const Header = () => {
   };
 
   useEffect(() => {
-    // Hide header bila sedang buka halaman admin dan buat artikel blog baru
-    if (path && path.includes("/admin/new-story")) {
-      setHideHeader(true);
-    } else {
-      setHideHeader(false);
-    }
     // Initialize with current scroll position
     setShowTopbar(window.scrollY <= 100);
     window.addEventListener("scroll", handleScroll);
@@ -31,9 +24,7 @@ const Header = () => {
     <>
       <div
         id="topbar"
-        className={`d-flex align-items-center fixed-top ${!showTopbar ? " topbar-scrolled" : ""} ${
-          hideHeader && "d-none"
-        }`}>
+        className={`d-flex align-items-center fixed-top ${!showTopbar ? " topbar-scrolled" : ""} `}>
         <div className="container d-flex justify-content-between">
           <div className="contact-info d-flex align-items-center">
             <i className="bi bi-envelope"></i> <Link href="mailto:admin@dialogika.co">admin@dialogika.co</Link>
@@ -64,10 +55,10 @@ const Header = () => {
         </div>
       </div>
 
-      {/*   <!-- ======= Header ======= --> */}
-      <header
+      {/*   <!-- ======= Desktop Navbar ======= --> */}
+      <nav
         id="header"
-        className={`fixed-top ${!showTopbar && "header-scrolled"}  ${hideHeader && "d-none"}`}>
+        className={`fixed-top ${!showTopbar && "header-scrolled"}  `}>
         <div className="container d-flex align-items-center">
           <Link
             href="../index.html"
@@ -252,11 +243,11 @@ const Header = () => {
             Promo<span className="d-none d-md-inline"> Class</span>
           </Link>
         </div>
-      </header>
-      {/* <!-- End Header --> */}
+      </nav>
+      {/* <!-- End Desktop Navbar --> */}
 
       {/* <!-- ======= Mobile Nav ======= --> */}
-      <nav className={` ${hideHeader && "d-none"} navbar-canvas fixed-top`}>
+      <nav className={`navbar-canvas fixed-top`}>
         <div className="container-fluid">
           <div
             className="offcanvas offcanvas-start"

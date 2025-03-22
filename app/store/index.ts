@@ -2,10 +2,12 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import authorReducer from "./authorsSlice";
 import blogListReducer from "./blogListSlice";
+import blogPreviewReducer from "./blogPreviewSlice";
 
 const rootReducer = combineReducers({
   authors: authorReducer,
   blogList: blogListReducer,
+  blogPreview: blogPreviewReducer,
 });
 
 export const store = configureStore({
