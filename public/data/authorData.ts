@@ -1,7 +1,29 @@
+/* ==============================
+22-03-2025
+Bila ada intern/copywriter baru. Masukkan data mereka disini : nama, quotes dan gambarnya
+Untuk gambar intern di masukkan ke folder public/assets/img/intern. Jangan lupa di compress dan convert ke .webp dulu
+Import gambar intern di file importIndex.ts
+============================== */
+
 import { BlogAuthorProps } from "@/types";
 import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LEWAT SINI
 
 export const authorData: BlogAuthorProps[] = [
+  {
+    authorName: "Fitriani",
+    imgPath: internImages.fitriani.src,
+    quotes: `The only way to do great work is to love what u do`,
+  },
+  {
+    authorName: "Nurfinka Lailasari",
+    imgPath: internImages.nurfinkaLailasari.src,
+    quotes: `With overflowing creativity, a blazing spirit, and relentless perseverance, someone will carve extraordinary achievements that become a beacon of inspiration for many. `,
+  },
+  {
+    authorName: "Jessica Caesya Agustin",
+    imgPath: internImages.jessicaCaesyaAgustin.src,
+    quotes: `Setiap orang memiliki jalannya masing-masing. Tak perlu terlalu terburu-buru. Pada akhirnya, hidup bukanlah sebuah kompetisi. `,
+  },
   {
     authorName: "Winema Aleshanee",
     imgPath: internImages.winemaAleshanee.src,
@@ -104,11 +126,6 @@ export const authorData: BlogAuthorProps[] = [
   },
   {
     authorName: "Indhira Nur",
-    imgPath: internImages.laurenciaEprinaDian.src,
-    quotes: "~~",
-  },
-  {
-    authorName: "Indhira Nur",
     imgPath: internImages.indhiraNur.src,
     quotes:
       "Talks about GenZ, pesonal development, tiktok, social media dan LIVE, menyukai berbicara dihadapan umum terutama via kamera dan mudah bergaul",
@@ -122,8 +139,7 @@ export const authorData: BlogAuthorProps[] = [
   {
     authorName: "Gisella Keilsa",
     imgPath: internImages.gisellaKeilsa.src,
-    quotes:
-      "Setiap tantangan adalah kesempatan untuk tumbuh, biarkan semangatmu membimbingmu menuju impian",
+    quotes: "Setiap tantangan adalah kesempatan untuk tumbuh, biarkan semangatmu membimbingmu menuju impian",
   },
   {
     authorName: "Fisalma Fadhia",
@@ -206,7 +222,7 @@ export const authorData: BlogAuthorProps[] = [
     quotes: "~~",
   },
   {
-    authorName: "An Nisa Nur Rizky Aghisa",
+    authorName: "An Nisa Nur Rizky",
     imgPath: internImages.anNisaNurRizky.src,
     quotes:
       "Tidak ada kata terlambat untuk memulai hal yang baru. Selama kita masih punya tekad dan semangat, kenapa tidak? ",
@@ -234,8 +250,7 @@ export const authorData: BlogAuthorProps[] = [
   {
     authorName: "Maya Alif Bunga Marshanda",
     imgPath: internImages.mayaAlifBungaMarshanda.src,
-    quotes:
-      "Life must go on. Get out of comfort zone and do what you've been worried about all this time",
+    quotes: "Life must go on. Get out of comfort zone and do what you've been worried about all this time",
   },
   {
     authorName: "Cipto Ardiantoro",
@@ -263,7 +278,7 @@ export const authorData: BlogAuthorProps[] = [
     quotes: "Push Your Limit",
   },
   {
-    authorName: "Darma Putra Kusuma",
+    authorName: "Darma Putra",
     imgPath: internImages.darmaPutraKusuma.src,
     quotes: "Be Good and Be Right",
   },

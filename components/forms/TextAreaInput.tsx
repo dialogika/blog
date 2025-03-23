@@ -25,7 +25,6 @@ const TextAreaInput: React.FC<TextAreaProps> = ({
   style,
   ...props
 }) => {
-  console.log("Props yang diterima oleh TextAreaInput:", props); // Debugging
   return (
     <div className={divClassName}>
       <textarea

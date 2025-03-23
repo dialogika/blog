@@ -1,3 +1,9 @@
+/* ==============================
+22-03-2025
+Component ini belum digunakan dan diuji coba. Tujuan dibuat component ini yaitu bila ada gambar dengan class dan id "dialogika-element" 
+di halaman /blog/read/id-artikel, akan secara otomatis diwrap div yg sudah ditentukan dibawah ini.  
+============================== */
+
 "use client";
 import { useEffect } from "react";
 

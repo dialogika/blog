@@ -1,3 +1,10 @@
+/* ==============================
+22-03-2025
+Property yang diharapkan mongoDB dalam artikel blog. Bila ingin menambahkan property baru 
+maka masukkan ke BlogArticleProps yg terletak di folder types/index.ts
+DAN di lib/mongodb/models/Article.ts ini
+============================== */
+
 import mongoose, { Schema } from "mongoose";
 
 const AuthorSchema = new Schema({
@@ -18,10 +25,12 @@ const articleSchema = new Schema(
       type: String,
       required: [true, "Please provide an id from title"],
       unique: true,
+      maxlength: [150, "idArticle cannot exceed 150 characters"],
     },
     title: {
       type: String,
       required: [true, "Please provide a title for this article"],
+      maxlength: [150, "idArticle cannot exceed 150 characters"],
     },
     thumbnail: {
       type: String,
@@ -58,7 +67,7 @@ const articleSchema = new Schema(
     collection: "articleCollections",
   }
 );
-
+// testingArticleCollections
 // If id is not provided, generate a new one
 // articleSchema.pre("save", function (next) {
 //   if (!this.idArticle) {

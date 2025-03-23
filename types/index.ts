@@ -1,3 +1,8 @@
+/* ==============================
+22-03-2025
+Property yang ada dalam artikel blog. Bila ingin menambahkan property baru maka masukkan ke BlogArticleProps ini
+DAN di folder lib/mongodb/models/Article.ts
+============================== */
 export interface BlogArticleProps {
   _id?: string; // Ini generate otomatis dari mongoDBnya
   idArticle: string;
