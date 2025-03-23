@@ -4,7 +4,7 @@ import LabelInput from "./LabelInput";
 
 export interface InputProps {
   name: string;
-  labelTitle: string;
+  labelTitle?: string;
   type?: React.HTMLInputTypeAttribute;
   placeholder?: string;
   divClassName?: string;
@@ -30,13 +30,15 @@ const TextInput: React.FC<InputProps> = ({
 }) => {
   return (
     <div className={divClassName}>
-      <LabelInput
-        htmlFor={name}
-        title={labelTitle}
-        required={required}
-        hideAsterisk={hideAsterisk}
-        description={description}
-      />
+      {labelTitle && (
+        <LabelInput
+          htmlFor={name}
+          title={labelTitle}
+          required={required}
+          hideAsterisk={hideAsterisk}
+          description={description}
+        />
+      )}
       <input
         type={type}
         name={name}
