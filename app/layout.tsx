@@ -70,6 +70,7 @@ export default function RootLayout({
         <TrackingScript />
         <ReduxProvider>
           <main>{children}</main>
+          <main>{children}</main>
         </ReduxProvider>
         {/* Global Scripts */}
         <GlobalScripts />

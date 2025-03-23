@@ -48,12 +48,6 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
 
   return (
     <>
-      {/* <LabelInput
-        htmlFor={props.name}
-        title="Authors"
-        description={props.description}
-        required={props.required}
-      /> */}
       <div className=" d-flex flex-wrap gap-3 mt-4 align-items-stretch justify-content-center">
         {totalInputs.map((tidakDipakai, index) => {
           // Find the selected author object based on the current value.
