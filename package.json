@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000 && echo 'Visit http://localhost:3000/blog'",
-    "build": "next build && next export && next-sitemap",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },

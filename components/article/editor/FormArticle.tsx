@@ -137,34 +137,17 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       setIsFailed(false);
       setSuccess(true);
 
-      // DELETE ENGKE CENGGG
-      // const rebuildGithub = await fetch(
-      //   "/blog/api/admin/article/build/triggerGithubRebuild/",
-      //   { method: "POST" }
-      // );
+      const rebuildGithub = await fetch(
+        "https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/build/triggerGithubRebuild/",
+        { method: "POST" }
+      );
 
-      // if (!rebuildGithub.ok) {
-      //   const errorText = await rebuildGithub.text();
-      //   console.log("🚀 ~ handleFormSubmit ~ errorText:", errorText);
-      // } else {
-      //   console.log("Berhasil redeploy github pages");
-      // }
-
-      // UNCOMMENT MEN BRANCH main-nextjs READY
-      // const rebuildGithub = await fetch(
-      //   "https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/build/triggerGithubRebuild/",
-      //   { method: "POST" }
-      // );
-
-      // if (!rebuildGithub.ok) {
-      //   const errorText = await rebuildGithub.text();
-      //   console.log("🚀 ~ handleFormSubmit ~ errorText:", errorText);
-      // } else {
-      //   console.log("Berhasil redeploy github pages");
-      // }
-
-      // Tampilkan payload di console untuk debugging
-      console.log("🚀 ~ Article Created here is the payload:", payload);
+      if (!rebuildGithub.ok) {
+        const errorText = await rebuildGithub.text();
+        console.log("🚀 ~ handleFormSubmit ~ errorText:", errorText);
+      } else {
+        console.log("Berhasil redeploy github pages");
+      }
     } catch (error: any) {
       setIsLoading(false);
       setSuccess(false);
