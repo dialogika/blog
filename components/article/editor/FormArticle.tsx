@@ -1,19 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import {
-  TextInput,
-  DynamicInput,
-  DynamicAuthorInput,
-  // LabelInput,
-  TextAreaInput,
-} from "@/components/forms";
+import { TextInput, DynamicInput, DynamicAuthorInput, TextAreaInput } from "@/components/forms";
 import { BlogArticleProps, BlogAuthorProps } from "@/types";
 import { useDispatch, useSelector } from "react-redux";
 import { updateAuthorsState } from "@/app/store/authorsSlice";
 import { RootState } from "@/app/store";
 import ImageUrl from "@/components/forms/ImageUrl";
 import JoditRegularEditor from "./JoditRegularEditor";
-import EditorModal from "@/components/layout/modals/EditorModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faSpinner } from "@fortawesome/free-solid-svg-icons";
 
@@ -24,7 +17,6 @@ interface FormArticleProps {
 const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
   const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail);
   const dispatch = useDispatch();
-  const [showGuide, setShowGuide] = useState(false); // State untuk menampilkan model GUIDE penggunaan text editor
   const [isSuccess, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
@@ -51,7 +43,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
     // Ambil judul blog dan buat id dari judul tersebut
     const title = formData.get("title")?.toString();
     if (!title) return;
-
     payload.title = title;
 
     const id = title
@@ -75,29 +66,26 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
     // Ambil deskripsi untuk digunakan di card di blog/index
     const blogDescription = formData.get("blogDescription")?.toString();
     if (!blogDescription) return;
-
     payload.cardsDescription = blogDescription;
 
     // Ambil keyword untuk blog
     const keywords = formData.get("keyword")?.toString();
     if (!keywords) return;
-
     payload.keywords = keywords;
 
     // Ambil writer notes untuk blog
     const writernote = formData.get("writernote")?.toString();
-    if (writernote) payload.writerNote = writernote;
+    if (!writernote) return;
+    payload.writerNote = writernote;
 
-    // Ambil outbound title untuk blog
+    // Ambil outbound title & link untuk blog. Bila tidak ada, gunakan link medium dialogika
     const externalTitle = formData.get("externalTitle")?.toString();
     const externalLink = formData.get("externalLink")?.toString();
 
-    if (externalTitle && externalLink) {
-      payload.outBoundLink = {
-        title: externalTitle || "Medium",
-        link: externalLink || "https://medium.com/dialogika",
-      };
-    }
+    payload.outBoundLink = {
+      title: externalTitle || "Medium",
+      link: externalLink || "https://medium.com/dialogika",
+    };
 
     // Ambil nilai input untuk tags (tags-0, tags-1, ..., tags-9)
     const tags: string[] = [];
@@ -105,13 +93,15 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       const tagValue = formData.get(`tags-${i}`);
       if (tagValue) tags.push(tagValue.toString());
     }
+    if (tags.length < 1) tags.push("#Dialogika", "#PublicSpeaking"); // Bila tags kosong tambah value Dialogika & PublicSpeaking
+
     payload.tags = tags;
 
     // Ambil value authors
     const selectedAuthors: string[] = [];
     const authorsPayload: BlogAuthorProps[] = [];
     for (let i = 0; i < 3; i++) {
-      const selectedAuthorNames = formData.get(`authors-${i}`); // Ambil nama-nama author yang ada dari input
+      const selectedAuthorNames = formData.get(`author-${i}`); // Ambil nama-nama author yang ada dari input DynamicAuthorInput
       if (selectedAuthorNames) selectedAuthors.push(selectedAuthorNames.toString());
     }
     selectedAuthors.forEach((author) => {
@@ -186,10 +176,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
 
   return (
     <>
-      <EditorModal
-        show={showGuide}
-        onHide={() => setShowGuide(false)}
-      />
       <form
         id="FormArticle"
         onSubmit={handleFormSubmit}
@@ -288,7 +274,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         <div className="mb-4 px-4">
           <div className="d-flex align-items-center mb-2 pt-4">
             <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-              <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
+              <i className="fas fa-link text-primary"></i>
             </div>
             <h5 className="mb-0 fw-bold text-primary">Outbound</h5>
           </div>
@@ -340,7 +326,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           <div className="">
             <div className="d-flex align-items-center pt-4">
               <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-                <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
+                <i className="fas fa-link text-primary"></i>
               </div>
               <h5 className="mb-0 fw-bold text-primary">
                 Meta Description <span className="text-danger">*</span>
@@ -354,6 +340,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                 rows={8}
                 maxLength={160}
                 name="metadata"
+                required={true}
                 placeholder="Masukkan metadata blog disini..."
                 divClassName="mb-0"
                 textAreaClassName="form-control fs-6 w-100 border border-light-subtle rounded-3 shadow-sm p-3"
@@ -392,7 +379,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           <div className="">
             <div className="d-flex align-items-center pt-4">
               <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-                <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
+                <i className="fas fa-link text-primary"></i>
               </div>
               <h5 className="mb-0 fw-bold text-primary">
                 Deskripsi Blog <span className="text-danger">*</span>
@@ -405,6 +392,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <TextAreaInput
                 maxLength={160}
                 rows={8}
+                required={true}
                 name="blogDescription"
                 placeholder="Masukkan deskripsi blog disini..."
                 divClassName="mb-0"
@@ -430,9 +418,11 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           <div className="">
             <div className="d-flex align-items-center pt-4">
               <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-                <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
+                <i className="fas fa-link text-primary"></i>
               </div>
-              <h5 className="mb-0 fw-bold text-primary">Writer`s Note</h5>
+              <h5 className="mb-0 fw-bold text-primary">
+                Writer`s Note <span className="text-danger">*</span>
+              </h5>
             </div>
           </div>
 
@@ -441,7 +431,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <TextAreaInput
                 maxLength={160}
                 rows={8}
-                required={false}
+                required={true}
                 name="writernote"
                 placeholder="Masukkan writer's note disini..."
                 divClassName="mb-0"
@@ -473,7 +463,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             </h5>
           </div>
 
-          <div className="px-2">
+          <div className="px-2 d-flex flex-column justify-content-center align-items-center ">
             <DynamicInput
               name="tags"
               maxInputs={5}
@@ -495,7 +485,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         {/* Input untuk Author */}
         <div className="d-flex align-items-center px-4 pt-4">
           <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-            <i className="fas fa-link text-primary"></i> {/* Ganti ikon jadi link biar relevan */}
+            <i className="fas fa-link text-primary"></i>
           </div>
           <h5 className="mb-0 fw-bold text-primary">
             Authors <span className="text-danger">*</span>
@@ -504,37 +494,25 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         <div className="row mb-5">
           <DynamicAuthorInput
             maxInputs={3}
-            name="authors"
+            name="author"
             data-bs-toggle="modal"
             description="Penulis Article Blog"
             required={true}
           />
         </div>
 
-        <button
-          type="button"
-          className="rev-appointment-btn"
-          onClick={() => setShowGuide(true)}
-          style={{ width: "fit-content" }}>
-          Buka Guide
-        </button>
-
-        <EditorModal
-          show={showGuide}
-          onHide={() => setShowGuide(false)}
-        />
         <JoditRegularEditor />
 
-        <button
+        {/* <button
           type="button"
-          className="rev-appointment-btn mt-4 align-self-end mb-4">
+          className="yellow-dialogika-btn rounded-3 mt-4 mb-3">
           Preview Blog
-        </button>
+        </button> */}
 
         <button
           type="submit"
           className="rev-appointment-btn ">
-          Publish Article
+          Publish Article Blog
         </button>
       </form>
       {isLoading && <LoadingIndicator />}

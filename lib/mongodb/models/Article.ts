@@ -1,3 +1,10 @@
+/* ==============================
+22-03-2025
+Property yang diharapkan mongoDB dalam artikel blog. Bila ingin menambahkan property baru 
+maka masukkan ke BlogArticleProps yg terletak di folder types/index.ts
+DAN di lib/mongodb/models/Article.ts ini
+============================== */
+
 import mongoose, { Schema } from "mongoose";
 
 const AuthorSchema = new Schema({

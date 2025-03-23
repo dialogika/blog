@@ -126,11 +126,6 @@ export const authorData: BlogAuthorProps[] = [
   },
   {
     authorName: "Indhira Nur",
-    imgPath: internImages.laurenciaEprinaDian.src,
-    quotes: "~~",
-  },
-  {
-    authorName: "Indhira Nur",
     imgPath: internImages.indhiraNur.src,
     quotes:
       "Talks about GenZ, pesonal development, tiktok, social media dan LIVE, menyukai berbicara dihadapan umum terutama via kamera dan mudah bergaul",

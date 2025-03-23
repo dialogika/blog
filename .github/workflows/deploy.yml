@@ -68,16 +68,14 @@ jobs:
           NEXT_PUBLIC_ESLINT_DISABLE: "true"
         run: ${{ steps.detect-package-manager.outputs.runner }} next build --no-lint
 
+      - name: Generate Sitemaps
+        run: npx next-sitemap
+
       # Upload the build artifact (the static output folder)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-
-        # Ping google to index blog pages
-      - name: Ping Google with Sitemap
-        run: |
-          curl "http://www.google.com/ping?sitemap=https://www.dialogika.co/sitemap.xml"
 
   deploy:
     runs-on: ubuntu-latest
