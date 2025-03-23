@@ -22,14 +22,19 @@ const LoginPage = () => {
         className="card p-5 shadow-lg border-0 rounded-4 bg-white"
         style={{ width: "600px", maxWidth: "90%" }}
       >
-        {/* Logo di atas form */}
         <div className="text-center mb-4">
-          <img
-            src="https://www.dialogika.co/assets/img/logo.webp"
-            alt="Dialogika Logo"
-            className="img-fluid mb-3"
-            style={{ width: "400px", height: "auto" }}
-          />
+          <a
+            href="https://www.dialogika.co/blog/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://www.dialogika.co/assets/img/logo.webp"
+              alt="Dialogika Logo"
+              className="img-fluid mb-3"
+              style={{ width: "400px", height: "auto" }}
+            />
+          </a>
           <h2 className="fw-bold text-[#032E68]">Login</h2>
         </div>
 
@@ -67,7 +72,7 @@ const LoginPage = () => {
                 style={{ zIndex: 5 }}
               >
                 <i
-                  className={showPassword ? "bi bi-eye-slash" : "bi bi-eye"}
+                  className={showPassword ? "bi bi-eye" : "bi bi-eye-slash"}
                 ></i>
               </button>
             </div>
