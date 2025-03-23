@@ -35,7 +35,7 @@ const LoginPage = () => {
               style={{ width: "400px", height: "auto" }}
             />
           </a>
-          <h2 className="fw-bold text-[#032E68]">Login</h2>
+          <h2 className="fw-bold text-[#032E68]">Login Copywriter </h2>
         </div>
 
         {/* Form Login */}
