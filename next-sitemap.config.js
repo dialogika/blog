@@ -1,8 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://www.dialogika.co",
-  generateRobotsTxt: true, // (optional)
-  // Change the following as needed, for example if your blog is in /blog
+  siteUrl: "https://www.dialogika.co/blog", // The main domain. 23-03-2025 Saat ini di tambahkan /blog diakhir siteUrlnya secara manual
+  basePath: "/blog",                   // Serve your site from /blog
+  generateRobotsTxt: true,            // Generates a robots.txt
   sitemapSize: 7000,
-  outDir: "./out", // match your Next.js export folder (or build folder)
+  outDir: "./out",                    // Matches your Next.js export folder
 };
