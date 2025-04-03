@@ -19,9 +19,12 @@ const EditorModal = ({ show, onHide }: editorModalProps) => {
       onHide={onHide}
       className="modal-xl"
       dialogClassName="modal-90w" // custom class
-      aria-labelledby="guide-modal"
-    >
-      <Modal.Header closeButton>Guide & Tips untuk editor</Modal.Header>
+      aria-labelledby="guide-modal">
+      <Modal.Header
+        closeButton
+        className="fs-4 fw-bold">
+        Guide & Tips untuk editor
+      </Modal.Header>
       <Modal.Body>
         <Accordion>
           {/* Start of Guide memasukkan Gambar */}
@@ -33,30 +36,26 @@ const EditorModal = ({ show, onHide }: editorModalProps) => {
                 <a
                   href="https://www.pexels.com/"
                   target="_blank"
-                  className="text-decoration-underline "
-                >
+                  className="text-decoration-underline ">
                   Pexels
                 </a>
                 ,{" "}
                 <a
                   href="https://yandex.com/images/"
                   target="_blank"
-                  className="text-decoration-underline "
-                >
+                  className="text-decoration-underline ">
                   Yandex
                 </a>
                 ,{" "}
                 <a
                   href="https://unsplash.com/"
                   target="_blank"
-                  className="text-decoration-underline "
-                >
+                  className="text-decoration-underline ">
                   Unsplash
                 </a>
               </h5>
               <h5 className="mt-5">
-                2. Click kanan pada gambar dan pilih{" "}
-                <b>`Open Image in New Tab`</b>
+                2. Klik kanan pada gambar dan pilih <b>`Open Image in New Tab`</b>
               </h5>
               <Image
                 src={guideGambar1}
@@ -65,8 +64,8 @@ const EditorModal = ({ show, onHide }: editorModalProps) => {
                 alt="guide gambar 1 "
               />
               <h5 className="mt-5">
-                3. Copy link gambar tersebut. Pindah ke halaman text editor dan
-                click icon gambar {`->`} masukkan linknya ke URL dan submit
+                3. Copy link gambarnya. Kembali ke halaman text editor dan di toolbar klik icon gambar (dibagian kanan atas) {`->`} masukkan linknya
+                ke URL dan submit
               </h5>
               <Image
                 src={guideGambar2}
@@ -76,9 +75,8 @@ const EditorModal = ({ show, onHide }: editorModalProps) => {
               />
 
               <h5 className="mt-5">
-                4. Click gambarnya untuk kustomisasi, gambar bisa diperbesar
-                atau diperkecil. Pilih Edit {`->`} Advanced dan masukkan
-                `dialogika-img` di Classes dan Id kemudian <i>Apply</i>.
+                4. Klik gambarnya untuk kustomisasi, gambar bisa diperbesar atau diperkecil. Pilih Edit {`->`} Advanced
+                dan masukkan `dialogika-img` di Classes dan Id kemudian <i>Apply</i>.
               </h5>
               <Image
                 src={guideGambar3}
@@ -88,8 +86,7 @@ const EditorModal = ({ show, onHide }: editorModalProps) => {
               />
 
               <h5 className="mt-5">
-                5. Bila ingin ada text disamping gambar, pilih vertical align
-                dan kemudian click disamping gambar
+                5. Bila ingin ada text disamping gambar, pilih vertical align dan kemudian Klik disamping gambar
               </h5>
               <Image
                 src={guideGambar4}
