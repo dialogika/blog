@@ -4,7 +4,7 @@
 export enum StorageKeys {
   // Nama_Variabel = "nama key yg menjelaskan item yg akan disimpan di localStorage"
   NEW_ARTICLE_DRAFT = "newArticleDraft",  // draft progress untuk Create New Article di page /blog/admin/new-story/
-  COPYWRITER_DATA = "copywriterUserData",
+  COPYWRITER_DATA = "copywriterUserData", // Menyimpan informasi login copywriter dan draftnya
 }
 
 // Function untuk memasukkan value kedalam item kemudian menyimpannya di localStorage

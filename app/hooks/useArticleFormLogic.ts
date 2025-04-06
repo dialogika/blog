@@ -1,8 +1,7 @@
 import { BlogArticleProps, BlogAuthorProps } from "@/types";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateBlogPreviewState } from "../store/blogPreviewSlice";
-import { RootState } from "../store";
 import { setLocalStorageItem, StorageKeys } from "../utils/localStorageUtils";
 
 interface UseArticleFormLogicProps {
@@ -14,7 +13,6 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
   const [success, setSuccess] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
   const dispatch = useDispatch();
-  const blogPreviewData = useSelector((state: RootState) => state.blogPreview.blogPreviewProps); // Redux untuk blogPreviewSlice kelihatannya tidak digunakan.
 
   // Function untuk mengambil value dari form yang ada di FormArticle.tsx
   // Hanya menerima event dari Form. Event lainnya seperti onClick, onMouseOver, dll tidak akan diterima
@@ -106,7 +104,7 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
     return payload;
   };
 
-  // Function untuk menghandle event saat copywriter akan submit artikelnya ke database
+  // Function untuk handle event saat copywriter akan submit artikelnya ke database
   const handleFormPublish = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const payload = getFormData(event);
@@ -153,23 +151,38 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
     }
   };
 
-  // Function untuk menghandle event saat copywriter ingin melihat hasil artikelnya sebelum di submit ke database
+  // Function untuk handle event saat copywriter ingin melihat hasil artikelnya sebelum di submit ke database
   const handlePreview = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    const findForm = event.currentTarget.closest("#FormArticle");
-    if (!findForm)
-      return alert("Failed to show preview, try again later! Please report this to the HTML writer TEAM !!!");
-
-    // Buat event-like object dengan currentTarget as sebagai <form>
-    const fakeEvent = { currentTarget: findForm } as React.FormEvent<HTMLFormElement>;
-    const payload = getFormData(fakeEvent);
+    const formEvent = handleMouseEvent(event); // Ubah dulu mouse event (button click) menjadi form event(submit form)
+    if (!formEvent) return;
+    const payload = getFormData(formEvent);
     dispatch(updateBlogPreviewState(payload));
     if (payload) setLocalStorageItem(StorageKeys.NEW_ARTICLE_DRAFT, payload); // Store payload ke localStorage
     window.open("/blog/admin/preview-article/", "_blank");
   };
 
+  // Function untuk menyimpan progress artikel ke mongoDB dan localStorage
+  const handleSaveProgress = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const formEvent = handleMouseEvent(event); // Ubah dulu mouse event (button click) menjadi form event(submit form)
+    if (!formEvent) return;
+    const payload = getFormData(formEvent);
+    if (payload) setLocalStorageItem(StorageKeys.NEW_ARTICLE_DRAFT, payload); // Store payload ke localStorage
+    alert("Progress is saved !!!");
+  };
+
+  const handleMouseEvent = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const findForm = event.currentTarget.closest("#FormArticle");
+    if (!findForm) return alert("Failed to get data, try again later! Please report this to the HTML writer TEAM !!!");
+
+    // Buat event-like object dengan currentTarget as sebagai <form>
+    const fakeEvent = { currentTarget: findForm } as React.FormEvent<HTMLFormElement>;
+    return fakeEvent;
+  };
+
   return {
     getFormData,
     dispatch,
+    handleSaveProgress,
     handleFormPublish,
     handlePreview,
     isLoading,

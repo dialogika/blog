@@ -1,14 +1,11 @@
 "use client";
-import EditorModal from "@/components/layout/modals/EditorModal";
 import dynamic from "next/dynamic";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { setLocalStorageItem, StorageKeys } from "@/app/utils/localStorageUtils";
 const LoadJoditRegular = dynamic(() => import("jodit-react"), {
   ssr: false,
   loading: () => <p>Loading Editor...</p>,
 });
 const JoditRegularEditor = () => {
-  const [showGuide, setShowGuide] = useState(false); // State untuk menampilkan model GUIDE penggunaan text editor
   const editor = useRef<any>(null);
   // Set isi default dari jodit editor bila tidak ada draft
   const [editorValue, setEditorValue] = useState(
@@ -16,9 +13,7 @@ const JoditRegularEditor = () => {
 
     <!-- 2 first paragraph of the draft -->
     <div class="col-lg-7 mt-4">
-        <p style="line-height: 32px;"> <span class="fw-lighter"><span style="color: rgb(153, 153, 153);">Ganti
-                    dengan keyword </span>- </span>Bagian awal HARUS ada dua (2) paragraph, ini bagian paragraph
-            pertama
+        <p style="line-height: 32px;"> <span class="fw-lighter"><span style="color: rgb(153, 153, 153);">Ganti dengan keyword - Bagian awal HARUS ada dua (2) paragraph, ini bagian paragraph pertama
         </p>
         <p style="line-height: 32px;">Bagian awal HARUS ada dua (2) paragraph, ini bagian paragraph kedua</p>
     </div>
@@ -115,19 +110,9 @@ const JoditRegularEditor = () => {
         className="fst-italic"
         style={{ fontSize: 12, opacity: 0.9 }}>
         Masukkan konten artikel blog Anda di area editor di bawah ini. Gunakan toolbar untuk memformat konten sesuai
-        kebutuhan. Jika masih bingung, klik tombol &quot; Buka Guide &quot; untuk mendapatkan panduan lengkap.
+        kebutuhan. Jika masih bingung, klik tombol &quot; Buka Guide &quot; di kanan bawah untuk mendapatkan panduan
+        lengkap.
       </span>
-      <button
-        type="button"
-        className="rev-appointment-btn my-3"
-        onClick={() => setShowGuide(true)}
-        style={{ width: "fit-content" }}>
-        Buka Guide
-      </button>
-      <EditorModal
-        show={showGuide}
-        onHide={() => setShowGuide(false)}
-      />
       <LoadJoditRegular
         editorRef={(ref) => (editor.current = ref)}
         value={editorValue}

@@ -41,15 +41,23 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
   );
 
   // Deconstruct fungsi ArticleFormLogic
-  const { isFailed, setIsFailed, isLoading, success, setSuccess, dispatch, handlePreview, handleFormPublish } =
-    useArticleFormLogic({
-      availableAuthors,
-    });
+  const {
+    isFailed,
+    setIsFailed,
+    isLoading,
+    success,
+    setSuccess,
+    dispatch,
+    handlePreview,
+    handleFormPublish,
+    handleSaveProgress,
+  } = useArticleFormLogic({
+    availableAuthors,
+  });
 
   // Gunakan useEffect untuk meng-update store dengan data author yang diterima
   useEffect(() => {
     dispatch(updateAuthorsState(authors));
-    console.log("ini draftedArticle", draftedArticle);
   }, [authors, dispatch]);
 
   return (
@@ -81,6 +89,17 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               </div>
             </div>
           </div>
+
+          <button
+            type="button"
+            onClick={handleSaveProgress}>
+            Test Save
+          </button>
+          <button
+            type="button"
+            onClick={() => console.log("ini draft terbaru", getLocalStorageItem(StorageKeys.NEW_ARTICLE_DRAFT))}>
+            Get latest Draft
+          </button>
 
           {/* Judul */}
           <div className="">
