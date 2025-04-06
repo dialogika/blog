@@ -5,6 +5,7 @@ import "./style.css";
 import { BlogAuthorProps } from "@/types";
 import ErrorPage from "@/components/layout/ErrorPage";
 import { authorData } from "@/public/data/authorData";
+import EditorGuideModal from "@/components/layout/modals/EditorGuideModal";
 
 const page = async () => {
   let authors: BlogAuthorProps[] = [];
@@ -13,9 +14,7 @@ const page = async () => {
   } catch (error) {
     console.error("Error fetching authors:", error);
     // Return a fallback UI for errors
-    return (
-      <ErrorPage message="Gagal mengambil list author. Silakan coba lagi nanti." />
-    );
+    return <ErrorPage message="Gagal mengambil list author. Silakan coba lagi nanti." />;
   }
 
   return (
@@ -32,6 +31,7 @@ const page = async () => {
       <section className="section container">
         <FormArticle authors={authors} />
       </section>
+      <EditorGuideModal />
     </>
   );
 };
