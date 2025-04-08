@@ -2,183 +2,69 @@
 import React, { useEffect, useState } from "react";
 import { TextInput, DynamicInput, DynamicAuthorInput, TextAreaInput } from "@/components/forms";
 import { BlogArticleProps, BlogAuthorProps } from "@/types";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { updateAuthorsState } from "@/app/store/authorsSlice";
 import { RootState } from "@/app/store";
 import ImageUrl from "@/components/forms/ImageUrl";
 import JoditRegularEditor from "./JoditRegularEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import useArticleFormLogic from "@/app/hooks/useArticleFormLogic";
+import { getLocalStorageItem, StorageKeys } from "@/app/utils/localStorageUtils";
 
 interface FormArticleProps {
   authors: BlogAuthorProps[];
 }
 
 const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
-  const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail);
-  const dispatch = useDispatch();
-  const [isSuccess, setSuccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isFailed, setIsFailed] = useState(false);
+  const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail); // Ambil data authorsDetail di folder store/authorSlice.ts
   const [totalKeyword, setTotalkeyword] = useState(0);
+  const [draftedArticle, setDraftedArticle] = useState(
+    getLocalStorageItem<BlogArticleProps>(StorageKeys.NEW_ARTICLE_DRAFT) || {
+      idArticle: "",
+      title: "",
+      thumbnail: "",
+      metaData: "",
+      keywords: "",
+      cta: "",
+      cardsDescription: "",
+      content: "",
+      authors: Array<BlogAuthorProps>,
+      writerNote: "",
+      publishedAt: "",
+      tags: [],
+      outBoundLink: {
+        title: "Medium Dialogika",
+        link: "https://medium.com/dialogika",
+      },
+    }
+  );
+
+  // Deconstruct fungsi ArticleFormLogic
+  const {
+    isFailed,
+    setIsFailed,
+    isLoading,
+    success,
+    setSuccess,
+    dispatch,
+    handlePreview,
+    handleFormPublish,
+    handleSaveProgress,
+  } = useArticleFormLogic({
+    availableAuthors,
+  });
+
   // Gunakan useEffect untuk meng-update store dengan data author yang diterima
   useEffect(() => {
     dispatch(updateAuthorsState(authors));
   }, [authors, dispatch]);
 
-  // Fungsi untuk menangani submit form
-  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    // payload ini akan digunakan untuk menampung semua data dari FormArticle
-    const payload: Partial<BlogArticleProps> = {};
-
-    // Set tgl publish
-    payload.publishedAt = new Date().toISOString();
-
-    // Ambil link/URL untuk thumbnail blog
-    const thumbnailImage = formData.get("thumbnail-image")?.toString();
-    payload.thumbnail = thumbnailImage;
-
-    // Ambil judul blog dan buat id dari judul tersebut
-    const title = formData.get("title")?.toString();
-    if (!title) return;
-    payload.title = title;
-
-    const id = title
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, "") // Hapus karakter seperti simbol (!,@,:,;) dari judul untuk dijadikan id atau urlnya
-      .trim()
-      .replace(/\s+/g, "-");
-    payload.idArticle = id; // Contoh hasil: /rahasia-membuat-pembukaan...
-
-    // Ambil metadata untuk blog
-    const metadata = formData.get("metadata")?.toString();
-    if (!metadata) {
-      return;
-    }
-    if (metadata.length > 160) {
-      alert("Metada tidak boleh lebih dari 160 karakter. Spasi, angka, simbol termasuk karakter !!");
-      return;
-    }
-    payload.metaData = metadata;
-
-    // Ambil deskripsi untuk digunakan di card di blog/index
-    const blogDescription = formData.get("blogDescription")?.toString();
-    if (!blogDescription) return;
-    payload.cardsDescription = blogDescription;
-
-    // Ambil keyword untuk blog
-    const keywords = formData.get("keyword")?.toString();
-    if (!keywords) return;
-    payload.keywords = keywords;
-
-    // Ambil writer notes untuk blog
-    const writernote = formData.get("writernote")?.toString();
-    if (!writernote) return;
-    payload.writerNote = writernote;
-
-    // Ambil outbound title & link untuk blog. Bila tidak ada, gunakan link medium dialogika
-    const externalTitle = formData.get("externalTitle")?.toString();
-    const externalLink = formData.get("externalLink")?.toString();
-
-    payload.outBoundLink = {
-      title: externalTitle || "Medium",
-      link: externalLink || "https://medium.com/dialogika",
-    };
-
-    // Ambil nilai input untuk tags (tags-0, tags-1, ..., tags-9)
-    const tags: string[] = [];
-    for (let i = 0; i < 10; i++) {
-      const tagValue = formData.get(`tags-${i}`);
-      if (tagValue) tags.push(tagValue.toString());
-    }
-    if (tags.length < 1) tags.push("#Dialogika", "#PublicSpeaking"); // Bila tags kosong tambah value Dialogika & PublicSpeaking
-
-    payload.tags = tags;
-
-    // Ambil value authors
-    const selectedAuthors: string[] = [];
-    const authorsPayload: BlogAuthorProps[] = [];
-    for (let i = 0; i < 3; i++) {
-      const selectedAuthorNames = formData.get(`author-${i}`); // Ambil nama-nama author yang ada dari input DynamicAuthorInput
-      if (selectedAuthorNames) selectedAuthors.push(selectedAuthorNames.toString());
-    }
-    selectedAuthors.forEach((author) => {
-      const findAuhor = availableAuthors.find((item) => item.authorName == author);
-      if (findAuhor) authorsPayload.push(findAuhor);
-    });
-    payload.authors = authorsPayload;
-
-    // Ambil value dari text editor (menggunakan jodit editor)
-    const content = formData.get("formEditor") as string;
-    payload.content = content;
-
-    try {
-      setIsLoading(true);
-      setSuccess(false);
-      setIsFailed(false);
-      event.preventDefault();
-      console.log("Submitting Article ...");
-      const res = await fetch("https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) {
-        setIsLoading(false);
-        setSuccess(false);
-        setIsFailed(true);
-        throw new Error(`Failed to create article: ${res.statusText}`);
-      }
-      setIsLoading(false);
-      setIsFailed(false);
-      setSuccess(true);
-
-      // DELETE ENGKE CENGGG
-      // const rebuildGithub = await fetch(
-      //   "/blog/api/admin/article/build/triggerGithubRebuild/",
-      //   { method: "POST" }
-      // );
-
-      // if (!rebuildGithub.ok) {
-      //   const errorText = await rebuildGithub.text();
-      //   console.log("🚀 ~ handleFormSubmit ~ errorText:", errorText);
-      // } else {
-      //   console.log("Berhasil redeploy github pages");
-      // }
-
-      // UNCOMMENT MEN BRANCH main-nextjs READY
-      // const rebuildGithub = await fetch(
-      //   "https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/build/triggerGithubRebuild/",
-      //   { method: "POST" }
-      // );
-
-      // if (!rebuildGithub.ok) {
-      //   const errorText = await rebuildGithub.text();
-      //   console.log("🚀 ~ handleFormSubmit ~ errorText:", errorText);
-      // } else {
-      //   console.log("Berhasil redeploy github pages");
-      // }
-
-      // Tampilkan payload di console untuk debugging
-      console.log("🚀 ~ Article Created here is the payload:", payload);
-    } catch (error: any) {
-      setIsLoading(false);
-      setSuccess(false);
-      setIsFailed(true);
-      console.error("Error submitting article:", error);
-      alert(`Error submitting article: ${error}`);
-    }
-  };
-
   return (
     <>
       <form
         id="FormArticle"
-        onSubmit={handleFormSubmit}
+        onSubmit={handleFormPublish}
         className="w-100 d-flex flex-column mt-5 mt-md-0 p-3 "
         style={{ height: "auto" }}>
         <div className="blog-form-container p-4">
@@ -203,6 +89,17 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               </div>
             </div>
           </div>
+
+          {/* <button
+            type="button"
+            onClick={handleSaveProgress}>
+            Test Save
+          </button>
+          <button
+            type="button"
+            onClick={() => console.log("ini draft terbaru", getLocalStorageItem(StorageKeys.NEW_ARTICLE_DRAFT))}>
+            Get latest Draft
+          </button> */}
 
           {/* Judul */}
           <div className="">
@@ -390,7 +287,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           <div className="card-body">
             <div className="position-relative">
               <TextAreaInput
-                maxLength={160}
                 rows={8}
                 required={true}
                 name="blogDescription"
@@ -429,7 +325,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           <div className="card-body">
             <div className="position-relative">
               <TextAreaInput
-                maxLength={160}
                 rows={8}
                 required={true}
                 name="writernote"
@@ -503,11 +398,12 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
 
         <JoditRegularEditor />
 
-        {/* <button
+        <button
           type="button"
+          onClick={handlePreview}
           className="yellow-dialogika-btn rounded-3 mt-4 mb-3">
           Preview Blog
-        </button> */}
+        </button>
 
         <button
           type="submit"
@@ -516,7 +412,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         </button>
       </form>
       {isLoading && <LoadingIndicator />}
-      {isSuccess && <SuccessIndicator onClose={() => setSuccess(false)} />}
+      {success && <SuccessIndicator onClose={() => setSuccess(false)} />}
       {isFailed && <FailedIndicator onClose={() => setIsFailed(false)} />}
     </>
   );

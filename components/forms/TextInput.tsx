@@ -43,6 +43,7 @@ const TextInput: React.FC<InputProps> = ({
         type={type}
         name={name}
         id={name}
+        defaultValue={""}
         className={inputClassName}
         placeholder={placeholder}
         required={required}

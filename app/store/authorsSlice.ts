@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // Slice untuk menyimpan data author
 const authorsDetailSlice = createSlice({
   name: "authorsDetail", // Nama slice
-  // Initial state dengan data author default
+  // Initial state untuk authorsDetail
   initialState: {
     authorsDetail: [
       {
@@ -21,6 +21,6 @@ const authorsDetailSlice = createSlice({
   },
 });
 
-// Ekspor action dan reducer-nya
-export const { updateAuthorsState } = authorsDetailSlice.actions;
+// Ekspor action atau reducer-nya
+export const { updateAuthorsState } = authorsDetailSlice.actions; // set updateAuthorsState as action
 export default authorsDetailSlice.reducer;

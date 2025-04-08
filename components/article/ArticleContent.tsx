@@ -17,7 +17,7 @@ import { BlogArticleProps } from "@/types";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 
-const ArticleSection = ({ article }: { article: BlogArticleProps }) => {
+const ArticleContent = ({ article }: { article: BlogArticleProps }) => {
   const categoriesList = ["Confidence", "Interview", "Productivity", "Introvert", "Communication", "Presentation"];
   return (
     <>
@@ -152,4 +152,4 @@ const ArticleSection = ({ article }: { article: BlogArticleProps }) => {
   );
 };
 
-export default ArticleSection;
+export default ArticleContent;
