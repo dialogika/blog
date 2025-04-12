@@ -1,6 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import React, { useEffect, useMemo, useState } from "react";
+import "@/public/assets/css/jodit-button-generator.css";
 
 const JoditEditor = dynamic(() => import("jodit-pro-react"), {
   ssr: false,
@@ -242,7 +243,6 @@ const JoditRegularEditor = () => {
       readonly: false,
       placeholder: "Mulai mengetik...",
       language: "id",
-      buttons: "source",
       extraButtons: [
         {
           name: "pexelsImage",
