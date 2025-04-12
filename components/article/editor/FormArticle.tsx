@@ -1,6 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { TextInput, DynamicInput, DynamicAuthorInput, TextAreaInput } from "@/components/forms";
+import {
+  TextInput,
+  DynamicInput,
+  DynamicAuthorInput,
+  TextAreaInput,
+} from "@/components/forms";
 import { BlogArticleProps, BlogAuthorProps } from "@/types";
 import { useSelector } from "react-redux";
 import { updateAuthorsState } from "@/app/store/authorsSlice";
@@ -10,14 +15,19 @@ import JoditRegularEditor from "./JoditRegularEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import useArticleFormLogic from "@/app/hooks/useArticleFormLogic";
-import { getLocalStorageItem, StorageKeys } from "@/app/utils/localStorageUtils";
+import {
+  getLocalStorageItem,
+  StorageKeys,
+} from "@/app/utils/localStorageUtils";
 
 interface FormArticleProps {
   authors: BlogAuthorProps[];
 }
 
 const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
-  const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail); // Ambil data authorsDetail di folder store/authorSlice.ts
+  const availableAuthors = useSelector(
+    (state: RootState) => state.authors.authorsDetail
+  ); // Ambil data authorsDetail di folder store/authorSlice.ts
   const [totalKeyword, setTotalkeyword] = useState(0);
   const [draftedArticle, setDraftedArticle] = useState(
     getLocalStorageItem<BlogArticleProps>(StorageKeys.NEW_ARTICLE_DRAFT) || {
@@ -66,7 +76,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         id="FormArticle"
         onSubmit={handleFormPublish}
         className="w-100 d-flex flex-column mt-5 mt-md-0 p-3 "
-        style={{ height: "auto" }}>
+        style={{ height: "auto" }}
+      >
         <div className="blog-form-container p-4">
           {/* Thumbnail Image Section */}
           <div className="mb-4">
@@ -85,7 +96,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               />
               <div className="mt-2 text-muted small">
                 <i className="fas fa-info-circle me-1"></i>
-                Gambar landscape akan ditampilkan lebih baik dibandingkan portrait di halaman utama blog
+                Gambar landscape akan ditampilkan lebih baik dibandingkan
+                portrait di halaman utama blog
               </div>
             </div>
           </div>
@@ -125,9 +137,11 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                 <i className="fas fa-lightbulb text-warning mt-1"></i>
                 <span
                   className="fst-italic"
-                  style={{ fontSize: "12px", opacity: "0.9" }}>
-                  Pastikan judul representatif, mengandung keyword, dan menarik perhatian pembaca. Idealnya di bawah 60
-                  karakter agar tidak terpotong di hasil pencarian.
+                  style={{ fontSize: "12px", opacity: "0.9" }}
+                >
+                  Pastikan judul representatif, mengandung keyword, dan menarik
+                  perhatian pembaca. Idealnya di bawah 60 karakter agar tidak
+                  terpotong di hasil pencarian.
                 </span>
               </div>
             </div>
@@ -159,9 +173,11 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}>
-                Berupa kata, frasa, dan klausa yang relevan dalam artikel (berjumlah 2-4). Keyword harus ada pada judul,
-                meta description, dan berulang pada isi artikel (1-2% dari total kata).
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Berupa kata, frasa, dan klausa yang relevan dalam artikel
+                (berjumlah 2-4). Keyword harus ada pada judul, meta description,
+                dan berulang pada isi artikel (1-2% dari total kata).
               </span>
             </div>
           </div>
@@ -190,7 +206,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}>
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
                 Judul tautan yang mengarah ke situs lain
               </span>
             </div>
@@ -210,9 +227,11 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}>
-                Tautan yang mengarah ke situs lain. Tautkan ke situs yang kredibel (seperti jurnal penelitian) dan
-                relevan dengan isi artikel.
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Tautan yang mengarah ke situs lain. Tautkan ke situs yang
+                kredibel (seperti jurnal penelitian) dan relevan dengan isi
+                artikel.
               </span>
             </div>
           </div>
@@ -252,8 +271,13 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                   <div className="text-end mt-1">
                     <small
                       className={`${
-                        totalKeyword > 160 ? "text-danger" : totalKeyword >= 150 ? "text-success" : "text-muted"
-                      }`}>
+                        totalKeyword > 160
+                          ? "text-danger"
+                          : totalKeyword >= 150
+                          ? "text-success"
+                          : "text-muted"
+                      }`}
+                    >
                       {totalKeyword}/160 karakter
                     </small>
                   </div>
@@ -264,8 +288,10 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}>
-                Ringkasan artikel yang terdiri 150–160 karakter. Usahakan menarik atau membuat pembaca penasaran. 
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Ringkasan artikel yang terdiri 150–160 karakter. Usahakan
+                menarik atau membuat pembaca penasaran. 
               </span>
             </div>
           </div>
@@ -301,9 +327,12 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}>
-                Berbeda dengan Meta Description, bagian ini menjelaskan isi blog secara overview (bukan ringkasan).
-                Contoh: “Artikel ini menjelaskan cara menulis blog, mulai dari brainstorming hingga penulisan HTML.”
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Berbeda dengan Meta Description, bagian ini menjelaskan isi blog
+                secara overview (bukan ringkasan). Contoh: “Artikel ini
+                menjelaskan cara menulis blog, mulai dari brainstorming hingga
+                penulisan HTML.”
               </span>
             </div>
           </div>
@@ -339,7 +368,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}>
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
                 Catatan dari penulis. Isinya bebas. So be creative!
               </span>
             </div>
@@ -349,9 +379,11 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         <div className="mb-4 px-4">
           <div
             className="d-flex align-items-center
-           pt-4">
+           pt-4"
+          >
             <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-2">
-              <i className="fas fa-tags text-primary"></i> {/* Ikon tags buat relevan */}
+              <i className="fas fa-tags text-primary"></i>{" "}
+              {/* Ikon tags buat relevan */}
             </div>
             <h5 className="mb-0 fw-bold text-primary">
               Tags <span className="text-danger">*</span>
@@ -369,9 +401,11 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <i className="fas fa-lightbulb text-warning mt-1"></i>
               <span
                 className="fst-italic"
-                style={{ fontSize: "12px", opacity: "0.9" }}>
-                Masukkan 4-6 tags yang berkaitan dengan artikel (dapat berasal dari keywords). Selalu masukkan
-                #PublicSpeaking meski tidak banyak berkaitan dengan isi.
+                style={{ fontSize: "12px", opacity: "0.9" }}
+              >
+                Masukkan 4-6 tags yang berkaitan dengan artikel (dapat berasal
+                dari keywords). Selalu masukkan #PublicSpeaking meski tidak
+                banyak berkaitan dengan isi.
               </span>
             </div>
           </div>
@@ -401,13 +435,12 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         <button
           type="button"
           onClick={handlePreview}
-          className="yellow-dialogika-btn rounded-3 mt-4 mb-3">
+          className="yellow-dialogika-btn rounded-3 mt-4 mb-3"
+        >
           Preview Blog
         </button>
 
-        <button
-          type="submit"
-          className="rev-appointment-btn ">
+        <button type="submit" className="rev-appointment-btn ">
           Publish Article Blog
         </button>
       </form>
@@ -430,16 +463,9 @@ interface IndicatorProps {
 
 const SuccessIndicator: React.FC<IndicatorProps> = ({ onClose }) => (
   <div className="fixed-top gap-3 d-flex flex-column justify-content-center align-items-center w-100 h-100 alert alert-success">
-    <FontAwesomeIcon
-      icon={faCheck}
-      beat
-      style={{ width: 50, height: 50 }}
-    />
+    <FontAwesomeIcon icon={faCheck} beat style={{ width: 50, height: 50 }} />
     <strong>Success!</strong> Article submitted successfully.
-    <button
-      type="button"
-      className="btn btn-primary"
-      onClick={onClose}>
+    <button type="button" className="btn btn-primary" onClick={onClose}>
       Close
     </button>
   </div>
@@ -447,27 +473,16 @@ const SuccessIndicator: React.FC<IndicatorProps> = ({ onClose }) => (
 
 const LoadingIndicator: React.FC<IndicatorProps> = () => (
   <div className="fixed-top gap-3 d-flex flex-column justify-content-center align-items-center w-100 h-100 alert alert-warning">
-    <FontAwesomeIcon
-      icon={faSpinner}
-      spin
-      style={{ width: 50, height: 50 }}
-    />
+    <FontAwesomeIcon icon={faSpinner} spin style={{ width: 50, height: 50 }} />
     <strong>Uploading !</strong> Please Wait.
   </div>
 );
 
 const FailedIndicator: React.FC<IndicatorProps> = ({ onClose }) => (
   <div className="fixed-top gap-3 d-flex flex-column justify-content-center align-items-center w-100 h-100 alert alert-danger">
-    <FontAwesomeIcon
-      icon={faSpinner}
-      spin
-      style={{ width: 50, height: 50 }}
-    />
+    <FontAwesomeIcon icon={faSpinner} spin style={{ width: 50, height: 50 }} />
     <strong>Failed ! Cant publish new article</strong> Please try again later!
-    <button
-      type="button"
-      className="btn btn-primary"
-      onClick={onClose}>
+    <button type="button" className="btn btn-primary" onClick={onClose}>
       Close
     </button>
   </div>
