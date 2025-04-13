@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import React from "react";
 import useJoditEditorLogic from "@/app/hooks/useJoditEditorLogic";
-import "/public/assets/css/jodit-button-generator.css";
+import "@/public/assets/css/jodit-button-generator.css";
 
 const JoditEditor = dynamic(() => import("jodit-pro-react"), {
   ssr: false,
