@@ -10,6 +10,7 @@ import {
   guideGambar5,
   guideGambar6,
   guideGambar7,
+  guideGambar8,
 } from ".";
 
 // Modal untuk guide halaman membuat artikel blog baru
@@ -131,8 +132,8 @@ const EditorGuideModal = () => {
               </Accordion.Header>
               <Accordion.Body>
                 <h5>
-                  1. Pilih Disebalah pojok kiri bawah text editor, untuk mencari
-                  gambar dari text editor
+                  1. Pilih Disebalah pojok kanan bawah text editor, untuk
+                  mencari gambar dari text editor
                 </h5>
                 <Image
                   src={guideGambar5}
@@ -172,8 +173,23 @@ const EditorGuideModal = () => {
 
             {/* Start of Guide 3 */}
             <Accordion.Item eventKey="2">
-              <Accordion.Header>Guide 3</Accordion.Header>
-              <Accordion.Body>Isi Guide 3</Accordion.Body>
+              <Accordion.Header>Cara Membuat Inbound Link</Accordion.Header>
+              <Accordion.Body>
+                {" "}
+                <h5>
+                  1. Pilih disebelah pojok kanan, untuk menambahkan inbound link
+                </h5>
+                <Image
+                  src={guideGambar8}
+                  className="img-fluid w-auto mx-auto rounded-3"
+                  style={{ height: "auto" }}
+                  alt="guide gambar 7 "
+                />
+                <h5 className="mt-5">
+                  2. Masukan URL yang akan menjadi Inbound Link
+                </h5>
+                <h5 className="mt-5">3. Inbound Link akan otomatis terbuat</h5>
+              </Accordion.Body>
             </Accordion.Item>
             {/* End of Guide 3 */}
 

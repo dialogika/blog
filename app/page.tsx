@@ -3,19 +3,27 @@ import ArticleLists from "@/components/article/ArticleLists";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import { BottomRightBtn, ProgramOffer, Social, Widget } from "@/components/sidebars";
+import {
+  BottomRightBtn,
+  ProgramOffer,
+  Social,
+  Widget,
+} from "@/components/sidebars";
 import logoDialogika from "@/public/assets/img/logo-square.png";
 import { BlogArticleProps } from "@/types";
 
 export default async function Home() {
   try {
     console.log("Fetching Article ...");
-    const getArticle = await fetch("https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/", {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
+    const getArticle = await fetch(
+      "https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/",
+      {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    );
     if (!getArticle.ok) {
       return (
         <>
@@ -27,7 +35,9 @@ export default async function Home() {
             ]}
           />
           <section className="section min-vh-100 pt-5">
-            <h1 className="text-black mt-5">Error: Cant connect to database !</h1>
+            <h1 className="text-black mt-5">
+              Error: Cant connect to database !
+            </h1>
             <h2 className="text-black mt-5">Please try again</h2>
           </section>
         </>
@@ -46,13 +56,8 @@ export default async function Home() {
           ]}
         />
 
-        <section
-          id="blog-details"
-          className="blog-details section">
-          <div
-            className="container"
-            data-aos="fade-up"
-            data-aos-delay="100">
+        <section id="blog-details" className="blog-details section">
+          <div className="container" data-aos="fade-up" data-aos-delay="100">
             <div className="row">
               <aside className="col-lg-1 mt-4">
                 <Social />

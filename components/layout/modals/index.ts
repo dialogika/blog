@@ -5,6 +5,7 @@ import guideGambar4 from "@/public/assets/img/guide/guide-gambar-4.webp";
 import guideGambar5 from "@/public/assets/img/guide/gambar2-1.webp";
 import guideGambar6 from "@/public/assets/img/guide/gambar2-2.webp";
 import guideGambar7 from "@/public/assets/img/guide/gambar2-3.webp";
+import guideGambar8 from "@/public/assets/img/guide/gambar3-1.png";
 // import guideGambar5 from "@/public/assets/img/guide/guide-gambar-5.webp";
 
 export {
@@ -15,4 +16,5 @@ export {
   guideGambar5,
   guideGambar6,
   guideGambar7,
+  guideGambar8,
 };
