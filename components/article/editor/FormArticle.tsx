@@ -90,7 +90,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             </div>
           </div>
 
-          <button
+          {/* <button
             type="button"
             onClick={handleSaveProgress}>
             Test Save
@@ -99,7 +99,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             type="button"
             onClick={() => console.log("ini draft terbaru", getLocalStorageItem(StorageKeys.NEW_ARTICLE_DRAFT))}>
             Get latest Draft
-          </button>
+          </button> */}
 
           {/* Judul */}
           <div className="">
