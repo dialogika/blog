@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     }
 
     const data = await pexelsResponse.json();
-    return NextResponse.json(data, { headers: corsHeaders });
+    return NextResponse.json(data, { status: 200, headers: corsHeaders });
   } catch (error) {
     console.error("Exception in API route:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500, headers: corsHeaders });
