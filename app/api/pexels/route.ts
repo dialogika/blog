@@ -33,12 +33,5 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("Exception in API route:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500, headers: corsHeaders });
-    return NextResponse.json(data, { headers: corsHeaders });
-  } catch (error) {
-    console.error("Exception in API route:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500, headers: corsHeaders  }
-    );
   }
 }
