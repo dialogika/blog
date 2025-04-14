@@ -1,5 +1,3 @@
-
-import { corsHeaders } from "@/components/utils/corsHeaderSettings";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -7,7 +5,12 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { query, page = 1 } = body;
 
-    console.log("Making request to Pexels API with query:", query, "and page:", page);
+    console.log(
+      "Making request to Pexels API with query:",
+      query,
+      "and page:",
+      page
+    );
     const pexelsResponse = await fetch(
       `https://api.pexels.com/v1/search?query=${encodeURIComponent(
         query
@@ -24,14 +27,17 @@ export async function POST(req: Request) {
       console.error("Error from Pexels API:", pexelsResponse.status, errorData);
       return NextResponse.json(
         { error: "Failed to fetch from Pexels" },
-        { status: pexelsResponse.status, headers: corsHeaders }
+        { status: pexelsResponse.status }
       );
     }
 
     const data = await pexelsResponse.json();
-    return NextResponse.json(data, { headers: corsHeaders });
+    return NextResponse.json(data);
   } catch (error) {
     console.error("Exception in API route:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500, headers: corsHeaders });
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
