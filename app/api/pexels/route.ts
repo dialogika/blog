@@ -13,7 +13,7 @@ export async function POST(req: Request) {
       )}&orientation=landscape&per_page=20&page=${page}`,
       {
         headers: {
-          Authorization: process.env.PEXELS_API_KEY!,
+          Authorization: process.env.PEXELS_API_KEY,
         },
       }
     );
