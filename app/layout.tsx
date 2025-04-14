@@ -6,6 +6,7 @@ import { basePath } from "@/next.config";
 import BootstrapJS from "@/components/utils/BootstrapJS";
 import TrackingScript from "@/components/utils/TrackingScript";
 import ReduxProvider from "@/components/utils/ReduxProvider";
+import "/public/assets/css/inbound-link.css";
 
 // Global metadata
 export const metadata: Metadata = {
@@ -66,6 +67,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-Fo3rlrZj/k7ujTTXRN+qk9xFepzbFUsP0AG+nK41rK1N0iUXF1Km9pRocO9WzX/6pO64yO58slF7oD59N+fwWw=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </head>
       <body className="antialiased">
         <TrackingScript />
         <ReduxProvider>

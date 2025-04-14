@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
@@ -22,6 +23,7 @@
     "boxicons": "^2.1.4",
     "glightbox": "^3.3.1",
     "highlight.js": "^11.11.1",
+    "jodit-pro-react": "^5.2.26",
     "jodit-react": "^5.2.19",
     "jquery": "^3.7.1",
     "mongodb": "^6.13.0",
