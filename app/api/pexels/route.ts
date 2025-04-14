@@ -7,7 +7,6 @@ export async function POST(req: Request) {
     const { query, page = 1 } = body;
 
     console.log("Making request to Pexels API with query:", query, "and page:", page);
-    console.log("Making request to Pexels API with query:", query, "and page:", page);
     const pexelsResponse = await fetch(
       `https://api.pexels.com/v1/search?query=${encodeURIComponent(
         query
