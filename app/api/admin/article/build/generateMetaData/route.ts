@@ -1,12 +1,7 @@
 import Article from "@/lib/mongodb/models/Article";
 import dbConnect from "@/lib/mongodb/mongodb";
+import { corsHeaders } from "@/utils/corsHeaderSettings";
 import { NextResponse } from "next/server";
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization",
-};
 
 // Function ini digunakan server/vercel untuk GET artikel blog di mongoDB yand idArticlenya sesuai
 // dan kemudian di folder [idArticle]/page.tsx datanya akan diambil dan dijadikan metadata saat proses build di github pages
