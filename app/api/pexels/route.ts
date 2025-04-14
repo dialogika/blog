@@ -7,6 +7,7 @@ export async function POST(req: Request) {
     const { query, page = 1 } = body;
 
     console.log("Making request to Pexels API with query:", query, "and page:", page);
+    console.log("Making request to Pexels API with query:", query, "and page:", page);
     const pexelsResponse = await fetch(
       `https://api.pexels.com/v1/search?query=${encodeURIComponent(
         query
@@ -32,5 +33,12 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("Exception in API route:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500, headers: corsHeaders });
+    return NextResponse.json(data, { headers: corsHeaders });
+  } catch (error) {
+    console.error("Exception in API route:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500, headers: corsHeaders  }
+    );
   }
 }
