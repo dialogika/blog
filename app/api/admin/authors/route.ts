@@ -1,7 +1,12 @@
 // Dari 23-02-2025 discontinued, kemungkinan tidak akan dipakai
 import Authors from "@/lib/mongodb/models/Authors";
 import dbConnect from "@/lib/mongodb/mongodb";
+import { corsHeaders } from "@/utils/corsHeaderSettings";
 import { NextResponse } from "next/server";
+
+export function OPTIONS() {
+  return new NextResponse(null, { status: 200, headers: corsHeaders });
+}
 
 // Function untuk mengambil data-data authors/penulis blog dari database
 export const GET = async () => {

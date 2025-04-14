@@ -3,6 +3,10 @@ import dbConnect from "@/lib/mongodb/mongodb";
 import { corsHeaders } from "@/utils/corsHeaderSettings";
 import { NextResponse } from "next/server";
 
+export function OPTIONS() {
+  return new NextResponse(null, { status: 200, headers: corsHeaders });
+}
+
 // Function ini digunakan server/vercel untuk GET artikel blog di mongoDB yand idArticlenya sesuai
 // dan kemudian di folder [idArticle]/page.tsx datanya akan diambil dan dijadikan metadata saat proses build di github pages
 export const GET = async (request: Request) => {
