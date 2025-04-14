@@ -6,6 +6,12 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
 
+// Handle preflight OPTIONS requests
+export function OPTIONS() {
+  // An empty response with a 204 status code is fine.
+  return new Response(null, { status: 204, headers: corsHeaders });
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
