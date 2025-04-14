@@ -1,6 +1,11 @@
 import dbConnect from "@/lib/mongodb/mongodb";
 import Article from "@/lib/mongodb/models/Article";
 import { NextResponse } from "next/server";
+import { corsHeaders } from "@/utils/corsHeaderSettings";
+
+export function OPTIONS() {
+  return new NextResponse(null, { status: 200, headers: corsHeaders });
+}
 
 // Function ini digunakan server/vercel untuk GET semua artikel blog di mongoDB saat proses build di github pages 
 export async function GET() {
