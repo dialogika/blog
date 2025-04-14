@@ -1,14 +1,9 @@
 import Article from "@/lib/mongodb/models/Article";
 import dbConnect from "@/lib/mongodb/mongodb";
 import { BlogArticleProps } from "@/types";
+import { corsHeaders } from "@/utils/corsHeaderSettings";
 import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization",
-};
 
 export async function OPTIONS() {
   // Handle preflight request

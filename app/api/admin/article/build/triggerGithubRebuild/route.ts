@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import dbConnect from "@/lib/mongodb/mongodb";
+import { corsHeaders } from "@/utils/corsHeaderSettings";
 import { NextResponse } from "next/server";
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization",
-};
 
 // Fungsi/Route ini digunakan server/vercel untuk memulai proses build/generate dan deploy di halaman baru di github saat tim copywriter selesai.
 //  Intinya automatisasi push blog/deploy blog
