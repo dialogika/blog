@@ -76,7 +76,7 @@ const useJoditEditorLogic = () => {
 
   const fetchImages = async (query: string, editor: any, page: number = 1) => {
     try {
-      const res = await fetch("/blog/api/pexels", {
+      const res = await fetch("https://blog-admin-dialogikas-projects.vercel.app/blog/api/pexels/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query, page }),
