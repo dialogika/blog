@@ -9,9 +9,8 @@ const useJoditEditorLogic = () => {
 
         <!-- 2 first paragraph of the draft -->
         <div class="col-lg-7 mt-4">
-            <p style="line-height: 32px;"> <span class="fw-lighter"><span style="color: rgb(153, 153, 153);">Ganti dengan keyword - Bagian awal HARUS ada dua (2) paragraph, ini bagian paragraph pertama
-            </p>
-            <p style="line-height: 32px;">Bagian awal HARUS ada dua (2) paragraph, ini bagian paragraph kedua</p>
+            <p style="line-height: 32px;"><span style="color: rgb(153, 153, 153);" class="fw-lighter">Ganti dengan keyword - </span> Bagian awal HARUS ada dua (2) paragraph Ini paragraph pertama</p>
+            <p style="line-height: 32px;">ini bagian paragraph kedua</p>
         </div>
 
         <div class="col-lg-5 mt-4">
@@ -94,12 +93,7 @@ const useJoditEditorLogic = () => {
     }
   };
 
-  const showImageSelectionDialog = (
-    images: any[],
-    query: string,
-    editorInstance: any,
-    page: number
-  ) => {
+  const showImageSelectionDialog = (images: any[], query: string, editorInstance: any, page: number) => {
     const overlay = document.createElement("div");
     Object.assign(overlay.style, {
       position: "fixed",
@@ -237,8 +231,15 @@ const useJoditEditorLogic = () => {
     () => ({
       readonly: false,
       placeholder: "Mulai mengetik...",
-      language: "id",
-      style: "/blog/assets/css/jodit-button-generator.css",
+      language: "en",
+      useSplitMode: false,
+      observer: false,
+      defaultParagraphSeparator: "br",
+      askBeforePasteHTML: false,
+      toolbarAdaptive: false,
+      useNativeTooltip: true,
+      askBeforePasteFromWord: false,
+      disablePlugins: ["resize", "search"],
       extraButtons: [
         {
           name: "pexelsImage",
