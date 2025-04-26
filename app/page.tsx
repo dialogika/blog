@@ -14,19 +14,40 @@ import { BlogArticleProps } from "@/types";
 
 export default async function Home() {
   try {
+    // Fetch a larger number of articles initially
+    // The ArticleLists component will handle displaying them incrementally
     console.log("Fetching Article ...");
     const getArticle = await fetch(
-      "https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/",
+      `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article`,
       {
         method: "GET",
         headers: {
           "Content-type": "application/json",
         },
+        next: { revalidate: 0 },
+        cache: "no-store",
       }
     );
+
+    // Ganti jadi http://localhost:3000/blog/... untuk development di local
+    // const getArticle = await fetch(
+    //   `http://localhost:3000/blog/api/admin/article`,
+    //   {
+    //     method: "GET",
+    //     headers: {
+    //       "Content-type": "application/json",
+    //     },
+    //     cache: "no-store",
+    //   }
+    // );
+
     if (!getArticle.ok) {
+      console.error(
+        `Error fetching articles: ${getArticle.status} ${getArticle.statusText}`
+      );
       return (
         <>
+          <Header />
           <Breadcrumbs
             title="Article"
             breadcrumbs={[
@@ -35,16 +56,45 @@ export default async function Home() {
             ]}
           />
           <section className="section min-vh-100 pt-5">
-            <h1 className="text-black mt-5">
-              Error: Cant connect to database !
-            </h1>
-            <h2 className="text-black mt-5">Please try again</h2>
+            <div className="container">
+              <h1 className="text-black mt-5">
+                Error: Cannot connect to database!
+              </h1>
+              <h2 className="text-black mt-5">Please try again later</h2>
+              <p>Status: {getArticle.status}</p>
+            </div>
           </section>
+          <Footer />
         </>
       );
     }
+
     const response = await getArticle.json();
     const articles: BlogArticleProps[] = response.data;
+
+    // Check if we actually got articles data
+    if (!articles || articles.length === 0) {
+      return (
+        <>
+          <Header />
+          <Breadcrumbs
+            title="Article"
+            breadcrumbs={[
+              { title: "Home", link: "https://www.dialogika.co" },
+              { title: "Blog", link: "../blog" },
+            ]}
+          />
+          <section className="section min-vh-100 pt-5">
+            <div className="container">
+              <h1 className="text-black mt-5">No articles found</h1>
+              <h2 className="text-black mt-5">Please check back later</h2>
+            </div>
+          </section>
+          <Footer />
+        </>
+      );
+    }
+
     return (
       <>
         <Header />
@@ -68,7 +118,6 @@ export default async function Home() {
               </div>
 
               <aside className="col-lg-4 mt-4">
-                {/* pageType index atau article */}
                 <Widget
                   imgPath={logoDialogika}
                   author="Dialogika"
@@ -84,6 +133,26 @@ export default async function Home() {
       </>
     );
   } catch (error: any) {
-    console.error("Error generating metadata:", error);
+    console.error("Error in Home component:", error);
+    return (
+      <>
+        <Header />
+        <Breadcrumbs
+          title="Article"
+          breadcrumbs={[
+            { title: "Home", link: "https://www.dialogika.co" },
+            { title: "Blog", link: "../blog" },
+          ]}
+        />
+        <section className="section min-vh-100 pt-5">
+          <div className="container">
+            <h1 className="text-black mt-5">Error: Something went wrong</h1>
+            <h2 className="text-black mt-5">Please try again later</h2>
+            <p>Error details: {error.message}</p>
+          </div>
+        </section>
+        <Footer />
+      </>
+    );
   }
 }
