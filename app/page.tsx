@@ -12,7 +12,6 @@ import {
 import logoDialogika from "@/public/assets/img/logo-square.png";
 import { BlogArticleProps } from "@/types";
 
-export const dynamic = 'force-dynamic';
 export default async function Home() {
   try {
     console.log("Fetching Article ...");
@@ -24,7 +23,6 @@ export default async function Home() {
         headers: {
           "Content-type": "application/json",
         },
-        cache: "no-store",
       }
     );
 
