@@ -18,7 +18,7 @@ export default async function Home() {
     // The ArticleLists component will handle displaying them incrementally
     console.log("Fetching Article ...");
     const getArticle = await fetch(
-      `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article`,
+      `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/`,
       {
         method: "GET",
         headers: {
