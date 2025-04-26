@@ -17,8 +17,9 @@ export default async function Home() {
     // Fetch a larger number of articles initially
     // The ArticleLists component will handle displaying them incrementally
     console.log("Fetching Article ...");
+    // Ganti jadi http://localhost:3000/blog/... untuk development di local
     const getArticle = await fetch(
-      `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article`,
+      `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/`,
       {
         method: "GET",
         headers: {
@@ -28,18 +29,6 @@ export default async function Home() {
         cache: "no-store",
       }
     );
-
-    // Ganti jadi http://localhost:3000/blog/... untuk development di local
-    // const getArticle = await fetch(
-    //   `http://localhost:3000/blog/api/admin/article`,
-    //   {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-type": "application/json",
-    //     },
-    //     cache: "no-store",
-    //   }
-    // );
 
     if (!getArticle.ok) {
       console.error(
