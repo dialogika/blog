@@ -1,9 +1,3 @@
-/* ==============================
-22-03-2025
-Component ini digunakan di home page blog atau di dialogika.co/blog
-Untuk menampilkan list artikel blog terbaru. Secara default hanya menampilkan 3 artikel blog terbaru.
-============================== */
-
 "use client";
 import { BlogArticleProps } from "@/types";
 import { formatDate } from "@/components/utils/date";
@@ -15,19 +9,56 @@ export interface articlesProps {
   articles: BlogArticleProps[];
 }
 
-const ArticleLists = ({ articles }: articlesProps) => {
+const ArticleLists = ({ articles: initialArticles }: articlesProps) => {
+  const [articles, setArticles] = useState<BlogArticleProps[]>(initialArticles);
   const [visibleArticles, setVisibleArticles] = useState<number>(3);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [hasMore, setHasMore] = useState<boolean>(true);
 
-  const handleShowMore = () => {
-    setVisibleArticles((prev) => prev + 3);
+  const handleShowMore = async () => {
+    setLoading(true);
+    try {
+      // Calculate how many more articles we need
+      const currentCount = articles.length;
+      const nextVisibleCount = visibleArticles + 3;
+
+      // If we need more articles than we currently have, fetch more
+      if (nextVisibleCount > currentCount && hasMore) {
+        const response = await fetch(
+          `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/?limit=${nextVisibleCount}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.data.length <= currentCount) {
+            // If we didn't get any new articles, there are no more to load
+            setHasMore(false);
+          }
+          setArticles(data.data);
+        } else {
+          console.error("Failed to fetch more articles");
+        }
+      }
+
+      // Update the number of visible articles
+      setVisibleArticles(nextVisibleCount);
+    } catch (error) {
+      console.error("Error fetching more articles:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
       {articles.slice(0, visibleArticles).map((article, index) => (
-        <article
-          className="article"
-          key={index}>
+        <article className="article" key={index}>
           <div className="post-img">
             <Image
               src={article.thumbnail.trim()}
@@ -39,9 +70,7 @@ const ArticleLists = ({ articles }: articlesProps) => {
           </div>
 
           <h1 className="title">
-            <Link
-              href={`read/${article.idArticle}`}
-              target="_blank">
+            <Link href={`read/${article.idArticle}`} target="_blank">
               {article.title}
             </Link>
           </h1>
@@ -49,13 +78,9 @@ const ArticleLists = ({ articles }: articlesProps) => {
           <div className="meta-top my-4">
             <ul>
               {article.authors.map((author, index) => (
-                <li
-                  className="d-flex align-items-center"
-                  key={index}>
+                <li className="d-flex align-items-center" key={index}>
                   <i className="bi bi-person"></i>
-                  <Link
-                    href={`read/${article.idArticle}`}
-                    target="_blank">
+                  <Link href={`read/${article.idArticle}`} target="_blank">
                     {author.authorName}
                   </Link>
                 </li>
@@ -63,7 +88,9 @@ const ArticleLists = ({ articles }: articlesProps) => {
               <li className="d-flex align-items-center">
                 <i className="bi bi-clock"></i>
                 <Link href={`read/${article.idArticle}`}>
-                  <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
+                  <time dateTime={article.publishedAt}>
+                    {formatDate(article.publishedAt)}
+                  </time>
                 </Link>
               </li>
             </ul>
@@ -75,7 +102,8 @@ const ArticleLists = ({ articles }: articlesProps) => {
               <Link
                 href={`read/${article.idArticle}`}
                 target="_blank"
-                className="btn appointment-btn">
+                className="btn appointment-btn"
+              >
                 Read More
               </Link>
             </div>
@@ -94,17 +122,17 @@ const ArticleLists = ({ articles }: articlesProps) => {
         </article>
       ))}
 
-      {visibleArticles < articles.length && (
-        <div className="text-center mt-4">
-          <button
-            className="appointment-btn"
-            id="show-more-btn"
-            style={{ border: "none" }}
-            onClick={handleShowMore}>
-            More Article
-          </button>
-        </div>
-      )}
+      <div className="text-center mt-4">
+        <button
+          className="appointment-btn"
+          id="show-more-btn"
+          style={{ border: "none" }}
+          onClick={handleShowMore}
+          disabled={loading}
+        >
+          {loading ? "Loading..." : "More Article"}
+        </button>
+      </div>
     </>
   );
 };
