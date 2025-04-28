@@ -1,4 +1,3 @@
-// useJoditEditorLogic.ts
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import "/public/assets/css/inbound-link.css";
@@ -239,6 +238,7 @@ const useJoditEditorLogic = () => {
       toolbarAdaptive: false,
       useNativeTooltip: true,
       askBeforePasteFromWord: false,
+      defaultActionOnPasteFromWord:"insert_only_text",
       disablePlugins: ["resize", "search"],
       extraButtons: [
         {
