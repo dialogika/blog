@@ -14,17 +14,14 @@ const JoditRegularEditor = () => {
 
   return (
     <div className="my-5">
-      <label
-        htmlFor="formEditor"
-        className="fw-bold text-primary fs-5 mb-1">
+      <label htmlFor="formEditor" className="fw-bold text-primary fs-5 mb-1">
         Text Editor Artikel
       </label>
-      <p
-        className="fst-italic"
-        style={{ fontSize: 12, opacity: 0.85 }}>
-        Masukkan konten artikel blog Anda di area editor di bawah ini. Gunakan toolbar untuk memformat konten sesuai
-        kebutuhan. Jika masih bingung, klik tombol &quot; Buka Guide &quot; di kanan bawah untuk mendapatkan panduan
-        lengkap.
+      <p className="fst-italic" style={{ fontSize: 12, opacity: 0.85 }}>
+        Masukkan konten artikel blog Anda di area editor di bawah ini. Gunakan
+        toolbar untuk memformat konten sesuai kebutuhan. Jika masih bingung,
+        klik tombol &quot; Buka Guide &quot; di kanan bawah untuk mendapatkan
+        panduan lengkap.
       </p>
       <JoditEditor
         value={editorValue}
