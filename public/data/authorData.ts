@@ -10,9 +10,14 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 
 export const authorData: BlogAuthorProps[] = [
   {
+    authorName: "Hanifah Mutiara",
+    imgPath: internImages.hanifahMutiara.src,
+    quotes: `be as you wish to seem`,
+  },
+  {
     authorName: "Puti Cinta Novtazulfa",
     imgPath: internImages.putiCinta.src,
-    quotes: `own your voice`, 
+    quotes: `own your voice`,
   },
   {
     authorName: "Arsha Haroun Al Rasyid",
