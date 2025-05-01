@@ -11,6 +11,10 @@ import {
   guideGambar6,
   guideGambar7,
   guideGambar8,
+  guideGambar9,
+  guideGambar10,
+  guideGambar11,
+  guideGambar12,
 } from ".";
 
 // Modal untuk guide halaman membuat artikel blog baru
@@ -188,14 +192,56 @@ const EditorGuideModal = () => {
                 <h5 className="mt-5">
                   2. Masukan URL yang akan menjadi Inbound Link
                 </h5>
-                <h5 className="mt-5">3. Inbound Link akan otomatis terbuat</h5>
+                <h5 className="mt-5">
+                  3. Setelah Inbound Link terbuat, pilih logo pennsil
+                </h5>
+                <Image
+                  src={guideGambar12}
+                  className="img-fluid w-auto mx-auto rounded-3"
+                  style={{ height: "auto" }}
+                  alt="guide gambar 7 "
+                />
+                <h5 className="mt-5">
+                  4. Checklist pada bagian (Open in new tab) dan ganti text
+                  (Baca Juga: ......)
+                </h5>
+                <Image
+                  src={guideGambar9}
+                  className="img-fluid w-auto mx-auto rounded-3"
+                  style={{ height: "auto" }}
+                  alt="guide gambar 7 "
+                />
+                <h5 className="mt-5">5. Inbound Link sudah bisa terbuat</h5>
               </Accordion.Body>
             </Accordion.Item>
             {/* End of Guide 3 */}
 
             <Accordion.Item eventKey="3">
-              <Accordion.Header>Guide 4</Accordion.Header>
-              <Accordion.Body>Isi Guide 4</Accordion.Body>
+              <Accordion.Header>Cara Mereset Artikel</Accordion.Header>
+              <Accordion.Body>
+                <h5 className="mt-5">
+                  1. Pilih pada bagian X di pojok kanan bawah
+                </h5>
+                <Image
+                  src={guideGambar11}
+                  className="img-fluid w-auto mx-auto rounded-3"
+                  style={{ height: "auto" }}
+                  alt="guide gambar 7 "
+                />
+                <h5 className="mt-5">
+                  2. Akan muncul popup konfirmasi untuk mereset artikel, klik
+                  reset jika ingin meresetnya
+                </h5>
+                <Image
+                  src={guideGambar10}
+                  className="img-fluid w-auto mx-auto rounded-3"
+                  style={{ height: "auto" }}
+                  alt="guide gambar 7 "
+                />
+                <h5 className="mt-5">
+                  3. Artikel akan terreset, dan akan kembali seperti awal
+                </h5>
+              </Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </Modal.Body>
