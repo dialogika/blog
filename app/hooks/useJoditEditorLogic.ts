@@ -74,11 +74,14 @@ const useJoditEditorLogic = () => {
 
   const fetchImages = async (query: string, editor: any, page: number = 1) => {
     try {
-      const res = await fetch("https://blog-admin-dialogikas-projects.vercel.app/blog/api/pexels/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, page }),
-      });
+      const res = await fetch(
+        "https://blog-admin-dialogikas-projects.vercel.app/blog/api/pexels/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query, page }),
+        }
+      );
 
       const data = await res.json();
       if (data.photos?.length) {
@@ -92,7 +95,12 @@ const useJoditEditorLogic = () => {
     }
   };
 
-  const showImageSelectionDialog = (images: any[], query: string, editorInstance: any, page: number) => {
+  const showImageSelectionDialog = (
+    images: any[],
+    query: string,
+    editorInstance: any,
+    page: number
+  ) => {
     const overlay = document.createElement("div");
     Object.assign(overlay.style, {
       position: "fixed",
@@ -238,7 +246,7 @@ const useJoditEditorLogic = () => {
       toolbarAdaptive: false,
       useNativeTooltip: true,
       askBeforePasteFromWord: false,
-      defaultActionOnPasteFromWord:"insert_only_text",
+      defaultActionOnPasteFromWord: "insert_only_text",
       disablePlugins: ["resize", "search"],
       extraButtons: [
         {
@@ -345,6 +353,7 @@ const useJoditEditorLogic = () => {
           },
           tooltip: "Masukkan Gambar dari Pexels",
         },
+
         {
           name: "bacaJuga",
           icon: "link",
@@ -362,6 +371,145 @@ const useJoditEditorLogic = () => {
             editor.s.insertHTML(html);
           },
           tooltip: "Inbound Link",
+        },
+
+        {
+          name: "resetContent",
+          icon: "cancel",
+
+          exec: (editor: any) => {
+            const overlay = document.createElement("div");
+            Object.assign(overlay.style, {
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0,0,0,0.5)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 9999,
+            });
+
+            const dialog = document.createElement("div");
+            Object.assign(dialog.style, {
+              width: "90%",
+              maxWidth: "500px",
+              backgroundColor: "#fff",
+              borderRadius: "20px",
+              padding: "24px",
+              textAlign: "center",
+              boxShadow: "0 10px 50px rgba(0,0,0,0.5)",
+            });
+
+            const text = document.createElement("p");
+            text.textContent =
+              "Yakin mau reset isi editor? Semua perubahan akan hilang!";
+            text.style.marginBottom = "20px";
+
+            const buttonContainer = document.createElement("div");
+            buttonContainer.style.display = "flex";
+            buttonContainer.style.gap = "10px";
+            buttonContainer.style.justifyContent = "center";
+
+            const cancelBtn = document.createElement("button");
+            cancelBtn.textContent = "Batal";
+            Object.assign(cancelBtn.style, {
+              flex: 1,
+              padding: "12px",
+              backgroundColor: "#7f8c8d",
+              color: "#fff",
+              border: "none",
+              fontSize: "16px",
+              borderRadius: "8px",
+              cursor: "pointer",
+            });
+            cancelBtn.onclick = () => {
+              document.body.removeChild(overlay);
+            };
+
+            const resetBtn = document.createElement("button");
+            resetBtn.textContent = "Reset";
+            Object.assign(resetBtn.style, {
+              flex: 1,
+              padding: "12px",
+              backgroundColor: "#e74c3c",
+              color: "#fff",
+              border: "none",
+              fontSize: "16px",
+              borderRadius: "8px",
+              cursor: "pointer",
+            });
+            resetBtn.onclick = () => {
+              const initialContent = `<div class="row">
+                <!-- 2 first paragraph of the draft -->
+                <div class="col-lg-7 mt-4">
+                    <p style="line-height: 32px;"><span style="color: rgb(153, 153, 153);" class="fw-lighter">Ganti dengan keyword - </span> Bagian awal HARUS ada dua (2) paragraph Ini paragraph pertama</p>
+                    <p style="line-height: 32px;">ini bagian paragraph kedua</p>
+                </div>
+                <div class="col-lg-5 mt-4">
+                    <div class="card card-body key-take">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong class="title-b3">Key Takeaways</strong></li>
+                            <li class="list-group-item">key takeaway 1</li>
+                            <li class="list-group-item">key takeaway 2</li>
+                            <li class="list-group-item">key takeaway 3</li>
+                            <li class="list-group-item">key takeaway 4</li>
+                            <li class="list-group-item">key takeaway 5</li>
+                        </ul>
+                    </div>
+                </div>
+                <p><br></p>
+                <p>Konten-konten dimasukkan kesini. Replace bagian ini dengan isi dari artikelnya, Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu fugiat nulla pariatur. </p>
+                <p><br></p>
+                <div id="call-to-action" class="call-to-action">
+                    <img src="https://img.freepik.com/free-photo/woman-asking-questions-podcast_23-2149029335.jpg?w=2000&amp;t=st=1702424624~exp=1702425224~hmac=8ef22a8fb4c913b576a1fefecfe57e6e9f84a118e0f24b78674d7e4105d2d7b1"
+                        alt="Menawar, negosiasi, murah">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="col-xl-12">
+                                <div class="text-center">
+                                    <h3 style="color: #f1f7fd;">Tanya Aja Dulu</h3>
+                                    <p>Susah dan Gugup Ngomong di Depan Umum? Konsul Aja Dulu</p>
+                                    <a class="cta-btn title-change-consultation" href="https://wa.link/q8jnnv" target="_blank">Tanya
+                                        Admin</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p><br></p>
+                <h2>Penutup/Kesimpulan (Pilih satu)</h2>
+                <p>Isi penutup/kesimpulan</p>
+                <blockquote>
+                    <p><br></p>
+                    <figcaption class="blockquote-footer">
+                        Ann Lander
+                    </figcaption>
+                    “Bukan apa yang Anda lakukan untuk anak-anak Anda, tapi apa yang Anda ajarkan kepada mereka untuk
+                    dilakukan bagi diri mereka sendiri, itulah yang akan menjadikan mereka manusia sukses.”
+                    <p><br></p>
+                </blockquote>
+              </div>`;
+              editor.value = initialContent;
+              localStorage.setItem("joditEditorContent", initialContent);
+              document.body.removeChild(overlay);
+            };
+
+            buttonContainer.appendChild(cancelBtn);
+            buttonContainer.appendChild(resetBtn);
+
+            dialog.appendChild(text);
+            dialog.appendChild(buttonContainer);
+            overlay.appendChild(dialog);
+            document.body.appendChild(overlay);
+          },
+          tooltip: "Reset Isi Editor",
         },
       ],
     }),
