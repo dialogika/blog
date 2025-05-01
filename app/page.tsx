@@ -25,8 +25,6 @@ export default async function Home() {
         headers: {
           "Content-type": "application/json",
         },
-        next: { revalidate: 0 },
-        cache: "no-store",
       }
     );
 
