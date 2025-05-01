@@ -10,6 +10,16 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 
 export const authorData: BlogAuthorProps[] = [
   {
+    authorName: "Puti Cinta Novtazulfa",
+    imgPath: internImages.putiCinta.src,
+    quotes: `own your voice`, 
+  },
+  {
+    authorName: "Arsha Haroun Al Rasyid",
+    imgPath: internImages.arshaHaroun.src,
+    quotes: `Hidup itu singkat, jadi buat setiap momen berarti`,
+  },
+  {
     authorName: "Fitriani",
     imgPath: internImages.fitriani.src,
     quotes: `The only way to do great work is to love what u do`,
