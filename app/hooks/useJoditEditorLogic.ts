@@ -241,7 +241,7 @@ const useJoditEditorLogic = () => {
       language: "en",
       useSplitMode: false,
       observer: false,
-      defaultParagraphSeparator: "br",
+      defaultParagraphSeparator: "p",
       askBeforePasteHTML: false,
       toolbarAdaptive: false,
       useNativeTooltip: true,
@@ -512,6 +512,14 @@ const useJoditEditorLogic = () => {
           tooltip: "Reset Isi Editor",
         },
       ],
+      cleanHTML: {
+        cleanOnPaste: true,
+        fillEmptyParagraph: false,
+        removeEmptyElements: true,
+      },
+      pasteOptions: {
+        defaultActionOnPaste: "insert_clear_html",
+      },
     }),
     []
   );
