@@ -16,7 +16,7 @@ export const authorData: BlogAuthorProps[] = [
   },
   {
     authorName: "Puti Cinta Novtazulfa",
-    imgPath: internImages.putiCinta.src,
+    imgPath: internImages.putiCintaNovtazulfa.src,
     quotes: `own your voice`,
   },
   {

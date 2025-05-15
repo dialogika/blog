@@ -27,6 +27,14 @@ const nextConfig: NextConfig = {
     config.output.publicPath = `${process.env.ASSET_PREFIX || ""}${config.output.publicPath}`;
     return config;
   },
+  redirects: async () => [
+    {
+      source: "/blog/:slug.html",
+      // meski redirect, Next.js akan kembalikan HTTP 410
+      destination: "/",
+      statusCode: 301,
+    },
+  ],
 };
 
 export default nextConfig;
