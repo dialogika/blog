@@ -66,6 +66,7 @@ import nurfinkaLailasari from "@/public/assets/img/intern/pingka.jpg";
 import fitriani from "@/public/assets/img/intern/fitriani.webp";
 import putiCinta from "@/public/assets/img/intern/puti-cinta.webp";
 import arshaHaroun from "@/public/assets/img/intern/arsha-haroun.webp";
+import Bernadheta from "@/public/assets/img/intern/Bernadheta.jpg";
 
 const internImages = {
   fitriani,
@@ -134,6 +135,7 @@ const internImages = {
   yunitaSara,
   yusufNurohman,
   winemaAleshanee,
+  Bernadheta,
 };
 
 export default internImages;
