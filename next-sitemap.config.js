@@ -4,7 +4,7 @@ module.exports = {
   basePath: "/blog", // Serve your site from /blog
   generateRobotsTxt: true, // Generates a robots.txt
   sitemapSize: 7000,
-  changefreq: "never",
+  changefreq: "monthly",
   trailingSlash: true,
-  outDir: "./out", // Matches your Next.js export folder
+  outDir: "./out",
 };

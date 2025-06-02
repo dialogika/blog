@@ -10,13 +10,13 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 
 export const authorData: BlogAuthorProps[] = [
   {
-    authorName: "Bernadheta Tanya Chandra",
-    imgPath: internImages.Bernadheta.src,
-    quotes: "Mistakes are proof that you’re trying, jadi keep going.",
+    authorName: "Hanifah Mutiara",
+    imgPath: internImages.hanifahMutiara.src,
+    quotes: `be as you wish to seem`,
   },
   {
     authorName: "Puti Cinta Novtazulfa",
-    imgPath: internImages.putiCinta.src,
+    imgPath: internImages.putiCintaNovtazulfa.src,
     quotes: `own your voice`,
   },
   {

@@ -177,7 +177,7 @@ const useJoditEditorLogic = () => {
         const html = `
           <div class="img-control mt-4">
             <a href="${image.src.original}" class="glightbox">
-              <img src="${image.src.medium}" class="img-fluid rounded visible" alt="${query}">
+              <img src="${image.src.original}" class="img-fluid rounded visible" alt="${query}">
               <img src="https://www.dialogika.co/assets/img/logo.webp" class="img-logo-image" alt="${query}">
             </a>
             <a href="https://wa.link/3rwk8y" target="_blank">
