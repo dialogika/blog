@@ -64,12 +64,14 @@ import DamarAdi from "@/public/assets/img/intern/damar-adi.webp";
 import jessicaCaesyaAgustin from "@/public/assets/img/intern/jessica-caesya-agustin.webp";
 import nurfinkaLailasari from "@/public/assets/img/intern/pingka.jpg";
 import fitriani from "@/public/assets/img/intern/fitriani.webp";
-import putiCinta from "@/public/assets/img/intern/puti-cinta.webp";
+import putiCintaNovtazulfa from "@/public/assets/img/intern/puti-cinta-novtazulfa.webp";
 import arshaHaroun from "@/public/assets/img/intern/arsha-haroun.webp";
+import hanifahMutiara from "@/public/assets/img/intern/hanifah-mutiara.webp";
 
 const internImages = {
+  hanifahMutiara,
   fitriani,
-  putiCinta,
+  putiCintaNovtazulfa,
   arshaHaroun,
   yogaPangestu,
   miftakhulHudha,
