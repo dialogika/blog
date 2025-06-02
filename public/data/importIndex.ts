@@ -67,8 +67,10 @@ import fitriani from "@/public/assets/img/intern/fitriani.webp";
 import putiCintaNovtazulfa from "@/public/assets/img/intern/puti-cinta-novtazulfa.webp";
 import arshaHaroun from "@/public/assets/img/intern/arsha-haroun.webp";
 import hanifahMutiara from "@/public/assets/img/intern/hanifah-mutiara.webp";
+import Bernadheta from "@/public/assets/img/intern/Bernadheta.jpg";
 
 const internImages = {
+  Bernadheta,
   hanifahMutiara,
   fitriani,
   putiCintaNovtazulfa,
@@ -136,7 +138,6 @@ const internImages = {
   yunitaSara,
   yusufNurohman,
   winemaAleshanee,
-  Bernadheta,
 };
 
 export default internImages;
