@@ -73,11 +73,11 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
     .slice()
     .sort((a, b) => a.authorName.localeCompare(b.authorName));
   const [totalInputs, setTotalInputs] = useState([""]);
-  const [values, setValues] = useState<string[]>([authors[0].authorName]);
+  const [values, setValues] = useState<string[]>([""]);
 
   const handleAddInput = () => {
     setTotalInputs([...totalInputs, ""]);
-    setValues([...values, authors[0].authorName]);
+    setValues([...values, ""]);
   };
 
   const handleRemoveInput = (index: number) => {
