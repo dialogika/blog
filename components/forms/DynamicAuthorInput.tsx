@@ -1,11 +1,14 @@
 "use client";
 import React, { useState } from "react";
-// import LabelInput from "./LabelInput";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/store";
+
+import Dropdown from "react-bootstrap/Dropdown";
+import Form from "react-bootstrap/Form";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 interface DynamicAuthorInputProps {
   name: string;
@@ -15,6 +18,56 @@ interface DynamicAuthorInputProps {
   maxInputs: number;
 }
 
+// 🔍 Custom Dropdown Toggle
+const CustomToggle = React.forwardRef(
+  ({ children, onClick }: any, ref: React.Ref<HTMLButtonElement>) => (
+    <button
+      ref={ref}
+      className="btn btn-outline-primary px-3 py-2 rounded"
+      onClick={(e) => {
+        e.preventDefault();
+        onClick(e);
+      }}
+    >
+      {children} <span className="ms-2">&#x25bc;</span>
+    </button>
+  )
+);
+
+// 🔍 Custom Dropdown Menu with Search
+const CustomMenu = React.forwardRef(
+  (
+    { children, style, className, "aria-labelledby": labeledBy }: any,
+    ref: React.Ref<HTMLDivElement>
+  ) => {
+    const [value, setValue] = useState("");
+
+    return (
+      <div
+        ref={ref}
+        style={style}
+        className={className}
+        aria-labelledby={labeledBy}
+      >
+        <Form.Control
+          autoFocus
+          className="mx-3 my-2 w-auto"
+          placeholder="Type to filter..."
+          onChange={(e) => setValue(e.target.value)}
+          value={value}
+        />
+        <ul className="list-unstyled mb-0">
+          {React.Children.toArray(children).filter(
+            (child: any) =>
+              !value ||
+              child.props.children.toLowerCase().includes(value.toLowerCase())
+          )}
+        </ul>
+      </div>
+    );
+  }
+);
+
 const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
   const authors = useSelector((state: RootState) => state.authors.authorsDetail)
     .slice()
@@ -22,24 +75,18 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
   const [totalInputs, setTotalInputs] = useState([""]);
   const [values, setValues] = useState<string[]>([authors[0].authorName]);
 
-  // Add a new input, defaulting the selected author to the first one.
   const handleAddInput = () => {
     setTotalInputs([...totalInputs, ""]);
     setValues([...values, authors[0].authorName]);
   };
 
-  // Remove input sesuai dengan index
   const handleRemoveInput = (index: number) => {
-    const newTotalInput = totalInputs.filter(
-      (iniTidakDipakai, i) => i !== index
-    );
+    const newTotalInput = totalInputs.filter((_, i) => i !== index);
     setTotalInputs(newTotalInput);
-
-    const newValues = values.filter((iniTidakDipakai, i) => i !== index);
+    const newValues = values.filter((_, i) => i !== index);
     setValues(newValues);
   };
 
-  // Update data dari input yang dipilih/sesuai dengan index
   const handleSelectChange = (index: number, selectedAuthorName: string) => {
     const newValues = [...values];
     newValues[index] = selectedAuthorName;
@@ -48,9 +95,8 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
 
   return (
     <>
-      <div className=" d-flex flex-wrap gap-3 mt-4 align-items-stretch justify-content-center">
-        {totalInputs.map((tidakDipakai, index) => {
-          // Find the selected author object based on the current value.
+      <div className="d-flex flex-wrap gap-3 mt-4 align-items-stretch justify-content-center">
+        {totalInputs.map((_, index) => {
           const selectedAuthor =
             authors.find((author) => author.authorName === values[index]) ||
             authors[0];
@@ -66,21 +112,35 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
                 }`}
               >
                 <div className="d-flex gap-2 justify-content-around justify-items-start">
-                  <select
-                    name={`author-${index}`}
-                    id={`author-${index}`}
-                    value={values[index]}
-                    onChange={(e) => handleSelectChange(index, e.target.value)}
+                  {/* 🔽 Dropdown with Search */}
+                  <Dropdown
+                    onSelect={(eventKey) =>
+                      handleSelectChange(
+                        index,
+                        eventKey || authors[0].authorName
+                      )
+                    }
                   >
-                    <option className="fst-italic" value="">
-                      Select Author
-                    </option>
-                    {authors.map((author, idx) => (
-                      <option key={idx} value={author.authorName}>
-                        {author.authorName}
-                      </option>
-                    ))}
-                  </select>
+                    <Dropdown.Toggle
+                      as={CustomToggle}
+                      id={`dropdown-author-${index}`}
+                    >
+                      {values[index] || "Select Author"}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu as={CustomMenu}>
+                      {authors.map((author, idx) => (
+                        <Dropdown.Item
+                          key={idx}
+                          eventKey={author.authorName}
+                          active={author.authorName === values[index]}
+                        >
+                          {author.authorName}
+                        </Dropdown.Item>
+                      ))}
+                    </Dropdown.Menu>
+                  </Dropdown>
+
                   {totalInputs.length > 1 && (
                     <button
                       type="button"
@@ -94,6 +154,7 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
                     </button>
                   )}
                 </div>
+
                 <div
                   style={{
                     display: "flex",
