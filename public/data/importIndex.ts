@@ -68,8 +68,10 @@ import putiCintaNovtazulfa from "@/public/assets/img/intern/puti-cinta-novtazulf
 import arshaHaroun from "@/public/assets/img/intern/arsha-haroun.webp";
 import hanifahMutiara from "@/public/assets/img/intern/hanifah-mutiara.webp";
 import Bernadheta from "@/public/assets/img/intern/Bernadheta.jpg";
+import AbyanAlhafizh from "@/public/assets/img/intern/muhammad-abyan-alhafizh.webp";
 
 const internImages = {
+  AbyanAlhafizh,
   Bernadheta,
   hanifahMutiara,
   fitriani,

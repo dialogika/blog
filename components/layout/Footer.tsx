@@ -264,7 +264,7 @@ const Footer = () => {
                   data-bs-parent=".footer-links">
                   <li>
                     <i className="bx bx-chevron-right"></i>
-                    <a href="../about/">About Us</a>
+                    <a href="https://www.dialogika.co/about">About Us</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right"></i>

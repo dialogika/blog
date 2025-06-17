@@ -10,6 +10,11 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 
 export const authorData: BlogAuthorProps[] = [
   {
+    authorName: "Muhammad Abyan Alhafizh",
+    imgPath: internImages.AbyanAlhafizh.src,
+    quotes: "trust the process.",
+  },
+  {
     authorName: "Bernadheta Tanya Chandra",
     imgPath: internImages.Bernadheta.src,
     quotes: "Mistakes are proof that you’re trying, jadi keep going.",
