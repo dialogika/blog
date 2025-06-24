@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
@@ -19,27 +19,21 @@ interface DynamicAuthorInputProps {
 }
 
 // 🔍 Custom Dropdown Toggle
-const CustomToggle = React.forwardRef(
-  ({ children, onClick }: any, ref: React.Ref<HTMLButtonElement>) => (
-    <button
-      ref={ref}
-      className="btn btn-outline-primary px-3 py-2 rounded"
-      onClick={(e) => {
-        e.preventDefault();
-        onClick(e);
-      }}
-    >
-      {children} <span className="ms-2">&#x25bc;</span>
-    </button>
-  )
-);
-
+const CustomToggle = React.forwardRef(({ children, onClick }: any, ref: React.Ref<HTMLButtonElement>) => (
+  <button
+    ref={ref}
+    className="btn btn-outline-primary px-3 py-2 rounded"
+    onClick={(e) => {
+      e.preventDefault();
+      onClick(e);
+    }}>
+    {children} <span className="ms-2">&#x25bc;</span>
+  </button>
+));
+CustomToggle.displayName = "CustomToggle";
 // 🔍 Custom Dropdown Menu with Search
 const CustomMenu = React.forwardRef(
-  (
-    { children, style, className, "aria-labelledby": labeledBy }: any,
-    ref: React.Ref<HTMLDivElement>
-  ) => {
+  ({ children, style, className, "aria-labelledby": labeledBy }: any, ref: React.Ref<HTMLDivElement>) => {
     const [value, setValue] = useState("");
 
     return (
@@ -47,8 +41,7 @@ const CustomMenu = React.forwardRef(
         ref={ref}
         style={style}
         className={className}
-        aria-labelledby={labeledBy}
-      >
+        aria-labelledby={labeledBy}>
         <Form.Control
           autoFocus
           className="mx-3 my-2 w-auto"
@@ -58,26 +51,27 @@ const CustomMenu = React.forwardRef(
         />
         <ul className="list-unstyled mb-0">
           {React.Children.toArray(children).filter(
-            (child: any) =>
-              !value ||
-              child.props.children.toLowerCase().includes(value.toLowerCase())
+            (child: any) => !value || child.props.children.toLowerCase().includes(value.toLowerCase())
           )}
         </ul>
       </div>
     );
   }
 );
+CustomMenu.displayName = "CustomMenu";
 
 const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
   const authors = useSelector((state: RootState) => state.authors.authorsDetail)
     .slice()
     .sort((a, b) => a.authorName.localeCompare(b.authorName));
-  const [totalInputs, setTotalInputs] = useState([""]);
-  const [values, setValues] = useState<string[]>([""]);
+  const [totalInputs, setTotalInputs] = useState<string[]>([]);
+  const [values, setValues] = useState<string[]>([]);
 
   const handleAddInput = () => {
-    setTotalInputs([...totalInputs, ""]);
-    setValues([...values, ""]);
+    if (authors.length > 0 && totalInputs.length < props.maxInputs) {
+      setTotalInputs([...totalInputs, ""]);
+      setValues([...values, authors[0].authorName]);
+    }
   };
 
   const handleRemoveInput = (index: number) => {
@@ -93,50 +87,51 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
     setValues(newValues);
   };
 
+  useEffect(() => {
+    if (authors.length > 0 && totalInputs.length === 0) {
+      setTotalInputs([""]);
+      setValues([authors[0].authorName]);
+    }
+  }, [authors, totalInputs.length]);
+
+  if (authors.length === 0) return <div>Loading Authors...</div>;
+
   return (
     <>
       <div className="d-flex flex-wrap gap-3 mt-4 align-items-stretch justify-content-center">
         {totalInputs.map((_, index) => {
-          const selectedAuthor =
-            authors.find((author) => author.authorName === values[index]) ||
-            authors[0];
+          const selectedAuthor = authors.find((author) => author.authorName === values[index]) || authors[0];
           return (
             <div
               key={index}
-              className="flex flex-wrap gap-3 justify-content-space-between"
-            >
+              className="flex flex-wrap gap-3 justify-content-space-between">
+              <input
+                type="hidden"
+                name={`author-${index}`}
+                value={values[index] || ""}
+              />
               <div
                 id={`author-card-${index}`}
                 className={`d-flex gap-3 flex-column h-auto align-items-center justify-content-around position-relative ${
                   index % 3 === 2 ? "order-first" : ""
-                }`}
-              >
+                }`}>
                 <div className="d-flex gap-2 justify-content-around justify-items-start">
                   {/* 🔽 Dropdown with Search */}
-                  <Dropdown
-                    onSelect={(eventKey) =>
-                      handleSelectChange(
-                        index,
-                        eventKey || authors[0].authorName
-                      )
-                    }
-                  >
+                  <Dropdown onSelect={(eventKey) => handleSelectChange(index, eventKey || authors[0].authorName)}>
                     <Dropdown.Toggle
                       as={CustomToggle}
-                      id={`dropdown-author-${index}`}
-                    >
+                      id={`dropdown-author-${index}`}>
                       {values[index] || "Select Author"}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu as={CustomMenu}>
                       {authors.map((author, idx) => (
-                        <Dropdown.Item
-                          key={idx}
-                          eventKey={author.authorName}
-                          active={author.authorName === values[index]}
-                        >
-                          {author.authorName}
-                        </Dropdown.Item>
+                          <Dropdown.Item
+                            key={idx}
+                            eventKey={author.authorName}
+                            active={author.authorName === values[index]}>
+                            {author.authorName}
+                          </Dropdown.Item>
                       ))}
                     </Dropdown.Menu>
                   </Dropdown>
@@ -145,8 +140,7 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
                     <button
                       type="button"
                       onClick={() => handleRemoveInput(index)}
-                      className="bg-transparent border-0"
-                    >
+                      className="bg-transparent border-0">
                       <FontAwesomeIcon
                         icon={faCircleXmark}
                         style={{ width: 20, height: 20 }}
@@ -170,8 +164,7 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
                     backdropFilter: "blur(10px)",
                     WebkitBackdropFilter: "blur(10px)",
                     border: "1px solid rgba(255, 255, 255, 0.2)",
-                  }}
-                >
+                  }}>
                   <Image
                     src={selectedAuthor.imgPath || "/placeholder.jpg"}
                     width={250}
@@ -189,8 +182,7 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
                       marginTop: 10,
                       marginBottom: 0,
                       display: "block",
-                    }}
-                  >
+                    }}>
                     {selectedAuthor.quotes || "No Quote Yet"}
                   </p>
                 </div>
@@ -202,8 +194,7 @@ const DynamicAuthorInput = (props: DynamicAuthorInputProps) => {
           <button
             type="button"
             onClick={handleAddInput}
-            className="rev-appointment-btn h-10"
-          >
+            className="rev-appointment-btn h-10">
             <FontAwesomeIcon icon={faPlus} />
             <span>Add {props.name}</span>
           </button>

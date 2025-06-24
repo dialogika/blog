@@ -88,6 +88,8 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
     // Ambil value authors
     const selectedAuthors: string[] = [];
     const authorsPayload: BlogAuthorProps[] = [];
+    const test = formData.get(`author-1`);
+    console.log("THIS IS AUTHER GET:", test);
     for (let i = 0; i < 3; i++) {
       const selectedAuthorNames = formData.get(`author-${i}`); // Ambil nama-nama author yang ada dari input DynamicAuthorInput
       if (selectedAuthorNames) selectedAuthors.push(selectedAuthorNames.toString());
