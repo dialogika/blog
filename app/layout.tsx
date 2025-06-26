@@ -45,12 +45,12 @@ const GlobalScripts = () => (
     <Script src={`${basePath}/assets/js/main.js`} strategy="lazyOnload" />
 
     {/* Vendor JS */}
-    <Script
+    {/* <Script
       src={`../public/assets/vendor/international-phone-number/intlTelInput.min.js`}
     />
     <Script
       src={`../public/assets/vendor/international-phone-number/script.js`}
-    />
+    /> */}
 
     {/* External Icons */}
     <Script

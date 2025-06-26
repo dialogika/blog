@@ -245,6 +245,9 @@ const useJoditEditorLogic = () => {
       askBeforePasteHTML: false,
       toolbarAdaptive: false,
       useNativeTooltip: true,
+      style:{
+        fontFamily: '"Times New Roman", Times, serif',
+      },
       askBeforePasteFromWord: false,
       defaultActionOnPasteFromWord: "insert_only_text",
       disablePlugins: ["resize", "search"],
@@ -252,7 +255,7 @@ const useJoditEditorLogic = () => {
         {
           name: "pexelsImage",
           iconURL:
-            "https://cdn0.iconfinder.com/data/icons/eon-social-media-contact-info-2/32/pexels_photo_free-512.png",
+            "/public/assets/img/icons/svg/pexels.svgb",
           exec: (editor: any) => {
             const overlay = document.createElement("div");
             Object.assign(overlay.style, {
@@ -485,7 +488,7 @@ const useJoditEditorLogic = () => {
                 </div>
                 <p><br></p>
                 <h2>Penutup/Kesimpulan (Pilih satu)</h2>
-                <p>Isi penutup/kesimpulan</p>
+                <p style={{ fontFamily: '"Times New Roman", Times, serif' }}>Isi penutup/kesimpulan</p>
                 <blockquote>
                     <p><br></p>
                     <figcaption class="blockquote-footer">

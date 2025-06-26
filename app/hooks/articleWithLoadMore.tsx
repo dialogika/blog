@@ -18,7 +18,6 @@ export default function ArticlesWithLoadMore({
 
   const visibleArticles = articles.slice(0, visibleCount);
   const hasMoreArticles = visibleCount < articles.length;
-  console.log("Artikel yang diterima di client:", articles.length);
 
   return (
     <>

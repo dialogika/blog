@@ -87,6 +87,7 @@ const ArticleSection = ({ article }: { article: BlogArticleProps }) => {
                 {/* Isi konten dari artikel blog */}
                 <div
                   className="content p-4"
+                  style={{ fontFamily: '"Times New Roman", Times, serif' }}
                   dangerouslySetInnerHTML={{ __html: article.content }}></div>
                 <div className="meta-bottom d-flex gap-2 align-items-center px-4 py-3">
                   <i className="bi bi-folder"></i>

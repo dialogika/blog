@@ -36,10 +36,8 @@ const ArticleLists = ({ articles: initialArticles }: articlesProps) => {
 
         if (response.ok) {
           const data = await response.json();
-          if (data.data.length <= currentCount) {
-            // If we didn't get any new articles, there are no more to load
-            setHasMore(false);
-          }
+          if (data.data.length <= currentCount) setHasMore(false);
+
           setArticles(data.data);
         } else {
           console.error("Failed to fetch more articles");
@@ -58,7 +56,9 @@ const ArticleLists = ({ articles: initialArticles }: articlesProps) => {
   return (
     <>
       {articles.slice(0, visibleArticles).map((article, index) => (
-        <article className="article" key={index}>
+        <article
+          className="article "style={{fontFamily: '"Times New Roman", Times, serif'}}
+          key={index}>
           <div className="post-img">
             <Image
               src={article.thumbnail.trim()}
@@ -70,17 +70,23 @@ const ArticleLists = ({ articles: initialArticles }: articlesProps) => {
           </div>
 
           <h1 className="title">
-            <Link href={`read/${article.idArticle}`} target="_blank">
+            <Link
+              href={`read/${article.idArticle}`}style={{fontFamily: '"Times New Roman", Times, serif'}}
+              target="_blank">
               {article.title}
             </Link>
           </h1>
-
-          <div className="meta-top my-4">
+{/* style='font-family: "Times new roman", Times, serif;' */}
+          <div className="meta-top my-4" >
             <ul>
               {article.authors.map((author, index) => (
-                <li className="d-flex align-items-center" key={index}>
+                <li
+                  className="d-flex align-items-center"
+                  key={index}>
                   <i className="bi bi-person"></i>
-                  <Link href={`read/${article.idArticle}`} target="_blank">
+                  <Link
+                    href={`read/${article.idArticle}`}
+                    target="_blank">
                     {author.authorName}
                   </Link>
                 </li>
@@ -88,9 +94,7 @@ const ArticleLists = ({ articles: initialArticles }: articlesProps) => {
               <li className="d-flex align-items-center">
                 <i className="bi bi-clock"></i>
                 <Link href={`read/${article.idArticle}`}>
-                  <time dateTime={article.publishedAt}>
-                    {formatDate(article.publishedAt)}
-                  </time>
+                  <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
                 </Link>
               </li>
             </ul>
@@ -102,8 +106,7 @@ const ArticleLists = ({ articles: initialArticles }: articlesProps) => {
               <Link
                 href={`read/${article.idArticle}`}
                 target="_blank"
-                className="btn appointment-btn"
-              >
+                className="btn appointment-btn">
                 Read More
               </Link>
             </div>
@@ -128,8 +131,7 @@ const ArticleLists = ({ articles: initialArticles }: articlesProps) => {
           id="show-more-btn"
           style={{ border: "none" }}
           onClick={handleShowMore}
-          disabled={loading}
-        >
+          disabled={loading}>
           {loading ? "Loading..." : "More Article"}
         </button>
       </div>
