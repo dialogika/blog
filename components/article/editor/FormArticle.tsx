@@ -8,7 +8,7 @@ import { AppDispatch, RootState } from "@/app/store";
 import ImageUrl from "@/components/forms/ImageUrl";
 import JoditRegularEditor from "./JoditRegularEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookOpen, faCheck, faPenToSquare, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faPenToSquare, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import useArticleFormLogic from "@/app/hooks/useArticleFormLogic";
 import { getLocalStorageItem, StorageKeys } from "@/app/utils/localStorageUtils";
 import { fetchArticles } from "@/app/store/blogListSlice";
@@ -26,7 +26,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
   const allArticles = useSelector((state: RootState) => state.blogList.articles);
   const articleStatus = useSelector((state: RootState) => state.blogList.status);
   const reduxDispatch = useDispatch<AppDispatch>();
-  
+
   const [draftedArticle, setDraftedArticle] = useState(
     getLocalStorageItem<BlogArticleProps>(StorageKeys.NEW_ARTICLE_DRAFT) || {
       idArticle: "",
@@ -47,7 +47,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       },
     }
   );
-
 
   // Deconstruct fungsi ArticleFormLogic
   const {
@@ -457,11 +456,11 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       {isLoading && <LoadingIndicator />}
       {success && <SuccessIndicator onClose={() => setSuccess(false)} />}
       {isFailed && <FailedIndicator onClose={() => setIsFailed(false)} />}
-        <EditArticleModal
+      <EditArticleModal
         show={showEditModal}
         onHide={() => setShowEditModal(false)}
         onLoadArticle={loadArticleToForm}
-        allArticles={allArticles}
+        // allArticles={allArticles}
       />
     </>
   );
