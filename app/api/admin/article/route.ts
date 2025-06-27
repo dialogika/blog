@@ -23,80 +23,21 @@ export const POST = async (request: Request) => {
     const payload: Partial<BlogArticleProps> = await request.json();
 
     // Update artikel blog bila artikel dengan idArticle sudah ada, bila tidak ada maka buat baru
-    const result = await Article.updateOne(
-      { idArticle: payload.idArticle },
-      { $set: payload },
-      { upsert: true }
-    );
+    const result = await Article.updateOne({ idArticle: payload.idArticle }, { $set: payload }, { upsert: true });
 
-    return NextResponse.json(
-      { status: "success", result },
-      { status: 200, headers: corsHeaders }
-    );
+    return NextResponse.json({ status: "success", result }, { status: 200, headers: corsHeaders });
   } catch (error: any) {
     console.error("Error in API route:", error);
-    return NextResponse.json(
-      { status: "error", message: error.message },
-      { status: 500, headers: corsHeaders }
-    );
+    return NextResponse.json({ status: "error", message: error.message }, { status: 500, headers: corsHeaders });
   }
 };
-
-// Function untuk mengambil artikel blog dari database
-// export const GET = async (request: Request) => {
-//   try {
-//     await dbConnect();
-//     const { searchParams } = new URL(request.url);
-//     const idArticle = searchParams.get("idArticle"); // Cari custom search params idArticle
-
-//     if (idArticle) {
-//       // Bila idArticle ada, return article dengan idArticle tersebut
-//       const article = await Article.findOne({ idArticle: idArticle }).lean();
-//       if (!article) {
-//         return NextResponse.json(
-//           { status: "error", message: "Article not found" },
-//           { status: 404, headers: corsHeaders }
-//         );
-//       }
-//       return NextResponse.json(
-//         { status: "success", data: article },
-//         { status: 200, headers: corsHeaders }
-//       );
-//     } else {
-//       // No idArticle provided: return 3 latest articles
-//       const limitParams = searchParams.get("limit");
-//       const limit = limitParams ? Number(limitParams) : null;
-
-//       let articles;
-//       if (limit) {
-//         articles = await Article.find().sort({ createdAt: -1 }).limit(limit);
-//       } else {
-//         articles = await Article.find().sort({ createdAt: -1 }); // Ambil semua
-//       }
-
-//       // Kirim GET request ke mongoDB, ambil data artikel yang sesuai dengan limit
-//       const articles = await Article.find()
-//         .sort({ createdAt: -1 })
-//         .limit(limit);
-//       return NextResponse.json(
-//         { status: "success", data: articles },
-//         { status: 200, headers: corsHeaders }
-//       );
-//     }
-//   } catch (error: any) {
-//     console.error("Error in GET API route:", error);
-//     return NextResponse.json(
-//       { status: "error", message: error.message },
-//       { status: 500, headers: corsHeaders }
-//     );
-//   }
-// };
 
 export const GET = async (request: Request) => {
   try {
     await dbConnect();
     const { searchParams } = new URL(request.url);
     const idArticle = searchParams.get("idArticle");
+    const titleQuery = searchParams.get("title");
 
     if (idArticle) {
       const article = await Article.findOne({ idArticle }).lean();
@@ -106,10 +47,12 @@ export const GET = async (request: Request) => {
           { status: 404, headers: corsHeaders }
         );
       }
-      return NextResponse.json(
-        { status: "success", data: article },
-        { status: 200, headers: corsHeaders }
-      );
+      return NextResponse.json({ status: "success", data: article }, { status: 200, headers: corsHeaders });
+    } else if (titleQuery) {
+      const articles = await Article.find({ title: { $regex: titleQuery, $options: "i" } })
+        .sort({ createdAt: -1 })
+        .lean();
+      return NextResponse.json({ status: "success", articles: articles }, { status: 200, headers: corsHeaders });
     } else {
       const limitParams = searchParams.get("limit");
       const limit = limitParams ? Number(limitParams) : 3;
@@ -118,17 +61,11 @@ export const GET = async (request: Request) => {
         ? await Article.find().sort({ createdAt: -1 }).limit(limit)
         : await Article.find().sort({ createdAt: -1 });
 
-      return NextResponse.json(
-        { status: "success", data: articles },
-        { status: 200, headers: corsHeaders }
-      );
+      return NextResponse.json({ status: "success", data: articles }, { status: 200, headers: corsHeaders });
     }
   } catch (error: any) {
     console.error("Error in GET API route:", error);
-    return NextResponse.json(
-      { status: "error", message: error.message },
-      { status: 500, headers: corsHeaders }
-    );
+    return NextResponse.json({ status: "error", message: error.message }, { status: 500, headers: corsHeaders });
   }
 };
 
