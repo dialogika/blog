@@ -74,33 +74,22 @@ const useJoditEditorLogic = () => {
 
   const fetchImages = async (query: string, editor: any, page: number = 1) => {
     try {
-      const res = await fetch(
-        "https://blog-admin-dialogikas-projects.vercel.app/blog/api/pexels/",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ query, page }),
-        }
-      );
+      const res = await fetch("https://blog-admin-dialogikas-projects.vercel.app/blog/api/pexels/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query, page }),
+      });
 
       const data = await res.json();
-      if (data.photos?.length) {
-        showImageSelectionDialog(data.photos, query, editor, page);
-      } else {
-        alert("Tidak ditemukan gambar.");
-      }
+      if (data.photos?.length) showImageSelectionDialog(data.photos, query, editor, page);
+      else alert("Tidak ditemukan gambar.");
     } catch (error) {
       alert("Gagal mengambil gambar.");
       console.error(error);
     }
   };
 
-  const showImageSelectionDialog = (
-    images: any[],
-    query: string,
-    editorInstance: any,
-    page: number
-  ) => {
+  const showImageSelectionDialog = (images: any[], query: string, editorInstance: any, page: number) => {
     const overlay = document.createElement("div");
     Object.assign(overlay.style, {
       position: "fixed",
@@ -245,7 +234,7 @@ const useJoditEditorLogic = () => {
       askBeforePasteHTML: false,
       toolbarAdaptive: false,
       useNativeTooltip: true,
-      style:{
+      style: {
         fontFamily: '"Times New Roman", Times, serif',
       },
       askBeforePasteFromWord: false,
@@ -254,8 +243,7 @@ const useJoditEditorLogic = () => {
       extraButtons: [
         {
           name: "pexelsImage",
-          iconURL:
-            "/public/assets/img/icons/svg/pexels.svgb",
+          iconURL: "https://dialogika.co/blog /public/assets/img/icons/svg/pexels.svg",
           exec: (editor: any) => {
             const overlay = document.createElement("div");
             Object.assign(overlay.style, {
@@ -407,8 +395,7 @@ const useJoditEditorLogic = () => {
             });
 
             const text = document.createElement("p");
-            text.textContent =
-              "Yakin mau reset isi editor? Semua perubahan akan hilang!";
+            text.textContent = "Yakin mau reset isi editor? Semua perubahan akan hilang!";
             text.style.marginBottom = "20px";
 
             const buttonContainer = document.createElement("div");

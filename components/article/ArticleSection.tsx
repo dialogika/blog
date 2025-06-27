@@ -52,7 +52,7 @@ const ArticleSection = ({ article }: { article: BlogArticleProps }) => {
                   {article.thumbnail &&
                     article.thumbnail.length > 0 && ( // Cek apakah thumbnail untuk blog ini ada atau tidak
                       <Image
-                        src={article.thumbnail.trimEnd()}
+                        src={article ? article.thumbnail.trimEnd() : "https://www.dialogika.co/assets/img/logo.webp"}
                         alt={article.keywords}
                         className="img-fluid"
                         width={800}

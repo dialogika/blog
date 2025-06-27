@@ -2,15 +2,18 @@
 import React, { useEffect, useState } from "react";
 import { TextInput, DynamicInput, DynamicAuthorInput, TextAreaInput } from "@/components/forms";
 import { BlogArticleProps, BlogAuthorProps } from "@/types";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateAuthorsState } from "@/app/store/authorsSlice";
-import { RootState } from "@/app/store";
+import { AppDispatch, RootState } from "@/app/store";
 import ImageUrl from "@/components/forms/ImageUrl";
 import JoditRegularEditor from "./JoditRegularEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faBookOpen, faCheck, faPenToSquare, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import useArticleFormLogic from "@/app/hooks/useArticleFormLogic";
 import { getLocalStorageItem, StorageKeys } from "@/app/utils/localStorageUtils";
+import { fetchArticles } from "@/app/store/blogListSlice";
+import { Button } from "react-bootstrap";
+import EditArticleModal from "../EditArticleModal";
 
 interface FormArticleProps {
   authors: BlogAuthorProps[];
@@ -19,6 +22,11 @@ interface FormArticleProps {
 const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
   const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail); // Ambil data authorsDetail di folder store/authorSlice.ts
   const [totalKeyword, setTotalkeyword] = useState(0);
+  const [showEditModal, setShowEditModal] = useState(false); // State for the new modal
+  const allArticles = useSelector((state: RootState) => state.blogList.articles);
+  const articleStatus = useSelector((state: RootState) => state.blogList.status);
+  const reduxDispatch = useDispatch<AppDispatch>();
+  
   const [draftedArticle, setDraftedArticle] = useState(
     getLocalStorageItem<BlogArticleProps>(StorageKeys.NEW_ARTICLE_DRAFT) || {
       idArticle: "",
@@ -39,6 +47,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       },
     }
   );
+
 
   // Deconstruct fungsi ArticleFormLogic
   const {
@@ -65,6 +74,22 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
     dispatch(updateAuthorsState(authors));
   }, [authors, dispatch]);
 
+  useEffect(() => {
+    if (articleStatus === "idle") {
+      reduxDispatch(fetchArticles());
+    }
+  }, [articleStatus, reduxDispatch]);
+
+  const loadArticleToForm = (article: BlogArticleProps) => {
+    document.querySelector<HTMLInputElement>('input[name="title"]')!.value = article.title;
+    document.querySelector<HTMLInputElement>('input[name="thumbnail-image"]')!.value = article.thumbnail || "";
+    document.querySelector<HTMLTextAreaElement>('textarea[name="metadata"]')!.value = article.metaData || "";
+    document.querySelector<HTMLTextAreaElement>('textarea[name="blogDescription"]')!.value =
+      article.cardsDescription || "";
+    document.querySelector<HTMLInputElement>('input[name="keyword"]')!.value = article.keywords || "";
+    // Note: You'll need to expand this for dynamic inputs and Jodit content
+  };
+
   return (
     <>
       <form
@@ -73,6 +98,18 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
         onKeyDown={handleKeyDown}
         className="w-100 d-flex flex-column mt-5 mt-md-0 p-3 "
         style={{ height: "auto" }}>
+        <div className="d-flex justify-content-end gap-2 mb-4">
+          <Button
+            variant="info"
+            onClick={() => setShowEditModal(true)}>
+            <FontAwesomeIcon
+              icon={faPenToSquare}
+              className="me-2"
+            />
+            Edit Article
+          </Button>
+        </div>
+
         <div className="blog-form-container p-4">
           {/* Thumbnail Image Section */}
           <div className="mb-4">
@@ -420,6 +457,12 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
       {isLoading && <LoadingIndicator />}
       {success && <SuccessIndicator onClose={() => setSuccess(false)} />}
       {isFailed && <FailedIndicator onClose={() => setIsFailed(false)} />}
+        <EditArticleModal
+        show={showEditModal}
+        onHide={() => setShowEditModal(false)}
+        onLoadArticle={loadArticleToForm}
+        allArticles={allArticles}
+      />
     </>
   );
 };
