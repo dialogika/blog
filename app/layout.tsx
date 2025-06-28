@@ -10,12 +10,16 @@ import "/public/assets/css/inbound-link.css";
 
 // Global metadata
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.dialogika.co"),
   title: "Dialogika Blog - Kursus Public Speaking",
   description:
     "Dialogika Blog: Learn tips and best practices from our Dialogika mentor and team on topics from Mental Health & Social Science and Mindset to Public Speaking.",
   keywords: "Blog Dialogika, Blog, blog, dialogika",
   authors: [{ name: "Dialogika Team" }],
-  robots: "index, follow",
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Dialogika Blog - Kursus Public Speaking",
     description:
@@ -42,7 +46,10 @@ export const metadata: Metadata = {
 const GlobalScripts = () => (
   <>
     {/* Main Custom JS */}
-    <Script src={`${basePath}/assets/js/main.js`} strategy="lazyOnload" />
+    <Script
+      src={`${basePath}/assets/js/main.js`}
+      strategy="lazyOnload"
+    />
 
     {/* Vendor JS */}
     {/* <Script
@@ -60,11 +67,7 @@ const GlobalScripts = () => (
   </>
 );
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id">
       <head>

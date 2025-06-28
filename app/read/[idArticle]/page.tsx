@@ -8,16 +8,6 @@ import ArticleSection from "@/components/article/ArticleSection";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 
-// Set base URL for canonical links and other metadata
-export const metadataBase = new URL("https://www.dialogika.co");
-
-export const defaultMetadata: Metadata = {
-  robots: {
-    index: true, // added to explicitly allow indexing
-    follow: true, // added to explicitly allow crawling links
-  },
-};
-
 type PageParams = Promise<{ idArticle: string[] }>;
 export default async function Page(props: { params: PageParams }) {
   const { idArticle } = await props.params;
