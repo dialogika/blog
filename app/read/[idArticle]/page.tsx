@@ -8,6 +8,16 @@ import ArticleSection from "@/components/article/ArticleSection";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 
+// Set base URL for canonical links and other metadata
+export const metadataBase = new URL("https://www.dialogika.co");
+
+export const defaultMetadata: Metadata = {
+  robots: {
+    index: true, // added to explicitly allow indexing
+    follow: true, // added to explicitly allow crawling links
+  },
+};
+
 type PageParams = Promise<{ idArticle: string[] }>;
 export default async function Page(props: { params: PageParams }) {
   const { idArticle } = await props.params;
@@ -120,6 +130,7 @@ export async function generateMetadata(props: { params: PageParams }): Promise<M
       return {
         title: "Article Not Found",
         description: `No article found with id: ${idArticle}`,
+        robots: { index: false, follow: false },
       };
     }
     const result = await response.json();
@@ -128,6 +139,7 @@ export async function generateMetadata(props: { params: PageParams }): Promise<M
       return {
         title: "Article Not Found",
         description: `No article found with id: ${idArticle}`,
+        robots: { index: false, follow: false },
       };
     }
     return {
@@ -135,6 +147,9 @@ export async function generateMetadata(props: { params: PageParams }): Promise<M
       description: article.metaData || "Read our latest article on Dialogika Blog.",
       keywords: article.keywords || "Public Speaking, Dialogika, Berbicara Didepan Umum",
       authors: [{ name: article.authors?.[0]?.authorName || "Dialogika Team" }],
+      alternates: {
+        canonical: `https://www.dialogika.co/blog/read/${article.idArticle}`,
+      },
       openGraph: {
         title: article.title,
         description: article.metaData || "Read our latest article on Dialogika Blog.",
@@ -159,12 +174,14 @@ export async function generateMetadata(props: { params: PageParams }): Promise<M
         icon: `https://www.dialogika.co/assets/img/favicon.webp`,
         apple: `https://www.dialogika.co/assets/img/apple-touch-icon.webp`,
       },
+      robots: { index: true, follow: true },
     };
   } catch (error: any) {
     console.error("Error generating metadata:", error);
     return {
       title: "Error",
       description: "Error fetching article metadata.",
+      robots: { index: false, follow: false },
     };
   }
 }
