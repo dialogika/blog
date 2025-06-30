@@ -28,9 +28,7 @@ const EditArticleModal: React.FC<EditArticleModalProps> = ({ show, onHide, onLoa
 
   // Fetch articles via Redux if they haven't been loaded yet
   useEffect(() => {
-    if (show && articleStatus === "idle") {
-      dispatch(fetchArticles());
-    }
+    if (show && articleStatus === "idle") dispatch(fetchArticles());
   }, [show, articleStatus, dispatch]);
 
   const handleSearch = async (e: React.FormEvent) => {
@@ -46,13 +44,10 @@ const EditArticleModal: React.FC<EditArticleModalProps> = ({ show, onHide, onLoa
 
     try {
       // Dispatch the server-side search action
-      const resultAction = await dispatch(searchArticlesByTitle(searchTerm));
-      const filteredArticles = resultAction.payload as BlogArticleProps[];
+      const filteredArticles = await dispatch(searchArticlesByTitle(searchTerm)).unwrap();
 
       setSearchResults(filteredArticles);
-      if (filteredArticles.length === 0) {
-        setSearchStatus("no_results");
-      }
+      if (filteredArticles.length === 0) setSearchStatus("no_results");
     } catch (error) {
       console.error("Failed to search articles:", error);
       setSearchStatus("error");
@@ -63,7 +58,7 @@ const EditArticleModal: React.FC<EditArticleModalProps> = ({ show, onHide, onLoa
 
   const handleLoadClick = (article: BlogArticleProps) => {
     onLoadArticle(article);
-    onHide(); // Close modal after loading
+    onHide();
   };
 
   // Clear search results when the modal is closed

@@ -23,7 +23,6 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
   const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail); // Ambil data authorsDetail di folder store/authorSlice.ts
   const [totalKeyword, setTotalkeyword] = useState(0);
   const [showEditModal, setShowEditModal] = useState(false); // State for the new modal
-  const allArticles = useSelector((state: RootState) => state.blogList.articles);
   const articleStatus = useSelector((state: RootState) => state.blogList.status);
   const reduxDispatch = useDispatch<AppDispatch>();
 

@@ -9,17 +9,16 @@ export const fetchArticles = createAsyncThunk("blogList/fetchArticles", async ()
   return data.articles as BlogArticleProps[];
 });
 
-export const searchArticlesByTitle = createAsyncThunk(
-  'blogList/searchArticlesByTitle',
-  async (title: string) => {
-    // We call the same endpoint but with a 'title' query parameter
-    const response = await fetch(`/https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article?title=${title}`);
-    if (!response.ok) throw new Error('Failed to search articles');
-    const data = await response.json();
-    return data.articles as BlogArticleProps[];
-  }
-);
-
+export const searchArticlesByTitle = createAsyncThunk("blogList/searchArticlesByTitle", async (title: string) => {
+  // We call the same endpoint but with a 'title' query parameter
+  const response = await fetch(
+    `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article?title=${title}`
+  );
+  console.log("THIS IS RESPONSE FROM SEARCH :", await response.json());
+  if (!response.ok) throw new Error("Failed to search articles");
+  const data = await response.json();
+  return data.articles as BlogArticleProps[];
+});
 
 interface BlogListState {
   articles: BlogArticleProps[];
