@@ -1,5 +1,6 @@
 import Article from "@/lib/mongodb/models/Article";
 import dbConnect from "@/lib/mongodb/mongodb";
+import { escapeRegex } from "@/lib/utils";
 import { BlogArticleProps } from "@/types";
 import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
@@ -49,7 +50,8 @@ export const GET = async (request: Request) => {
       }
       return NextResponse.json({ status: "success", data: article }, { status: 200, headers: corsHeaders });
     } else if (titleQuery) {
-      const articles = await Article.find({ title: { $regex: titleQuery, $options: "i" } })
+      const sanitizedQuery = escapeRegex(titleQuery);
+      const articles = await Article.find({ title: { $regex: sanitizedQuery, $options: "i" } })
         .sort({ createdAt: -1 })
         .lean();
       return NextResponse.json({ status: "success", articles: articles }, { status: 200, headers: corsHeaders });
