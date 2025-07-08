@@ -1,6 +1,5 @@
 import Article from "@/lib/mongodb/models/Article";
 import dbConnect from "@/lib/mongodb/mongodb";
-import { generateIdArticle } from "@/lib/utils";
 import { BlogArticleProps } from "@/types";
 import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
@@ -68,7 +67,6 @@ export const GET = async (request: Request) => {
 
       return NextResponse.json({ status: "success", data: article }, { status: 200, headers: corsHeaders });
     } else if (titleQuery) {
-      // const sanitizedQuery = escapeRegex(titleQuery);
       const articles = await Article.find({ idArticle: { $regex: titleQuery, $options: "i" } })
         .select({ title: 1, idArticle: 1, _id: 0 })
         .sort({ createdAt: -1 })
@@ -93,21 +91,15 @@ export const GET = async (request: Request) => {
 export const DELETE = async (request: Request) => {
   try {
     await dbConnect();
-    console.log("backend trying to DELETE 1");
 
     // Parse the JSON body from the request
     const body = await request.json();
     const { idArticle } = body;
 
-    console.log("backend trying to DELETE 2");
-
-    if (!idArticle) {
-      console.log("backend trying to DELETE 3");
-      throw new Error("Missing idArticle parameter");
-    }
+    if (!idArticle) throw new Error("Missing idArticle parameter");
 
     const res = await Article.deleteOne({ idArticle });
-    return new Response(JSON.stringify(res), { status: 200,headers: corsHeaders });
+    return new Response(JSON.stringify(res), { status: 200 });
   } catch (error) {
     console.error("Error deleting article:", error);
     return new Response("Internal Server Error", { status: 500 });
