@@ -1,6 +1,6 @@
 import Article from "@/lib/mongodb/models/Article";
 import dbConnect from "@/lib/mongodb/mongodb";
-import { escapeRegex } from "@/lib/utils";
+import { generateIdArticle } from "@/lib/utils";
 import { BlogArticleProps } from "@/types";
 import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
@@ -42,18 +42,20 @@ export const GET = async (request: Request) => {
 
     if (idArticle) {
       const article = await Article.findOne({ idArticle }).lean();
-      if (!article) {
+      if (!article)
         return NextResponse.json(
           { status: "error", message: "Article not found" },
           { status: 404, headers: corsHeaders }
         );
-      }
+
       return NextResponse.json({ status: "success", data: article }, { status: 200, headers: corsHeaders });
     } else if (titleQuery) {
-      const sanitizedQuery = escapeRegex(titleQuery);
-      const articles = await Article.find({ title: { $regex: sanitizedQuery, $options: "i" } })
+      const idArticleQuery = generateIdArticle(titleQuery);
+      const articles = await Article.find({ idArticle: { $regex: idArticleQuery, $options: "i" } })
+        .select({ title: 1, idArticle: 1, _id: 0 })
         .sort({ createdAt: -1 })
         .lean();
+
       return NextResponse.json({ status: "success", articles: articles }, { status: 200, headers: corsHeaders });
     } else {
       const limitParams = searchParams.get("limit");
