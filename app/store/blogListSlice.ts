@@ -1,3 +1,4 @@
+import { generateIdArticle } from "@/lib/generateIdArticle";
 import { BlogArticleProps } from "@/types";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -10,13 +11,19 @@ export const fetchArticles = createAsyncThunk("blogList/fetchArticles", async ()
 });
 
 export const searchArticlesByTitle = createAsyncThunk("blogList/searchArticlesByTitle", async (title: string) => {
-  // We call the same endpoint but with a 'title' query parameter
+  const idArticleQuery = generateIdArticle(title);
   const response = await fetch(
-    `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article?title=${title}`
+    `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article?title=${idArticleQuery}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+      },
+    }
   );
-  console.log("THIS IS RESPONSE FROM SEARCH :", await response.json());
-  if (!response.ok) throw new Error("Failed to search articles");
   const data = await response.json();
+  if (!response.ok) throw new Error("Failed to search articles");
+  console.log("THIS IS RESPONSE FROM SEARCH :", data);
   return data.articles as BlogArticleProps[];
 });
 

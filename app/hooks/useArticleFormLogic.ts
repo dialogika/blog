@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateBlogPreviewState } from "../store/blogPreviewSlice";
 import { setLocalStorageItem, StorageKeys } from "../utils/localStorageUtils";
+import { generateIdArticle } from "@/lib/generateIdArticle";
 
 interface UseArticleFormLogicProps {
   availableAuthors: BlogAuthorProps[];
@@ -33,11 +34,7 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
     if (!title) return;
     payload.title = title;
 
-    const id = title
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, "") // Hapus karakter seperti simbol (!,@,:,;) dari judul untuk dijadikan id atau urlnya
-      .trim()
-      .replace(/\s+/g, "-");
+    const id = generateIdArticle(title);
     payload.idArticle = id; // Contoh hasil: /rahasia-membuat-pembukaan...
 
     // Ambil metadata untuk blog
@@ -107,7 +104,7 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
   // Function untuk handle event saat copywriter akan submit artikelnya ke database
   const handleFormPublish = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
+
     if (!window.confirm("Apa anda yakin ingin publish Blog ini ?")) return;
     const payload = getFormData(event);
 
