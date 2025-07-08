@@ -13,7 +13,7 @@ export const fetchArticles = createAsyncThunk("blogList/fetchArticles", async ()
 export const searchArticlesByTitle = createAsyncThunk("blogList/searchArticlesByTitle", async (title: string) => {
   const idArticleQuery = generateIdArticle(title);
   const response = await fetch(
-    `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article?title=${idArticleQuery}`,
+    `https://blog-admin-dialogikas-projects.vercel.app/blog/api/admin/article/?title=${idArticleQuery}`,
     {
       method: "GET",
       headers: {
