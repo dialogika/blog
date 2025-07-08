@@ -50,8 +50,8 @@ export const GET = async (request: Request) => {
 
       return NextResponse.json({ status: "success", data: article }, { status: 200, headers: corsHeaders });
     } else if (titleQuery) {
-      const idArticleQuery = generateIdArticle(titleQuery);
-      const articles = await Article.find({ idArticle: { $regex: idArticleQuery, $options: "i" } })
+      // const sanitizedQuery = escapeRegex(titleQuery);
+      const articles = await Article.find({ idArticle: { $regex: titleQuery, $options: "i" } })
         .select({ title: 1, idArticle: 1, _id: 0 })
         .sort({ createdAt: -1 })
         .lean();
@@ -90,7 +90,7 @@ export const DELETE = async (request: Request) => {
     }
 
     const res = await Article.deleteOne({ idArticle });
-    return new Response(JSON.stringify(res), { status: 200 });
+    return new Response(JSON.stringify(res), { status: 200,headers: corsHeaders });
   } catch (error) {
     console.error("Error deleting article:", error);
     return new Response("Internal Server Error", { status: 500 });
