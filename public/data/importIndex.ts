@@ -58,7 +58,7 @@ import taaibahNgaunillahRohmatun from "@/public/assets/img/intern/taaibah-ngauni
 import theoArisadewo from "@/public/assets/img/intern/theo-arisadewo.webp";
 import virdaManikArdhana from "@/public/assets/img/intern/virda-manik-ardhana.jpg";
 import yunitaSara from "@/public/assets/img/intern/yunita-sara.jpg";
-import yusufNurohman from "@/public/assets/img/intern/yusuf-nurohman.jpg";
+import yusufNurohman from "@/public/assets/img/intern/yusuf-nurohman.webp";
 import winemaAleshanee from "@/public/assets/img/intern/winema-aleshanee.webp";
 import DamarAdi from "@/public/assets/img/intern/damar-adi.webp";
 import jessicaCaesyaAgustin from "@/public/assets/img/intern/jessica-caesya-agustin.webp";
@@ -69,8 +69,10 @@ import arshaHaroun from "@/public/assets/img/intern/arsha-haroun.webp";
 import hanifahMutiara from "@/public/assets/img/intern/hanifah-mutiara.webp";
 import Bernadheta from "@/public/assets/img/intern/Bernadheta.jpg";
 import AbyanAlhafizh from "@/public/assets/img/intern/muhammad-abyan-alhafizh.webp";
+import RaisaIndiraZahra from "@/public/assets/img/intern/raisa-indira-zahra.webp";
 
 const internImages = {
+  RaisaIndiraZahra,
   AbyanAlhafizh,
   Bernadheta,
   hanifahMutiara,
