@@ -16,6 +16,24 @@ export async function OPTIONS() {
   return new NextResponse(null, { status: 200, headers: corsHeaders });
 }
 
+const handleError = (error: unknown, context: string): NextResponse => {
+  // Log the full error for better server-side debugging
+  console.error(`[API_ERROR] Context: ${context}`, {
+    timestamp: new Date().toISOString(),
+    error: error,
+  });
+
+  const message = error instanceof Error ? error.message : "An unknown internal server error occurred.";
+
+  return NextResponse.json(
+    {
+      status: "error",
+      message: `Failed during ${context} operation.`,
+      errorDetail: message,
+    },
+    { status: 500, headers: corsHeaders }
+  );
+};
 // Function untuk mengirim artikel blog baru ke database
 export const POST = async (request: Request) => {
   try {
@@ -29,7 +47,7 @@ export const POST = async (request: Request) => {
     return NextResponse.json({ status: "success", result }, { status: 200, headers: corsHeaders });
   } catch (error: any) {
     console.error("Error in API route:", error);
-    return NextResponse.json({ status: "error", message: error.message }, { status: 500, headers: corsHeaders });
+    return handleError(error, "POST");
   }
 };
 
@@ -44,7 +62,7 @@ export const GET = async (request: Request) => {
       const article = await Article.findOne({ idArticle }).lean();
       if (!article)
         return NextResponse.json(
-          { status: "error", message: "Article not found" },
+          { status: "error", message: `Article dengan id: ${idArticle} tidak ditemukan` },
           { status: 404, headers: corsHeaders }
         );
 
@@ -68,8 +86,7 @@ export const GET = async (request: Request) => {
       return NextResponse.json({ status: "success", data: articles }, { status: 200, headers: corsHeaders });
     }
   } catch (error: any) {
-    console.error("Error in GET API route:", error);
-    return NextResponse.json({ status: "error", message: error.message }, { status: 500, headers: corsHeaders });
+    return handleError(error, "GET");
   }
 };
 
