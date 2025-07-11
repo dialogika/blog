@@ -68,7 +68,7 @@ export const GET = async (request: Request) => {
       return NextResponse.json({ status: "success", data: article }, { status: 200, headers: corsHeaders });
     } else if (titleQuery) {
       const articles = await Article.find({ idArticle: { $regex: titleQuery, $options: "i" } })
-        .select({ title: 1, idArticle: 1, _id: 0 })
+        .select({ title: 1, idArticle: 1, authors: 1, _id: 0 })
         .sort({ createdAt: -1 })
         .lean();
 
