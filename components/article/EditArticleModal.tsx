@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BlogArticleProps } from "@/types";
 import { Modal, Button, Form, Card } from "react-bootstrap";
 import Link from "next/link";
-import { formatDate } from "@/components/utils/date";
-import { fetchArticles, searchArticlesByTitle } from "@/app/store/blogListSlice";
+import { fetchArticleById, fetchArticles, searchArticlesByTitle } from "@/app/store/blogListSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/app/store";
 
@@ -17,13 +16,14 @@ interface EditArticleModalProps {
 
 const EditArticleModal: React.FC<EditArticleModalProps> = ({ show, onHide, onLoadArticle }) => {
   // Get articles and status directly from the Redux store
-  const allArticles = useSelector((state: RootState) => state.blogList.articles);
   const articleStatus = useSelector((state: RootState) => state.blogList.status);
   const dispatch = useDispatch<AppDispatch>();
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState<BlogArticleProps[]>([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [isLoadingArticle, setIsLoadingArticle] = useState(false);
+
   const [searchStatus, setSearchStatus] = useState<"idle" | "no_results" | "error">("idle");
 
   // Fetch articles via Redux if they haven't been loaded yet
@@ -47,19 +47,32 @@ const EditArticleModal: React.FC<EditArticleModalProps> = ({ show, onHide, onLoa
       const filteredArticles = await dispatch(searchArticlesByTitle(searchTerm)).unwrap();
 
       setSearchResults(filteredArticles);
-      console.log("This is filtered article result : ",filteredArticles)
-      if (filteredArticles.length === 0) setSearchStatus("no_results");
+      console.log("This is filtered article result : ", filteredArticles);
+      // if (filteredArticles.length === 0) setSearchStatus("no_results");
     } catch (error) {
       console.error("Failed to search articles:", error);
       setSearchStatus("error");
     } finally {
       setIsSearching(false);
+      setIsLoadingArticle(false);
     }
   };
 
-  const handleLoadClick = (article: BlogArticleProps) => {
-    onLoadArticle(article);
-    onHide();
+  const handleLoadClick = async (idArticle: string) => {
+    setIsLoadingArticle(true);
+    try {
+      const fullArticle = await dispatch(fetchArticleById(idArticle)).unwrap();
+      // Pass the complete article object to the form loader
+      if (!fullArticle) return alert("Data artikel sepertinya tidak bisa diambil !");
+      onLoadArticle(fullArticle);
+      onHide();
+    } catch (error) {
+      console.error("Failed to load the full article:", error);
+      alert("Gagal memuat artikel. Silakan coba lagi.");
+    } finally {
+      setIsSearching(false);
+      setIsLoadingArticle(false);
+    }
   };
 
   // Clear search results when the modal is closed
@@ -107,7 +120,9 @@ const EditArticleModal: React.FC<EditArticleModalProps> = ({ show, onHide, onLoa
           {!isSearching && searchStatus === "no_results" && (
             <p className="text-center text-muted">No articles found.</p>
           )}
+          {isLoadingArticle && <p className="text-center">Loading article data...</p>}
           {!isSearching &&
+            !isLoadingArticle &&
             searchResults.map((article) => (
               <Card
                 key={article.idArticle}
@@ -116,12 +131,11 @@ const EditArticleModal: React.FC<EditArticleModalProps> = ({ show, onHide, onLoa
                 <Card.Body>
                   <Card.Title className="fw-bold">{article.title}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">
-                    By: {article.authors.map((a) => a.authorName).join(", ")} | Published:{" "}
-                    {formatDate(article.publishedAt)}
+                    By: {article.authors.map((a) => a.authorName).join(", ")}
                   </Card.Subtitle>
                   <div className="d-flex gap-2 mt-3">
                     <Link
-                      href={`/read/${article.idArticle}`}
+                      href={`https://www.dialogika.co/blog/read/${article.idArticle}`}
                       passHref
                       target="_blank"
                       rel="noopener noreferrer">
@@ -134,7 +148,7 @@ const EditArticleModal: React.FC<EditArticleModalProps> = ({ show, onHide, onLoa
                     <Button
                       variant="primary"
                       size="sm"
-                      onClick={() => handleLoadClick(article)}>
+                      onClick={() => handleLoadClick(article.idArticle)}>
                       Load to Editor
                     </Button>
                   </div>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { TextInput, DynamicInput, DynamicAuthorInput, TextAreaInput } from "@/components/forms";
-import { BlogArticleProps, BlogAuthorProps } from "@/types";
+import { BlogAuthorProps } from "@/types";
 import { useDispatch, useSelector } from "react-redux";
 import { updateAuthorsState } from "@/app/store/authorsSlice";
 import { AppDispatch, RootState } from "@/app/store";
@@ -10,7 +10,6 @@ import JoditRegularEditor from "./JoditRegularEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faPenToSquare, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import useArticleFormLogic from "@/app/hooks/useArticleFormLogic";
-import { getLocalStorageItem, StorageKeys } from "@/app/utils/localStorageUtils";
 import { fetchArticles } from "@/app/store/blogListSlice";
 import { Button } from "react-bootstrap";
 import EditArticleModal from "../EditArticleModal";
@@ -20,46 +19,45 @@ interface FormArticleProps {
 }
 
 const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
-  const availableAuthors = useSelector((state: RootState) => state.authors.authorsDetail); // Ambil data authorsDetail di folder store/authorSlice.ts
   const [totalKeyword, setTotalkeyword] = useState(0);
-  const [showEditModal, setShowEditModal] = useState(false); // State for the new modal
+  const [showEditModal, setShowEditModal] = useState(false);
+  const dispatch = useDispatch();
+
   const articleStatus = useSelector((state: RootState) => state.blogList.status);
   const reduxDispatch = useDispatch<AppDispatch>();
 
-  const [draftedArticle, setDraftedArticle] = useState(
-    getLocalStorageItem<BlogArticleProps>(StorageKeys.NEW_ARTICLE_DRAFT) || {
-      idArticle: "",
-      title: "",
-      thumbnail: "",
-      metaData: "",
-      keywords: "",
-      cta: "",
-      cardsDescription: "",
-      content: "",
-      authors: Array<BlogAuthorProps>,
-      writerNote: "",
-      publishedAt: "",
-      tags: [],
-      outBoundLink: {
-        title: "Medium Dialogika",
-        link: "https://medium.com/dialogika",
-      },
-    }
-  );
-
   // Deconstruct fungsi ArticleFormLogic
   const {
-    isFailed,
-    setIsFailed,
     isLoading,
     success,
+    isFailed,
+    setIsFailed,
     setSuccess,
-    dispatch,
     handlePreview,
     handleFormPublish,
-    handleSaveProgress,
+    loadArticleToForm,
+    // Form field states
+    title,
+    thumbnail,
+    keywords,
+    metaData,
+    cardsDescription,
+    writerNote,
+    externalTitle,
+    externalLink,
+    editorContent,
+    // Form field setters
+    setTitle,
+    setThumbnail,
+    setKeywords,
+    setMetaData,
+    setCardsDescription,
+    setWriterNote,
+    setExternalTitle,
+    setExternalLink,
+    setEditorContent,
   } = useArticleFormLogic({
-    availableAuthors,
+    availableAuthors: authors,
   });
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLFormElement>) => {
@@ -73,20 +71,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
   }, [authors, dispatch]);
 
   useEffect(() => {
-    if (articleStatus === "idle") {
-      reduxDispatch(fetchArticles());
-    }
+    if (articleStatus === "idle") reduxDispatch(fetchArticles());
   }, [articleStatus, reduxDispatch]);
-
-  const loadArticleToForm = (article: BlogArticleProps) => {
-    document.querySelector<HTMLInputElement>('input[name="title"]')!.value = article.title;
-    document.querySelector<HTMLInputElement>('input[name="thumbnail-image"]')!.value = article.thumbnail || "";
-    document.querySelector<HTMLTextAreaElement>('textarea[name="metadata"]')!.value = article.metaData || "";
-    document.querySelector<HTMLTextAreaElement>('textarea[name="blogDescription"]')!.value =
-      article.cardsDescription || "";
-    document.querySelector<HTMLInputElement>('input[name="keyword"]')!.value = article.keywords || "";
-    // Note: You'll need to expand this for dynamic inputs and Jodit content
-  };
 
   return (
     <>
@@ -122,6 +108,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                 inputPlaceholder={
                   "Masukkan link gambar untuk thumbnail. Disarankan untuk menggunakan gambar Landscape dibandingkan Portrait"
                 }
+                thumbnail={thumbnail}
+                setThumbnail={setThumbnail}
                 name={"thumbnail-image"}
               />
               <div className="mt-2 text-muted small">
@@ -156,9 +144,10 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <TextInput
                 type="text"
                 name="title"
-                labelTitle=""
+                value={title}
                 required={true}
                 hideAsterisk={true}
+                onChange={(e) => setTitle(e.target.value)}
                 placeholder="Masukkan judul blog yang menarik..."
                 inputClassName="text-input fs-6 w-100 p-3 border border-light shadow-sm rounded-3"
               />
@@ -190,6 +179,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             <TextInput
               type="text"
               name="keyword"
+              value={keywords}
+              onChange={(e) => setKeywords(e.target.value)}
               labelTitle=""
               hideAsterisk={true}
               required={true}
@@ -221,6 +212,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             <TextInput
               type="text"
               name="externalTitle"
+              value={externalTitle}
+              onChange={(e) => setExternalTitle(e.target.value)}
               labelTitle="Outbound Title"
               hideAsterisk={true}
               required={false}
@@ -241,6 +234,8 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
             <TextInput
               type="text"
               name="externalLink"
+              value={externalLink}
+              onChange={(e) => setExternalLink(e.target.value)}
               labelTitle="Outbound Link"
               hideAsterisk={true}
               required={false}
@@ -278,6 +273,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                 rows={8}
                 maxLength={160}
                 name="metadata"
+                value={metaData}
                 required={true}
                 placeholder="Masukkan metadata blog disini..."
                 divClassName="mb-0"
@@ -285,6 +281,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
                 style={{ resize: "none", backgroundColor: "#f8f9fa" }}
                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
                   const valueLength = event.target.value.length;
+                  setMetaData(event.target.value);
                   setTotalkeyword(valueLength);
                 }}
               />
@@ -330,7 +327,9 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <TextAreaInput
                 rows={8}
                 required={true}
-                name="blogDescription"
+                name="cardsDescription"
+                onChange={(e) => setCardsDescription(e.target.value)}
+                value={cardsDescription}
                 placeholder="Masukkan deskripsi blog disini..."
                 divClassName="mb-0"
                 textAreaClassName="form-control fs-6 w-100 border border-light-subtle rounded-3 shadow-sm p-3"
@@ -368,7 +367,9 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
               <TextAreaInput
                 rows={8}
                 required={true}
-                name="writernote"
+                name="writerNote"
+                value={writerNote}
+                onChange={(e) => setWriterNote(e.target.value)}
                 placeholder="Masukkan writer's note disini..."
                 divClassName="mb-0"
                 textAreaClassName="form-control fs-6 w-100 border border-light-subtle rounded-3 shadow-sm p-3"
@@ -437,7 +438,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ authors }) => {
           />
         </div>
 
-        <JoditRegularEditor />
+        <JoditRegularEditor editorContent={editorContent} setEditorContent={setEditorContent}/>
 
         <button
           type="button"

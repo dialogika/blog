@@ -5,6 +5,7 @@ export interface TextAreaProps {
   rows?: number;
   maxLength?: number;
   name: string;
+  value: string;
   placeholder?: string;
   divClassName?: string;
   textAreaClassName?: string;
@@ -23,6 +24,8 @@ const TextAreaInput: React.FC<TextAreaProps> = ({
   divClassName,
   textAreaClassName,
   style,
+  value,
+  onChange,
   ...props
 }) => {
   return (
@@ -32,6 +35,8 @@ const TextAreaInput: React.FC<TextAreaProps> = ({
         rows={rows}
         name={name}
         id={name}
+        value={value}
+        onChange={onChange}
         className={textAreaClassName}
         placeholder={placeholder}
         style={style}

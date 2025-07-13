@@ -7,11 +7,12 @@ import Image from "next/image";
 interface imageUrlProps {
   inputPlaceholder: string;
   name: string;
+  thumbnail: string;
+  setThumbnail: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
+const ImageUrl = ({ inputPlaceholder, name, thumbnail, setThumbnail }: imageUrlProps) => {
   const [urlInput, setUrlInput] = useState<string>("");
-  const [submittedUrl, setSubmittedUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,12 +22,12 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     setIsLoading(true);
-    setSubmittedUrl(urlInput);
+    setThumbnail(urlInput);
   };
 
   const handleRemoveImg = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    setSubmittedUrl(null);
+    setThumbnail("");
     setUrlInput("");
   };
 
@@ -34,20 +35,21 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
     <div
       id="upload-thumbnail-container"
       className="overflow-hidden my-5 mt-md-0 rounded-3 position-relative d-flex flex-column justify-content-center align-items-center gap-3 p-3 border shadow-sm bg-white"
-      style={{ minHeight: 250, width: "100%" }}
-    >
-      {submittedUrl ? (
+      style={{ minHeight: 250, width: "100%" }}>
+      {thumbnail.length > 5 ? (
         <div className="position-relative w-100 h-100 rounded-3 overflow-hidden">
           {isLoading && (
             <div className="loading-overlay position-absolute top-50 start-50 translate-middle text-primary">
-              <div className="spinner-border text-primary" role="status">
+              <div
+                className="spinner-border text-primary"
+                role="status">
                 <span className="visually-hidden">Loading...</span>
               </div>
             </div>
           )}
           <div className="post-img position-relative m-0">
             <Image
-              src={submittedUrl.trim()}
+              src={thumbnail.trim()}
               alt="Preview image"
               width={800}
               height={490}
@@ -67,8 +69,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
           <button
             type="button"
             onClick={handleRemoveImg}
-            className="btn position-absolute top-0 end-0 d-block z-20 p-1 border-0 bg-transparent"
-          >
+            className="btn position-absolute top-0 end-0 d-block z-20 p-1 border-0 bg-transparent">
             <FontAwesomeIcon
               icon={faCircleXmark}
               style={{ color: "red", width: 24, height: 24 }}
@@ -85,8 +86,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
           />
           <h6
             className="text-center text-secondary fw-normal"
-            style={{ width: 350 }}
-          >
+            style={{ width: 350 }}>
             {inputPlaceholder}
           </h6>
           <div className="d-flex gap-2 w-100 justify-content-center align-items-center">
@@ -102,8 +102,7 @@ const ImageUrl = ({ inputPlaceholder, name }: imageUrlProps) => {
             <button
               type="button"
               className="rev-appointment-btn ms-0"
-              onClick={handleSubmit}
-            >
+              onClick={handleSubmit}>
               Submit Image
             </button>
           </div>

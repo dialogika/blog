@@ -15,10 +15,93 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
   const [isFailed, setIsFailed] = useState(false);
   const dispatch = useDispatch();
 
+  // const { editorValue, setEditorValue, joditConfig } = useJoditEditorLogic();
+
+  const [title, setTitle] = useState("");
+  const [thumbnail, setThumbnail] = useState<string>("");
+  const [keywords, setKeywords] = useState("");
+  const [metaData, setMetaData] = useState("");
+  const [cardsDescription, setCardsDescription] = useState("");
+  const [writerNote, setWriterNote] = useState("");
+  const [externalTitle, setExternalTitle] = useState("");
+  const [externalLink, setExternalLink] = useState("");
+  const [editorContent, setEditorContent] = useState(`<div class="row">
+
+        <!-- 2 first paragraph of the draft -->
+        <div class="col-lg-7 mt-4">
+            <p style="line-height: 32px;"><span style="color: rgb(153, 153, 153);" class="fw-lighter">Ganti dengan keyword - </span> Bagian awal HARUS ada dua (2) paragraph Ini paragraph pertama</p>
+            <p style="line-height: 32px;">ini bagian paragraph kedua</p>
+        </div>
+
+        <div class="col-lg-5 mt-4">
+            <div class="card card-body key-take">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong class="title-b3">Key Takeaways</strong></li>
+                    <li class="list-group-item">key takeaway 1</li>
+                    <li class="list-group-item">key takeaway 2</li>
+                    <li class="list-group-item">key takeaway 3</li>
+                    <li class="list-group-item">key takeaway 4</li>
+                    <li class="list-group-item">key takeaway 5</li>
+                </ul>
+            </div>
+        </div>
+        <p><br></p>
+        <p>Konten-konten dimasukkan kesini. Replace bagian ini dengan isi dari artikelnya, Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. </p>
+        <p><br></p>
+
+        <div id="call-to-action" class="call-to-action">
+            <img src="https://img.freepik.com/free-photo/woman-asking-questions-podcast_23-2149029335.jpg?w=2000&amp;t=st=1702424624~exp=1702425224~hmac=8ef22a8fb4c913b576a1fefecfe57e6e9f84a118e0f24b78674d7e4105d2d7b1"
+                alt="Menawar, negosiasi, murah">
+            <div class="container-fluid">
+                <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-xl-12">
+                        <div class="text-center">
+                            <h3 style="color: #f1f7fd;">Tanya Aja Dulu</h3>
+                            <p>Susah dan Gugup Ngomong di Depan Umum? Konsul Aja Dulu</p>
+                            <a class="cta-btn title-change-consultation" href="https://wa.link/q8jnnv" target="_blank">Tanya
+                                Admin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p><br></p>
+        <h2>Penutup/Kesimpulan (Pilih satu)</h2>
+        <p>Isi penutup/kesimpulan</p>
+
+        <blockquote>
+            <p>
+                <br>
+            </p>
+            <figcaption class="blockquote-footer">
+                Ann Lander
+            </figcaption>
+            “Bukan apa yang Anda lakukan untuk anak-anak Anda, tapi apa yang Anda ajarkan kepada mereka untuk
+            dilakukan bagi diri mereka sendiri, itulah yang akan menjadikan mereka manusia sukses.”
+            <p><br></p>
+        </blockquote>
+      </div>`);
+
+  const loadArticleToForm = (article: BlogArticleProps) => {
+    setTitle(article.title || "");
+    setThumbnail(article.thumbnail || "https://www.dialogika.co/assets/img/logo.webp");
+    setKeywords(article.keywords || "");
+    setMetaData(article.metaData || "");
+    setCardsDescription(article.cardsDescription || "");
+    setWriterNote(article.writerNote || "");
+    setExternalTitle(article.outBoundLink?.title || "Medium");
+    setExternalLink(article.outBoundLink?.link || "https://medium.com/dialogika");
+    setEditorContent(article.content || "");
+  };
+
   // Function untuk mengambil value dari form yang ada di FormArticle.tsx
   // Hanya menerima event dari Form. Event lainnya seperti onClick, onMouseOver, dll tidak akan diterima
   const getFormData = (event: React.FormEvent<HTMLFormElement>) => {
-    const formData = new FormData(event.currentTarget);
     // payload ini akan digunakan untuk menampung semua data dari FormArticle
     const payload: Partial<BlogArticleProps> = {};
 
@@ -26,52 +109,38 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
     payload.publishedAt = new Date().toISOString();
 
     // Ambil link/URL untuk thumbnail blog
-    const thumbnailImage = formData.get("thumbnail-image")?.toString();
-    payload.thumbnail = thumbnailImage;
+    payload.thumbnail = thumbnail.length < 5 ? "https://www.dialogika.co/assets/img/logo.webp" : thumbnail;
 
     // Ambil judul blog dan buat id dari judul tersebut
-    const title = formData.get("title")?.toString();
-    if (!title) return;
+    if (!title || title.length <= 2) return alert("Judul Blog Belum dimasukkan");
     payload.title = title;
 
-    const id = generateIdArticle(title);
-    payload.idArticle = id; // Contoh hasil: /rahasia-membuat-pembukaan...
+    payload.idArticle = generateIdArticle(title); // Contoh hasil: /rahasia-membuat-pembukaan...
 
     // Ambil metadata untuk blog
-    const metadata = formData.get("metadata")?.toString();
-    if (!metadata) {
-      return;
-    }
-    if (metadata.length > 160) {
-      alert("Metada tidak boleh lebih dari 160 karakter. Spasi, angka, simbol termasuk karakter !!");
-      return;
-    }
-    payload.metaData = metadata;
+    if (!metaData) return;
+    if (metaData.length > 160)
+      return alert("Metada tidak boleh lebih dari 160 karakter. Spasi, angka, simbol termasuk karakter !!");
+    payload.metaData = metaData;
 
-    // Ambil deskripsi untuk digunakan di card di blog/index
-    const blogDescription = formData.get("blogDescription")?.toString();
-    if (!blogDescription) return;
-    payload.cardsDescription = blogDescription;
+    if (!cardsDescription) return;
+    payload.cardsDescription = cardsDescription;
 
     // Ambil keyword untuk blog
-    const keywords = formData.get("keyword")?.toString();
     if (!keywords) return;
     payload.keywords = keywords;
 
     // Ambil writer notes untuk blog
-    const writernote = formData.get("writernote")?.toString();
-    if (!writernote) return;
-    payload.writerNote = writernote;
+    if (!writerNote) return;
+    payload.writerNote = writerNote;
 
     // Ambil outbound title & link untuk blog. Bila tidak ada, gunakan link medium dialogika
-    const externalTitle = formData.get("externalTitle")?.toString();
-    const externalLink = formData.get("externalLink")?.toString();
-
     payload.outBoundLink = {
       title: externalTitle || "Medium",
       link: externalLink || "https://medium.com/dialogika",
     };
 
+    const formData = new FormData(event.currentTarget);
     // Ambil nilai input untuk tags (tags-0, tags-1, ..., tags-9)
     const tags: string[] = [];
     for (let i = 0; i < 10; i++) {
@@ -93,11 +162,12 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
       const findAuhor = availableAuthors.find((item) => item.authorName == author);
       if (findAuhor) authorsPayload.push(findAuhor);
     });
+    console.log("THIS IS AUTHOR PAYLOAD :", authorsPayload);
     payload.authors = authorsPayload;
 
     // Ambil value dari text editor (menggunakan jodit editor)
-    const content = formData.get("formEditor") as string;
-    payload.content = content;
+    // const content = formData.get("formEditor") as string;
+    payload.content = editorContent;
     return payload;
   };
 
@@ -108,6 +178,9 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
     if (!window.confirm("Apa anda yakin ingin publish Blog ini ?")) return;
     const payload = getFormData(event);
 
+    console.log("THIS IS CURRENT PAYLOAD", payload);
+
+    return;
     try {
       setSuccess(false);
       setIsFailed(false);
@@ -179,16 +252,35 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
   };
 
   return {
-    getFormData,
-    dispatch,
-    handleSaveProgress,
-    handleFormPublish,
-    handlePreview,
     isLoading,
     success,
-    setSuccess,
     isFailed,
     setIsFailed,
+    setSuccess,
+    handlePreview,
+    handleFormPublish,
+    handleSaveProgress,
+    loadArticleToForm,
+    // Form field states
+    title,
+    thumbnail,
+    keywords,
+    metaData,
+    cardsDescription,
+    writerNote,
+    externalTitle,
+    externalLink,
+    editorContent,
+    // Form field setters
+    setTitle,
+    setThumbnail,
+    setKeywords,
+    setMetaData,
+    setCardsDescription,
+    setWriterNote,
+    setExternalTitle,
+    setExternalLink,
+    setEditorContent,
   };
 };
 

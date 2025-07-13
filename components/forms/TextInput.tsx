@@ -4,6 +4,7 @@ import LabelInput from "./LabelInput";
 
 export interface InputProps {
   name: string;
+  value: string;
   labelTitle?: string;
   type?: React.HTMLInputTypeAttribute;
   placeholder?: string;
@@ -18,6 +19,8 @@ export interface InputProps {
 
 const TextInput: React.FC<InputProps> = ({
   name,
+  value, 
+  onChange,
   type = "text",
   placeholder,
   description,
@@ -43,7 +46,8 @@ const TextInput: React.FC<InputProps> = ({
         type={type}
         name={name}
         id={name}
-        defaultValue={""}
+        value={value}
+        onChange={onChange}
         className={inputClassName}
         placeholder={placeholder}
         required={required}
