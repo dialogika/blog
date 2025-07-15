@@ -18,7 +18,7 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
   // const { editorValue, setEditorValue, joditConfig } = useJoditEditorLogic();
 
   const [title, setTitle] = useState("");
-  const [thumbnail, setThumbnail] = useState<string>("");
+  const [thumbnail, setThumbnail] = useState("");
   const [keywords, setKeywords] = useState("");
   const [metaData, setMetaData] = useState("");
   const [cardsDescription, setCardsDescription] = useState("");
@@ -162,7 +162,6 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
       const findAuhor = availableAuthors.find((item) => item.authorName == author);
       if (findAuhor) authorsPayload.push(findAuhor);
     });
-    console.log("THIS IS AUTHOR PAYLOAD :", authorsPayload);
     payload.authors = authorsPayload;
 
     // Ambil value dari text editor (menggunakan jodit editor)
@@ -177,8 +176,6 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
 
     if (!window.confirm("Apa anda yakin ingin publish Blog ini ?")) return;
     const payload = getFormData(event);
-
-    console.log("THIS IS CURRENT PAYLOAD", payload);
 
     return;
     try {

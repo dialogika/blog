@@ -47,7 +47,6 @@ const EditArticleModal: React.FC<EditArticleModalProps> = ({ show, onHide, onLoa
       const filteredArticles = await dispatch(searchArticlesByTitle(searchTerm)).unwrap();
 
       setSearchResults(filteredArticles);
-      console.log("This is filtered article result : ", filteredArticles);
       // if (filteredArticles.length === 0) setSearchStatus("no_results");
     } catch (error) {
       console.error("Failed to search articles:", error);
