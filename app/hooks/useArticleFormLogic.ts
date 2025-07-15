@@ -174,13 +174,8 @@ const useArticleFormLogic = ({ availableAuthors }: UseArticleFormLogicProps) => 
   const handleFormPublish = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log("SEBELUM UPLOAD")
     if (!window.confirm("Apa anda yakin ingin publish Blog ini ?")) return;
     const payload = getFormData(event);
-    console.log("UPLOADING")
-    console.log("THIS IS PAYLOAD :", payload)
-
-    return;
     try {
       setSuccess(false);
       setIsFailed(false);
