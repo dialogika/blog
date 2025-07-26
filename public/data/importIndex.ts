@@ -70,8 +70,10 @@ import hanifahMutiara from "@/public/assets/img/intern/hanifah-mutiara.webp";
 import Bernadheta from "@/public/assets/img/intern/Bernadheta.jpg";
 import AbyanAlhafizh from "@/public/assets/img/intern/muhammad-abyan-alhafizh.webp";
 import RaisaIndiraZahra from "@/public/assets/img/intern/raisa-indira-zahra.webp";
+import DillaNafisa from "@/public/assets/img/intern/dilla-nafisa-sausan.webp";
 
 const internImages = {
+  DillaNafisa,
   RaisaIndiraZahra,
   AbyanAlhafizh,
   Bernadheta,

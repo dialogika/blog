@@ -10,6 +10,11 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 
 export const authorData: BlogAuthorProps[] = [
   {
+    authorName: "Dilla Nafisa Sausan",
+    imgPath: internImages.DillaNafisa.src,
+    quotes: "at least i’ve tried to be better every day.",
+  },
+  {
     authorName: "Raisa Indira Zahra",
     imgPath: internImages.RaisaIndiraZahra.src,
     quotes: "Grow with giggles.",
@@ -169,8 +174,7 @@ export const authorData: BlogAuthorProps[] = [
   {
     authorName: "Gisella Keilsa",
     imgPath: internImages.gisellaKeilsa.src,
-    quotes:
-      "Setiap tantangan adalah kesempatan untuk tumbuh, biarkan semangatmu membimbingmu menuju impian",
+    quotes: "Setiap tantangan adalah kesempatan untuk tumbuh, biarkan semangatmu membimbingmu menuju impian",
   },
   {
     authorName: "Fisalma Fadhia",
@@ -281,8 +285,7 @@ export const authorData: BlogAuthorProps[] = [
   {
     authorName: "Maya Alif Bunga Marshanda",
     imgPath: internImages.mayaAlifBungaMarshanda.src,
-    quotes:
-      "Life must go on. Get out of comfort zone and do what you've been worried about all this time",
+    quotes: "Life must go on. Get out of comfort zone and do what you've been worried about all this time",
   },
   {
     authorName: "Cipto Ardiantoro",
