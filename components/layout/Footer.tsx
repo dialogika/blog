@@ -47,7 +47,7 @@ const Footer = () => {
               </h4>
               <div className="social-link d-flex mt-3">
                 <a
-                  href="https://wa.link/ms2gko"
+                  href="https://wa.link/gszino"
                   className="text-light d-flex align-items-center justify-content-center">
                   <i className="bx bxl-whatsapp"></i>
                 </a>
