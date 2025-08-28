@@ -354,4 +354,9 @@ export const authorData: BlogAuthorProps[] = [
     imgPath: internImages.ameliaMiftakhusSaadah.src,
     quotes: "Better late than never try",
   },
+  {
+    authorName: "Galuh Karnia Sasmitya",
+    imgPath: internImages.galuhKarnia.src,
+    quotes: "Keberhasilan berasal dari percaya pada diri sendiri, semangat!",
+  },
 ];

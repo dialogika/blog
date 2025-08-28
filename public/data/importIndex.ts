@@ -72,8 +72,10 @@ import AbyanAlhafizh from "@/public/assets/img/intern/muhammad-abyan-alhafizh.we
 import RaisaIndiraZahra from "@/public/assets/img/intern/raisa-indira-zahra.webp";
 import DillaNafisa from "@/public/assets/img/intern/dilla-nafisa-sausan.webp";
 import ameliaMiftakhusSaadah from "@/public/assets/img/intern/amelia-miftakhus.webp";
+import galuhKarnia from "@/public/assets/img/intern/galuh-karnia-sasmitya.webp";
 
 const internImages = {
+  galuhKarnia,
   ameliaMiftakhusSaadah,
   DillaNafisa,
   RaisaIndiraZahra,
