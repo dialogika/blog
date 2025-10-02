@@ -10,6 +10,21 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 
 export const authorData: BlogAuthorProps[] = [
   {
+    authorName: "Afifah Rismayanti",
+    imgPath: internImages.afifahRismayanti.src,
+    quotes: "Boleh takut, tapi jangan lupa berani.",
+  },
+  {
+    authorName: "Rosa Julianda",
+    imgPath: internImages.RosaJulianda.src,
+    quotes: "silence your mind, hear your soul.",
+  },
+  {
+    authorName: "Mita Rifki Annisa",
+    imgPath: internImages.mitaRifkiAnnisa.src,
+    quotes: "Stay patient, trust the journey.",
+  },
+  {
     authorName: "Dilla Nafisa Sausan",
     imgPath: internImages.DillaNafisa.src,
     quotes: "at least i’ve tried to be better every day.",

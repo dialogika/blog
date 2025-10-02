@@ -73,8 +73,14 @@ import RaisaIndiraZahra from "@/public/assets/img/intern/raisa-indira-zahra.webp
 import DillaNafisa from "@/public/assets/img/intern/dilla-nafisa-sausan.webp";
 import ameliaMiftakhusSaadah from "@/public/assets/img/intern/amelia-miftakhus.webp";
 import galuhKarnia from "@/public/assets/img/intern/galuh-karnia-sasmitya.webp";
+import mitaRifkiAnnisa from "@/public/assets/img/intern/annisa.webp";
+import RosaJulianda from "@/public/assets/img/intern/rosa.webp";
+import afifahRismayanti from "@/public/assets/img/intern/afifah.webp";
 
 const internImages = {
+  afifahRismayanti,
+  RosaJulianda,
+  mitaRifkiAnnisa,  
   galuhKarnia,
   ameliaMiftakhusSaadah,
   DillaNafisa,
