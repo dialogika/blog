@@ -10,7 +10,7 @@ import agathaBetasabrinaSampebua from "@/public/assets/img/intern/agatha.jpg";
 import salsabillaAghisa from "@/public/assets/img/intern/aghisa.webp";
 import habibahNureniati from "@/public/assets/img/intern/habibah-nureniati.jpg";
 import anNisaNurRizky from "@/public/assets/img/intern/an-nisa-nur-rizky.webp";
-import anisa from "@/public/assets/img/intern/anisa.jpg";
+import anisa from "@/public/assets/img/intern/anisa.jpg";e
 import ciptoArdiantoro from "@/public/assets/img/intern/ardix.jpg";
 import arif from "@/public/assets/img/intern/arif.webp";
 import aryaDifaHendrawan from "@/public/assets/img/intern/arya.jpg";
@@ -71,11 +71,11 @@ import Bernadheta from "@/public/assets/img/intern/Bernadheta.jpg";
 import AbyanAlhafizh from "@/public/assets/img/intern/muhammad-abyan-alhafizh.webp";
 import RaisaIndiraZahra from "@/public/assets/img/intern/raisa-indira-zahra.webp";
 import DillaNafisa from "@/public/assets/img/intern/dilla-nafisa-sausan.webp";
-import ameliaMiftakhusSaadah from "@/public/assets/img/intern/amelia-miftakhus.webp";
-import galuhKarnia from "@/public/assets/img/intern/galuh-karnia-sasmitya.webp";
-import mitaRifkiAnnisa from "@/public/assets/img/intern/annisa.webp";
+import ameliaMiftakhusSaadah from "@/public/assets/img/intern/amel.jpg";
+import galuhKarnia from "@/public/assets/img/intern/galuh.jpg";
+import mitaRifkiAnnisa from "@/public/assets/img/intern/anisa.jpg";
 import RosaJulianda from "@/public/assets/img/intern/rosa.webp";
-import afifahRismayanti from "@/public/assets/img/intern/afifah.webp";
+import afifahRismayanti from "@/public/assets/img/intern/afifah.jpg";
 
 const internImages = {
   afifahRismayanti,
