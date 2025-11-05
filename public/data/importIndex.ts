@@ -10,7 +10,7 @@ import agathaBetasabrinaSampebua from "@/public/assets/img/intern/agatha.jpg";
 import salsabillaAghisa from "@/public/assets/img/intern/aghisa.webp";
 import habibahNureniati from "@/public/assets/img/intern/habibah-nureniati.jpg";
 import anNisaNurRizky from "@/public/assets/img/intern/an-nisa-nur-rizky.webp";
-import anisa from "@/public/assets/img/intern/anisa.jpg";e
+import anisa from "@/public/assets/img/intern/anisa.jpg";
 import ciptoArdiantoro from "@/public/assets/img/intern/ardix.jpg";
 import arif from "@/public/assets/img/intern/arif.webp";
 import aryaDifaHendrawan from "@/public/assets/img/intern/arya.jpg";
