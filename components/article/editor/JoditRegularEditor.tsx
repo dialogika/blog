@@ -413,23 +413,6 @@ const JoditRegularEditor = ({ editorContent, setEditorContent }: JoditRegularEdi
                       nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                       dolore eu fugiat nulla pariatur. </p>
                   <p><br></p>
-                  <div id="call-to-action" class="call-to-action">
-                      <img src="https://img.freepik.com/free-photo/woman-asking-questions-podcast_23-2149029335.jpg?w=2000&amp;t=st=1702424624~exp=1702425224~hmac=8ef22a8fb4c913b576a1fefecfe57e6e9f84a118e0f24b78674d7e4105d2d7b1"
-                          alt="Menawar, negosiasi, murah">
-                      <div class="container-fluid">
-                          <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-                              <div class="col-xl-12">
-                                  <div class="text-center">
-                                      <h3 style="color: #f1f7fd;">Tanya Aja Dulu</h3>
-                                      <p>Susah dan Gugup Ngomong di Depan Umum? Konsul Aja Dulu</p>
-                                      <a class="cta-btn title-change-consultation" href="https://wa.link/q8jnnv" target="_blank">Tanya
-                                          Admin</a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <p><br></p>
                   <h2>Penutup/Kesimpulan (Pilih satu)</h2>
                   <p style={{ fontFamily: '"Times New Roman", Times, serif' }}>Isi penutup/kesimpulan</p>
                   <blockquote>
