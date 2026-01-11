@@ -76,8 +76,8 @@ import galuhKarnia from "@/public/assets/img/intern/galuh.jpg";
 import mitaRifkiAnnisa from "@/public/assets/img/intern/anisa.jpg";
 import RosaJulianda from "@/public/assets/img/intern/rosa.webp";
 import afifahRismayanti from "@/public/assets/img/intern/afifah.jpg";
-import NafiraSyanindityaKinanti from "@/public/assets/img/intern/nafira.jpg";
-import BrigitaAndariHayunani from "@/public/assets/img/intern/brigita.jpg";
+import NafiraSyanindityaKinanti from "@/public/assets/img/intern/nafira.jpeg";
+import BrigitaAndariHayunani from "@/public/assets/img/intern/brigita.jpeg";
 
 const internImages = {
   NafiraSyanindityaKinanti,
