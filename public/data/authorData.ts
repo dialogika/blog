@@ -9,6 +9,16 @@ import { BlogAuthorProps } from "@/types";
 import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LEWAT SINI
 
 export const authorData: BlogAuthorProps[] = [
+   {
+    authorName: "Nafira Syaninditya Kinanti",
+    imgPath: internImages.afifahRismayanti.src,
+    quotes: "Marilah selalu bertumbuh, berproses dan bekerja cerdas.",
+  },
+   {
+    authorName: "Brigita Andari Hayunani",
+    imgPath: internImages.afifahRismayanti.src,
+    quotes: "Tak semua hal perlu dikejar. Sebagian cukup dijaga.",
+  },
   {
     authorName: "Afifah Rismayanti",
     imgPath: internImages.afifahRismayanti.src,
