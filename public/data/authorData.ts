@@ -11,12 +11,12 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 export const authorData: BlogAuthorProps[] = [
    {
     authorName: "Nafira Syaninditya Kinanti",
-    imgPath: internImages.afifahRismayanti.src,
+    imgPath: internImages.NafiraSyanindityaKinanti.src,
     quotes: "Marilah selalu bertumbuh, berproses dan bekerja cerdas.",
   },
    {
     authorName: "Brigita Andari Hayunani",
-    imgPath: internImages.afifahRismayanti.src,
+    imgPath: internImages.BrigitaAndariHayunani.src,
     quotes: "Tak semua hal perlu dikejar. Sebagian cukup dijaga.",
   },
   {
