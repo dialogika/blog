@@ -10,6 +10,16 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 
 export const authorData: BlogAuthorProps[] = [
    {
+    authorName: "Almira Pradipta Ihsani",
+    imgPath: internImages.NafiraSyanindityaKinanti.src,
+    quotes: "Everything in life is writable about if you have the outgoing guts to do it.",
+  }, 
+  {
+    authorName: "Rosyid Azam Pamawasjati",
+    imgPath: internImages.NafiraSyanindityaKinanti.src,
+    quotes: "Belajar peka pada hal kecil, untuk memahami makna yang besar.",
+  }, 
+  {
     authorName: "Nafira Syaninditya Kinanti",
     imgPath: internImages.NafiraSyanindityaKinanti.src,
     quotes: "Marilah selalu bertumbuh, berproses dan bekerja cerdas.",
