@@ -80,11 +80,11 @@ import NafiraSyanindityaKinanti from "@/public/assets/img/intern/nafira.jpg";
 import BrigitaAndariHayunani from "@/public/assets/img/intern/brigita.jpg";
 import AlmiraPradiptaIhsani from "@/public/assets/img/intern/almira.jpg";
 import RosyidAzamPamawasjati from "@/public/assets/img/intern/azam.jpg";
-import LuthfiyahSalsabil from "@/public/assets/img/intern/luthfi.webp";
+import LutfiyahSalsabil from "@/public/assets/img/intern/lutfiyah.webp";
 
 
 const internImages = {
-  LuthfiyahSalsabil,
+  LutfiyahSalsabil,
   RosyidAzamPamawasjati,
   AlmiraPradiptaIhsani,
   NafiraSyanindityaKinanti,

@@ -10,8 +10,8 @@ import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LE
 
 export const authorData: BlogAuthorProps[] = [
   {
-    authorName: "Luthfiyah Salsabil",
-    imgPath: internImages.LuthfiyahSalsabil.src,
+    authorName: "Lutfiyah Salsabil",
+    imgPath: internImages.LutfiyahSalsabil.src,
     quotes: "Always be a little kinder than necessary",
   },
   {
