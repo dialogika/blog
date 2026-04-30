@@ -9,7 +9,12 @@ import { BlogAuthorProps } from "@/types";
 import internImages from "./importIndex"; // MASUKKAN LINK GAMBAR INTERN BARU LEWAT SINI
 
 export const authorData: BlogAuthorProps[] = [
-   {
+  {
+    authorName: "Luthfiyah Salsabil",
+    imgPath: internImages.LuthfiyahSalsabil.src,
+    quotes: "Always be a little kinder than necessary",
+  },
+  {
     authorName: "Almira Pradipta Ihsani",
     imgPath: internImages.AlmiraPradiptaIhsani.src,
     quotes: "Everything in life is writable about if you have the outgoing guts to do it.",
